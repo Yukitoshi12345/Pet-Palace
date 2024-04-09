@@ -25,7 +25,7 @@
 
 | Steps            | Details                                                        |
 | ---------------- | -------------------------------------------------------------- |
-| Live application | [Let's Brag!]()                                                |
+| Live application | [Name of project]()                                            |
 | Clone this repo  | ` git clone git@github.com:Yukitoshi12345/[nameofproject].git` |
 | run on vs        | `cd ..`                                                        |
 
