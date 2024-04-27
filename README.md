@@ -1,4 +1,4 @@
-<h1 align ="center">Project 3</h1>
+<h1 align ="center">Pet Adoption</h1>
 
 ## Table of Contents
 
@@ -23,11 +23,11 @@
 
 ## Usage
 
-| Steps            | Details                                                        |
-| ---------------- | -------------------------------------------------------------- |
-| Live application | [Name of project]()                                            |
-| Clone this repo  | ` git clone git@github.com:Yukitoshi12345/[nameofproject].git` |
-| run on vs        | `cd ..`                                                        |
+| Steps            | Details                                                     |
+| ---------------- | ----------------------------------------------------------- |
+| Live application | [Pet Adoption]()                                            |
+| Clone this repo  | ` git clone git@github.com:Yukitoshi12345/Pet-Adoption.git` |
+| run on vs        | `cd ..`                                                     |
 
 ## Installation Instruction
 
@@ -47,4 +47,4 @@
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/Yukitoshi12345/[project-name]/blob/main/LICENSE).
+This project is licensed under the [MIT License](https://github.com/Yukitoshi12345/Pet-Adoption/blob/main/LICENSE).
