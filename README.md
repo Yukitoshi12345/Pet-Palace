@@ -26,6 +26,9 @@ Our repository is structured with clarity and maintainability in mind, featuring
 ## User Story
 
 ```
+As A pet lover looking to adopt a pet or support animal shelters,
+I WANT to be able to access and interact with a comprehensive pet adoption website,
+SO THAT I can search for pets based on specific criteria, manage my profile, list pets for adoption, save favourite pets, and donate to animal shelters efficiently.
 
 ```
 
