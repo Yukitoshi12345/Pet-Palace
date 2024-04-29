@@ -85,8 +85,8 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 
 | Steps            | Details                                                     |
 | ---------------- | ----------------------------------------------------------- |
-| Live application | [Pet Adoption]()                                            |
-| Clone this repo  | ` git clone git@github.com:Yukitoshi12345/Pet-Adoption.git` |
+| Live application | [PetMatch Hub]()                                            |
+| Clone this repo  | ` git clone git@github.com:Yukitoshi12345/PetMatch-Hub.git` |
 | run on vs        | `cd ..`                                                     |
 
 ## Installation Instruction
@@ -107,4 +107,4 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/Yukitoshi12345/Pet-Adoption/blob/main/LICENSE).
+This project is licensed under the [MIT License](https://github.com/Yukitoshi12345/PetMatch-Hub/blob/main/LICENSE).
