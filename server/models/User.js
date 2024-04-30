@@ -10,6 +10,7 @@ const userSchema = new Schema(
     birthday: {
       type: Date,
       required: true,
+      match: [/\d{4}-\d{2}-\d{2}/, 'Birthday must be in YYYY-MM-DD format'],
     },
     email: {
       type: String,
