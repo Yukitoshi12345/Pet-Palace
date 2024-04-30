@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Whiskers",
+    "color": "Tabby",
+    "age": "2 years",
+    "gender": "Male",
+    "breed": "Domestic Shorthair",
+    "location": "Newtown, Sydney",
+    "description": "Curious and playful, loves to explore and play with toys.",
+    "vaccinationHistory": "Fully Vaccinated",
+    "disability": "None",
+    "pedigreeKnown": "No"
+  },
+  {
+    "name": "Luna",
+    "color": "Grey",
+    "age": "1 years",
+    "gender": "Female",
+    "breed": "Russian Blue",
+    "location": "Paramatta, Sydney",
+    "description": "Shy at first, but very loving once she warms up.",
+    "vaccinationHistory": "Partially Vaccinated",
+    "disability": "Deaf",
+    "pedigreeKnown": "No"
+  },
+  {
+    "name": "Coco",
+    "color": "Black",
+    "age": "4 years",
+    "gender": "Female",
+    "breed": "Persian",
+    "location": "Chatswood, Sydney",
+    "description": "Quiet and dignified, prefers a calm environment.",
+    "vaccinationHistory": "Up-to-date",
+    "disability": "Vision Impairment",
+    "pedigreeKnown": "Yes"
+  },
+  {
+    "name": "Tiger",
+    "color": "Orange and White",
+    "age": "3 years",
+    "gender": "Male",
+    "breed": "Bengal",
+    "location": "Randwick, Sydney",
+    "description": "Affectionate and friendly, great with families.",
+    "vaccinationHistory": "Need Booster Shots",
+    "disability": "None",
+    "pedigreeKnown": "No"
+  },
+  {
+    "name": "Simba",
+    "color": "Ginger",
+    "age": "5 years",
+    "gender": "Male",
+    "breed": "Maine Coon",
+    "location": "Sutherland, Sydney",
+    "description": "Majestic and confident, enjoys high perches and observing his surroundings.",
+    "vaccinationHistory": "Fully Vaccinated",
+    "disability": "None",
+    "pedigreeKnown": "Yes"
+  },
+  {
+    "name": "Sapphire",
+    "color": "Cream",
+    "age": "6 year",
+    "gender": "Female",
+    "breed": "Siamese",
+    "location": "Bankstown, Sydney",
+    "description": "Vocal and social, seeks attention and interaction.",
+    "vaccinationHistory": "Vaccination in Progress",
+    "disability": "None",
+    "pedigreeKnown": "Yes"
+  }
+]

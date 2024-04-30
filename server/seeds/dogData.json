@@ -6,8 +6,8 @@
     "gender": "Female",
     "breed": "Labrador Retriever",
     "location": "Bondi, Sydney",
-    "description": "Energetic and Friendly, great with kids",
-    "vaccinationHistory": "Fully vaccinated",
+    "description": "Energetic and Friendly, great with kids.",
+    "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
     "pedigreeKnown": "Yes"
   },
@@ -18,7 +18,7 @@
     "gender": "Male",
     "breed": "Border Collie",
     "location": "Marrickville, Sydney",
-    "description": "Intelligent and Highly Trainable, loves agility games",
+    "description": "Intelligent and Highly Trainable, loves agility games.",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Deaf",
     "pedigreeKnown": "No"
@@ -30,7 +30,7 @@
     "gender": "Female",
     "breed": "Samoyed",
     "location": "Manly, Sydney",
-    "description": "Friendly and Gentle, perfect family pet",
+    "description": "Friendly and Gentle, perfect family pet.",
     "vaccinationHistory": "No Vaccination",
     "disability": "Blindness",
     "pedigreeKnown": "Yes"
@@ -42,7 +42,7 @@
     "gender": "Male",
     "breed": "Boxer",
     "location": "Penrith, Sydney",
-    "description": "Loyal and Protective, excellent guard dog",
+    "description": "Loyal and Protective, excellent guard dog.",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
     "pedigreeKnown": "No"
@@ -54,7 +54,7 @@
     "gender": "Female",
     "breed": "Weimaraner",
     "location": "Glebe, Sydney",
-    "description": "Active and Affectionate, needs lots of exercise",
+    "description": "Active and Affectionate, needs lots of exercise.",
     "vaccinationHistory": "Partially Vaccinated",
     "disability": "Hip Dysplasia",
     "pedigreeKnown": "No"
@@ -66,7 +66,7 @@
     "gender": "Male",
     "breed": "French Bulldog",
     "location": "Surry Hills, Sydney",
-    "description": "Playful and charming, great with other pets",
+    "description": "Playful and charming, great with other pets.",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Epilepsy",
     "pedigreeKnown": "Yes"
