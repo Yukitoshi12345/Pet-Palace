@@ -59,9 +59,9 @@ const Signup = () => {
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter full name"
-                  name="fullName"
+                  name="name"
                   type="text"
-                  value={formState.fullName}
+                  value={formState.name}
                   onChange={handleChange}
                 />
               </div>
