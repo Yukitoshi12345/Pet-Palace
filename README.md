@@ -19,7 +19,7 @@ Our repository is structured with clarity and maintainability in mind, featuring
 - [Test Instruction](#test-instruction)
 - [Screenshots](#screenshots)
 - [Overview](#overview)
-- [Contribution/Roles](#contributionroles)
+- [Contribution/Roles](#contributors)
 - [Installation Instruction](#installation-instruction)
 - [License](#license)
 
@@ -99,7 +99,7 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 
 ## Overview
 
-## Contributers
+## Contributors
 
 - [Jodie Lee](https://github.com/jodielee062788)
 - [Suyash Maharjan](https://github.com/simplesuyash)
