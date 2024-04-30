@@ -7,6 +7,7 @@
     "breed": "Labrador Retriever",
     "location": "Bondi, Sydney",
     "description": "Energetic and Friendly, great with kids.",
+    "photo": "labrador-retriever.jpeg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
     "pedigreeKnown": "Yes"
