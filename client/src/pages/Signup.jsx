@@ -43,56 +43,74 @@ const Signup = () => {
 
   return (
     <div>
-      <h2>Sign Up</h2>
+      <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold mb-4 text-black text-center">SIGN UP</h2>
       <form>
-        {/* {(
-          <div style={{ color: 'red', marginBottom: '10px' }}>
-            {errorMessage}
-          </div>
-        )} */}
-
-        <div style={{ marginBottom: '10px' }}>
-          <label htmlFor='Name'>Name</label>
+        <div className="mb-4">
+          <label className="block text-sm font-semibold mb-1" htmlFor="name">Name</label>
           <input
-            type='string'
-            placeholder='Your Name'
-            name='Name'
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            type="text"
+            id="name"
+            name="name"
             // onChange={handleInputChange}
             // value={userFormData.Name}
+            placeholder="Your Name"
             required
-            style={{ width: '100%', padding: '5px' }}
           />
         </div>
 
-        <div style={{ marginBottom: '10px' }}>
-          <label htmlFor='email'>Email</label>
+        <div className="mb-4">
+          <label className="block text-sm font-semibold mb-1" htmlFor="birthday">Birthday</label>
           <input
-            type='email'
-            placeholder='Your email address'
-            name='email'
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            type="date"
+            id="birthday"
+            name="birthday"
+            // onChange={handleInputChange}
+            // value={userFormData.birthday}
+            required
+          />
+        </div>
+
+        <div className="mb-4">
+          <label className="block text-sm font-semibold mb-1" htmlFor="email">Email</label>
+          <input
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            type="email"
+            id="email"
+            name="email"
             // onChange={handleInputChange}
             // value={userFormData.email}
+            placeholder="Your email address"
             required
-            style={{ width: '100%', padding: '5px' }}
           />
         </div>
 
-        <div style={{ marginBottom: '10px' }}>
-          <label htmlFor='password'>Password</label>
+        <div className="mb-4">
+          <label className="block text-sm font-semibold mb-1" htmlFor="password">Password</label>
           <input
-            type='password'
-            placeholder='Your password'
-            name='password'
-            // onChange={handleInputChange}
+            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+            type="password"
+            id="password"
+            name="password"
+             // onChange={handleInputChange}
             // value={userFormData.password}
+            placeholder="Your password"
             required
-            style={{ width: '100%', padding: '5px' }}
           />
         </div>
 
-        <button type='submit' style={{ width: '100%', padding: '10px', background: 'blue', color: 'white', border: 'none' }}>Sign Up</button>
+        <button
+          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300"
+          type="submit"
+        >
+          Sign Up
+        </button>
       </form>
+      </div>
     </div>
+
   );
 };
 
