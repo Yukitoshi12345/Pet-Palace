@@ -68,6 +68,15 @@ const petSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    photo: {
+      type: String,
+      required: [true, 'Photo URL is required'],
+    },
+    owner: {
+      type: Schema.Types.ObjectId, // References an ObjectId
+      ref: 'User', // The owner data is stored in a User collection
+      required: [true, 'Owner is required'],
+    },
   },
   {
     timestamps: true,
