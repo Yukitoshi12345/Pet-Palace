@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
+import Profile from './pages/Profile'
 import Login from './pages/Login'
 import SignUp from './pages/Signup'
 import ErrorPage from './pages/ErrorPage'
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />,
+      },
+      {
+        path: 'profile',
+        element: <Profile />,
       },
       {
         path: 'login',
