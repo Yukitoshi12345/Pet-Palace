@@ -4,6 +4,8 @@ export const GET_USER = gql`
     query user {
         user {
             _id
+            name
+            birthday
             email
         }
     }
