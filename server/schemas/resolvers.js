@@ -12,8 +12,8 @@ const resolvers = {
     users: async () => {
         return User.find();
       },
-      user: async (parent, { username }) => {
-        return User.findOne({ username });
+      user: async (parent, { email }) => {
+        return User.findOne({ email });
       },
     }, 
 
@@ -36,13 +36,15 @@ const resolvers = {
         return { token, user };
         },
 
-        addUser: async (parent, { username, email, password }) => {
+        addUser: async (parent, { name, birthday, email, password, confirmPassword }) => {
             // Create the user instance and return it with token 
             const user = await User.create(
                 {
-                    username: username,
+                    name: name,
+                    birthday: birthday,
                     email: email,
                     password: password,
+                    confirmPassword: confirmPassword,
                 }
             );
 
