@@ -1,86 +1,94 @@
-/* eslint-disable react/no-unknown-property */
-// import { useState } from 'react';
-// import { useMutation } from '@apollo/client';
-// import { ADD_USER } from '../utils/mutations';
-// import Auth from '../utils/auth';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
 
-const Signup = () => {
-  // const [userFormData, setUserFormData] = useState({ email: '', password: '' });
-  // const [validated, setValidated] = useState(false);
-  // const [errorMessage, setErrorMessage] = useState('');
+import Auth from '../utils/auth';
 
-  // const [addUser] = useMutation(ADD_USER);
+const Login = (props) => {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error, data }] = useMutation(LOGIN_USER);
 
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   setUserFormData({ ...userFormData, [name]: value });
-  // };
+  // update state based on form input changes
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-  //   const form = event.currentTarget;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-  //   if (form.checkValidity() === false) {
-  //     event.preventDefault();
-  //     event.stopPropagation();
-  //   }
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+    try {
+      const { data } = await login({
+        variables: { ...formState },
+      });
 
-  //   setValidated(true);
+      Auth.login(data.login.token);
+    } catch (e) {
+      console.error(e);
+    }
 
-  //   try {
-  //     const { data } = await addUser({
-  //       variables: { ...userFormData }
-  //     });
-
-  //     Auth.login(data.addUser.token);
-  //   } catch (err) {
-  //     console.error(err);
-  //     setErrorMessage(err.message);
-  //   }
-
-  //   setUserFormData({ email: '', password: '' });
-  // };
+    // clear form values
+    setFormState({
+      email: '',
+      password: '',
+    });
+  };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form>
-        {/* {(
-          <div style={{ color: 'red', marginBottom: '10px' }}>
-            {errorMessage}
-          </div>
-        )} */}
-
-        <div style={{ marginBottom: '10px' }}>
-          <label htmlFor='email'>Email</label>
-          <input
-            type='email'
-            placeholder='Your email address'
-            name='email'
-            // onChange={handleInputChange}
-            // value={userFormData.email}
-            required
-            style={{ width: '100%', padding: '5px' }}
-          />
+    <main className="flex justify-center mt-10">
+      <div className="max-w-md w-full px-4 mt-20">
+        <div className="bg-white shadow-md rounded px-8 py-8">
+          <h4 className="text-2xl mb-4 font-bold text-black">LOGIN</h4>
+          {data ? (
+            <p className="text-green-500 mb-4">
+              Success! You may now head{' '}
+              <Link to="/" className="text-blue-500 hover:underline">
+                back to the homepage.
+              </Link>
+            </p>
+          ) : (
+            <form onSubmit={handleFormSubmit}>
+              <div className="mb-4">
+                <input
+                  className="w-full px-3 py-2 border rounded"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+              </div>
+              <div className="mb-4">
+                <input
+                  className="w-full px-3 py-2 border rounded"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+              </div>
+              <button
+                className="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+                style={{ cursor: 'pointer' }}
+                type="submit"
+              >
+                LOGIN
+              </button>
+            </form>
+          )}
+          {error && (
+            <div className="text-red-500 mt-4">{error.message}</div>
+          )}
         </div>
-
-        <div style={{ marginBottom: '10px' }}>
-          <label htmlFor='password'>Password</label>
-          <input
-            type='password'
-            placeholder='Your password'
-            name='password'
-            // onChange={handleInputChange}
-            // value={userFormData.password}
-            required
-            style={{ width: '100%', padding: '5px' }}
-          />
-        </div>
-
-        <button type='submit' style={{ width: '100%', padding: '10px', background: 'blue', color: 'white', border: 'none' }}>Sign Up</button>
-      </form>
-    </div>
-  );
+      </div>
+    </main>
+  )
 };
-
-export default Signup;
+export default Login;

@@ -40,20 +40,6 @@ export const navigation= [
         name: 'contact',
         href: '/contact',
     },
-    {
-        name: 'login',
-        href: '/login',
-    },
-    {
-        name: 'sign up',
-        href: '/signup',
-    },
-    {
-        name: 'logout',
-        href: '/logout',
-        isHidden: true,
-    },
-
 ]
 
 export const account = [
