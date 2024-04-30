@@ -40,10 +40,6 @@ export const navigation= [
         name: 'contact',
         href: '/contact',
     },
-    {
-        name: 'profile',
-        href: '/profile',
-    },
 ]
 
 export const account = [
