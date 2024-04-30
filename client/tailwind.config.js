@@ -1,9 +1,9 @@
-
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./index.html", "./src/**/*.{js,ts,jsx,tsx}",
-    'node_modules/flowbite/lib/esm/**/*.js'
+    './node_modules/flowbite/**/*.js'
   ],
   theme: {
     fontFamily: {
@@ -42,7 +42,7 @@ export default {
       },
     },
     plugins: [
-      'flowbite/plugin',
+      'flowbite/plugin'
     ],
   },
 };

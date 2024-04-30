@@ -3,7 +3,6 @@ import NavMenu from '../NavMenu';
 // import NavMobile from "./UI/Navigation/NavMobile";
 import logo from '../../assets/images/logo.gif';
 import { NavLink } from 'react-router-dom';
-import Search from '../Search';
 
 const Header = () => {
   const [bg, setBg] = useState(false);
@@ -13,11 +12,11 @@ const Header = () => {
       return window.scrollY > 50 ? setBg(true) : setBg(false);
     });
   });
-  const handleChange = (e) => {};
+ 
   return (
-    <nav className={`${bg ? "bg-tertiary h-20": "h-24" }bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600`}>
+    <nav className={`${bg ? "bg-tertiary h-20": "h-24" }bg-white dark:bg-gray-900  z-20 top-0 start-0  container mx-auto`}>
      
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="flex flex-wrap items-center justify-between mx-auto p-4">
         
         <NavLink
           href="/"

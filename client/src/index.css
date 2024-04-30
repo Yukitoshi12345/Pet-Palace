@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-body text-paragraph leading-6 bg-gray-200 text-lg;
+    @apply font-body text-paragraph leading-6 bg-gray-900 text-lg;
   }
   h1,
   h2,
