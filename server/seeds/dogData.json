@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Bella",
+    "color": "Golden",
+    "age": "3 years",
+    "gender": "Female",
+    "breed": "Labrador Retriever",
+    "location": "Bondi, Sydney",
+    "description": "Energetic and Friendly, great with kids",
+    "vaccinationHistory": "Fully vaccinated",
+    "disability": "None",
+    "pedigreeKnown": "Yes"
+  },
+  {
+    "name": "Max",
+    "color": "Black and White",
+    "age": "5 years",
+    "gender": "Male",
+    "breed": "Border Collie",
+    "location": "Marrickville, Sydney",
+    "description": "Intelligent and Highly Trainable, loves agility games",
+    "vaccinationHistory": "Fully Vaccinated",
+    "disability": "Deaf",
+    "pedigreeKnown": "No"
+  },
+  {
+    "name": "Daisy",
+    "color": "White",
+    "age": "2 years",
+    "gender": "Female",
+    "breed": "Samoyed",
+    "location": "Manly, Sydney",
+    "description": "Friendly and Gentle, perfect family pet",
+    "vaccinationHistory": "No Vaccination",
+    "disability": "Blindness",
+    "pedigreeKnown": "Yes"
+  },
+  {
+    "name": "Oscar",
+    "color": "Brindle",
+    "age": "4 years",
+    "gender": "Male",
+    "breed": "Boxer",
+    "location": "Penrith, Sydney",
+    "description": "Loyal and Protective, excellent guard dog",
+    "vaccinationHistory": "Fully Vaccinated",
+    "disability": "None",
+    "pedigreeKnown": "No"
+  },
+  {
+    "name": "Lola",
+    "color": "Grey",
+    "age": "6 years",
+    "gender": "Female",
+    "breed": "Weimaraner",
+    "location": "Glebe, Sydney",
+    "description": "Active and Affectionate, needs lots of exercise",
+    "vaccinationHistory": "Partially Vaccinated",
+    "disability": "Hip Dysplasia",
+    "pedigreeKnown": "No"
+  },
+  {
+    "name": "Rocky",
+    "color": "tan",
+    "age": "1 year",
+    "gender": "Male",
+    "breed": "French Bulldog",
+    "location": "Surry Hills, Sydney",
+    "description": "Playful and charming, great with other pets",
+    "vaccinationHistory": "Fully Vaccinated",
+    "disability": "Epilepsy",
+    "pedigreeKnown": "Yes"
+  }
+]
