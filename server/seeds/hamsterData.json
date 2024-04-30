@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Nugget",
+    "color": "Golden",
+    "age": "8 months",
+    "gender": "Male",
+    "breed": "Syrian Hamester",
+    "location": "Balmain, Sydney",
+    "description": "Friendly and curious, loves to explore his surroundings in a secure play area.",
+    "health": "Excellent, Fully checked"
+  },
+  {
+    "name": "Pearl",
+    "color": "White",
+    "age": "1 year",
+    "gender": "Female",
+    "breed": "Dwarf Hamster",
+    "location": "Mosman, Sydney",
+    "description": "Shy at first, but very gentle and enjoys quiet time.",
+    "health": "Good health, regular health checks"
+  },
+  {
+    "name": "Gizmo",
+    "color": "Grey and White",
+    "age": "7 months",
+    "gender": "Male",
+    "breed": "Roborovski Dwarf Hamster",
+    "location": "Stanmore, Sydney",
+    "description": "Extremely active and loves running on his wheel, best for experienced owners.",
+    "health": "Very healthy, active"
+  },
+  {
+    "name": "Fudge",
+    "color": "Brown",
+    "age": "10 months",
+    "gender": "Male",
+    "breed": "Campbell's Dwarf Hamster",
+    "location": "Coogee, Sydney",
+    "description": "Sweet and easy-going, enjoys cuddling and gentle handling.",
+    "health": "Excellent condition"
+  },
+  {
+    "name": "Sparkle",
+    "color": "Silver",
+    "age": "1.5 years",
+    "gender": "Female",
+    "breed": "Winter White Dwarf Hamster",
+    "location": "Randwick, Sydney",
+    "description": "Quiet and observant, likes to watch her surroundings from her cage.",
+    "health": "Monitored for slight weight issues, otherwise healthy."
+  },
+  {
+    "name": "Ziggy",
+    "color": "Black and White",
+    "age": "1 year",
+    "gender": "Male",
+    "breed": "Chinese Hamster",
+    "location": "Burwood, Sydney",
+    "description": "PAdventurous and clever, skilled at navigating mazes and tunnels.",
+    "health": "Good, regular vet visits."
+  }
+]
