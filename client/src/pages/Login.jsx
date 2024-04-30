@@ -42,7 +42,7 @@ const Login = (props) => {
 
   return (
     <main className="flex justify-center mt-10">
-      <div className="max-w-md w-full px-4">
+      <div className="max-w-md w-full px-4 mt-20">
         <div className="bg-white shadow-md rounded px-8 py-8">
           <h4 className="text-2xl mb-4 font-bold text-black">LOGIN</h4>
           {data ? (
