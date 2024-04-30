@@ -11,12 +11,12 @@
   },
   {
     "name": "Pearl",
-    "color": "White",
+    "color": "White with black and brown markings",
     "age": "1 year",
     "gender": "Female",
-    "breed": "Dwarf Hamster",
+    "breed": "European Hamster",
     "location": "Mosman, Sydney",
-    "description": "Shy at first, but very gentle and enjoys quiet time.",
+    "description": "Initially reserved but very intelligent and capable of complex behaviours.",
     "health": "Good health, regular health checks"
   },
   {
@@ -24,7 +24,7 @@
     "color": "Grey and White",
     "age": "7 months",
     "gender": "Male",
-    "breed": "Roborovski Dwarf Hamster",
+    "breed": "Roborovski Hamster",
     "location": "Stanmore, Sydney",
     "description": "Extremely active and loves running on his wheel, best for experienced owners.",
     "health": "Very healthy, active"
@@ -51,7 +51,7 @@
   },
   {
     "name": "Ziggy",
-    "color": "Black and White",
+    "color": "Brown and White",
     "age": "1 year",
     "gender": "Male",
     "breed": "Chinese Hamster",
