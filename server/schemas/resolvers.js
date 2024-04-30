@@ -1,4 +1,4 @@
-const { User, Product, Category, Order } = require("../models");
+const { User } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 // Added personal stripe API
@@ -39,10 +39,12 @@ Mutation: {
         return { token, user };
     },
 
-    addUser: async (parent, { email, password }) => {
+    addUser: async (parent, { name, birthday, email, password }) => {
         // Create the user instance and return it with token 
         const user = await User.create(
             {
+                name: name,
+                birthday: birthday,
                 email: email,
                 password: password,
             }
