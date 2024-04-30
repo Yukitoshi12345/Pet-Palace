@@ -15,7 +15,6 @@ Our repository is structured with clarity and maintainability in mind, featuring
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Technologies Used](#technologies-used)
-- [Usage](#usage)
 - [Test Instruction](#test-instruction)
 - [Screenshots](#screenshots)
 - [Overview](#overview)
@@ -81,13 +80,6 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 
 ## Development Dependencies Used
 
-## Usage
-
-| Steps            | Details                                                     |
-| ---------------- | ----------------------------------------------------------- |
-| Live application | [PetMatch Hub]()                                            |
-| Clone this repo  | ` git clone git@github.com:Yukitoshi12345/PetMatch-Hub.git` |
-| run on vs        | `cd ..`                                                     |
 
 ## Installation Instruction
 
