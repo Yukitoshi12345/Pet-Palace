@@ -9,51 +9,47 @@ const stripe = require("stripe")(
 // TODO: Complete this section
 const resolvers = {
   Query: {
-    user: async (parent, args, context) => {
-        if (context.user) {
-            const user = await User.findOne({ _id: context.user._id });
-            return user;
-        } 
-        throw AuthenticationError;
-    }
-}, 
+    users: async () => {
+        return User.find();
+      },
+      user: async (parent, { username }) => {
+        return User.findOne({ username });
+      },
+    }, 
 
-Mutation: {
-    login: async (parent, { email, password }) => {
-        // Check if the email exists in the database 
+    Mutation: {
+        login: async (parent, { email, password }) => {
         const user = await User.findOne({ email });
 
         if (!user) {
             throw AuthenticationError;
         }
 
-        // Validate that the password is correct 
-        const isPwCorrect = await user.isCorrectPassword(password);
+        const correctPw = await user.isCorrectPassword(password);
 
-        if (!isPwCorrect) {
+        if (!correctPw) {
             throw AuthenticationError;
         }
 
-        // Return token and user 
         const token = signToken(user);
-        return { token, user };
-    },
 
-    addUser: async (parent, { name, birthday, email, password }) => {
-        // Create the user instance and return it with token 
-        const user = await User.create(
-            {
-                name: name,
-                birthday: birthday,
-                email: email,
-                password: password,
-            }
-        );
-
-        const token = signToken(user);
         return { token, user };
+        },
+
+        addUser: async (parent, { username, email, password }) => {
+            // Create the user instance and return it with token 
+            const user = await User.create(
+                {
+                    username: username,
+                    email: email,
+                    password: password,
+                }
+            );
+
+            const token = signToken(user);
+            return { token, user };
+        },
     },
-  }
-}  
+}
 
 module.exports = resolvers;
