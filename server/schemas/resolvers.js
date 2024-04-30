@@ -36,7 +36,7 @@ const resolvers = {
         return { token, user };
         },
 
-        addUser: async (parent, { name, birthday, email, password, confirmPassword }) => {
+        addUser: async (parent, { name, birthday, email, password }) => {
             // Create the user instance and return it with token 
             const user = await User.create(
                 {
@@ -44,7 +44,6 @@ const resolvers = {
                     birthday: birthday,
                     email: email,
                     password: password,
-                    confirmPassword: confirmPassword,
                 }
             );
 
