@@ -1,71 +1,86 @@
-import { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
-import { LOGIN } from '../utils/mutations';
-import Auth from '../utils/auth';
+/* eslint-disable react/no-unknown-property */
+// import { useState } from 'react';
+// import { useMutation } from '@apollo/client';
+// import { ADD_USER } from '../utils/mutations';
+// import Auth from '../utils/auth';
 
-function Login() {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error }] = useMutation(LOGIN);
+const Signup = () => {
+  // const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+  // const [validated, setValidated] = useState(false);
+  // const [errorMessage, setErrorMessage] = useState('');
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
-      });
-      const token = mutationResponse.data.login.token;
-      Auth.login(token);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  // const [addUser] = useMutation(ADD_USER);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setUserFormData({ ...userFormData, [name]: value });
+  // };
+
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const form = event.currentTarget;
+
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+
+  //   setValidated(true);
+
+  //   try {
+  //     const { data } = await addUser({
+  //       variables: { ...userFormData }
+  //     });
+
+  //     Auth.login(data.addUser.token);
+  //   } catch (err) {
+  //     console.error(err);
+  //     setErrorMessage(err.message);
+  //   }
+
+  //   setUserFormData({ email: '', password: '' });
+  // };
 
   return (
-    <div className="container my-1">
-      <Link to="/signup">← Go to Signup</Link>
-
+    <div>
       <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email address:</label>
-          <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
+      <form>
+        {/* {(
+          <div style={{ color: 'red', marginBottom: '10px' }}>
+            {errorMessage}
           </div>
-        ) : null}
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
+        )} */}
+
+        <div style={{ marginBottom: '10px' }}>
+          <label htmlFor='email'>Email</label>
+          <input
+            type='email'
+            placeholder='Your email address'
+            name='email'
+            // onChange={handleInputChange}
+            // value={userFormData.email}
+            required
+            style={{ width: '100%', padding: '5px' }}
+          />
         </div>
+
+        <div style={{ marginBottom: '10px' }}>
+          <label htmlFor='password'>Password</label>
+          <input
+            type='password'
+            placeholder='Your password'
+            name='password'
+            // onChange={handleInputChange}
+            // value={userFormData.password}
+            required
+            style={{ width: '100%', padding: '5px' }}
+          />
+        </div>
+
+        <button type='submit' style={{ width: '100%', padding: '10px', background: 'blue', color: 'white', border: 'none' }}>Sign Up</button>
       </form>
     </div>
   );
-}
+};
 
-export default Login;
+export default Signup;

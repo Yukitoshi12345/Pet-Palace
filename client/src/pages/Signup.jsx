@@ -1,87 +1,99 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useMutation } from '@apollo/client';
-import Auth from '../utils/auth';
-import { ADD_USER } from '../utils/mutations';
+/* eslint-disable react/no-unknown-property */
+// import { useState } from 'react';
+// import { useMutation } from '@apollo/client';
+// import { ADD_USER } from '../utils/mutations';
+// import Auth from '../utils/auth';
 
-function Signup() {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
+const Signup = () => {
+  // const [userFormData, setUserFormData] = useState({ email: '', password: '' });
+  // const [validated, setValidated] = useState(false);
+  // const [errorMessage, setErrorMessage] = useState('');
 
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: {
-        email: formState.email,
-        password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
-      },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
-  };
+  // const [addUser] = useMutation(ADD_USER);
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
+  //   setUserFormData({ ...userFormData, [name]: value });
+  // };
+
+  // const handleFormSubmit = async (event) => {
+  //   event.preventDefault();
+  //   const form = event.currentTarget;
+
+  //   if (form.checkValidity() === false) {
+  //     event.preventDefault();
+  //     event.stopPropagation();
+  //   }
+
+  //   setValidated(true);
+
+  //   try {
+  //     const { data } = await addUser({
+  //       variables: { ...userFormData }
+  //     });
+
+  //     Auth.login(data.addUser.token);
+  //   } catch (err) {
+  //     console.error(err);
+  //     setErrorMessage(err.message);
+  //   }
+
+  //   setUserFormData({ email: '', password: '' });
+  // };
 
   return (
-    <div className="container my-1">
-      <Link to="/login">← Go to Login</Link>
+    <div>
+      <h2>Sign Up</h2>
+      <form>
+        {/* {(
+          <div style={{ color: 'red', marginBottom: '10px' }}>
+            {errorMessage}
+          </div>
+        )} */}
 
-      <h2>Signup</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
+        <div style={{ marginBottom: '10px' }}>
+          <label htmlFor='Name'>Name</label>
           <input
-            placeholder="First"
-            name="firstName"
-            type="firstName"
-            id="firstName"
-            onChange={handleChange}
+            type='string'
+            placeholder='Your Name'
+            name='Name'
+            // onChange={handleInputChange}
+            // value={userFormData.Name}
+            required
+            style={{ width: '100%', padding: '5px' }}
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
+
+        <div style={{ marginBottom: '10px' }}>
+          <label htmlFor='email'>Email</label>
           <input
-            placeholder="Last"
-            name="lastName"
-            type="lastName"
-            id="lastName"
-            onChange={handleChange}
+            type='email'
+            placeholder='Your email address'
+            name='email'
+            // onChange={handleInputChange}
+            // value={userFormData.email}
+            required
+            style={{ width: '100%', padding: '5px' }}
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
+
+        <div style={{ marginBottom: '10px' }}>
+          <label htmlFor='password'>Password</label>
           <input
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
+            type='password'
+            placeholder='Your password'
+            name='password'
+            // onChange={handleInputChange}
+            // value={userFormData.password}
+            required
+            style={{ width: '100%', padding: '5px' }}
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
-          <input
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="flex-row flex-end">
-          <button type="submit">Submit</button>
-        </div>
+
+        <button type='submit' style={{ width: '100%', padding: '10px', background: 'blue', color: 'white', border: 'none' }}>Sign Up</button>
       </form>
     </div>
   );
-}
+};
 
 export default Signup;

@@ -41,8 +41,12 @@ export const navigation= [
         href: '/contact',
     },
     {
-        name: 'login/sign up',
-        href: '/register',
+        name: 'login',
+        href: '/login',
+    },
+    {
+        name: 'sign up',
+        href: '/signup',
     },
     {
         name: 'logout',
