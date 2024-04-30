@@ -1,6 +1,10 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html", "./src/**/*.{js,ts,jsx,tsx}",
+    'node_modules/flowbite/lib/esm/**/*.js'
+  ],
   theme: {
     fontFamily: {
       primary: ['Playfair Display', 'serif'],
@@ -20,7 +24,7 @@ export default {
       xl: '1280px',
     },
     extend: {
-      display: ["group-hover"],
+     display: ["group-hover"],
       colors: {
         primary: '#050402',
         //secondary: '#1C1D24',
@@ -34,9 +38,11 @@ export default {
         leather: '#0b0806',
         // paragraph: '#878e99',
         paragraph: '#78716c',
-        blackperl: '#0e1013',
+        blackperl: '#0e1013', 
       },
     },
+    plugins: [
+      'flowbite/plugin',
+    ],
   },
-  plugins: [],
 };

@@ -1,15 +1,12 @@
+import { Outlet } from "react-router-dom"
+import Header from "./components/Header"
 
 
 function App() {
-  
-
   return (
     <>
-      
-        
-      <p className='font-logo'>
-        Tailwindcss is connected!
-      </p>
+      <Header/>
+      <Outlet/>
     </>
   )
 }
