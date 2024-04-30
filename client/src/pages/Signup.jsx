@@ -55,7 +55,7 @@ const Signup = () => {
           ) : (
             <form onSubmit={handleFormSubmit}>
                <div className="mb-4">
-               <label htmlFor="username" className="block text-black mb-2">Name</label>
+               <label htmlFor="name" className="block text-black mb-2">Name</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter full name"
@@ -66,7 +66,7 @@ const Signup = () => {
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="username" className="block text-black mb-2">Birthday</label>
+              <label htmlFor="birthday" className="block text-black mb-2">Birthday</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter birthday"
@@ -77,7 +77,7 @@ const Signup = () => {
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="username" className="block text-black mb-2">Email</label>
+              <label htmlFor="email" className="block text-black mb-2">Email</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter email"
@@ -88,7 +88,7 @@ const Signup = () => {
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="username" className="block text-black mb-2">Password</label>
+              <label htmlFor="password" className="block text-black mb-2">Password</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Must have at least 5 characters"
@@ -99,7 +99,7 @@ const Signup = () => {
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="username" className="block text-black mb-2">Confirm Password</label>
+              <label htmlFor="confirmPassword" className="block text-black mb-2">Confirm Password</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Confirm Password"
