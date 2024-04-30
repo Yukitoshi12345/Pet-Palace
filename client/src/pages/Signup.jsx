@@ -50,7 +50,7 @@ const Signup = () => {
           <h4 className="text-2xl mb-4 font-bold text-black text-center">SIGN UP</h4>
           {data ? (
             <p className="text-green-500 mb-4">
-              Logged in succesfully!
+              Success! Your account has been created!
             </p>
           ) : (
             <form onSubmit={handleFormSubmit}>
