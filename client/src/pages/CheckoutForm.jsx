@@ -1,5 +1,4 @@
-// src/components/CheckoutForm.js
-import React from 'react';
+// import React from 'react';
 import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 
 const CheckoutForm = () => {
