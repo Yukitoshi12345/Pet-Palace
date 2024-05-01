@@ -5,7 +5,6 @@ require('dotenv').config();
 const stripeAPI = process.env.Stripe_API_KEY;
 const stripe = require('stripe')(stripeAPI);
 
-// TODO: Complete this section
 const resolvers = {
   Query: {
     users: async () => {
@@ -21,13 +20,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw AuthenticationError;
+        throw new AuthenticationError('No user found with this email address.');
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw AuthenticationError;
+        throw new AuthenticationError('Incorrect password.');
       }
 
       const token = signToken(user);
@@ -36,7 +35,6 @@ const resolvers = {
     },
 
     addUser: async (parent, { name, birthday, email, password }) => {
-      // Create the user instance and return it with token
       const user = await User.create({
         name: name,
         birthday: birthday,
@@ -46,6 +44,19 @@ const resolvers = {
 
       const token = signToken(user);
       return { token, user };
+    },
+
+    createCharge: async (parent, { amount, source, currency }) => {
+      try {
+        const charge = await stripe.charges.create({
+          amount,
+          currency,
+          source,
+        });
+        return { success: true, chargeId: charge.id };
+      } catch (error) {
+        return { success: false, error: error.message };
+      }
     },
   },
 };
