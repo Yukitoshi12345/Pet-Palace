@@ -1,9 +1,46 @@
-import React from 'react'
+import { about } from '../data';
+import Team from '../components/About/Team';
+import Sponsors from '../components/About/Sponsors';
+import Rehoming from '../components/About/Rehoming';
 
 const About = () => {
+  const {title, heading, paragraphs, commitments, team, rehoming, sponsors } = about;
   return (
-    <section id="about">About</section>
-  )
-}
+    <section id="about" className="section format">
+      <div className="container mx-auto m">
+        <h1 className="text-center section-title">{title}</h1>
+        <h2 className="subtitle">{heading}</h2>
+        {
+          paragraphs.map((item, index) => {
+            return ( 
+              <div key={index}>
+                <p>{item}</p>
+                {
+                  index === 2 && (
+                    <ul className="list-disc list-inside indent-7 mb-5 leading-6">
+                      {
+                        commitments.map((commitment, index) => {
+                          return <li key={index}>{commitment}</li>
+                        })
+                      }
+                    </ul>
+                  )
+                }
+              </div>
+            );
+          })
+        }
 
-export default About
+        {/* rehoming section */}
+        < Rehoming {...rehoming}/>
+        {/* sponsors section */}
+        <Sponsors {...sponsors} />
+        {/* team section*/}
+        <Team {...team} />
+      
+      </div>
+    </section>
+  );
+};
+
+export default About;

@@ -6,7 +6,7 @@ const Home = () => {
     <section id='home' className='container mx-auto'>
        
        <Hero/>
-      </section>
+    </section>
   )
 }
 
