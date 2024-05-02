@@ -49,28 +49,15 @@ const client = new ApolloClient({
 // Initialize Stripe with your key
 const stripeAPI = import.meta.env.VITE_STRIPE_API_KEY;
 const stripePromise = loadStripe(stripeAPI);
-console.log(import.meta.env.VITE_USER_ID);
 
 function App() {
   return (
     <ApolloProvider client={client}>
-      <BrowserRouter>
-        <Elements stripe={stripePromise}>
-          <ThemeController />
+          <ThemeController /> 
           <Header />
-          <Home />
-          <About />
-          <Contact />
+          <Outlet />
           <Footer />
           <BackToTopBtn />
-          <Outlet />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/checkout" element={<CheckoutForm />} />
-            {/* Add other routes as needed */}
-          </Routes>
-        </Elements>
-      </BrowserRouter>
     </ApolloProvider>
   );
 }

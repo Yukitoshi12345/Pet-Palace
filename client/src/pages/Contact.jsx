@@ -14,9 +14,7 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const form = useRef();
-  const SERVICE_ID = '';
-  const TEMPLATE_ID = '';
-  const USER_ID = '';
+
 
   //handle input blur
   const handleInputBlur = (e) => {
@@ -73,10 +71,10 @@ const Contact = () => {
     e.preventDefault();
     try {
       const result = await emailjs.sendForm(
-        SERVICE_ID,
-        TEMPLATE_ID,
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
         form.current,
-        USER_ID,
+        import.meta.env.VITE_USER_ID,
       );
       if (result.text === 'OK') {
         alert(
