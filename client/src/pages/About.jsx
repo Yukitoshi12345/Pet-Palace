@@ -2,12 +2,17 @@ import { about } from '../data';
 import Team from '../components/About/Team';
 import Sponsors from '../components/About/Sponsors';
 import Rehoming from '../components/About/Rehoming';
+import Hero from '../components/Hero';
 
 const About = () => {
   const {title, heading, paragraphs, commitments, team, rehoming, sponsors } = about;
   return (
     <section id="about" className="section format">
-      <div className="container mx-auto m">
+      <div className="container mx-auto">
+        <div className="hidden md:block mb-36">
+          <Hero/>
+        </div>
+        
         <h1 className="text-center section-title">{title}</h1>
         <h2 className="subtitle">{heading}</h2>
         {
