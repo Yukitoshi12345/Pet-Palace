@@ -1,3 +1,10 @@
+
+
+// import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+// import { Outlet } from "react-router-dom"
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import About from './pages/About';
@@ -6,6 +13,8 @@ import ThemeController from './components/ThemeController';
 import Footer from './components/Footer';
 import BackToTopBtn from './components/BackToTopBtn';
 import Contact from './pages/Contact';
+import CheckoutForm from './pages/CheckoutForm'; // The Stripe Checkout Form component
+
 
 import {
   ApolloClient,
@@ -42,17 +51,30 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+// Initialize Stripe with your key
+const stripeAPI = process.env.Stripe_API_KEY;
+const stripePromise = loadStripe(stripeAPI);
+
 function App() {
   return (
     <ApolloProvider client={client}>
-      <ThemeController /> 
-      <Header />
-      <Home />
-      <About />
-      <Contact />
-      <Outlet />
-      <Footer />
-      <BackToTopBtn />
+      <BrowserRouter>
+        <Elements stripe={stripePromise}>
+          <ThemeController /> 
+          <Header />
+          <Home />
+          <About />
+          <Contact />
+          <Footer />
+          <BackToTopBtn />
+          <Outlet />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/checkout" element={<CheckoutForm />} />
+            {/* Add other routes as needed */}
+          </Routes>
+        </Elements>
+      </BrowserRouter>
     </ApolloProvider>
   );
 }
