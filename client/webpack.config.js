@@ -3,36 +3,26 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
-module.exports = () => {
+dotenv.config();
+
+module.exports = (env) => {
   return {
     mode: 'development',
     // Entry point for files
-    entry: {
-      main: './src/js/index.js',
-      install: './src/js/install.js',
-      cards: './src/js/cards.js',
-    },
-    // Output for our bundles
-    output: {
-      filename: '[name].bundle.js',
-      path: path.resolve(__dirname, 'dist'),
-    },
+    
     plugins: [
+      // Define environment variables
+      new Dotenv(
+        {
+          path: './.env',
+        },
+      ),
       // Webpack plugin that generates our html file and injects our bundles.
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'Contact Cards',
-      }),
-
-      new webpack.DefinePlugin({
-        'process.env': JSON.stringify(process.env),
-      }),
-
-      // Injects our custom service worker
-      new InjectManifest({
-        swSrc: './src-sw.js',
-        swDest: 'src-sw.js',
       }),
 
       // Creates a manifest.json file.

@@ -47,8 +47,9 @@ const client = new ApolloClient({
 });
 
 // Initialize Stripe with your key
-const stripeAPI = process.env.Stripe_API_KEY;
+const stripeAPI = import.meta.env.VITE_STRIPE_API_KEY;
 const stripePromise = loadStripe(stripeAPI);
+console.log(import.meta.env.VITE_USER_ID);
 
 function App() {
   return (
