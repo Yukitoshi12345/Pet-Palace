@@ -74,7 +74,7 @@ const Login = (props) => {
                 />
               </div>
               <button
-                className="w-full py-2 btn btn-accent mt-2"
+                className="w-full py-2 btn btn-accent mt-2 text-[16px]"
                 type="submit"
               >
                 LOGIN
