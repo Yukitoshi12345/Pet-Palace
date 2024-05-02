@@ -12,6 +12,9 @@ const userSchema = new Schema(
       required: true,
       match: [/\d{4}-\d{2}-\d{2}/, 'Birthday must be in YYYY-MM-DD format'],
     },
+    favoritePet: {
+      type: String,
+    },
     email: {
       type: String,
       required: true,

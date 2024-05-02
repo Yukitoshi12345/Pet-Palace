@@ -27,6 +27,8 @@ const Signup = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+    console.log(formState.favoritePet);
+
     if (formState.password !== formState.confirmPassword) {
       setError('Passwords do not match!');
       return;
