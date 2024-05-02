@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import daisyui from "daisyui"
-//import tailwind typography plugin
-import typography from '@tailwindcss/typography'
-//import flowbite plugin
-import flowbite from 'flowbite/plugin'
+
 
 
 export default {
@@ -61,11 +58,14 @@ export default {
       business:{
         ...require("daisyui/src/theming/themes")["business"],
         neutral: "#ffffff",
-        accent: "#A16207"
+        accent: "#A16207",
+        primary: "#1f1f1f",
       },
       emerald:{
         ...require("daisyui/src/theming/themes")["emerald"],
-        accent: "#A16207"
+        accent: "#A16207",
+        
+        primary: "#faf9f6",
       }
     }
     
@@ -73,9 +73,7 @@ export default {
   },
   plugins: [
     daisyui,
-    /* require ('@tailwindcss/typography'),
-    require('flowbite/plugin') */
-    typography,
-    flowbite
+     require ('@tailwindcss/typography'),
+    require('flowbite/plugin') 
   ],
 };

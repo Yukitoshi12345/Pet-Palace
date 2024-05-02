@@ -3,9 +3,9 @@ import {heros} from '../../data'
 
 const Hero = () => {
   return (
-    <div className='hidden md:flex w-full lg:h-[28rem] md:h-[22rem]'>
+    <div className='hidden md:flex w-full lg:h-[32rem] md:h-[26rem]'>
     {/* get a random hero image from the heros array */}
-    <img src={heros[Math.floor(Math.random() * heros.length)].pic} alt='hero' className='w-full h-full object-cover object-center'/>
+    <img src={heros[Math.floor(Math.random() * heros.length)]} alt='hero image' className='w-full h-full object-cover object-center'/>
 
     </div>
   )

@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import NavMenu from './NavMenu';
-// import NavMobile from "./UI/Navigation/NavMobile";
-import logo from '../../assets/images/logo.gif';
+
+import {header} from '../../data';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+  const{companyLogo} = header;
   const [bg, setBg] = useState(false);
 
   useEffect(() => {
@@ -22,9 +23,9 @@ const Header = () => {
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
-          <img src={logo} className="h-24 rounded-full" alt="Logo" />
+          <img src={companyLogo.pic} className="h-24 rounded-full" alt="Logo" />
           <span className="self-center bg-clip-text text-4xl text-transparent  whitespace-nowrap font-logo bg-gradient-to-r from-accent via-secondary to-accent pr-3">
-            Pet Palace
+            {companyLogo.name}
           </span>
         </NavLink>
         <div className="flex lg:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
