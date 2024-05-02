@@ -5,7 +5,7 @@ import {header} from '../../data';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-  const{companyLogo} = header;
+  const{companyLogo, donationIcon} = header;
   const [bg, setBg] = useState(false);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const Header = () => {
             type="button"
             className="btn btn-accent"
           >
-            Donate Now
+            {donationIcon}Donate Now
           </button>
 
           <button

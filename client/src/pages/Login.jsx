@@ -4,6 +4,7 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import dog from '../assets/images/login/sad-dog.jpg';
 import Auth from '../utils/auth';
+import { ImEnter } from "react-icons/im";
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -91,7 +92,7 @@ const Login = (props) => {
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
-                  LOGIN
+                  <ImEnter/>LOGIN
                 </button>
               </form>
             )}
