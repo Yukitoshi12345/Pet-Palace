@@ -55,6 +55,7 @@ const Login = (props) => {
               <label htmlFor="email" className="block text-base-100 mb-2">Email</label>
               <div className="mb-4">
                 <input
+                  id="email"
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter email"
                   name="email"
@@ -67,6 +68,7 @@ const Login = (props) => {
               <div className="mb-4">
                 <label htmlFor="password" className="block text-base-100 mb-2">Password</label>
                 <input
+                  id="password"
                   className="w-full px-3 py-2 border rounded"
                   placeholder="*****"
                   name="password"
