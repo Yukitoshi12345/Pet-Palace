@@ -27,8 +27,6 @@ const Signup = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    console.log(formState.favoritePet);
-
     if (formState.password !== formState.confirmPassword) {
       setError('Passwords do not match!');
       return;
@@ -59,6 +57,7 @@ const Signup = () => {
               <div className="mb-4">
                 <label htmlFor="name" className="block text-base-100 mb-2">Name</label>
                 <input
+                  id="name"
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter full name"
                   name="name"
@@ -71,6 +70,7 @@ const Signup = () => {
               <div className="mb-4">
                 <label htmlFor="birthday" className="block text-base-100 mb-2">Birthday</label>
                 <input
+                  id="birthday"
                   className="w-full px-3 py-2 border rounded uppercase"
                   placeholder="Enter birthday"
                   name="birthday"
@@ -83,6 +83,7 @@ const Signup = () => {
               <div className="mb-4">
                 <label htmlFor="favoritePet" className="block text-base-100 mb-2">Favorite Pet</label>
                 <select
+                  id="favoritePet"
                   className="w-full px-3 py-2 border rounded"
                   name="favoritePet"
                   value={formState.favoritePet}
@@ -100,6 +101,7 @@ const Signup = () => {
               <div className="mb-4">
                 <label htmlFor="email" className="block text-base-100 mb-2">Email</label>
                 <input
+                  id="email"
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter email"
                   name="email"
@@ -112,6 +114,7 @@ const Signup = () => {
               <div className="mb-2">
                 <label htmlFor="password" className="block text-base-100 mb-2">Password</label>
                 <input
+                  id="password"
                   className="w-full px-3 py-2 border rounded"
                   placeholder="At least 5 characters"
                   name="password"
@@ -124,6 +127,7 @@ const Signup = () => {
               <div className="mb-2">
                 <label htmlFor="confirmPassword" className="block text-base-100 mb-2">Confirm Password</label>
                 <input
+                  id="confirmPassword"
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Confirm Password"
                   name="confirmPassword"

@@ -14,6 +14,7 @@ const userSchema = new Schema(
     },
     favoritePet: {
       type: String,
+      required: true,
     },
     email: {
       type: String,
