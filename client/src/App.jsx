@@ -1,11 +1,17 @@
+
+
 // import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 // import { Outlet } from "react-router-dom"
-import Home from './components/Home';
+import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
+import About from './pages/About';
+import Home from './pages/Home';
+import ThemeController from './components/ThemeController';
 import CheckoutForm from './pages/CheckoutForm'; // The Stripe Checkout Form component
+
 
 import {
   ApolloClient,
@@ -49,7 +55,11 @@ function App() {
     <ApolloProvider client={client}>
       <BrowserRouter>
         <Elements stripe={stripePromise}>
+          <ThemeController /> 
           <Header />
+          <Home />
+          <About />
+          <Outlet />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/checkout" element={<CheckoutForm />} />

@@ -1,33 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  body {
-    @apply font-body text-paragraph leading-6 bg-gray-900 text-lg;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply text-white font-primary;
-  }
-  .section {
-    @apply py-12 lg:py-32 pt-36  min-h-[100vh] flex  items-center justify-center  mb-32 lg:mb-0;
-  }
-  .section-title {
-    @apply text-3xl lg:text-4xl font-medium lg:font-extrabold mb-5;
-  }
-  .subtitle {
-    @apply  text-paragraph mb-16 lg:mb-24 max-w-[520px];
-  }
-  .btn {
-    @apply py-4 px-7 font-medium text-white flex items-center justify-center rounded-sm hover:bg-accent-hover transition-all;
-  }
+.btn {
+  @apply py-4 px-7 ;
+} 
+/* 
   .btn-lg {
     @apply h-[54px];
   }
@@ -38,12 +22,43 @@
     @apply h-[40px];
   }
   .input {
-    @apply bg-secondary text-paragraph h-[60px] outline-none pl-6 w-full font-body text-[15px] rounded-sm focus:outline focus:outline-1 focus:outline-accent;
+    @apply h-[60px] outline-none pl-6 w-full font-body text-[15px] rounded-sm focus:outline focus:outline-1;
   }
   .textarea {
-    @apply bg-secondary resize-none w-full outline-none p-6 rounded-sm h-[200px] focus:outline focus:outline-1 focus:outline-accent;
+    @apply  resize-none w-full outline-none p-6 rounded-sm h-[200px] focus:outline focus:outline-1;
+  } 
+  */
+
+@layer base {
+  body {
+    @apply  bg-base-100 text-neutral font-bodyAlt text-lg min-w-[474px];
+      
+  }
+  h1{
+    @apply text-2xl font-extrabold leading-none tracking-tight md:text-3xl lg:text-4xl text-accent !important;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-primary text-accent !important;
+  }
+  p{
+    @apply mb-4 text-lg font-normal text-neutral text-justify;
+  }
+  .section {
+    @apply prose min-w-full min-h-[100vh] flex  items-center justify-center mt-24 lg:mb-0;
+  }
+  .section-title {
+    @apply text-3xl lg:text-4xl font-medium lg:font-extrabold mb-5;
+  }
+  .subtitle {
+    @apply  mb-4 lg:mb-8 ;
   }
   .active {
     @apply text-accent;
-  }
+  } 
+  
 }
+

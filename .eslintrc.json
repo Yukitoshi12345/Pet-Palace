@@ -30,7 +30,9 @@
     "brace-style": "error",
     "quotes": ["error", "single", { "avoidEscape": true }],
     "semi": ["error", "always"],
-    "radix": "off"
+    "radix": "off",
+    "react/prop-types": "off",
+    "node": true
   },
   "extends": ["prettier"],
   "parser": "@babel/eslint-parser"

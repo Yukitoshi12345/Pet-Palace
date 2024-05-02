@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui from "daisyui"
+//import tailwind typography plugin
+import typography from '@tailwindcss/typography'
+//import flowbite plugin
+import flowbite from 'flowbite/plugin'
+
 
 export default {
+  darkMode: 'class',
   content: [
     "./index.html", "./src/**/*.{js,ts,jsx,tsx}",
     './node_modules/flowbite/**/*.js'
@@ -10,6 +17,7 @@ export default {
       primary: ['Playfair Display', 'serif'],
       body: ['Barlow', 'sans-serif'],
       logo: ['Great Vibes', 'cursive'],
+      bodyAlt: ['Saira', 'sans-serif'],
     },
     container: {
       padding: {
@@ -17,6 +25,9 @@ export default {
         lg: '3rem',
       },
     },
+    /*
+    not using this anymore
+    clashing with flowbite
     screens: {
       sm: '640px',
       md: '768px',
@@ -41,8 +52,30 @@ export default {
         blackperl: '#0e1013', 
       },
     },
-    plugins: [
-      'flowbite/plugin'
+    */
+  },
+  daisyui: {
+    themes: [
+      "emerald",
+      {
+      business:{
+        ...require("daisyui/src/theming/themes")["business"],
+        neutral: "#ffffff",
+        accent: "#A16207"
+      },
+      emerald:{
+        ...require("daisyui/src/theming/themes")["emerald"],
+        accent: "#A16207"
+      }
+    }
+    
     ],
   },
+  plugins: [
+    daisyui,
+    /* require ('@tailwindcss/typography'),
+    require('flowbite/plugin') */
+    typography,
+    flowbite
+  ],
 };
