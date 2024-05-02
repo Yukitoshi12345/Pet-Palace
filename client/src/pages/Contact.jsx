@@ -3,7 +3,7 @@ import { contact } from '../data';
 import { validateEmail } from '../utils/helpers';
 import emailjs from '@emailjs/browser';
 // Use "dotenv" to access environment variables from a `.env` file
-// import 'dotenv/config.js';
+//import 'dotenv/config';
 
 const Contact = () => {
   // Create state variables for the fields in the form
@@ -14,9 +14,9 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const form = useRef();
-  // const SERVICE_ID = process.env.SERVICE_ID;
-  // const TEMPLATE_ID = process.env.TEMPLATE_ID;
-  // const USER_ID = process.env.USER_ID;
+  const SERVICE_ID = '';
+  const TEMPLATE_ID = '';
+  const USER_ID = '';
 
   //handle input blur
   const handleInputBlur = (e) => {
