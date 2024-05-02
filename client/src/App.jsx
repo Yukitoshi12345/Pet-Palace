@@ -1,5 +1,3 @@
-
-
 // import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
@@ -15,8 +13,6 @@ import BackToTopBtn from './components/BackToTopBtn';
 import Contact from './pages/Contact';
 import CheckoutForm from './pages/CheckoutForm'; // The Stripe Checkout Form component
 
-
-
 import {
   ApolloClient,
   InMemoryCache,
@@ -24,8 +20,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
-
 
 // Construct main GraphQL API endpoint
 const httpLink = createHttpLink({
