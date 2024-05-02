@@ -1,4 +1,3 @@
-
 import { useQuery } from '@apollo/client';
 import { QUERY_USER } from '../utils/queries';
 
@@ -20,6 +19,7 @@ const Profile = ({ email }) => {
       <p>Name: {user.name}</p>
       <p>Email: {user.email}</p>
       <p>Birthday: {user.birthday}</p>
+      <p>Favorite Pet: {user.favoritePet}</p>
     </section>
   );
 };
