@@ -1,4 +1,6 @@
 // Description: This file contains all the data that is used in the application.
+//donation logo
+import { BiSolidDonateHeart } from "react-icons/bi";
 
 //brand logo
 import logo from './assets/images/logo.gif';
@@ -6,6 +8,7 @@ import logo from './assets/images/logo.gif';
 //contact us icons
 import {FiMail, FiMapPin } from "react-icons/fi";
 import {FaPhoneAlt} from "react-icons/fa";
+import { BsSendArrowUpFill } from "react-icons/bs";
 
 //footer photos
 import charity from './assets/images/footer/registered-charity.png';
@@ -160,7 +163,8 @@ export const header = {
       name: 'contact',
       href: '/contact',
     }
-  ]
+  ],
+  donationIcon: <BiSolidDonateHeart/>,
 }
 
 export const contact = {
@@ -170,6 +174,7 @@ export const contact = {
     mail: <FiMail/>,
     phone: <FaPhoneAlt/> ,
     map: <FiMapPin/>,
+    send: <BsSendArrowUpFill/>,
   },
   location: {
     title: 'Our Locations',

@@ -115,11 +115,11 @@ const Contact = () => {
                     <h5 className="text-xl m-0">{location.location}</h5>
                     <div className="text-lg m-0 flex items-center gap-2">
                       {contact.icon.mail}
-                      <a href="{location.email}">{location.email}</a>
+                      <a href={`mailto:${location.email}`}>{location.email}</a>
                     </div>
                     <div className="text-lg m-0 flex items-center gap-2">
                       {contact.icon.phone}
-                      <a href="tel:{location.number}">{location.number}</a>
+                      <a href={`tel:${location.number}`}>{location.number}</a>
                     </div>
                   </div>
                 ))
@@ -173,11 +173,11 @@ const Contact = () => {
             )}
             <button
               type="button"
-              className="btn btn-lg bg-accent"
+              className="btn btn-lg btn-accent"
               onClick={handleFormSubmit}
               // disabled={!email || !name || !message || !validateEmail(email)}
             >
-              Send Message
+              {contact.icon.send}Send Message
             </button>
           </form>
         </div>
