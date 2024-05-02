@@ -48,7 +48,7 @@
     @apply mb-4 text-lg font-normal text-neutral text-justify;
   }
   .section {
-    @apply prose min-w-full min-h-[100vh] flex  items-center justify-center mt-24 lg:mb-0;
+    @apply prose min-w-full min-h-[75vh] flex  items-center justify-center mt-24 lg:mb-0;
   }
   .section-title {
     @apply text-3xl lg:text-4xl font-medium lg:font-extrabold mb-5;

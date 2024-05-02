@@ -44,10 +44,10 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex justify-center">
+    <main className="flex justify-center section">
       <div className="max-w-md w-full px-4 mt-20">
-        <div className="bg-white shadow-md rounded px-8 py-8">
-          <h4 className="text-2xl mb-4 font-bold text-black text-center">SIGN UP</h4>
+        <div className="bg-neutral shadow-md rounded px-8 py-8">
+          <h4 className="text-2xl mb-4 font-bold text-center">SIGN UP</h4>
           {data ? (
             <p className="text-green-500 mb-4">
               Success! Your account has been created!
@@ -55,7 +55,7 @@ const Signup = () => {
           ) : (
             <form onSubmit={handleFormSubmit}>
                <div className="mb-4">
-               <label htmlFor="name" className="block text-black mb-2">Name</label>
+               <label htmlFor="name" className="block text-base-100 mb-2">Name</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter full name"
@@ -66,7 +66,7 @@ const Signup = () => {
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="birthday" className="block text-black mb-2">Birthday</label>
+              <label htmlFor="birthday" className="block text-base-100 mb-2">Birthday</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter birthday"
@@ -77,7 +77,7 @@ const Signup = () => {
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="email" className="block text-black mb-2">Email</label>
+              <label htmlFor="email" className="block text-base-100 mb-2">Email</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter email"
@@ -88,7 +88,7 @@ const Signup = () => {
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="password" className="block text-black mb-2">Password</label>
+              <label htmlFor="password" className="block text-base-100 mb-2">Password</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Must have at least 5 characters"
@@ -99,7 +99,7 @@ const Signup = () => {
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="confirmPassword" className="block text-black mb-2">Confirm Password</label>
+              <label htmlFor="confirmPassword" className="block text-base-100 mb-2">Confirm Password</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Confirm Password"
@@ -110,7 +110,7 @@ const Signup = () => {
                 />
               </div>
               <button
-                className="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600 cursor-pointer"
+                className="w-full py-2 btn btn-accent"
                 type="submit"
               >
                 REGISTER
