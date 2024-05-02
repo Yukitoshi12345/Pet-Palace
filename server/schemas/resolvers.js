@@ -34,10 +34,11 @@ const resolvers = {
       return { token, user };
     },
 
-    addUser: async (parent, { name, birthday, email, password }) => {
+    addUser: async (parent, { name, birthday, favoritePet, email, password }) => {
       const user = await User.create({
         name: name,
         birthday: birthday,
+        favoritePet: favoritePet,
         email: email,
         password: password,
       });
