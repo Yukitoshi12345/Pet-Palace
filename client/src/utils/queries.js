@@ -6,6 +6,7 @@ export const QUERY_USER = gql`
       _id
       name
       birthday
+      favoritePet
       email  
     }
   }
