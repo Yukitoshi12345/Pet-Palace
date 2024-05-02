@@ -7,12 +7,13 @@ const Signup = () => {
   const [formState, setFormState] = useState({
     name: '',
     birthday: '',
+    favoritePet: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
   const [addUser, { data }] = useMutation(ADD_USER);
-  const [errorMsg, setErrorMsg] = useState('');
+  const [error, setError] = useState('');
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -27,8 +28,7 @@ const Signup = () => {
     event.preventDefault();
 
     if (formState.password !== formState.confirmPassword) {
-      // If passwords don't match, set an error message and return early
-      setErrorMsg('Passwords do not match');
+      setError('Passwords do not match!');
       return;
     }
 
@@ -45,17 +45,17 @@ const Signup = () => {
 
   return (
     <main className="flex justify-center section">
-      <div className="max-w-md w-full px-4 mt-20">
-        <div className="bg-neutral shadow-md rounded px-8 py-8">
-          <h4 className="text-2xl mb-4 font-bold text-center">SIGN UP</h4>
+      <div className="max-w-xl w-full px-4 mt-20">
+        <div className="bg-neutral shadow-md rounded-lg px-8 py-8">
+          <h4 className="text-2x1 mb-8 mt-1 font-bold text-center text-[34px] border-b py-1">SIGN UP</h4>
           {data ? (
             <p className="text-green-500 mb-4">
               Success! Your account has been created!
             </p>
           ) : (
-            <form onSubmit={handleFormSubmit}>
-               <div className="mb-4">
-               <label htmlFor="name" className="block text-base-100 mb-2">Name</label>
+            <form onSubmit={handleFormSubmit} className="grid grid-cols-2 gap-4">
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-base-100 mb-2">Name</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter full name"
@@ -63,21 +63,40 @@ const Signup = () => {
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
+                  required
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="birthday" className="block text-base-100 mb-2">Birthday</label>
+                <label htmlFor="birthday" className="block text-base-100 mb-2">Birthday</label>
                 <input
-                  className="w-full px-3 py-2 border rounded"
+                  className="w-full px-3 py-2 border rounded uppercase"
                   placeholder="Enter birthday"
                   name="birthday"
                   type="date"
                   value={formState.birthday}
                   onChange={handleChange}
+                  required
                 />
               </div>
               <div className="mb-4">
-              <label htmlFor="email" className="block text-base-100 mb-2">Email</label>
+                <label htmlFor="favoritePet" className="block text-base-100 mb-2">Favorite Pet</label>
+                <select
+                  className="w-full px-3 py-2 border rounded"
+                  name="favoritePet"
+                  value={formState.favoritePet}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">Select a pet</option>
+                  <option value="dog">Dog</option>
+                  <option value="cat">Cat</option>
+                  <option value="bird">Bird</option>
+                  <option value="rabbit">Rabbit</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-base-100 mb-2">Email</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Enter email"
@@ -85,21 +104,23 @@ const Signup = () => {
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
+                  required
                 />
               </div>
-              <div className="mb-4">
-              <label htmlFor="password" className="block text-base-100 mb-2">Password</label>
+              <div className="mb-2">
+                <label htmlFor="password" className="block text-base-100 mb-2">Password</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
-                  placeholder="Must have at least 5 characters"
+                  placeholder="At least 5 characters"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
+                  required
                 />
               </div>
-              <div className="mb-4">
-              <label htmlFor="confirmPassword" className="block text-base-100 mb-2">Confirm Password</label>
+              <div className="mb-2">
+                <label htmlFor="confirmPassword" className="block text-base-100 mb-2">Confirm Password</label>
                 <input
                   className="w-full px-3 py-2 border rounded"
                   placeholder="Confirm Password"
@@ -107,18 +128,19 @@ const Signup = () => {
                   type="password"
                   value={formState.confirmPassword}
                   onChange={handleChange}
+                  required
                 />
               </div>
               <button
-                className="w-full py-2 btn btn-accent"
+                className="col-span-2 w-full py-2 btn btn-accent mt-2 text-[16px]"
                 type="submit"
               >
                 REGISTER
               </button>
             </form>
           )}
-          {errorMsg && (
-            <div className="text-red-500 mt-4">{errorMsg}</div>
+          {error && (
+            <div className="text-red-500 mt-4 text-center">{error}</div>
           )}
         </div>
       </div>
