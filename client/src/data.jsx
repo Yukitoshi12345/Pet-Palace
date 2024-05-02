@@ -1,3 +1,15 @@
+// Description: This file contains all the data that is used in the application.
+
+//brand logo
+import logo from './assets/images/logo.gif';
+
+//contact us icons
+import {FiMail, FiMapPin } from "react-icons/fi";
+import {FaPhoneAlt} from "react-icons/fa";
+
+//footer photos
+import charity from './assets/images/footer/registered-charity.png';
+
 //hero photos
 import hero1 from './assets/images/hero/hero1.jpg';
 import hero2 from './assets/images/hero/hero2.jpg';
@@ -16,39 +28,15 @@ import casino from './assets/images/about/star-casino.png';
 import coles from './assets/images/about/coles.jpg';
 import staff from './assets/images/about/StaffGroup.jpg';
 
+
 //dogs photos
 
 //cats photos
 
 //birds photos
 
-//explore hero photos
-export const heros = [
-  {
-    pic: hero1,
-  },
-  {
-    pic: hero2,
-  },
-  {
-    pic: hero3,
-  },
-];
-//navigation
-export const navigation = [
-  {
-    name: 'home',
-    href: '/',
-  },
-  {
-    name: 'about',
-    href: '/about',
-  },
-  {
-    name: 'contact',
-    href: '/contact',
-  }
-];
+// hero photos
+export const heros = [ hero1, hero2, hero3 ];
 
 export const about = {
   title: 'ABOUT US',
@@ -141,3 +129,70 @@ export const about = {
     ],
   },
 };
+
+export const footer = {
+  registration: {
+    registrationBoard: 'Australian CAN',
+    pic: charity,
+  },
+  copyright: '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
+  slogan: 'A brighter future for animals in need'
+};
+
+
+export const header = {
+  //logo
+  companyLogo: {
+    pic: logo,
+    name: 'Pet Palace'
+  },
+  //navigation
+  navigation: [
+    {
+      name: 'home',
+      href: '/',
+    },
+    {
+      name: 'about',
+      href: '/about',
+    },
+    {
+      name: 'contact',
+      href: '/contact',
+    }
+  ]
+}
+
+export const contact = {
+  title: 'CONTACT US',
+  subtitle: 'If you have any questions or concerns, please feel free to contact us. We are here to help you and your pet in any way we can. You can reach us by phone, email, or by visiting our office. Our friendly staff are always happy to help and will do their best to answer any questions you may have. We look forward to hearing from you!',
+  icon: {
+    mail: <FiMail/>,
+    phone: <FaPhoneAlt/> ,
+    map: <FiMapPin/>,
+  },
+  location: {
+    title: 'Our Locations',
+    locations: [
+      {
+        location: 'Head Office',
+        email: 'info@sydney.petpalace.org.au',
+        number: '1800 000 000',
+        address: '123 Unnamed Road, Sydney, NSW 2000',
+      },
+      {
+        location: 'Melbourne Branch',
+        email: 'info@melbourne.petpalace.org.au',
+        number: '1800 000 001',
+        address: '123 Unnamed Street, North Melbourne, VIC 3051',
+      },
+      {
+        location: 'Brisbane Branch',
+        email: 'info@brisbane.petpalace.org.au',
+        number: '1800 000 002',
+        address: '123 Haven Crescent, Brisbane, QLD 4000',
+      }
+    ]
+  }
+  
+}

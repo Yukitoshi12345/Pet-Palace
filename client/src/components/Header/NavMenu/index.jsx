@@ -1,4 +1,4 @@
-import { navigation } from "../../../data";
+import { header } from "../../../data";
 import { NavLink } from "react-router-dom";
 import Auth from '../../../utils/auth'; // Import Auth utility for handling authentication
 
@@ -7,7 +7,7 @@ const NavMenu = ({bg}) => {
     event.preventDefault();
     Auth.logout();
   };
-
+  const { navigation } = header;
   return (
     <div className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
       <ul className={`${bg ? "lg:bg-base-200  ": "lg:bg-base-100 " } bg-base-300 capitalize flex flex-col p-4 lg:p-0 mt-4 font-medium border rounded-lg  lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0`}>

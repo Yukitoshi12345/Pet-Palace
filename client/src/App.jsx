@@ -3,6 +3,9 @@ import Header from './components/Header';
 import About from './pages/About';
 import Home from './pages/Home';
 import ThemeController from './components/ThemeController';
+import Footer from './components/Footer';
+import BackToTopBtn from './components/BackToTopBtn';
+import Contact from './pages/Contact';
 
 import {
   ApolloClient,
@@ -11,6 +14,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+
+
 
 // Construct main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -44,7 +49,10 @@ function App() {
       <Header />
       <Home />
       <About />
+      <Contact />
       <Outlet />
+      <Footer />
+      <BackToTopBtn />
     </ApolloProvider>
   );
 }
