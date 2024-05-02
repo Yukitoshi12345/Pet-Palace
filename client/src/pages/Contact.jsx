@@ -175,7 +175,7 @@ const Contact = () => {
               type="button"
               className="btn btn-lg bg-accent"
               onClick={handleFormSubmit}
-              disabled={!email || !name || !message || !validateEmail(email)}
+              // disabled={!email || !name || !message || !validateEmail(email)}
             >
               Send Message
             </button>

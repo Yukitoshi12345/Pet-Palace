@@ -15,7 +15,7 @@ const Header = () => {
   });
  
   return (
-    <nav className={`${bg ? "bg-base-200 h-24 opacity-95": "bg-base-100 h-32" } fixed container mx-auto text-[1.2rem] z-20 top-0 left-0 right-0  lg:px-12 xxl:px-24`}>
+    <nav className={`${bg ? "bg-base-200 h-24 opacity-95": "bg-base-100 h-32" } fixed container mx-auto text-[1.2rem] z-20 top-0 left-0 right-0 lg:px-12 xxl:px-24`}>
      
         <div className=" flex flex-wrap items-center justify-between mx-auto p-4">
         
@@ -33,7 +33,7 @@ const Header = () => {
             type="button"
             className="btn btn-accent"
           >
-            Adopt Now
+            Donate Now
           </button>
 
           <button
