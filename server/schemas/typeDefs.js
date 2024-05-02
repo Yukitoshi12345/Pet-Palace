@@ -5,6 +5,7 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     birthday: String!
+    favoritePet: String!
     email: String!
     password: String!
   }
@@ -29,10 +30,14 @@ const typeDefs = gql`
     addUser(
       name: String!
       birthday: String!
+      favoritePet: String!
       email: String!
       password: String!
     ): Auth
-    login(email: String!, password: String!): Auth
+    login(
+      email: String!, 
+      password: String!
+    ): Auth
     createCharge(
       amount: Int!
       source: String!
