@@ -62,95 +62,104 @@ const Signup = () => {
         </div>
         <div className="flex flex-col items-center lg:items-stretch lg:justify-start z-10 lg:flex-row">
           <div className="max-w-md w-full ">
-            <div className="bg-neutral shadow-md  px-8 py-8 border-r-2 rounded-t-3xl lg:rounded-tr-none lg:rounded-l-3xl">
-              <h4 className="text-2xl mb-4 font-bold text-center">SIGN UP</h4>
+            <div className="bg-neutral shadow-md px-8 py-8 border-r-2 rounded-t-3xl lg:rounded-tr-none lg:rounded-l-3xl">
+              <h4 className="text-2x1 mb-8 mt-1 font-bold text-center text-[34px] border-b py-1">SIGN UP</h4>
               {data ? (
                 <p className="text-green-500 mb-4">
                   Success! Your account has been created!
                 </p>
               ) : (
-                <form onSubmit={handleFormSubmit}>
-                  <div className="mb-4">
-                    <label htmlFor="name" className="block text-base-100 mb-2">
-                      Name
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 border rounded"
-                      placeholder="Enter full name"
-                      name="name"
-                      type="text"
-                      value={formState.name}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label
-                      htmlFor="birthday"
-                      className="block text-base-100 mb-2"
-                    >
-                      Birthday
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 border rounded"
-                      placeholder="Enter birthday"
-                      name="birthday"
-                      type="date"
-                      value={formState.birthday}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label htmlFor="email" className="block text-base-100 mb-2">
-                      Email
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 border rounded"
-                      placeholder="Enter email"
-                      name="email"
-                      type="email"
-                      value={formState.email}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label
-                      htmlFor="password"
-                      className="block text-base-100 mb-2"
-                    >
-                      Password
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 border rounded"
-                      placeholder="Must have at least 5 characters"
-                      name="password"
-                      type="password"
-                      value={formState.password}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label
-                      htmlFor="confirmPassword"
-                      className="block text-base-100 mb-2"
-                    >
-                      Confirm Password
-                    </label>
-                    <input
-                      className="w-full px-3 py-2 border rounded"
-                      placeholder="Confirm Password"
-                      name="confirmPassword"
-                      type="password"
-                      value={formState.confirmPassword}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <button className="w-full py-2 btn btn-accent" type="submit">
+                <form onSubmit={handleFormSubmit} className="grid grid-cols-2 gap-4">
+                <div className="mb-4">
+                  <label htmlFor="name" className="block text-base-100 mb-2">Name</label>
+                  <input
+                    id="name"
+                    className="w-full px-3 py-2 border rounded"
+                    placeholder="Enter full name"
+                    name="name"
+                    type="text"
+                    value={formState.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="birthday" className="block text-base-100 mb-2">Birthday</label>
+                  <input
+                    id="birthday"
+                    className="w-full px-3 py-2 border rounded uppercase"
+                    placeholder="Enter birthday"
+                    name="birthday"
+                    type="date"
+                    value={formState.birthday}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="favoritePet" className="block text-base-100 mb-2">Favorite Pet</label>
+                  <select
+                    id="favoritePet"
+                    className="w-full px-3 py-2 border rounded"
+                    name="favoritePet"
+                    value={formState.favoritePet}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Select a pet</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div className="mb-4">
+                  <label htmlFor="email" className="block text-base-100 mb-2">Email</label>
+                  <input
+                    id="email"
+                    className="w-full px-3 py-2 border rounded"
+                    placeholder="Enter email"
+                    name="email"
+                    type="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-2">
+                  <label htmlFor="password" className="block text-base-100 mb-2">Password</label>
+                  <input
+                    id="password"
+                    className="w-full px-3 py-2 border rounded"
+                    placeholder="At least 5 characters"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="mb-2">
+                  <label htmlFor="confirmPassword" className="block text-base-100 mb-2">Confirm Password</label>
+                  <input
+                    id="confirmPassword"
+                    className="w-full px-3 py-2 border rounded"
+                    placeholder="Confirm Password"
+                    name="confirmPassword"
+                    type="password"
+                    value={formState.confirmPassword}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                  <button className="col-span-2 w-full py-2 btn btn-accent mt-2 text-[16px]" type="submit">
                     <GiArchiveRegister />
                     REGISTER
                   </button>
                 </form>
               )}
-              {errorMsg && <div className="text-red-500 mt-4">{errorMsg}</div>}
+              {error && <div className="text-red-500 mt-4">{error}</div>}
             </div>
           </div>
           <div className="max-w-md w-full px-6 bg-neutral text-base-100 lg:min-w-max">
