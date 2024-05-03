@@ -56,7 +56,7 @@ function App() {
           <ThemeController /> 
           <Header />
           <Outlet />
-          <Footer />
+          {/* <Footer /> */}
           <BackToTopBtn />
     </ApolloProvider>
   );

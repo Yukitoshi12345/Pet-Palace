@@ -1,25 +1,29 @@
 // Description: This file contains all the data that is used in the application.
+//donation logo
+import { BiSolidDonateHeart } from 'react-icons/bi';
 
 //brand logo
 import logo from './assets/images/logo.gif';
 
 //contact us icons
-import {FiMail, FiMapPin } from "react-icons/fi";
-import {FaPhoneAlt} from "react-icons/fa";
+import { FiMail, FiMapPin } from 'react-icons/fi';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { BsSendArrowUpFill } from 'react-icons/bs';
 
-//footer photos
-import charity from './assets/images/footer/registered-charity.png';
 
-//hero photos
+
+
+//about hero photos
 import hero1 from './assets/images/hero/hero1.jpg';
 import hero2 from './assets/images/hero/hero2.jpg';
 import hero3 from './assets/images/hero/hero3.jpg';
 
-//about photos
+//about staff photos
 //import jodi from './assets/images/about/jodi.jpg';
 import suyash from './assets/images/about/suyash.jpg';
 import yukitoshi from './assets/images/about/Yuki.jpg';
 
+//about sponsors photos
 import myer from './assets/images/about/myer_logo.webp';
 import nova from './assets/images/about/nova.png';
 import nsw from './assets/images/about/nsw-gov.png';
@@ -29,6 +33,11 @@ import coles from './assets/images/about/coles.jpg';
 import staff from './assets/images/about/StaffGroup.jpg';
 
 
+//home photos
+import hero from './assets/images/home/pet-adoption.png';
+import rego1 from './assets/images/home/acnc.png';
+import rego2 from './assets/images/home/ACNC-1.png';
+
 //dogs photos
 
 //cats photos
@@ -36,7 +45,7 @@ import staff from './assets/images/about/StaffGroup.jpg';
 //birds photos
 
 // hero photos
-export const heros = [ hero1, hero2, hero3 ];
+export const heros = [hero1, hero2, hero3];
 
 export const about = {
   title: 'ABOUT US',
@@ -45,28 +54,28 @@ export const about = {
   paragraphs: [
     'Pet Palace is a non-profit organization that is dedicated to creating a brighter future for animals in need. We have been working hard to provide a safe and loving environment for animals for the past 60 years. Our mission is to help animals find their forever homes and to provide them with the care and support they need to thrive.',
     'We believe that every animal deserves a second chance at life, and we are committed to helping them find it. We work with local shelters and rescue groups to find homes for animals in need, and we provide them with the medical care and support they need to recover and thrive.',
-    'A key focus of Animal Welfare League Queensland is to raise the value of animals in society so that the intrinsic needs of each species are recognised, respected and met. Just as importantly, we will:',
+    'A key focus of Pet Palace is to raise the value of animals in society so that the intrinsic needs of each species are recognised, respected and met. Just as importantly, we will:',
     'Our team of dedicated volunteers and staff work tirelessly to provide the best possible care for the animals in our care. We are committed to creating a safe and loving environment for all animals, and we are proud to be a part of the Pet Palace family.',
     "To think of animals facing an uncertain future, their loneliness and fear - this is our motivation. Our goals are ambitious - we don't turn away animals who are suffering; we don't euthanise animals because they are old or require treatment. Our model is different and we are incredibly proud of this.",
   ],
 
   commitments: [
-    'Continue to keep our promise to never euthanise a healthy, sociable or treatable animal in our care',
-    'Provide stray and homeless animals a second chance at life through innovative rehoming strategies',
-    'Prevent the birth of unwanted kittens and puppies through our National Desexing Network',
-    'Increase the number of Councils participating in our Cooperative Desexing Programs',
-    'Work with Councils to improve the living conditions of animals and introduce our Getting to Zero model',
-    'Keep people and their pets together by providing charitable support through our Community Vet Clinics',
-    'Through the Golden Hearts™ Program support seniors through every step of pet ownership',
-    "Improve the community's attitude toward all animals through education",
-    'Find a positive solution for un-owned cats',
+    'Maintain our commitment to never euthanise a healthy, sociable, or treatable animal under our care',
+    'Offer a new beginning to stray and homeless animals through creative rehoming efforts',
+    'Control the population of unwanted kittens and puppies via our National Desexing Network',
+    'Expand the number of Councils engaged in our Cooperative Desexing Programs',
+    'Collaborate with Councils to enhance animal living conditions and implement our Getting to Zero model',
+    'Help keep families and their pets together by offering charitable assistance at our Community Vet Clinics',
+    'Support seniors in every aspect of pet ownership through our Golden Hearts™ Program',
+    'Foster better community attitudes toward all animals via educational initiatives',
+    'Seek constructive outcomes for un-owned cats',
   ],
   team: {
     members: [
       {
-        name: 'Jodi Lee',
+        name: 'Jodie Lee',
         role: 'CEO',
-        pic: 'jodi',
+        pic: 'jodie',
       },
       {
         name: 'Suyash Maharjan',
@@ -74,7 +83,7 @@ export const about = {
         pic: suyash,
       },
       {
-        name: 'Yukitoshi ',
+        name: 'Yukitoshi Imaizumi-Zhou',
         role: 'Rehoming Manager',
         pic: yukitoshi,
       },
@@ -131,20 +140,21 @@ export const about = {
 };
 
 export const footer = {
-  registration: {
-    registrationBoard: 'Australian CAN',
-    pic: charity,
+  logo: {
+    brand: 'Pet Palace',
+    pic: logo,
   },
-  copyright: '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
-  slogan: 'A brighter future for animals in need'
-};
 
+  copyright: '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
+  slogan: '\u{201c} A brighter future for animals in need \u{201d}'
+
+};
 
 export const header = {
   //logo
   companyLogo: {
     pic: logo,
-    name: 'Pet Palace'
+    name: 'Pet Palace',
   },
   //navigation
   navigation: [
@@ -159,17 +169,20 @@ export const header = {
     {
       name: 'contact',
       href: '/contact',
-    }
-  ]
-}
+    },
+  ],
+  donationIcon: <BiSolidDonateHeart />,
+};
 
 export const contact = {
   title: 'CONTACT US',
-  subtitle: 'If you have any questions or concerns, please feel free to contact us. We are here to help you and your pet in any way we can. You can reach us by phone, email, or by visiting our office. Our friendly staff are always happy to help and will do their best to answer any questions you may have. We look forward to hearing from you!',
+  subtitle:
+    'If you have any questions or concerns, please feel free to contact us. We are here to help you and your pet in any way we can. You can reach us by phone, email, or by visiting our office. Our friendly staff are always happy to help and will do their best to answer any questions you may have. We look forward to hearing from you!',
   icon: {
-    mail: <FiMail/>,
-    phone: <FaPhoneAlt/> ,
-    map: <FiMapPin/>,
+    mail: <FiMail />,
+    phone: <FaPhoneAlt />,
+    map: <FiMapPin />,
+    send: <BsSendArrowUpFill />,
   },
   location: {
     title: 'Our Locations',
@@ -191,8 +204,38 @@ export const contact = {
         email: 'info@brisbane.petpalace.org.au',
         number: '1800 000 002',
         address: '123 Haven Crescent, Brisbane, QLD 4000',
+
       }
     ]
-  }
+  },
+  successMessage: 'Message received successfully. Thank you for reaching out to us. We will get back to you as soon as possible.',
+  errorMessage: 'There was an error sending your message. Please try again.'
   
+}
+
+export const home = {
+  hero: hero,
+  plea: 'More than 500 animals desperately need help at our center. You have the power to change a life. It\'s a gift they\'ll never forget',
+  donation: 'Donate Now',
+  donationIcon: <BiSolidDonateHeart />,
+  about: [
+    {
+      heading: 'Our Mission',
+      paragraph:
+        'Pet Palace is a non-profit organization that is dedicated to creating a brighter future for animals in need. We have been working hard to provide a safe and loving environment for animals for the past 60 years. Our mission is to help animals find their forever homes and to provide them with the care and support they need to thrive.',
+    },
+    {
+      heading: 'Our Vision',
+      paragraph:
+        'Our vision is to create a world where every animal is treated with love and respect. We believe that every animal deserves a second chance at life, and we are committed to helping them find it. We work with local shelters and rescue groups to find homes for animals in need, and we provide them with the medical care and support they need to recover and thrive.',
+    },
+    {
+      heading: 'Our Values',
+      paragraph:
+        'We are committed to creating a safe and loving environment for all animals. We believe that every animal deserves to be treated with kindness and compassion. We are dedicated to providing the best possible care for the animals in our care, and we are proud to be a part of the Pet Palace family.',
+    },
+  ],
+  registrationHeading: 'We are a registered charity with the Australian Charities and Not-for-profits Commission (ACNC)',
+  regos: [rego1, rego2],
+  featured: 'See our featured pets',
 }

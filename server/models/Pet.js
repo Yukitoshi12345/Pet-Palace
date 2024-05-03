@@ -13,17 +13,23 @@ const petSchema = new Schema(
       required: [true, 'Type of pet is required'],
       enum: ['Dog', 'Cat', 'Hamster', 'Bird', 'Rabbit'],
     },
-    variety: {
-      // Generic term that can refer to breed or species
+    species: {
       type: String,
       required: [
-        true,
-        'Breed or species is required depending on the type of pet',
+        false,
+        'Species is optional, but it is recommended to provide it for better search results',
+      ],
+    },
+    breed: {
+      type: String,
+      required: [
+        false,
+        'Breed  is optional, but it is recommended to provide it for better search results',
       ],
     },
     gender: {
       type: String,
-      required: [true, 'Gender is required'],
+      required: [false, 'Gender is optional, because it is not always known'],
       enum: ['Male', 'Female', 'Other'],
     },
     age: {
@@ -59,6 +65,7 @@ const petSchema = new Schema(
     vaccinationHistory: {
       type: String,
       required: [true, 'Vaccination history is required'],
+      default: 'Unknown',
     },
     disability: {
       type: String,
@@ -72,11 +79,11 @@ const petSchema = new Schema(
       type: String,
       required: [true, 'Photo URL is required'],
     },
-    owner: {
-      type: Schema.Types.ObjectId, // References an ObjectId
-      ref: 'User', // The owner data is stored in a User collection
-      required: [true, 'Owner is required'],
-    },
+    // owner: {
+    //   type: Schema.Types.ObjectId, // References an ObjectId
+    //   ref: 'User', // The owner data is stored in a User collection
+    //   required: [true, 'Owner is required'],
+    // },
   },
   {
     timestamps: true,

@@ -2,73 +2,86 @@
   {
     "name": "Whiskers",
     "color": "Tabby",
-    "age": "2 years",
+    "age": "2",
     "gender": "Male",
     "breed": "Domestic Shorthair",
     "location": "Newtown, Sydney",
     "description": "Curious and playful, loves to explore and play with toys.",
+    "photo": "domestic-shorthair.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "false",
+    "type": "Cat"
+    
   },
   {
     "name": "Luna",
     "color": "Grey",
-    "age": "1 years",
+    "age": "1",
     "gender": "Female",
     "breed": "Russian Blue",
     "location": "Paramatta, Sydney",
     "description": "Shy at first, but very loving once she warms up.",
+    "photo": "russian-blue.png",
     "vaccinationHistory": "Partially Vaccinated",
     "disability": "Deaf",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "false",
+    "type": "Cat"
   },
   {
     "name": "Coco",
     "color": "Black",
-    "age": "4 years",
+    "age": "4",
     "gender": "Female",
     "breed": "Persian",
     "location": "Chatswood, Sydney",
     "description": "Quiet and dignified, prefers a calm environment.",
+    "photo": "persian.png",
     "vaccinationHistory": "Up-to-date",
     "disability": "Vision Impairment",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "true",
+    "type": "Cat"
   },
   {
     "name": "Tiger",
     "color": "Orange and White",
-    "age": "3 years",
+    "age": "3",
     "gender": "Male",
     "breed": "Bengal",
     "location": "Randwick, Sydney",
     "description": "Affectionate and friendly, great with families.",
+    "photo": "bengal.png",
     "vaccinationHistory": "Need Booster Shots",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "false",
+    "type": "Cat"
   },
   {
     "name": "Simba",
     "color": "Ginger",
-    "age": "5 years",
+    "age": "5",
     "gender": "Male",
     "breed": "Maine Coon",
     "location": "Sutherland, Sydney",
     "description": "Majestic and confident, enjoys high perches and observing his surroundings.",
+    "photo": "maine-coon.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "true",
+    "type": "Cat"
   },
   {
     "name": "Sapphire",
     "color": "Cream",
-    "age": "6 year",
+    "age": "6",
     "gender": "Female",
     "breed": "Siamese",
     "location": "Bankstown, Sydney",
     "description": "Vocal and social, seeks attention and interaction.",
+    "photo": "siamese.png",
     "vaccinationHistory": "Vaccination in Progress",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "true",
+    "type": "Cat"
   }
 ]

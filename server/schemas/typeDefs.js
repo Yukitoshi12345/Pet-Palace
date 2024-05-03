@@ -8,6 +8,7 @@ const typeDefs = gql`
     favoritePet: String!
     email: String!
     password: String!
+    role: String!
   }
 
   type Payment {
@@ -32,6 +33,7 @@ const typeDefs = gql`
       favoritePet: String!
       email: String!
       password: String!
+      role: String!
     ): Auth
     login(
       email: String!, 

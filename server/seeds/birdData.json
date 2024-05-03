@@ -2,73 +2,85 @@
   {
     "name": "Skyler",
     "color": "Grey with a bright red tail",
-    "age": "10 years",
+    "age": "10 ",
     "gender": "Male",
     "species": "African Grey Parrot",
     "location": "Eastern Suburbs, Sydney",
     "description": "Intelligent and talkative, known for mimicking sounds and words.",
+    "photo": "african-grey-parrot.png",
     "health": "Fully Vetted, Healthy",
-    "tame": "Yes, hand-reared",
-    "specialNeeds": "Requires mental stimulation and social interaction."
+    "tame": "true",
+    "specialNeeds": "Requires mental stimulation and social interaction.",
+    "type": "Bird"
   },
   {
     "name": "Sunshine",
     "color": "Yellow with orange cheek patches",
-    "age": "3 years",
+    "age": "3 ",
     "gender": "Female",
     "species": "Cockatiel",
     "location": "North Shore, Sydney",
     "description": "Cheerful and active, enjoys singing and whistling.",
+    "photo": "cockatiel.png",
     "health": "Up-to-Date in Vaccination",
-    "tame": "Semi-tame, needs further training.",
-    "specialNeeds": "None"
+    "tame": "false",
+    "specialNeeds": "None",
+    "type": "Bird"
   },
   {
     "name": "Jasper",
     "color": "Blue and Yellow",
-    "age": "15 years",
+    "age": "15",
     "gender": "Male",
     "species": "Blue-and-Gold Macaw",
     "location": "Paramatta, Sydney",
     "description": "Bold and charismatic, thrives on interaction and play.",
+    "photo": "blue-and-gold-macaw.png",
     "health": "Regular health checks completed",
-    "tame": "Yes",
-    "specialNeeds": "Needs a spacious environment to fly"
+    "tame": "true",
+    "specialNeeds": "Needs a spacious environment to fly",
+    "type": "Bird"
   },
   {
     "name": "Kiwi",
     "color": "Green and Yellow",
-    "age": "1 year",
+    "age": "1",
     "gender": "Female",
     "species": "Budgerigar",
     "location": "Ultimo, Sydney",
     "description": "Social and friendly, prefers company, ideally suited with other budgies.",
+    "photo": "budgerigar.png",
     "health": "Healthy, regular check-ups",
-    "tame": "Yes",
-    "specialNeeds": "Social species, needs companionship"
+    "tame": "true",
+    "specialNeeds": "Social species, needs companionship",
+    "type": "Bird"
   },
   {
     "name": "Ruby",
     "color": "Red, Yellow, and Blue",
-    "age": "20 years",
+    "age": "20 ",
     "gender": "Female",
     "species": "Scarlet Macaw",
     "location": "Annandale, Sydney",
     "description": "Dignified and intelligent, capable of learning numerous tricks.",
+    "photo": "scarlet-macaw.png",
     "health": "Monitored for arthritis, otherwise healthy",
-    "tame": "Yes",
-    "specialNeeds": "Requires a diet specific to macaws, enriched with nuts and fruits."
+    "tame": "true",
+    "specialNeeds": "Requires a diet specific to macaws, enriched with nuts and fruits.",
+    "type": "Bird"
   },
   {
     "name": "Echo",
     "color": "Peach and Green",
-    "age": "2 years",
+    "age": "2 ",
     "gender": "Male",
     "species": "Lovebird",
     "location": "Northern Beaches, Sydney",
     "description": "Affectionate and cuddly, often forming strong bonds with owners.",
+    "photo": "lovebird.png",
     "health": "Excellent condition",
-    "tame": "Yes",
-    "specialNeeds": "Needs constant social interaction to prevent loneliness."
+    "tame": "true",
+    "specialNeeds": "Needs constant social interaction to prevent loneliness.",
+    "type": "Bird"
   }
 ]

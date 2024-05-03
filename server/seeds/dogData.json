@@ -2,74 +2,85 @@
   {
     "name": "Bella",
     "color": "Golden",
-    "age": "3 years",
+    "age": "3",
     "gender": "Female",
     "breed": "Labrador Retriever",
     "location": "Bondi, Sydney",
     "description": "Energetic and Friendly, great with kids.",
-    "photo": "labrador-retriever.jpeg",
+    "photo": "labrador-retriever.jpg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "true",
+    "type": "Dog"
   },
   {
     "name": "Max",
     "color": "Black and White",
-    "age": "5 years",
+    "age": "5",
     "gender": "Male",
     "breed": "Border Collie",
     "location": "Marrickville, Sydney",
     "description": "Intelligent and Highly Trainable, loves agility games.",
+    "photo": "border-collie.jpg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Deaf",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "false",
+    "type": "Dog"
   },
   {
     "name": "Daisy",
     "color": "White",
-    "age": "2 years",
+    "age": "2",
     "gender": "Female",
     "breed": "Samoyed",
     "location": "Manly, Sydney",
     "description": "Friendly and Gentle, perfect family pet.",
+    "photo": "samoyed.jpg",
     "vaccinationHistory": "No Vaccination",
     "disability": "Blindness",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "true",
+    "type": "Dog"
   },
   {
     "name": "Oscar",
     "color": "Brindle",
-    "age": "4 years",
+    "age": "4",
     "gender": "Male",
     "breed": "Boxer",
     "location": "Penrith, Sydney",
     "description": "Loyal and Protective, excellent guard dog.",
+    "photo": "boxer.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "false",
+    "type": "Dog"
   },
   {
     "name": "Lola",
     "color": "Grey",
-    "age": "6 years",
+    "age": "6",
     "gender": "Female",
     "breed": "Weimaraner",
     "location": "Glebe, Sydney",
     "description": "Active and Affectionate, needs lots of exercise.",
+    "photo": "weimaraner.png",
     "vaccinationHistory": "Partially Vaccinated",
     "disability": "Hip Dysplasia",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "false",
+    "type": "Dog"
   },
   {
     "name": "Rocky",
     "color": "Tan",
-    "age": "1 year",
+    "age": "1",
     "gender": "Male",
     "breed": "French Bulldog",
     "location": "Surry Hills, Sydney",
     "description": "Playful and charming, great with other pets.",
+    "photo": "french-bulldog.jpg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Epilepsy",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "true",
+    "type": "Dog"
   }
 ]
