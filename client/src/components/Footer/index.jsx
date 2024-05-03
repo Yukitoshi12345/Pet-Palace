@@ -2,13 +2,13 @@ import React from 'react';
 import {footer } from '../../data';
 
 const Footer = () => {
-    const {copyright, slogan, registration } = footer;
+    const {copyright, slogan, logo } = footer;
   return (
     <footer className="bg-accent footer mt-10 flex items-center justify-evenly">
       <figure className="flex flex-col gap-0 items-center">
-        <img src={registration.pic} alt="logo" className="h-28" />
-        <figcaption className="text-white tracking-tight font-bold m-0">
-          {registration.registrationBoard}
+        <img src={logo.pic} alt="logo" className="h-28 rounded-full" />
+        <figcaption className="text-white text-xl tracking-tight font-bold m-0">
+          {logo.brand}
         </figcaption>
       </figure>
       <p className='font-logo text-4xl text-white'>{slogan}</p>

@@ -7,6 +7,7 @@ const typeDefs = gql`
     birthday: String!
     email: String!
     password: String!
+    role: String!
   }
 
   type Payment {
@@ -31,6 +32,7 @@ const typeDefs = gql`
       birthday: String!
       email: String!
       password: String!
+      role: String!
     ): Auth
     login(email: String!, password: String!): Auth
     createCharge(
