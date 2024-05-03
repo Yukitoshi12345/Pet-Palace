@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import dog from '../assets/images/login/sad-dog.jpg';
@@ -7,8 +6,12 @@ import Auth from '../utils/auth';
 import { ImEnter } from "react-icons/im";
 
 const Login = (props) => {
-  const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [formState, setFormState] = useState({ 
+    email: '', 
+    password: '' 
+  });
+  const [login, { data }] = useMutation(LOGIN_USER);
+  const [error, setError] = useState('');
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -31,10 +34,9 @@ const Login = (props) => {
 
       Auth.login(data.login.token);
     } catch (e) {
-      console.error(e);
+      setError('Invalid email or password. Please try again.');
     }
-
-    // clear form values
+    
     setFormState({
       email: '',
       password: '',
@@ -104,4 +106,5 @@ const Login = (props) => {
     </main>
   );
 };
+
 export default Login;

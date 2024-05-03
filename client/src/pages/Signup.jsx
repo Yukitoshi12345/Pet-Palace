@@ -14,12 +14,13 @@ const Signup = () => {
   const [formState, setFormState] = useState({
     name: '',
     birthday: '',
+    favoritePet: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
   const [addUser, { data }] = useMutation(ADD_USER);
-  const [errorMsg, setErrorMsg] = useState('');
+  const [error, setError] = useState('');
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -34,8 +35,7 @@ const Signup = () => {
     event.preventDefault();
 
     if (formState.password !== formState.confirmPassword) {
-      // If passwords don't match, set an error message and return early
-      setErrorMsg('Passwords do not match');
+      setError('Passwords do not match!');
       return;
     }
 
