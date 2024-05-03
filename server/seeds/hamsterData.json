@@ -7,6 +7,7 @@
     "breed": "Syrian Hamester",
     "location": "Balmain, Sydney",
     "description": "Friendly and curious, loves to explore his surroundings in a secure play area.",
+    "photo": "syrian.png",
     "health": "Excellent, Fully checked",
     "owner": "Yara Whitcombe"
   },
@@ -18,6 +19,7 @@
     "breed": "European Hamster",
     "location": "Mosman, Sydney",
     "description": "Initially reserved but very intelligent and capable of complex behaviours.",
+    "photo": "european.png",
     "health": "Good health, regular health checks",
     "owner": "Zane Ashwood"
   },
@@ -29,6 +31,7 @@
     "breed": "Roborovski Hamster",
     "location": "Stanmore, Sydney",
     "description": "Extremely active and loves running on his wheel, best for experienced owners.",
+    "photo": "roborovski.png",
     "health": "Very healthy, active",
     "owner": "Avery Kingston"
   },
@@ -40,6 +43,7 @@
     "breed": "Campbell's Dwarf Hamster",
     "location": "Coogee, Sydney",
     "description": "Sweet and easy-going, enjoys cuddling and gentle handling.",
+    "photo": "campbell-dwarf.png",
     "health": "Excellent condition",
     "owner": "Bianca Fairfield"
   },
@@ -51,6 +55,7 @@
     "breed": "Winter White Dwarf Hamster",
     "location": "Randwick, Sydney",
     "description": "Quiet and observant, likes to watch her surroundings from her cage.",
+    "photo": "winter-white.png",
     "health": "Monitored for slight weight issues, otherwise healthy.",
     "owner": "Callum Shorewood"
   },
@@ -62,6 +67,7 @@
     "breed": "Chinese Hamster",
     "location": "Burwood, Sydney",
     "description": "Adventurous and clever, skilled at navigating mazes and tunnels.",
+    "photo": "chinese.png",
     "health": "Good, regular vet visits.",
     "owner": "Delilah Brentwood"
   }
