@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Pet } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
@@ -8,12 +8,18 @@ const stripe = require('stripe')(stripeAPI);
 
 const resolvers = {
   Query: {
-    user: async (parent, { userId }) => {
-      // Convert the string userId to ObjectId
-      const objectId = new ObjectId(userId);
 
-      // Query the user by ObjectId
-      return User.findOne({ _id: objectId });
+    users: async () => {
+      return User.find();
+    },
+    user: async (parent, { email }) => {
+      return User.findOne({ email });
+    },
+    pets: async () => {
+      return Pet.find();
+    },
+    featuredPets: async () => {
+      return Pet.find({ featured: true });
     }
   },
 

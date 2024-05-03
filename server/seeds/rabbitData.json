@@ -81,6 +81,7 @@
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
     "pedigreeKnown": "true",
-    "type": "Rabbit"
+    "type": "Rabbit",
+    "featured": "true"
   }
 ]

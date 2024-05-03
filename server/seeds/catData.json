@@ -40,7 +40,8 @@
     "vaccinationHistory": "Up-to-date",
     "disability": "Vision Impairment",
     "pedigreeKnown": "true",
-    "type": "Cat"
+    "type": "Cat",
+    "featured": "true"
   },
   {
     "name": "Tiger",

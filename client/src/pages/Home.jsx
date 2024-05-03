@@ -2,8 +2,13 @@ import React from 'react';
 import Hero from '../components/Hero';
 import { home } from '../data';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useQuery } from '@apollo/client';
+import { QUERY_FEATURED_PETS } from '../utils/queries';
 
 const Home = () => {
+  const { loading, data } = useQuery(QUERY_FEATURED_PETS);
+  const featuredPets = data?.featuredPets || [];
+
   const sentence = {
     hidden: { opacity: 1 },
     visible: {
@@ -69,25 +74,51 @@ const Home = () => {
         </div>
 
         {/* charity registration section  */}
-        <div>
-          <h3 className="text-2xl font-bold text-accent text-center">
+        <div className='bg-base-200 py-5 my-4'>
+          <h3 className="text-2xl font-bold  text-center">
             {home.registrationHeading}
           </h3>
-          <div className='flex flex-col md:flex-row justify-around items-center'>
-          {
-            home.regos.map((rego, index) => (
-              <div key={index} >
+          <div className="flex flex-col md:flex-row justify-around items-center">
+            {home.regos.map((rego, index) => (
+              <div key={index}>
                 <img src={rego} alt="registration" className="h-36" />
               </div>
-            ))
-          }
+            ))}
           </div>
         </div>
 
-          {/* feature pets section  */}
+        {/* feature pets section  */}
+        <div className=''>
+          <h3 className="text-2xl font-bold  text-center">{home.featured}</h3>
+          <div className="flex flex-wrap items-center justify-center p4 gap-4">
+            
+            {loading ? (
+              <span className="loading loading-bars loading-lg"></span>
+            ) : (
+              featuredPets.map((pet, index) => (
+                console.log(`../assets/images/pets/${pet.type}s/${pet.photo}`),
+                
+                <div key={index} className="card w-96 bg-base-200 shadow-xl">
+                  <figure>
+                    <img src={`../assets/images/pets/${pet.type.toLowerCase()}s/${pet.photo}`} alt="featured pet" />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title">
+                      {pet.name}
+                      <div className="badge badge-secondary">FEATURED</div>
+                    </h2>
+                    <p>{pet.location}</p>
+                    <div className="card-actions justify-end">
+                      <div className="badge badge-outline">{pet.age}years</div>
+                      <div className="badge badge-outline">{pet.breed || pet.species}</div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
 
-
-          
+        </div>
       </div>
     </section>
   );
