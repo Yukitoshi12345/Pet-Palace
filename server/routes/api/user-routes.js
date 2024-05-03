@@ -13,6 +13,6 @@ router.route('/').post(createUser).put(authMiddleware);
 
 router.route('/login').post(login);
 
-router.route('/profile').get(authMiddleware, getSingleUser);
+router.route('/profiles/:userId').get(authMiddleware, getSingleUser);
 
 module.exports = router;

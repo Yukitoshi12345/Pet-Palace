@@ -5,6 +5,7 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     birthday: String!
+    favoritePet: String!
     email: String!
     password: String!
     role: String!
@@ -42,22 +43,30 @@ const typeDefs = gql`
   }
 
   type Query {
+
     users: [User]
     user(email: String!): User
     pets: [Pet]
     pet(_id: ID!): Pet
     featuredPets : [Pet]
+
+    user(userId: ID!): User
+
   }
 
   type Mutation {
     addUser(
       name: String!
       birthday: String!
+      favoritePet: String!
       email: String!
       password: String!
       role: String!
     ): Auth
-    login(email: String!, password: String!): Auth
+    login(
+      email: String!, 
+      password: String!
+    ): Auth
     createCharge(
       amount: Int!
       source: String!
