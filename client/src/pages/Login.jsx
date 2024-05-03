@@ -49,8 +49,8 @@ const Login = (props) => {
           alt="sad dog"
           className="contain h-[1200px] mask mask-squircle absolute right-1/4 -z-10 opacity-50"
         />
-        <div className="max-w-md w-full px-4 mt-20 ">
-          <div className="flex flex-col justify-center bg-neutral shadow-md rounded px-8 py-8 min-h-[600px]">
+        <div className="max-w-md w-full px-4 ">
+          <div className="flex flex-col justify-center bg-neutral shadow-md rounded-r-2xl px-8 py-8 -mt-12 min-h-[600px]">
             <h4 className="text-2xl mb-4 font-bold text-center">LOGIN</h4>
             {data ? (
               <p className="text-green-500 mb-4 text-center font-bold">
@@ -100,6 +100,7 @@ const Login = (props) => {
           </div>
         </div>
       </div>
+      
     </main>
   );
 };

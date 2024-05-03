@@ -139,7 +139,7 @@ export const footer = {
     pic: charity,
   },
   copyright: '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
-  slogan: 'A brighter future for animals in need'
+  slogan: '\u{201c} A brighter future for animals in need \u{201d}'
 };
 
 
