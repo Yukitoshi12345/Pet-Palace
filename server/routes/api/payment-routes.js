@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const stripe = require('stripe')(process.env.Stripe_API_KEY);
+const stripe = require('stripe')(process.env.STRIPE_API_KEY);
 
 router.post('/create-charge', async (req, res) => {
   try {
