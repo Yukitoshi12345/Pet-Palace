@@ -53,7 +53,7 @@ export const about = {
   ],
 
   commitments: [
-    'Maintain our commitment to never euthanize a healthy, sociable, or treatable animal under our care',
+    'Maintain our commitment to never euthanise a healthy, sociable, or treatable animal under our care',
     'Offer a new beginning to stray and homeless animals through creative rehoming efforts',
     'Control the population of unwanted kittens and puppies via our National Desexing Network',
     'Expand the number of Councils engaged in our Cooperative Desexing Programs',

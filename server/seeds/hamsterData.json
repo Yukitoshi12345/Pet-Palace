@@ -7,7 +7,8 @@
     "breed": "Syrian Hamester",
     "location": "Balmain, Sydney",
     "description": "Friendly and curious, loves to explore his surroundings in a secure play area.",
-    "health": "Excellent, Fully checked"
+    "health": "Excellent, Fully checked",
+    "owner": "Yara Whitcombe"
   },
   {
     "name": "Pearl",
@@ -17,7 +18,8 @@
     "breed": "European Hamster",
     "location": "Mosman, Sydney",
     "description": "Initially reserved but very intelligent and capable of complex behaviours.",
-    "health": "Good health, regular health checks"
+    "health": "Good health, regular health checks",
+    "owner": "Zane Ashwood"
   },
   {
     "name": "Gizmo",
@@ -27,7 +29,8 @@
     "breed": "Roborovski Hamster",
     "location": "Stanmore, Sydney",
     "description": "Extremely active and loves running on his wheel, best for experienced owners.",
-    "health": "Very healthy, active"
+    "health": "Very healthy, active",
+    "owner": "Avery Kingston"
   },
   {
     "name": "Fudge",
@@ -37,7 +40,8 @@
     "breed": "Campbell's Dwarf Hamster",
     "location": "Coogee, Sydney",
     "description": "Sweet and easy-going, enjoys cuddling and gentle handling.",
-    "health": "Excellent condition"
+    "health": "Excellent condition",
+    "owner": "Bianca Fairfield"
   },
   {
     "name": "Sparkle",
@@ -47,7 +51,8 @@
     "breed": "Winter White Dwarf Hamster",
     "location": "Randwick, Sydney",
     "description": "Quiet and observant, likes to watch her surroundings from her cage.",
-    "health": "Monitored for slight weight issues, otherwise healthy."
+    "health": "Monitored for slight weight issues, otherwise healthy.",
+    "owner": "Callum Shorewood"
   },
   {
     "name": "Ziggy",
@@ -56,7 +61,8 @@
     "gender": "Male",
     "breed": "Chinese Hamster",
     "location": "Burwood, Sydney",
-    "description": "PAdventurous and clever, skilled at navigating mazes and tunnels.",
-    "health": "Good, regular vet visits."
+    "description": "Adventurous and clever, skilled at navigating mazes and tunnels.",
+    "health": "Good, regular vet visits.",
+    "owner": "Delilah Brentwood"
   }
 ]
