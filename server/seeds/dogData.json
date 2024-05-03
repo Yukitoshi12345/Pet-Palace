@@ -7,10 +7,11 @@
     "breed": "Labrador Retriever",
     "location": "Bondi, Sydney",
     "description": "Energetic and Friendly, great with kids.",
-    "photo": "labrador-retriever.jpeg",
+    "photo": "labrador-retriever.jpg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Aria Knightsbridge"
   },
   {
     "name": "Max",
@@ -20,9 +21,11 @@
     "breed": "Border Collie",
     "location": "Marrickville, Sydney",
     "description": "Intelligent and Highly Trainable, loves agility games.",
+    "photo": "border-collie.jpg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Deaf",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Beau Riverton"
   },
   {
     "name": "Daisy",
@@ -32,9 +35,11 @@
     "breed": "Samoyed",
     "location": "Manly, Sydney",
     "description": "Friendly and Gentle, perfect family pet.",
+    "photo": "samoyed.jpg",
     "vaccinationHistory": "No Vaccination",
     "disability": "Blindness",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Cleo Marwood"
   },
   {
     "name": "Oscar",
@@ -44,9 +49,11 @@
     "breed": "Boxer",
     "location": "Penrith, Sydney",
     "description": "Loyal and Protective, excellent guard dog.",
+    "photo": "boxer.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Dexter Flemming"
   },
   {
     "name": "Lola",
@@ -56,9 +63,11 @@
     "breed": "Weimaraner",
     "location": "Glebe, Sydney",
     "description": "Active and Affectionate, needs lots of exercise.",
+    "photo": "weimaraner.png",
     "vaccinationHistory": "Partially Vaccinated",
     "disability": "Hip Dysplasia",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Elodie Varnham"
   },
   {
     "name": "Rocky",
@@ -68,8 +77,10 @@
     "breed": "French Bulldog",
     "location": "Surry Hills, Sydney",
     "description": "Playful and charming, great with other pets.",
+    "photo": "french-bulldog.jpg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Epilepsy",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Finn Barlowe"
   }
 ]

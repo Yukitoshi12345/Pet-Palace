@@ -7,9 +7,11 @@
     "species": "African Grey Parrot",
     "location": "Eastern Suburbs, Sydney",
     "description": "Intelligent and talkative, known for mimicking sounds and words.",
+    "photo": "african-grey-parrot.png",
     "health": "Fully Vetted, Healthy",
     "tame": "Yes, hand-reared",
-    "specialNeeds": "Requires mental stimulation and social interaction."
+    "specialNeeds": "Requires mental stimulation and social interaction.",
+    "owner": "Mila Rosenthal"
   },
   {
     "name": "Sunshine",
@@ -19,9 +21,11 @@
     "species": "Cockatiel",
     "location": "North Shore, Sydney",
     "description": "Cheerful and active, enjoys singing and whistling.",
+    "photo": "cockatiel.png",
     "health": "Up-to-Date in Vaccination",
     "tame": "Semi-tame, needs further training.",
-    "specialNeeds": "None"
+    "specialNeeds": "None",
+    "owner": "Nolan Crest"
   },
   {
     "name": "Jasper",
@@ -31,9 +35,11 @@
     "species": "Blue-and-Gold Macaw",
     "location": "Paramatta, Sydney",
     "description": "Bold and charismatic, thrives on interaction and play.",
+    "photo": "blue-and-gold-macaw.png",
     "health": "Regular health checks completed",
     "tame": "Yes",
-    "specialNeeds": "Needs a spacious environment to fly"
+    "specialNeeds": "Needs a spacious environment to fly",
+    "owner": "Opal Hartley"
   },
   {
     "name": "Kiwi",
@@ -43,9 +49,11 @@
     "species": "Budgerigar",
     "location": "Ultimo, Sydney",
     "description": "Social and friendly, prefers company, ideally suited with other budgies.",
+    "photo": "budgerigar.png",
     "health": "Healthy, regular check-ups",
     "tame": "Yes",
-    "specialNeeds": "Social species, needs companionship"
+    "specialNeeds": "Social species, needs companionship",
+    "owner": "Paxton Ellesmere"
   },
   {
     "name": "Ruby",
@@ -55,9 +63,11 @@
     "species": "Scarlet Macaw",
     "location": "Annandale, Sydney",
     "description": "Dignified and intelligent, capable of learning numerous tricks.",
+    "photo": "scarlet-macaw.png",
     "health": "Monitored for arthritis, otherwise healthy",
     "tame": "Yes",
-    "specialNeeds": "Requires a diet specific to macaws, enriched with nuts and fruits."
+    "specialNeeds": "Requires a diet specific to macaws, enriched with nuts and fruits.",
+    "owner": "Quinn Radcliffe"
   },
   {
     "name": "Echo",
@@ -67,8 +77,10 @@
     "species": "Lovebird",
     "location": "Northern Beaches, Sydney",
     "description": "Affectionate and cuddly, often forming strong bonds with owners.",
+    "photo": "lovebird.png",
     "health": "Excellent condition",
     "tame": "Yes",
-    "specialNeeds": "Needs constant social interaction to prevent loneliness."
+    "specialNeeds": "Needs constant social interaction to prevent loneliness.",
+    "owner": "Rosalie Vale"
   }
 ]

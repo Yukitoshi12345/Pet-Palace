@@ -7,9 +7,11 @@
     "breed": "Mini Lop",
     "location": "Castle Hill, Sydney",
     "description": "Sweet and calm, loves gentle handling and quiet environments.",
+    "photo": "mini-lop.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Sawyer Dunmore"
   },
   {
     "name": "Thumper",
@@ -19,9 +21,11 @@
     "breed": "Flemish Giant",
     "location": "Bankstown, Sydney",
     "description": "Gentle giant, enjoys lounging around and is good with other pets.",
+    "photo": "flemish-giant.png",
     "vaccinationHistory": "Up-to-Date",
     "disability": "Deaf",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Talia Greenwood"
   },
   {
     "name": "Carrot",
@@ -31,9 +35,11 @@
     "breed": "Dutch",
     "location": "Manly, Sydney",
     "description": "Energetic and playful, loves exploring and hopping around.",
+    "photo": "dutch.png",
     "vaccinationHistory": "Initial vaccinations completed, boosters needed.",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Uriel Stockton"
   },
   {
     "name": "Oliver",
@@ -43,9 +49,11 @@
     "breed": "New Zealand White",
     "location": "Manly, Sydney",
     "description": "Friendly and sociable, enjoys human company and is easy to handle.",
+    "photo": "new-zealand-white.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Partial Blindness",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Viola Penrose"
   },
   {
     "name": "Hazel",
@@ -55,9 +63,11 @@
     "breed": "Rex",
     "location": "Paramatta, Sydney",
     "description": "Soft fur and affectionate nature, prefers a quiet corner to relax.",
+    "photo": "rex.png",
     "vaccinationHistory": "Up-to-Date",
     "disability": "Dental Malocclusion",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Wesley Moorwood"
   },
   {
     "name": "Bunny",
@@ -67,8 +77,10 @@
     "breed": "Chinchilla Rabbit",
     "location": "Town Hall, Sydney",
     "description": "Very curious and smart, needs lots of mental stimulation and play.",
+    "photo": "chinchilla.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Xenia Eastley"
   }
 ]

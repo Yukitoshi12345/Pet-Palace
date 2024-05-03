@@ -7,9 +7,11 @@
     "breed": "Domestic Shorthair",
     "location": "Newtown, Sydney",
     "description": "Curious and playful, loves to explore and play with toys.",
+    "photo": "domestic-shorthair.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Giselle Thorne"
   },
   {
     "name": "Luna",
@@ -19,9 +21,11 @@
     "breed": "Russian Blue",
     "location": "Paramatta, Sydney",
     "description": "Shy at first, but very loving once she warms up.",
+    "photo": "russian-blue.png",
     "vaccinationHistory": "Partially Vaccinated",
     "disability": "Deaf",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Hugo Bracknell"
   },
   {
     "name": "Coco",
@@ -31,9 +35,11 @@
     "breed": "Persian",
     "location": "Chatswood, Sydney",
     "description": "Quiet and dignified, prefers a calm environment.",
+    "photo": "persian.png",
     "vaccinationHistory": "Up-to-date",
     "disability": "Vision Impairment",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Isla Fenwick"
   },
   {
     "name": "Tiger",
@@ -43,9 +49,11 @@
     "breed": "Bengal",
     "location": "Randwick, Sydney",
     "description": "Affectionate and friendly, great with families.",
+    "photo": "bengal.png",
     "vaccinationHistory": "Need Booster Shots",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Jasper Kildare"
   },
   {
     "name": "Simba",
@@ -55,9 +63,11 @@
     "breed": "Maine Coon",
     "location": "Sutherland, Sydney",
     "description": "Majestic and confident, enjoys high perches and observing his surroundings.",
+    "photo": "maine-coon.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Keira Stansfield"
   },
   {
     "name": "Sapphire",
@@ -67,8 +77,10 @@
     "breed": "Siamese",
     "location": "Bankstown, Sydney",
     "description": "Vocal and social, seeks attention and interaction.",
+    "photo": "siamese.png",
     "vaccinationHistory": "Vaccination in Progress",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Liam Westfall"
   }
 ]
