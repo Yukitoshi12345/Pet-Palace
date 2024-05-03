@@ -1,5 +1,6 @@
 const { User } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
+const { ObjectId } = require('mongodb');
 require('dotenv').config();
 // Added personal stripe API
 const stripeAPI = process.env.Stripe_API_KEY;
@@ -7,11 +8,12 @@ const stripe = require('stripe')(stripeAPI);
 
 const resolvers = {
   Query: {
-    users: async () => {
-      return User.find();
-    },
-    user: async (parent, { userEmail }) => {
-      return User.findOne({ email: userEmail })
+    user: async (parent, { userId }) => {
+      // Convert the string userId to ObjectId
+      const objectId = new ObjectId(userId);
+
+      // Query the user by ObjectId
+      return User.findOne({ _id: objectId });
     }
   },
 

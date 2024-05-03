@@ -24,7 +24,7 @@ const NavMenu = ({bg}) => {
         {Auth.loggedIn() ? ( // If user is logged in, render logout button
           <>
           <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
-            <NavLink to="/profile">Profile</NavLink>
+            <NavLink to="/profiles/:userId">Profile</NavLink>
           </li>
           <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
             <NavLink to="/petDetails">Pet Details</NavLink>
