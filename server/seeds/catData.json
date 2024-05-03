@@ -9,7 +9,8 @@
     "description": "Curious and playful, loves to explore and play with toys.",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Giselle Thorne"
   },
   {
     "name": "Luna",
@@ -21,7 +22,8 @@
     "description": "Shy at first, but very loving once she warms up.",
     "vaccinationHistory": "Partially Vaccinated",
     "disability": "Deaf",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Hugo Bracknell"
   },
   {
     "name": "Coco",
@@ -33,7 +35,8 @@
     "description": "Quiet and dignified, prefers a calm environment.",
     "vaccinationHistory": "Up-to-date",
     "disability": "Vision Impairment",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Isla Fenwick"
   },
   {
     "name": "Tiger",
@@ -45,7 +48,8 @@
     "description": "Affectionate and friendly, great with families.",
     "vaccinationHistory": "Need Booster Shots",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Jasper Kildare"
   },
   {
     "name": "Simba",
@@ -57,7 +61,8 @@
     "description": "Majestic and confident, enjoys high perches and observing his surroundings.",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Keira Stansfield"
   },
   {
     "name": "Sapphire",
@@ -69,6 +74,7 @@
     "description": "Vocal and social, seeks attention and interaction.",
     "vaccinationHistory": "Vaccination in Progress",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Liam Westfall"
   }
 ]

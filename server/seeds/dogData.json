@@ -10,7 +10,8 @@
     "photo": "labrador-retriever.jpeg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Aria Knightsbridge"
   },
   {
     "name": "Max",
@@ -22,7 +23,8 @@
     "description": "Intelligent and Highly Trainable, loves agility games.",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Deaf",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Beau Riverton"
   },
   {
     "name": "Daisy",
@@ -34,7 +36,8 @@
     "description": "Friendly and Gentle, perfect family pet.",
     "vaccinationHistory": "No Vaccination",
     "disability": "Blindness",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Cleo Marwood"
   },
   {
     "name": "Oscar",
@@ -46,7 +49,8 @@
     "description": "Loyal and Protective, excellent guard dog.",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Dexter Flemming"
   },
   {
     "name": "Lola",
@@ -58,7 +62,8 @@
     "description": "Active and Affectionate, needs lots of exercise.",
     "vaccinationHistory": "Partially Vaccinated",
     "disability": "Hip Dysplasia",
-    "pedigreeKnown": "No"
+    "pedigreeKnown": "No",
+    "owner": "Elodie Varnham"
   },
   {
     "name": "Rocky",
@@ -70,6 +75,7 @@
     "description": "Playful and charming, great with other pets.",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Epilepsy",
-    "pedigreeKnown": "Yes"
+    "pedigreeKnown": "Yes",
+    "owner": "Finn Barlowe"
   }
 ]
