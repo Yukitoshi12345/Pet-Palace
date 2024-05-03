@@ -198,6 +198,8 @@ export const contact = {
         address: '123 Haven Crescent, Brisbane, QLD 4000',
       }
     ]
-  }
+  },
+  successMessage: 'Message received successfully. Thank you for reaching out to us. We will get back to you as soon as possible.',
+  errorMessage: 'There was an error sending your message. Please try again.'
   
 }

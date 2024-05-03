@@ -3,8 +3,8 @@ import { contact } from '../data';
 import { validateEmail } from '../utils/helpers';
 import emailjs from '@emailjs/browser';
 import Footer from '../components/Footer';
-// Use "dotenv" to access environment variables from a `.env` file
-//import 'dotenv/config';
+import  Alert from '../components/Alert';
+
 
 const Contact = () => {
   // Create state variables for the fields in the form
@@ -14,6 +14,9 @@ const Contact = () => {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const inputRef = useRef(null);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
   const form = useRef();
 
   //handle input blur
@@ -68,7 +71,15 @@ const Contact = () => {
 
   // Handle the form submission
   const handleFormSubmit = async (e) => {
-    e.preventDefault();
+    if (!email || !name || !message ) {
+      alert('Please fill in all required fields')
+      setErrorMessage('Please fill in all required fields');
+      return;
+    }
+    if (!validateEmail(email)) {
+      setErrorMessage('Invalid email');
+      return;
+    }
     try {
       const result = await emailjs.sendForm(
         import.meta.env.VITE_SERVICE_ID,
@@ -77,22 +88,35 @@ const Contact = () => {
         import.meta.env.VITE_USER_ID,
       );
       if (result.text === 'OK') {
-        alert(
-          'Message received successfully!\nThank you for reaching out to us. We will get back to you as soon as possible.📧🙏',
-        );
+        setShowSuccess(true);
+        setTimeout(() => {
+          setShowSuccess(false);
+        }, 2000);
         setEmail('');
         setName('');
         setSubject('');
         setMessage('');
       }
     } catch (err) {
-      console.log(err.text);
-      alert('An error occurred, Please try again later');
+      console.error(err);
+      setShowError(true);
+      setTimeout(() => {
+        setShowError(false);
+      }, 2000);
     }
+  };
+  const focusInput = () => {
+    inputRef.current.focus();
   };
 
   return (
-    <section className="section flex-col justify-between" id="contact">
+    <section
+      onLoad={focusInput}
+      className="section flex-col justify-between"
+      id="contact"
+    >
+      <Alert  message={contact.successMessage} type="success" show={showSuccess}/>
+      <Alert  message={contact.errorMessage} type="error" show={showError} />
       <div>
         {/* section title  */}
         <div className="container mx-auto">
@@ -140,6 +164,7 @@ const Contact = () => {
                   value={name}
                   onChange={handleInputChange}
                   onBlur={handleInputBlur}
+                  ref={inputRef}
                 />
                 <input
                   type="email"
