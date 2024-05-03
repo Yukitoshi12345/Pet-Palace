@@ -2,7 +2,7 @@
   {
     "name": "Whiskers",
     "color": "Tabby",
-    "age": "2 years",
+    "age": "2",
     "gender": "Male",
     "breed": "Domestic Shorthair",
     "location": "Newtown, Sydney",
@@ -10,13 +10,14 @@
     "photo": "domestic-shorthair.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No",
-    "owner": "Giselle Thorne"
+    "pedigreeKnown": "false",
+    "type": "Cat"
+    
   },
   {
     "name": "Luna",
     "color": "Grey",
-    "age": "1 years",
+    "age": "1",
     "gender": "Female",
     "breed": "Russian Blue",
     "location": "Paramatta, Sydney",
@@ -24,13 +25,13 @@
     "photo": "russian-blue.png",
     "vaccinationHistory": "Partially Vaccinated",
     "disability": "Deaf",
-    "pedigreeKnown": "No",
-    "owner": "Hugo Bracknell"
+    "pedigreeKnown": "false",
+    "type": "Cat"
   },
   {
     "name": "Coco",
     "color": "Black",
-    "age": "4 years",
+    "age": "4",
     "gender": "Female",
     "breed": "Persian",
     "location": "Chatswood, Sydney",
@@ -38,13 +39,13 @@
     "photo": "persian.png",
     "vaccinationHistory": "Up-to-date",
     "disability": "Vision Impairment",
-    "pedigreeKnown": "Yes",
-    "owner": "Isla Fenwick"
+    "pedigreeKnown": "true",
+    "type": "Cat"
   },
   {
     "name": "Tiger",
     "color": "Orange and White",
-    "age": "3 years",
+    "age": "3",
     "gender": "Male",
     "breed": "Bengal",
     "location": "Randwick, Sydney",
@@ -52,13 +53,13 @@
     "photo": "bengal.png",
     "vaccinationHistory": "Need Booster Shots",
     "disability": "None",
-    "pedigreeKnown": "No",
-    "owner": "Jasper Kildare"
+    "pedigreeKnown": "false",
+    "type": "Cat"
   },
   {
     "name": "Simba",
     "color": "Ginger",
-    "age": "5 years",
+    "age": "5",
     "gender": "Male",
     "breed": "Maine Coon",
     "location": "Sutherland, Sydney",
@@ -66,13 +67,13 @@
     "photo": "maine-coon.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes",
-    "owner": "Keira Stansfield"
+    "pedigreeKnown": "true",
+    "type": "Cat"
   },
   {
     "name": "Sapphire",
     "color": "Cream",
-    "age": "6 year",
+    "age": "6",
     "gender": "Female",
     "breed": "Siamese",
     "location": "Bankstown, Sydney",
@@ -80,7 +81,7 @@
     "photo": "siamese.png",
     "vaccinationHistory": "Vaccination in Progress",
     "disability": "None",
-    "pedigreeKnown": "Yes",
-    "owner": "Liam Westfall"
+    "pedigreeKnown": "true",
+    "type": "Cat"
   }
 ]

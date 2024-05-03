@@ -40,6 +40,7 @@ const resolvers = {
         birthday: birthday,
         email: email,
         password: password,
+        role: 'user',
       });
 
       const token = signToken(user);

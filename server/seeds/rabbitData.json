@@ -2,7 +2,7 @@
   {
     "name": "Mocha",
     "color": "Brown with white markings",
-    "age": "1 year",
+    "age": "1",
     "gender": "Female",
     "breed": "Mini Lop",
     "location": "Castle Hill, Sydney",
@@ -10,13 +10,13 @@
     "photo": "mini-lop.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No",
-    "owner": "Sawyer Dunmore"
+    "pedigreeKnown": "false",
+    "type": "Rabbit"
   },
   {
     "name": "Thumper",
     "color": "Grey",
-    "age": "2 years",
+    "age": "2",
     "gender": "Male",
     "breed": "Flemish Giant",
     "location": "Bankstown, Sydney",
@@ -24,13 +24,13 @@
     "photo": "flemish-giant.png",
     "vaccinationHistory": "Up-to-Date",
     "disability": "Deaf",
-    "pedigreeKnown": "No",
-    "owner": "Talia Greenwood"
+    "pedigreeKnown": "false",
+    "type": "Rabbit"
   },
   {
     "name": "Carrot",
     "color": "Black and White",
-    "age": "6 months",
+    "age": "0.6",
     "gender": "Female",
     "breed": "Dutch",
     "location": "Manly, Sydney",
@@ -38,13 +38,13 @@
     "photo": "dutch.png",
     "vaccinationHistory": "Initial vaccinations completed, boosters needed.",
     "disability": "None",
-    "pedigreeKnown": "Yes",
-    "owner": "Uriel Stockton"
+    "pedigreeKnown": "true",
+    "type": "Rabbit"
   },
   {
     "name": "Oliver",
     "color": "White",
-    "age": "3 years",
+    "age": "3",
     "gender": "Male",
     "breed": "New Zealand White",
     "location": "Manly, Sydney",
@@ -52,13 +52,13 @@
     "photo": "new-zealand-white.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Partial Blindness",
-    "pedigreeKnown": "No",
-    "owner": "Viola Penrose"
+    "pedigreeKnown": "false",
+    "type": "Rabbit"
   },
   {
     "name": "Hazel",
     "color": "Hazel",
-    "age": "4 years",
+    "age": "4",
     "gender": "Female",
     "breed": "Rex",
     "location": "Paramatta, Sydney",
@@ -66,13 +66,13 @@
     "photo": "rex.png",
     "vaccinationHistory": "Up-to-Date",
     "disability": "Dental Malocclusion",
-    "pedigreeKnown": "Yes",
-    "owner": "Wesley Moorwood"
+    "pedigreeKnown": "true",
+    "type": "Rabbit"
   },
   {
     "name": "Bunny",
     "color": "Grey and White",
-    "age": "1.5 years",
+    "age": "1.5",
     "gender": "Male",
     "breed": "Chinchilla Rabbit",
     "location": "Town Hall, Sydney",
@@ -80,7 +80,7 @@
     "photo": "chinchilla.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes",
-    "owner": "Xenia Eastley"
+    "pedigreeKnown": "true",
+    "type": "Rabbit"
   }
 ]
