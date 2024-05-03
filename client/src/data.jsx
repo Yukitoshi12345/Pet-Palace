@@ -1,14 +1,14 @@
 // Description: This file contains all the data that is used in the application.
 //donation logo
-import { BiSolidDonateHeart } from "react-icons/bi";
+import { BiSolidDonateHeart } from 'react-icons/bi';
 
 //brand logo
 import logo from './assets/images/logo.gif';
 
 //contact us icons
-import {FiMail, FiMapPin } from "react-icons/fi";
-import {FaPhoneAlt} from "react-icons/fa";
-import { BsSendArrowUpFill } from "react-icons/bs";
+import { FiMail, FiMapPin } from 'react-icons/fi';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { BsSendArrowUpFill } from 'react-icons/bs';
 
 //footer photos
 import charity from './assets/images/footer/registered-charity.png';
@@ -31,7 +31,6 @@ import casino from './assets/images/about/star-casino.png';
 import coles from './assets/images/about/coles.jpg';
 import staff from './assets/images/about/StaffGroup.jpg';
 
-
 //dogs photos
 
 //cats photos
@@ -39,7 +38,7 @@ import staff from './assets/images/about/StaffGroup.jpg';
 //birds photos
 
 // hero photos
-export const heros = [ hero1, hero2, hero3 ];
+export const heros = [hero1, hero2, hero3];
 
 export const about = {
   title: 'ABOUT US',
@@ -54,22 +53,22 @@ export const about = {
   ],
 
   commitments: [
-    'Continue to keep our promise to never euthanise a healthy, sociable or treatable animal in our care',
-    'Provide stray and homeless animals a second chance at life through innovative rehoming strategies',
-    'Prevent the birth of unwanted kittens and puppies through our National Desexing Network',
-    'Increase the number of Councils participating in our Cooperative Desexing Programs',
-    'Work with Councils to improve the living conditions of animals and introduce our Getting to Zero model',
-    'Keep people and their pets together by providing charitable support through our Community Vet Clinics',
-    'Through the Golden Hearts™ Program support seniors through every step of pet ownership',
-    "Improve the community's attitude toward all animals through education",
-    'Find a positive solution for un-owned cats',
+    'Maintain our commitment to never euthanize a healthy, sociable, or treatable animal under our care',
+    'Offer a new beginning to stray and homeless animals through creative rehoming efforts',
+    'Control the population of unwanted kittens and puppies via our National Desexing Network',
+    'Expand the number of Councils engaged in our Cooperative Desexing Programs',
+    'Collaborate with Councils to enhance animal living conditions and implement our Getting to Zero model',
+    'Help keep families and their pets together by offering charitable assistance at our Community Vet Clinics',
+    'Support seniors in every aspect of pet ownership through our Golden Hearts™ Program',
+    'Foster better community attitudes toward all animals via educational initiatives',
+    'Seek constructive outcomes for un-owned cats',
   ],
   team: {
     members: [
       {
-        name: 'Jodi Lee',
+        name: 'Jodie Lee',
         role: 'CEO',
-        pic: 'jodi',
+        pic: 'jodie',
       },
       {
         name: 'Suyash Maharjan',
@@ -77,7 +76,7 @@ export const about = {
         pic: suyash,
       },
       {
-        name: 'Yukitoshi ',
+        name: 'Yukitoshi Imaizumi-Zhou',
         role: 'Rehoming Manager',
         pic: yukitoshi,
       },
@@ -138,16 +137,16 @@ export const footer = {
     registrationBoard: 'Australian CAN',
     pic: charity,
   },
-  copyright: '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
-  slogan: 'A brighter future for animals in need'
+  copyright:
+    '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
+  slogan: 'A brighter future for animals in need',
 };
-
 
 export const header = {
   //logo
   companyLogo: {
     pic: logo,
-    name: 'Pet Palace'
+    name: 'Pet Palace',
   },
   //navigation
   navigation: [
@@ -162,19 +161,20 @@ export const header = {
     {
       name: 'contact',
       href: '/contact',
-    }
+    },
   ],
-  donationIcon: <BiSolidDonateHeart/>,
-}
+  donationIcon: <BiSolidDonateHeart />,
+};
 
 export const contact = {
   title: 'CONTACT US',
-  subtitle: 'If you have any questions or concerns, please feel free to contact us. We are here to help you and your pet in any way we can. You can reach us by phone, email, or by visiting our office. Our friendly staff are always happy to help and will do their best to answer any questions you may have. We look forward to hearing from you!',
+  subtitle:
+    'If you have any questions or concerns, please feel free to contact us. We are here to help you and your pet in any way we can. You can reach us by phone, email, or by visiting our office. Our friendly staff are always happy to help and will do their best to answer any questions you may have. We look forward to hearing from you!',
   icon: {
-    mail: <FiMail/>,
-    phone: <FaPhoneAlt/> ,
-    map: <FiMapPin/>,
-    send: <BsSendArrowUpFill/>,
+    mail: <FiMail />,
+    phone: <FaPhoneAlt />,
+    map: <FiMapPin />,
+    send: <BsSendArrowUpFill />,
   },
   location: {
     title: 'Our Locations',
@@ -196,8 +196,7 @@ export const contact = {
         email: 'info@brisbane.petpalace.org.au',
         number: '1800 000 002',
         address: '123 Haven Crescent, Brisbane, QLD 4000',
-      }
-    ]
-  }
-  
-}
+      },
+    ],
+  },
+};
