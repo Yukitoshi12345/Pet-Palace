@@ -11,7 +11,8 @@
     "health": "Fully Vetted, Healthy",
     "tame": "true",
     "specialNeeds": "Requires mental stimulation and social interaction.",
-    "type": "Bird"
+    "type": "Bird",
+    "featured": "false"
   },
   {
     "name": "Sunshine",
@@ -25,7 +26,8 @@
     "health": "Up-to-Date in Vaccination",
     "tame": "false",
     "specialNeeds": "None",
-    "type": "Bird"
+    "type": "Bird",
+    "featured": "false"
   },
   {
     "name": "Jasper",
@@ -39,7 +41,8 @@
     "health": "Regular health checks completed",
     "tame": "true",
     "specialNeeds": "Needs a spacious environment to fly",
-    "type": "Bird"
+    "type": "Bird",
+    "featured": "false"
   },
   {
     "name": "Kiwi",
@@ -53,7 +56,8 @@
     "health": "Healthy, regular check-ups",
     "tame": "true",
     "specialNeeds": "Social species, needs companionship",
-    "type": "Bird"
+    "type": "Bird",
+    "featured": "true"
   },
   {
     "name": "Ruby",
@@ -67,7 +71,8 @@
     "health": "Monitored for arthritis, otherwise healthy",
     "tame": "true",
     "specialNeeds": "Requires a diet specific to macaws, enriched with nuts and fruits.",
-    "type": "Bird"
+    "type": "Bird",
+    "featured": "false"
   },
   {
     "name": "Echo",
@@ -81,6 +86,7 @@
     "health": "Excellent condition",
     "tame": "true",
     "specialNeeds": "Needs constant social interaction to prevent loneliness.",
-    "type": "Bird"
+    "type": "Bird",
+    "featured": "false"
   }
 ]

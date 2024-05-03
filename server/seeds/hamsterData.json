@@ -33,7 +33,8 @@
     "description": "Extremely active and loves running on his wheel, best for experienced owners.",
     "photo": "roborovski.png",
     "health": "Very healthy, active",
-    "type": "Hamster"
+    "type": "Hamster",
+    "featured": "true"
   },
   {
     "name": "Fudge",

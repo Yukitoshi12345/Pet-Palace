@@ -53,7 +53,8 @@
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
     "pedigreeKnown": "false",
-    "type": "Dog"
+    "type": "Dog",
+    "featured": "true"
   },
   {
     "name": "Lola",

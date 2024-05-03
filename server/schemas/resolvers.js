@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Pet } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 require('dotenv').config();
 // Added personal stripe API
@@ -13,6 +13,12 @@ const resolvers = {
     user: async (parent, { email }) => {
       return User.findOne({ email });
     },
+    pets: async () => {
+      return Pet.find();
+    },
+    featuredPets: async () => {
+      return Pet.find({ featured: true });
+    }
   },
 
   Mutation: {

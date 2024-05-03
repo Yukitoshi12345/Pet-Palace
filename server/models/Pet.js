@@ -84,6 +84,13 @@ const petSchema = new Schema(
     //   ref: 'User', // The owner data is stored in a User collection
     //   required: [true, 'Owner is required'],
     // },
+    
+    featured: {
+      type: Boolean,
+      default: false,
+      required: [false, 'Featured status is optional'],
+    },
+    
   },
   {
     timestamps: true,
