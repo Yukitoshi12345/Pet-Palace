@@ -19,6 +19,7 @@ const Signup = () => {
     password: '',
     confirmPassword: '',
   });
+
   const [addUser, { data }] = useMutation(ADD_USER);
   const [error, setError] = useState('');
 
@@ -51,7 +52,7 @@ const Signup = () => {
   };
 
   return (
-    <main className=" section">
+    <main className="section">
       <div className="container px-4 mt-20 relative">
         <div className="absolute -right-24 -top-28 hidden lg:block">
           <img
