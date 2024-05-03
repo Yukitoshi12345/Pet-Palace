@@ -4,20 +4,23 @@
     "email": "yukitoshi@gmail.com",
     "password": "password01",
     "role": "user",
-    "birthday": "1990-01-01"
+    "birthday": "1990-01-01",
+    "favoritePet": "dog"
   },
   {
     "name": "Jodie",
     "email": "jodie@yahoo.com",
     "password": "password02",
     "role": "user", 
-    "birthday": "1995-01-01"
+    "birthday": "1995-01-01",
+    "favoritePet": "cat"
   },
   {
     "name": "Suyash",
     "email": "suyash@outlook.com",
     "password": "password03",
     "role": "user",
-    "birthday": "1987-07-27"
+    "birthday": "1987-07-27",
+    "favoritePet": "rabbit"
   }
 ]
