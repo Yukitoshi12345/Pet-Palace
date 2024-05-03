@@ -137,9 +137,10 @@ export const footer = {
     registrationBoard: 'Australian CAN',
     pic: charity,
   },
-  copyright:
-    '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
-  slogan: 'A brighter future for animals in need',
+
+  copyright: '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
+  slogan: '\u{201c} A brighter future for animals in need \u{201d}'
+
 };
 
 export const header = {
@@ -196,7 +197,12 @@ export const contact = {
         email: 'info@brisbane.petpalace.org.au',
         number: '1800 000 002',
         address: '123 Haven Crescent, Brisbane, QLD 4000',
-      },
-    ],
+
+      }
+    ]
   },
-};
+  successMessage: 'Message received successfully. Thank you for reaching out to us. We will get back to you as soon as possible.',
+  errorMessage: 'There was an error sending your message. Please try again.'
+  
+}
+
