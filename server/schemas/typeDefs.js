@@ -50,7 +50,7 @@ const typeDefs = gql`
     pet(_id: ID!): Pet
     featuredPets : [Pet]
 
-    user(userId: ID!): User
+    # user(userId: ID!): User
 
   }
 
