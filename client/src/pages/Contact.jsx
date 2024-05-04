@@ -145,6 +145,10 @@ const Contact = () => {
                       {contact.icon.phone}
                       <a href={`tel:${location.number}`}>{location.number}</a>
                     </div>
+                    <div className="text-lg m-0 flex items-center gap-2 italic">
+                      <a href={`http://maps.google.com/?q= ${location.address}`} target='_blank'>{location.address}</a>
+                    </div>
+
                   </div>
                 ))}
               </div>

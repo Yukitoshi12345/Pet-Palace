@@ -2,18 +2,18 @@ import { about } from '../data';
 import Team from '../components/About/Team';
 import Sponsors from '../components/About/Sponsors';
 import Rehoming from '../components/About/Rehoming';
-import Hero from '../components/Hero';
+import Hero from '../components/About/Hero';
 import Footer from '../components/Footer';
 
 const About = () => {
-  const { title, heading, paragraphs, commitments, team, rehoming, sponsors } =
+  const { heros, title, heading, paragraphs, commitments, team, rehoming, sponsors } =
     about;
   return (
     <section id="about" className="section flex-col justify-between">
       <div>
         <div className="container mx-auto">
           <div className="hidden md:block mb-36">
-            <Hero />
+            <Hero heros={heros} />
           </div>
 
           <h1 className="text-center section-title">{title}</h1>

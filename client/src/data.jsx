@@ -14,9 +14,10 @@ import { BsSendArrowUpFill } from 'react-icons/bs';
 
 
 //about hero photos
-import hero1 from './assets/images/hero/hero1.jpg';
-import hero2 from './assets/images/hero/hero2.jpg';
-import hero3 from './assets/images/hero/hero3.jpg';
+import hero1 from './assets/images/about/hero/hero1.jpg';
+import hero2 from './assets/images/about/hero/hero2.jpg';
+import hero3 from './assets/images/about/hero/hero3.jpg';
+import hero4 from './assets/images/about/hero/hero4.jpg';
 
 //about staff photos
 //import jodi from './assets/images/about/jodi.jpg';
@@ -44,10 +45,10 @@ import rego2 from './assets/images/home/ACNC-1.png';
 
 //birds photos
 
-// hero photos
-export const heros = [hero1, hero2, hero3];
+
 
 export const about = {
+  heros: [hero1, hero2, hero3, hero4],
   title: 'ABOUT US',
   heading:
     'For the past 60 years pet palace has been embracing a brighter future for animals in need.',
@@ -144,7 +145,7 @@ export const footer = {
     brand: 'Pet Palace',
     pic: logo,
   },
-
+  projectMembers: ['Jodie Lee', 'Suyash Maharjan', 'Yukitoshi Imaizumi-Zhou'], 
   copyright: '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
   slogan: '\u{201c} A brighter future for animals in need \u{201d}'
 
@@ -191,19 +192,19 @@ export const contact = {
         location: 'Head Office',
         email: 'info@sydney.petpalace.org.au',
         number: '1800 000 000',
-        address: '123 Unnamed Road, Sydney, NSW 2000',
+        address: '123 Macquaire Street, Sydney, NSW 2000',
       },
       {
         location: 'Melbourne Branch',
         email: 'info@melbourne.petpalace.org.au',
         number: '1800 000 001',
-        address: '123 Unnamed Street, North Melbourne, VIC 3051',
+        address: '7 Howard Street, North Melbourne, VIC 3051',
       },
       {
         location: 'Brisbane Branch',
         email: 'info@brisbane.petpalace.org.au',
         number: '1800 000 002',
-        address: '123 Haven Crescent, Brisbane, QLD 4000',
+        address: '2 Burnett Ln, Brisbane, QLD 4000',
 
       }
     ]
