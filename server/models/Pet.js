@@ -42,6 +42,7 @@ const petSchema = new Schema(
     location: {
       type: String,
       required: [true, 'Location is required'],
+      enum: ['Brisbane', 'Melbourne', 'Sydney'],
     },
     health: {
       type: String,
