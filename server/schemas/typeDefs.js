@@ -5,8 +5,30 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     birthday: String!
+    favoritePet: String!
     email: String!
     password: String!
+    role: String!
+  }
+  type Pet {
+    _id: ID!
+    name: String!
+    type: String!
+    breed:  String
+    species: String
+    gender: String!
+    age: Float
+    color: String!
+    description: String!
+    location: String!
+    health: String
+    tame: Boolean
+    specialNeeds: String
+    vaccinationHistory: String
+    disability: String
+    pedigreeKnown: Boolean
+    photo: String!
+    featured: Boolean
   }
 
   type Payment {
@@ -21,18 +43,30 @@ const typeDefs = gql`
   }
 
   type Query {
+
     users: [User]
     user(email: String!): User
+    pets: [Pet]
+    pet(_id: ID!): Pet
+    featuredPets : [Pet]
+
+    user(userId: ID!): User
+
   }
 
   type Mutation {
     addUser(
       name: String!
       birthday: String!
+      favoritePet: String!
       email: String!
       password: String!
+      role: String!
     ): Auth
-    login(email: String!, password: String!): Auth
+    login(
+      email: String!, 
+      password: String!
+    ): Auth
     createCharge(
       amount: Int!
       source: String!

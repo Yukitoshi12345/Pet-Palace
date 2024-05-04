@@ -10,6 +10,7 @@ import Profile from './pages/Profile'
 import Login from './pages/Login'
 import SignUp from './pages/Signup'
 import ErrorPage from './pages/ErrorPage'
+import PetDetails from './pages/PetDetails'
 
 
 // Bringing in the required imports from 'react-router-dom' to set up application routing behavior
@@ -37,8 +38,12 @@ const router = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: 'profile',
+        path: '/profiles/:userId',
         element: <Profile />,
+      },
+      {
+        path: 'petDetails',
+        element: <PetDetails />,
       },
       {
         path: 'login',

@@ -2,7 +2,7 @@
   {
     "name": "Bella",
     "color": "Golden",
-    "age": "3 years",
+    "age": "3",
     "gender": "Female",
     "breed": "Labrador Retriever",
     "location": "Melbourne",
@@ -10,13 +10,13 @@
     "photo": "labrador-retriever.jpg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "Yes",
-    "owner": "Aria Knightsbridge"
+    "pedigreeKnown": "true",
+    "type": "Dog"
   },
   {
     "name": "Max",
     "color": "Black and White",
-    "age": "5 years",
+    "age": "5",
     "gender": "Male",
     "breed": "Border Collie",
     "location": "Melbourne",
@@ -24,13 +24,13 @@
     "photo": "border-collie.jpg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Deaf",
-    "pedigreeKnown": "No",
-    "owner": "Beau Riverton"
+    "pedigreeKnown": "false",
+    "type": "Dog"
   },
   {
     "name": "Daisy",
     "color": "White",
-    "age": "2 years",
+    "age": "2",
     "gender": "Female",
     "breed": "Samoyed",
     "location": "Brisbane",
@@ -38,13 +38,13 @@
     "photo": "samoyed.jpg",
     "vaccinationHistory": "No Vaccination",
     "disability": "Blindness",
-    "pedigreeKnown": "Yes",
-    "owner": "Cleo Marwood"
+    "pedigreeKnown": "true",
+    "type": "Dog"
   },
   {
     "name": "Oscar",
     "color": "Brindle",
-    "age": "4 years",
+    "age": "4",
     "gender": "Male",
     "breed": "Boxer",
     "location": "Brisbane",
@@ -52,13 +52,14 @@
     "photo": "boxer.png",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "None",
-    "pedigreeKnown": "No",
-    "owner": "Dexter Flemming"
+    "pedigreeKnown": "false",
+    "type": "Dog",
+    "featured": "true"
   },
   {
     "name": "Lola",
     "color": "Grey",
-    "age": "6 years",
+    "age": "6",
     "gender": "Female",
     "breed": "Weimaraner",
     "location": "Sydney",
@@ -66,13 +67,13 @@
     "photo": "weimaraner.png",
     "vaccinationHistory": "Partially Vaccinated",
     "disability": "Hip Dysplasia",
-    "pedigreeKnown": "No",
-    "owner": "Elodie Varnham"
+    "pedigreeKnown": "false",
+    "type": "Dog"
   },
   {
     "name": "Rocky",
     "color": "Tan",
-    "age": "1 year",
+    "age": "1",
     "gender": "Male",
     "breed": "French Bulldog",
     "location": "Sydney",
@@ -80,7 +81,7 @@
     "photo": "french-bulldog.jpg",
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Epilepsy",
-    "pedigreeKnown": "Yes",
-    "owner": "Finn Barlowe"
+    "pedigreeKnown": "true",
+    "type": "Dog"
   }
 ]

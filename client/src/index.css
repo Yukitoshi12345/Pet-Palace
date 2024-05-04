@@ -48,7 +48,7 @@
     @apply mb-4 text-lg font-normal text-neutral text-justify;
   }
   .section {
-    @apply prose min-w-full min-h-[75vh] flex  items-center justify-center mt-24 lg:mb-0;
+    @apply prose min-w-full min-h-[95dvh] flex  items-center justify-center mt-24 lg:mb-0;
   }
   .section-title {
     @apply text-3xl lg:text-4xl font-medium lg:font-extrabold mb-5;
@@ -65,10 +65,10 @@
   }  
   */
   .input {
-    @apply bg-primary input-bordered  max-w-xs h-[60px] outline-none pl-6 w-full font-body text-[15px] rounded-sm focus:outline focus:outline-1 !important;
+    @apply caret-accent bg-primary input-bordered  max-w-xs h-[60px] outline-none pl-6 w-full font-body text-[15px] rounded-sm focus:outline focus:outline-1 !important;
   }
   .textarea {
-    @apply textarea-bordered bg-primary resize-none w-full outline-none p-6 rounded-sm h-[200px] focus:outline focus:outline-1 !important;
+    @apply  caret-accent textarea-bordered bg-primary resize-none w-full outline-none p-6 rounded-sm h-[200px] focus:outline focus:outline-1 !important;
   } 
 }
 

@@ -47,8 +47,8 @@ const client = new ApolloClient({
 });
 
 // Initialize Stripe with your key
-const stripeAPI = import.meta.env.VITE_STRIPE_API_KEY;
-const stripePromise = loadStripe(stripeAPI);
+// const stripeAPI = import.meta.env.VITE_STRIPE_API_KEY;
+// const stripePromise = loadStripe(stripeAPI);
 
 function App() {
   return (
@@ -56,7 +56,7 @@ function App() {
           <ThemeController /> 
           <Header />
           <Outlet />
-          <Footer />
+          {/* <Footer /> */}
           <BackToTopBtn />
     </ApolloProvider>
   );

@@ -1,17 +1,26 @@
 [
   {
-    "username": "Yukitoshi",
+    "name": "Yukitoshi",
     "email": "yukitoshi@gmail.com",
-    "password": "password01"
+    "password": "password01",
+    "role": "user",
+    "birthday": "1990-01-01",
+    "favoritePet": "dog"
   },
   {
-    "username": "Jodie",
+    "name": "Jodie",
     "email": "jodie@yahoo.com",
-    "password": "password02"
+    "password": "password02",
+    "role": "user", 
+    "birthday": "1995-01-01",
+    "favoritePet": "cat"
   },
   {
-    "username": "Suyash",
+    "name": "Suyash",
     "email": "suyash@outlook.com",
-    "password": "password03"
+    "password": "password03",
+    "role": "user",
+    "birthday": "1987-07-27",
+    "favoritePet": "rabbit"
   }
 ]
