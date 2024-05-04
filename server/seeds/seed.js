@@ -10,17 +10,23 @@ const userSeeds = require('./userData.json');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
-  await cleanDB('Pet', 'pets');
-  await cleanDB('User', 'users');
+  //implement try catch
+  try{
+    await cleanDB('Pet', 'pets');
+    await cleanDB('User', 'users');
+  
+    await Pet.create(birdSeeds);
+    await Pet.create(catSeeds);
+    await Pet.create(dogSeeds);
+    await Pet.create(hamsterSeeds);
+    await Pet.create(rabbitSeeds);
+    await User.create(userSeeds);
+  
+    console.log('Seeding finished successfully!');
+    process.exit(0);
+  }catch (err){
+    console.error(`%c${err}, "color: red; font-size: 20px;"`);
+    console.log("Seeding failed!");
+  }
 
-  // Create all the pets synchronously
-  await Pet.create(birdSeeds);
-  await Pet.create(catSeeds);
-  await Pet.create(dogSeeds);
-  await Pet.create(hamsterSeeds);
-  await Pet.create(rabbitSeeds);
-  await User.create(userSeeds);
-
-  console.log('all done!');
-  process.exit(0);
 });

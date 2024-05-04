@@ -1,9 +1,9 @@
 import React from 'react';
-import Hero from '../components/Hero';
 import { home } from '../data';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useQuery } from '@apollo/client';
 import { QUERY_FEATURED_PETS } from '../utils/queries';
+import PetCard from '../components/Home/PetCard';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_FEATURED_PETS);
@@ -36,27 +36,27 @@ const Home = () => {
             className="h-[40dvh] w-full object-cover object-top -z-10"
           />
           <div className="max-w-[350px] text-xl text-justify text-white font-semibold absolute right-12 top-10 z-10 leading-10">
-            <motion.div variants={sentence} initial="hidden" animate="visible">
+            <motion.div variants={sentence} initial="hidden" whileInView="visible" viewport={{once:false}}>
               {home.plea.split('').map((char, index) => (
                 <motion.span key={index} variants={letter}>
                   {char}
                 </motion.span>
               ))}
             </motion.div>
-            <AnimatePresence>
+            {/* <AnimatePresence> */}
               <motion.div
-                key="donationButton"
+                // key="donationButton"
                 className="flex justify-center mt-3"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 4.0, ease: 'easeInOut' }}
+                initial={{ opacity: 0}}
+                whileInView={{ opacity: 1, transition:{ duration: 1, delay: 4.0, ease: 'easeInOut' }}}
+                viewport={{once:false}}
               >
                 <button className="btn btn-accent capitalize">
                   {home.donationIcon}
                   {home.donation}
                 </button>
               </motion.div>
-            </AnimatePresence>
+            {/* </AnimatePresence> */}
           </div>
         </div>
 
@@ -96,24 +96,8 @@ const Home = () => {
               <span className="loading loading-bars loading-lg"></span>
             ) : (
               featuredPets.map((pet, index) => (
-                console.log(`../assets/images/pets/${pet.type}s/${pet.photo}`),
-                
-                <div key={index} className="card w-96 bg-base-200 shadow-xl">
-                  <figure>
-                    <img src={`../assets/images/pets/${pet.type.toLowerCase()}s/${pet.photo}`} alt="featured pet" />
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">
-                      {pet.name}
-                      <div className="badge badge-secondary">FEATURED</div>
-                    </h2>
-                    <p>{pet.location}</p>
-                    <div className="card-actions justify-end">
-                      <div className="badge badge-outline">{pet.age}years</div>
-                      <div className="badge badge-outline">{pet.breed || pet.species}</div>
-                    </div>
-                  </div>
-                </div>
+                console.log(`pets/${pet.type}s/${pet.photo}`),
+                <PetCard key={index} index={index} {...pet} />
               ))
             )}
           </div>
