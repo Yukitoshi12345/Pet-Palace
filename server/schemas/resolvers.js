@@ -3,12 +3,11 @@ const { signToken, AuthenticationError } = require('../utils/auth');
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
 // Added personal stripe API
-const stripeAPI = process.env.Stripe_API_KEY;
+const stripeAPI = process.env.STRIPE_API_KEY;
 const stripe = require('stripe')(stripeAPI);
 
 const resolvers = {
   Query: {
-
     users: async () => {
       return User.find();
     },
@@ -23,7 +22,7 @@ const resolvers = {
     },
     featuredPets: async () => {
       return Pet.find({ featured: true });
-    }
+    },
   },
 
   Mutation: {
@@ -45,7 +44,10 @@ const resolvers = {
       return { token, user };
     },
 
-    addUser: async (parent, { name, birthday, favoritePet, email, password }) => {
+    addUser: async (
+      parent,
+      { name, birthday, favoritePet, email, password },
+    ) => {
       const user = await User.create({
         name: name,
         birthday: birthday,
