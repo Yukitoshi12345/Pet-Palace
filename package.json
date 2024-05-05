@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
+    "dev": "npm run seed && concurrently \"cd server && npm run start\" \"cd client && npm run dev\"",
     "start": "node server --ignore client",
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
@@ -13,7 +13,7 @@
     "seed": "cd server && npm run seed"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jodie Lee, Suyash Maharjan, Yukitoshi Imaizumi-Zhou",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

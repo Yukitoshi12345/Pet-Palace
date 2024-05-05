@@ -4,14 +4,14 @@
     "email": "yukitoshi@gmail.com",
     "password": "password01",
     "role": "user",
-    "birthday": "1990-01-01",
+    "birthday": "1998-07-14",
     "favoritePet": "Dog"
   },
   {
     "name": "Jodie Lee",
     "email": "jodie@yahoo.com",
     "password": "password02",
-    "role": "user", 
+    "role": "user",
     "birthday": "1995-06-27",
     "favoritePet": "Cat"
   },
