@@ -2,6 +2,10 @@
 //donation logo
 import { BiSolidDonateHeart } from 'react-icons/bi';
 
+//header logos
+import { FaUserLarge } from "react-icons/fa6";
+import { FaUserCheck } from "react-icons/fa6"; 
+import { FaUserLock } from "react-icons/fa6";
 //brand logo
 import logo from './assets/images/logo.gif';
 
@@ -39,13 +43,7 @@ import hero from './assets/images/home/pet-adoption.png';
 import rego1 from './assets/images/home/acnc.png';
 import rego2 from './assets/images/home/ACNC-1.png';
 
-//dogs photos
-
-//cats photos
-
-//birds photos
-
-
+import { MdPets } from "react-icons/md";
 
 export const about = {
   heros: [hero1, hero2, hero3, hero4],
@@ -173,6 +171,15 @@ export const header = {
     },
   ],
   donationIcon: <BiSolidDonateHeart />,
+  adopt:{
+    btnTitle: 'Adopt A Pet',
+    icon: <MdPets />,
+  
+  },
+  userIconLoggedOut: <FaUserLock style={{ fontSize: '2em',  
+  marginRight: 5, color: 'A16207', marginTop:'0.5rem' }}/>,
+  userIconLoggedIn: <FaUserCheck style={{ fontSize: '2em',  
+  marginRight: 5, color: 'A16207', marginTop:'0.5rem' }}/>,
 };
 
 export const contact = {
@@ -239,4 +246,15 @@ export const home = {
   registrationHeading: 'We are a registered charity with the Australian Charities and Not-for-profits Commission (ACNC)',
   regos: [rego1, rego2],
   featured: 'See our featured pets',
+  featuredPets:{
+    heading: 'Featured Pets',
+    tag: 'featured',
+    btn: 'View All Pets',
+    icon: <MdPets />
+  }
+}
+
+export const donation = {
+  btnTitle: 'donate now',
+  icon: <BiSolidDonateHeart />,
 }

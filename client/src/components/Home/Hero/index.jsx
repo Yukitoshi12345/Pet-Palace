@@ -1,6 +1,7 @@
 import React from 'react';
 import { home } from '../../../data';
 import { motion, AnimatePresence } from 'framer-motion';
+import DonationBtn from '../../DonationBtn';
 
 
 const sentence = {
@@ -54,10 +55,7 @@ const Hero = () => {
           }}
           viewport={{ once: false }}
         >
-          <button className="btn btn-accent capitalize">
-            {home.donationIcon}
-            {home.donation}
-          </button>
+          <DonationBtn />
         </motion.div>
         {/* </AnimatePresence> */}
       </div>

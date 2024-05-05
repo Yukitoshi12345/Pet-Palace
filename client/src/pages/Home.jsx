@@ -5,10 +5,11 @@ import FeaturedPets from '../components/Home/FeaturedPets';
 import About from '../components/Home/About';
 import Hero from '../components/Home/Hero';
 import Footer from '../components/Footer';
+import DonationBtn from '../components/DonationBtn';
 
 const Home = () => {
   return (
-    <section id="home" className="section flex-col justify-between">
+    <section id="home" className="section flex-col justify-between relative">
       <div>
         <div className="container mx-auto">
           {/* hero image  */}
@@ -25,6 +26,12 @@ const Home = () => {
         </div>
       </div>
       <Footer />
+      <div className="toast">
+        <div className="alert bg-base-100">
+          <DonationBtn />
+        </div>
+      </div>
+
     </section>
   );
 };

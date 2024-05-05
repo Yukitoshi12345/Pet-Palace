@@ -1,40 +1,75 @@
 import { useState, useEffect } from 'react';
 import NavMenu from './NavMenu';
 
-import {header} from '../../data';
+import { header } from '../../data';
 import { NavLink } from 'react-router-dom';
+import DonationBtn from '../DonationBtn';
+import Auth from '../../utils/auth';
 
 const Header = () => {
-  const{companyLogo, donationIcon} = header;
+  const { companyLogo, adopt } = header;
   const [bg, setBg] = useState(false);
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
       return window.scrollY > 50 ? setBg(true) : setBg(false);
     });
   });
- 
+
   return (
-    <nav className={`${bg ? "bg-base-200 h-24 opacity-95 shadow-sm shadow-stone-700": "bg-base-100 h-32" } fixed container mx-auto text-[1.2rem] z-20 top-0 left-0 right-0 lg:px-12 xxl:px-24`}>
-     
-        <div className=" flex flex-wrap items-center justify-between mx-auto p-4">
-        
-        <NavLink
-          href="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
-        >
+    <nav
+      className={`${bg ? 'bg-base-200 h-24 opacity-95 shadow-sm shadow-stone-700' : 'bg-base-100 h-32'} fixed container mx-auto text-[1.2rem] z-20 top-0 left-0 right-0 lg:px-12 xxl:px-24`}
+    >
+      <div className=" flex flex-wrap items-center justify-between mx-auto p-4">
+        <NavLink href="/" className="flex items-center space-x-3">
           <img src={companyLogo.pic} className="h-24 rounded-full" alt="Logo" />
           <span className="self-center bg-clip-text text-4xl text-transparent  whitespace-nowrap font-logo bg-gradient-to-r from-accent via-secondary to-accent pr-3">
             {companyLogo.name}
           </span>
         </NavLink>
         <div className="flex lg:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            type="button"
-            className="btn btn-accent"
-          >
-            {donationIcon}Donate Now
-          </button>
+          <div className="flex space-x-3">
+            <div className="dropdown dropdown-bottom">
+              <div tabIndex={0} role="button" className="m-1">
+                {Auth.loggedIn() ? header.userIconLoggedIn : header.userIconLoggedOut}
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                {Auth.loggedIn() ? ( // If user is logged in, render logout button
+                  <>
+                    <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
+                      <NavLink to="/profiles/:userId">Profile</NavLink>
+                    </li>
+                    <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
+                      <button onClick={logout}>Logout</button>
+                    </li>
+                  </>
+                ) : (
+                  // If user is not logged in, render login and signup links
+                  <>
+                    <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
+                      <NavLink to="/login">Login</NavLink>
+                    </li>
+                    <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
+                      <NavLink to="/signup">Signup</NavLink>
+                    </li>
+                  </>
+                )}
+              </ul>
+            </div>
+
+            {/* adopt btn  */}
+            <NavLink to="/pets" className="btn btn-accent">
+              {adopt.icon}
+              {adopt.btnTitle}
+            </NavLink>
+          </div>
 
           <button
             data-collapse-toggle="navbar-sticky"
@@ -63,7 +98,7 @@ const Header = () => {
         </div>
         {/* imbedding the NavMenu component */}
         <NavMenu bg={bg} />
-        </div>
+      </div>
     </nav>
   );
 };

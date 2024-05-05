@@ -25,6 +25,7 @@ export const QUERY_PETS = gql`
       location
       photo
       featured
+      type
     }
   }
 `;
