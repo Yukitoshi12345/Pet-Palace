@@ -23,7 +23,7 @@ const PetDetails = () => {
 
   return (
     <div className="container mx-auto mt-20 section">
-      <section id="profile" className="max-w-lg mx-auto bg-neutral rounded-lg shadow-lg p-8">
+      <section id="profile" className="max-w-lg mx-auto bg-neutral rounded-lg shadow-lg p-8 mt-20 mb-20">
         <h1 className="text-3xl font-bold mb-4">{pet.name}</h1>
         <img className="rounded-lg mb-4" src={`/images/pets/${petType}s/${pet.photo}`} alt={pet.name} />
           <div className="text-base-100">
@@ -35,7 +35,7 @@ const PetDetails = () => {
             <p className="text-base-100"><span className="font-bold text-base-100">Location:</span> {pet.location}</p>
           </div>
           <div className="text-center mt-8">
-             <NavLink to="/enquire" className="btn btn-primary">Enquire Now</NavLink> 
+             <NavLink to="/enquiry" className="btn btn-primary">Enquire Now</NavLink> 
           </div>
       </section>
     </div>
