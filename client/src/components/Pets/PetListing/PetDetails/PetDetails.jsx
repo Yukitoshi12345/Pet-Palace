@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { useParams } from 'react-router-dom';
+import { useParams, NavLink } from 'react-router-dom';
 import { QUERY_SINGLE_PET } from '../../../../utils/queries';
 
 const PetDetails = () => {
@@ -14,33 +14,29 @@ const PetDetails = () => {
 
   const pet = data?.pet || {};
 
-  // Log the data object
-  console.log("Data:", data);
+  // Check if pet.type is defined before using toLowerCase()
+  const petType = pet.type ? pet.type.toLowerCase() : '';
 
   if (loading) {
     return <div className="text-center mt-8">Loading...</div>;
   }
 
-  // Log the pet object
-  console.log("Pet:", pet);
-
-  // Check if pet.type is defined before using toLowerCase()
-  const petType = pet.type ? pet.type.toLowerCase() : '';
-
-  // Log the petId variable
-  console.log("Pet ID:", petId);
-
   return (
-    <div className="container mx-auto mt-8 section">
+    <div className="container mx-auto mt-20 section">
       <section id="profile" className="max-w-lg mx-auto bg-neutral rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold mb-4">{pet.name}</h1>
         <img className="rounded-lg mb-4" src={`/images/pets/${petType}s/${pet.photo}`} alt={pet.name} />
-            <p><span className="font-bold text-base-100">Breed:</span> {pet.breed}</p>
-            <p><span className="font-bold text-base-100">Species:</span> {pet.species}</p>
-            <p><span className="font-bold text-base-100">Age:</span> {pet.age}</p>
-            <p><span className="font-bold text-base-100">Color:</span> {pet.color}</p>
-            <p><span className="font-bold text-base-100">Description:</span> {pet.description}</p>
-            <p><span className="font-bold text-base-100">Location:</span> {pet.location}</p>
+          <div className="text-base-100">
+            <p className="text-base-100"><span className="font-bold text-base-100">Breed:</span> {pet.breed}</p>
+            <p className="text-base-100"><span className="font-bold text-base-100">Species:</span> {pet.species}</p>
+            <p className="text-base-100"><span className="font-bold text-base-100">Age:</span> {pet.age}</p>
+            <p className="text-base-100"><span className="font-bold text-base-100">Color:</span> {pet.color}</p>
+            <p className="text-base-100"><span className="font-bold text-base-100">Description:</span> {pet.description}</p>
+            <p className="text-base-100"><span className="font-bold text-base-100">Location:</span> {pet.location}</p>
+          </div>
+          <div className="text-center mt-8">
+             <NavLink to="/enquire" className="btn btn-primary">Enquire Now</NavLink> 
+          </div>
       </section>
     </div>
   );
