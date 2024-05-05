@@ -1,52 +1,47 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
+import { useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
+import { QUERY_SINGLE_PET } from '../../../../utils/queries';
 
 const PetDetails = () => {
-  const { petId } = useParams(); // Get the petId from the URL params
-  const [petDetails, setPetDetails] = useState(null); // State to store pet details
+  // Get the petId from the URL parameters
+  const { petId } = useParams();
 
-  // Function to fetch pet details from the server
-  const fetchPetDetails = async () => {
-    try {
-      const response = await fetch(`/api/pets/${petId}`); // Replace with your API endpoint
-      if (!response.ok) {
-        throw new Error('Failed to fetch pet details');
-      }
-      const data = await response.json();
-      setPetDetails(data); // Set the fetched pet details to state
-    } catch (error) {
-      console.error('Error fetching pet details:', error);
-    }
-  };
+  // Fetch data for the single pet using the QUERY_SINGLE_PET query
+  const { loading, data } = useQuery(QUERY_SINGLE_PET, {
+    variables: { petId: petId },
+  });
 
-  // Fetch pet details when the component mounts
-  useEffect(() => {
-    fetchPetDetails();
-  }, [petId]); // Fetch details whenever petId changes
+  const pet = data?.pet || {};
 
-  // Render loading message while fetching pet details
-  if (!petDetails) {
-    return <div>Loading...</div>;
+  // Log the data object
+  console.log("Data:", data);
+
+  if (loading) {
+    return <div className="text-center mt-8">Loading...</div>;
   }
 
-  // Once pet details are fetched, render the details
+  // Log the pet object
+  console.log("Pet:", pet);
+
+  // Check if pet.type is defined before using toLowerCase()
+  const petType = pet.type ? pet.type.toLowerCase() : '';
+
+  // Log the petId variable
+  console.log("Pet ID:", petId);
+
   return (
-    <div>
-      <h2>{petDetails.name}</h2>
-      <p>Type: {petDetails.type}</p>
-      <p>Variety: {petDetails.variety}</p>
-      <p>Gender: {petDetails.gender}</p>
-      <p>Age: {petDetails.age}</p>
-      <p>Color: {petDetails.color}</p>
-      <p>Description: {petDetails.description}</p>
-      <p>Location: {petDetails.location}</p>
-      <p>Health: {petDetails.health}</p>
-      <p>Tame: {petDetails.tame ? 'Yes' : 'No'}</p>
-      <p>Special Needs: {petDetails.specialNeeds}</p>
-      <p>Vaccination History: {petDetails.vaccinationHistory}</p>
-      <p>Disability: {petDetails.disability}</p>
-      <p>Pedigree Known: {petDetails.pedigreeKnown ? 'Yes' : 'No'}</p>
-      <img src={petDetails.photo} alt={petDetails.name} style={{ maxWidth: '300px' }} />
+    <div className="container mx-auto mt-8 section">
+      <section id="profile" className="max-w-lg mx-auto bg-neutral rounded-lg shadow-lg p-8">
+        <h1 className="text-3xl font-bold mb-4">{pet.name}</h1>
+        <img className="rounded-lg mb-4" src={`/images/pets/${petType}s/${pet.photo}`} alt={pet.name} />
+            <p><span className="font-bold text-base-100">Breed:</span> {pet.breed}</p>
+            <p><span className="font-bold text-base-100">Species:</span> {pet.species}</p>
+            <p><span className="font-bold text-base-100">Age:</span> {pet.age}</p>
+            <p><span className="font-bold text-base-100">Color:</span> {pet.color}</p>
+            <p><span className="font-bold text-base-100">Description:</span> {pet.description}</p>
+            <p><span className="font-bold text-base-100">Location:</span> {pet.location}</p>
+      </section>
     </div>
   );
 };
