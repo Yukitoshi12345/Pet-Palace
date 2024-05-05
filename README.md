@@ -95,8 +95,8 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 
 ## APIs Used
 
-- [Stripe](https://dashboard.stripe.com/test/apikeys)
 - [emailJs](https://www.emailjs.com/docs/rest-api/send/)
+- [Stripe](https://dashboard.stripe.com/test/apikeys)
 
 ## Installation Instruction
 
@@ -113,6 +113,20 @@ To use this project:
 ```
 npm install
 ```
+
+- Copy the contents of the .env.copy file to a new file named .env in both the client and server directories.
+
+```
+cp client/.env.copy client/.env
+```
+
+```
+cp server/.env.copy server/.env
+```
+
+- Open these .env files and fill in your Stripe and EmailJS API keys where indicated.
+
+<br>
 
 - Type in the following to run the database:
 
