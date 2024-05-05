@@ -15,11 +15,14 @@ Our repository is structured with clarity and maintainability in mind, featuring
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Technologies Used](#technologies-used)
+- [Development Dependencies Used](#development-dependencies-used)
+- [API's Used](#apis-used)
+- [Installation Instruction](#installation-instruction)
 - [Test Instruction](#test-instruction)
 - [Screenshots](#screenshots)
 - [Overview](#overview)
-- [Contribution/Roles](#contributors)
-- [Installation Instruction](#installation-instruction)
+- [Contributors](#contributors)
+- [Deployed Application](#deployed-application)
 - [License](#license)
 
 ## User Story
@@ -78,14 +81,56 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 
 ## Technologies Used
 
+- JavaScript
+- Node.js
+- MongoDB
+- Express
+- Mongoose
+- Vite
+- CORS
+- dotenv
+- bcrypt
+- graphQL
+- jsonwebtoken
+- stripe
+- @apollo/server
+- apollo-server-express
+- update later
+
 ## Development Dependencies Used
 
+## APIs Used
+
+- [Stripe](https://dashboard.stripe.com/test/apikeys)
+- [emailjs](https://www.emailjs.com/docs/rest-api/send/)
 
 ## Installation Instruction
 
 - [Install nodejs and npm](https://nodejs.org/en/download)
+- [Install MongoDB](https://www.mongodb.com/docs/manual/installation/)
 
 ## Test Instruction
+
+To use this project:
+
+- Get a copy of this repo to your local machine.
+- Install the `Node Module`
+
+```
+npm install
+```
+
+- Type in the following to run the database:
+
+```
+npm run seed
+```
+
+- Type in the following to run the project:
+
+```
+npm run start
+```
 
 ## Screenshots
 
@@ -96,6 +141,15 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 - [Jodie Lee](https://github.com/jodielee062788)
 - [Suyash Maharjan](https://github.com/simplesuyash)
 - [Yukitoshi Imaizumi-Zhou](https://github.com/yukitoshi12345)
+
+## Deployed Application
+
+The project was uploaded to [GitHub](https://github.com/) at the following repository:
+[https://github.com/yukitoshi12345/PetMatch-Hub/](https://github.com/yukitoshi12345/PetMatch-Hub)
+
+<br>
+
+You can access the deployed application here: [petmatch-hub.onrender.com](petmatch-hub.onrender.com)
 
 ## License
 
