@@ -41,6 +41,25 @@ export const QUERY_PETS = gql`
     }
   }
 `;
+
+export const QUERY_SINGLE_PET = gql`
+  query singlePet($petId: ID!) {
+    pet(petId: $petId) {
+      _id
+      name
+      breed
+      species
+      age
+      color
+      description
+      location
+      photo
+      featured
+      type
+    }
+  }
+`;
+
 export const QUERY_FEATURED_PETS = gql`
   query featuredPets {
     featuredPets {

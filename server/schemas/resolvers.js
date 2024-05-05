@@ -18,6 +18,9 @@ const resolvers = {
     pets: async () => {
       return Pet.find();
     },
+    pet: async (parent, { petId }) => {
+      return Pet.findOne({ _id: petId });
+    },
     featuredPets: async () => {
       return Pet.find({ featured: true });
     }
