@@ -1,21 +1,25 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
 
-const donationSchema = new Schema({
-  donationDate: {
-    type: Date,
-    default: Date.now,
-  },
+const donationSchema = new mongoose.Schema({
   amount: {
     type: Number,
     required: true,
   },
+
   donor: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
+    required: true,
   },
+
   message: {
     type: String,
+    default: '',
+  },
+
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 

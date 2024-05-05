@@ -31,20 +31,6 @@ const typeDefs = gql`
     featured: Boolean
   }
 
-  type Donation {
-    _id: ID!
-    donor: ID!
-    amount: Float!
-    donationDate: String
-    message: String
-  }
-
-  type Payment {
-    success: Boolean!
-    chargeId: String
-    error: String
-  }
-
   type Auth {
     token: ID!
     user: User
@@ -60,7 +46,6 @@ const typeDefs = gql`
     pets: [Pet]
     pet(petId: ID!): Pet
     featuredPets: [Pet]
-    checkout(amount: Float!, message: String): CheckoutSession
   }
 
   type Mutation {
@@ -73,7 +58,7 @@ const typeDefs = gql`
       role: String!
     ): Auth
     login(email: String!, password: String!): Auth
-    createCharge(amount: Float!, source: String!, currency: String!): Payment
+    createCheckoutSession(amount: Int!, message: String): CheckoutSession
   }
 `;
 
