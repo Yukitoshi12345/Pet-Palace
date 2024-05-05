@@ -43,15 +43,11 @@ const typeDefs = gql`
   }
 
   type Query {
-
     users: [User]
-    user(email: String!): User
+    user(userId: ID!): User
     pets: [Pet]
     pet(_id: ID!): Pet
     featuredPets : [Pet]
-
-    # user(userId: ID!): User
-
   }
 
   type Mutation {

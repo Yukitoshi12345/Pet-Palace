@@ -12,8 +12,8 @@ const resolvers = {
     users: async () => {
       return User.find();
     },
-    user: async (parent, { email }) => {
-      return User.findOne({ email });
+    user: async (parent, { userId }) => {
+      return User.findOne({ _id: userId });
     },
     pets: async () => {
       return Pet.find();
