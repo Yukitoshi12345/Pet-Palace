@@ -1,4 +1,4 @@
-const { User, Pet } = require('../models');
+const { User, Pet, Donation } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
@@ -22,6 +22,40 @@ const resolvers = {
     },
     featuredPets: async () => {
       return Pet.find({ featured: true });
+    },
+    checkout: async (parent, args, context) => {
+      const url = new URL(context.headers.referer).origin;
+      // `args` includes donation amount and optional message
+      const donation = await Donation.create({
+        amount: args.amount,
+        donor: context.user._id,
+        message: args.message,
+      });
+
+      const line_items = [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: 'Donation',
+              images: [`${url}/images/donation.png`],
+            },
+            unit_amount: args.amount * 100,
+          },
+          quantity: 1,
+        },
+      ];
+
+      // This is the checkout payment session
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items,
+        mode: 'payment',
+        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${url}/`,
+      });
+
+      return { session: session.id };
     },
   },
 
