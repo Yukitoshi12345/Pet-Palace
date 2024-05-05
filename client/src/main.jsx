@@ -9,7 +9,7 @@ import Profile from './pages/Profile'
 import Login from './pages/Login'
 import SignUp from './pages/Signup'
 import ErrorPage from './pages/ErrorPage'
-import PetDetails from './pages/PetDetails'
+import PetDetails from './components/Pets/PetListing/PetDetails/PetDetails.jsx'
 import Pets from './pages/Pets'
 
 
