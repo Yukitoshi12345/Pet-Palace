@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import e from "cors"
 import daisyui from "daisyui"
 
 
@@ -10,6 +11,11 @@ export default {
     './node_modules/flowbite/**/*.js'
   ],
   theme: {
+    extend: {
+      gridTemplateColumns: {
+        'auto-fill': 'repeat(auto-fill, minmax(18em, 1fr))'
+      },
+    },
     fontFamily: {
       primary: ['Playfair Display', 'serif'],
       body: ['Barlow', 'sans-serif'],

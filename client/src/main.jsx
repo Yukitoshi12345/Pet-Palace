@@ -4,13 +4,13 @@ import App from './App.jsx'
 import './index.css'
 import Home from './pages/Home'
 import About from './pages/About'
-import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Profile from './pages/Profile'
 import Login from './pages/Login'
 import SignUp from './pages/Signup'
 import ErrorPage from './pages/ErrorPage'
 import PetDetails from './pages/PetDetails'
+import Pets from './pages/Pets'
 
 
 // Bringing in the required imports from 'react-router-dom' to set up application routing behavior
@@ -30,8 +30,8 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: 'services',
-        element: <Services />,
+        path: 'pets',
+        element: <Pets />,
       },
       {
         path: 'contact',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const PetCard = ( {index, type, name, location, age, breed, species, photo}) => {
+const PetCard = ( {index, type, name, location, age, breed, species, photo, featured, color, description}) => {
   return (
     <motion.div className="card w-96 bg-base-200 shadow-xl"
     initial={{
@@ -24,16 +24,18 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo}) => 
       <div className="card-body pt-0 mt-0">
         <h2 className="card-title my-2 border-b-0 ">
           {name}
-          <div className="badge badge-secondary py-3  rounded-xl">FEATURED</div>
+          {featured &&<div className="badge badge-secondary py-3  rounded-xl">FEATURED</div>}
         </h2>
-        <p className='leading-3 my-0'>{location}</p>
+        <p className='leading-3 my-0'>{location} Rescue Center</p>
         <div className="card-actions justify-end">
           <div className="badge badge-outline py-3 rounded-xl">
             {age}
             {age > 1 ? 'years' : 'year'}
           </div>
           <div className="badge badge-outline py-3  rounded-xl">{breed || species}</div>
+          <div className="badge badge-outline py-3  rounded-xl">{color}</div>
         </div>
+        <p className='line-clamp-1'>{description}</p>
       </div>
     </motion.div>
   );

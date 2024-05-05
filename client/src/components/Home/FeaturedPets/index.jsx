@@ -19,11 +19,14 @@ const FeaturedPets = () => {
               <span className="loading loading-bars loading-lg"></span>
             ) : (
               featuredPets.map((pet, index) => (
-                <NavLink to={`/pets/${pet._id}`}>
-                <PetCard key={index} index={index} {...pet} />
+                <NavLink key={index} to={`/pets/${pet._id}`} className='no-underline'>
+                  <PetCard  index={index} {...pet} />
                 </NavLink>
               ))
             )}
+          </div>
+          <div className="flex justify-center my-5">
+            <NavLink to='/pets' className='btn btn-accent'>{home.featuredPets.icon}{home.featuredPets.btn}</NavLink>
           </div>
         </div>
   )

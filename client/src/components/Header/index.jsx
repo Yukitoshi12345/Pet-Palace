@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import NavMenu from './NavMenu';
+
 import { header } from '../../data';
 import { NavLink } from 'react-router-dom';
 import { QUERY_USERS } from '../../utils/queries';
@@ -8,13 +9,19 @@ import Auth from '../../utils/auth'; // Import the Auth module to check if the u
 
 const Header = () => {
   const { companyLogo, donationIcon } = header;
+
   const [bg, setBg] = useState(false);
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
       return window.scrollY > 50 ? setBg(true) : setBg(false);
     });
   });
+
 
   // Fetch users data
   const { loading, data } = useQuery(QUERY_USERS);
@@ -32,18 +39,51 @@ const Header = () => {
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse" // Changed href to to for NavLink
         >
+
           <img src={companyLogo.pic} className="h-24 rounded-full" alt="Logo" />
           <span className="self-center bg-clip-text text-4xl text-transparent  whitespace-nowrap font-logo bg-gradient-to-r from-accent via-secondary to-accent pr-3">
             {companyLogo.name}
           </span>
         </NavLink>
         <div className="flex lg:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            type="button"
-            className="btn btn-accent"
-          >
-            {donationIcon}Donate Now
-          </button>
+          <div className="flex space-x-3">
+            <div className="dropdown dropdown-bottom">
+              <div tabIndex={0} role="button" className="m-1">
+                {Auth.loggedIn() ? header.userIconLoggedIn : header.userIconLoggedOut}
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                {Auth.loggedIn() ? ( // If user is logged in, render logout button
+                  <>
+                    <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
+                      <NavLink to="/profiles/:userId">Profile</NavLink>
+                    </li>
+                    <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
+                      <button onClick={logout}>Logout</button>
+                    </li>
+                  </>
+                ) : (
+                  // If user is not logged in, render login and signup links
+                  <>
+                    <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
+                      <NavLink to="/login">Login</NavLink>
+                    </li>
+                    <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
+                      <NavLink to="/signup">Signup</NavLink>
+                    </li>
+                  </>
+                )}
+              </ul>
+            </div>
+
+            {/* adopt btn  */}
+            <NavLink to="/pets" className="btn btn-accent">
+              {adopt.icon}
+              {adopt.btnTitle}
+            </NavLink>
+          </div>
 
           <button
             data-collapse-toggle="navbar-sticky"
@@ -70,9 +110,11 @@ const Header = () => {
             </svg>
           </button>
         </div>
+
         {/* Embedding the NavMenu component */}
         {/* Pass bg and users as props to NavMenu */}
         <NavMenu bg={bg} userId={userId} users={users} />
+
       </div>
     </nav>
   );
