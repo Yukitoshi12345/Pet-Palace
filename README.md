@@ -16,6 +16,7 @@ Our repository is structured with clarity and maintainability in mind, featuring
 - [Acceptance Criteria](#acceptance-criteria)
 - [Technologies Used](#technologies-used)
 - [Development Dependencies Used](#development-dependencies-used)
+- [API's Used](#apis-used)
 - [Installation Instruction](#installation-instruction)
 - [Test Instruction](#test-instruction)
 - [Screenshots](#screenshots)
@@ -80,7 +81,28 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 
 ## Technologies Used
 
+- JavaScript
+- Node.js
+- MongoDB
+- Express
+- Mongoose
+- Vite
+- CORS
+- dotenv
+- bcrypt
+- graphQL
+- jsonwebtoken
+- stripe
+- @apollo/server
+- apollo-server-express
+- update later
+
 ## Development Dependencies Used
+
+## APIs Used
+
+- [Stripe](https://dashboard.stripe.com/test/apikeys)
+- [emailjs](https://www.emailjs.com/docs/rest-api/send/)
 
 ## Installation Instruction
 
