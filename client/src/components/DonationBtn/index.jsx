@@ -1,14 +1,7 @@
 import React from 'react';
 import { useMutation, gql } from '@apollo/client';
+import { CREATE_CHECKOUT_SESSION } from '../../utils/mutations';
 import { donation } from '../../data';
-
-const CREATE_CHECKOUT_SESSION = gql`
-  mutation CreateCheckoutSession($amount: Int!, $message: String) {
-    createCheckoutSession(amount: $amount, message: $message) {
-      session
-    }
-  }
-`;
 
 const DonationBtn = () => {
   const [createCheckoutSession, { data, loading, error }] = useMutation(
@@ -17,16 +10,16 @@ const DonationBtn = () => {
 
   const handleDonateClick = async () => {
     try {
-      // Example: Set a fixed amount or retrieve from user input or context
-      const amount = 5000; // amount in cents ($50.00)
+      // Example: Assuming you're passing the amount and message as fixed values or from state
+      const amount = 5000; // $50.00, assuming amount is in cents
       const message = 'Thanks for your support!';
-      const response = await createCheckoutSession({
+      const { data } = await createCheckoutSession({
         variables: { amount, message },
       });
 
       // Redirect to Stripe checkout
-      if (response.data.createCheckoutSession.session) {
-        window.location.href = `https://checkout.stripe.com/pay/${response.data.createCheckoutSession.session}`;
+      if (data.createCheckoutSession.session) {
+        window.location.href = `https://checkout.stripe.com/pay/${data.createCheckoutSession.session}`;
       } else {
         console.error('No session ID returned');
       }
