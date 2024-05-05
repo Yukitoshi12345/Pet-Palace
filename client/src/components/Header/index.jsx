@@ -8,7 +8,7 @@ import { useQuery } from '@apollo/client';
 import Auth from '../../utils/auth'; // Import the Auth module to check if the user is logged in
 
 const Header = () => {
-  const { companyLogo, donationIcon } = header;
+  const { companyLogo, donationIcon, adopt } = header;
 
   const [bg, setBg] = useState(false);
   const logout = (event) => {
