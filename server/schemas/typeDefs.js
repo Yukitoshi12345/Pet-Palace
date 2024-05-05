@@ -14,7 +14,7 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     type: String!
-    breed:  String
+    breed: String
     species: String
     gender: String!
     age: Float
@@ -31,6 +31,14 @@ const typeDefs = gql`
     featured: Boolean
   }
 
+  type Donation {
+    _id: ID!
+    donor: ID!
+    amount: Float!
+    donationDate: String
+    message: String
+  }
+
   type Payment {
     success: Boolean!
     chargeId: String
@@ -42,12 +50,17 @@ const typeDefs = gql`
     user: User
   }
 
+  type CheckoutSession {
+    session: ID!
+  }
+
   type Query {
     users: [User]
     user(userId: ID!): User
     pets: [Pet]
     pet(petId: ID!): Pet
-    featuredPets : [Pet]
+    featuredPets: [Pet]
+    checkout(amount: Float!, message: String): CheckoutSession
   }
 
   type Mutation {
@@ -59,15 +72,8 @@ const typeDefs = gql`
       password: String!
       role: String!
     ): Auth
-    login(
-      email: String!, 
-      password: String!
-    ): Auth
-    createCharge(
-      amount: Int!
-      source: String!
-      currency: String = "aud"
-    ): Payment
+    login(email: String!, password: String!): Auth
+    createCharge(amount: Float!, source: String!, currency: String!): Payment
   }
 `;
 
