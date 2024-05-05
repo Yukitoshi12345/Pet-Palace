@@ -11,7 +11,7 @@ import SignUp from './pages/Signup'
 import ErrorPage from './pages/ErrorPage'
 import Pets from './pages/Pets'
 import PetDetails from './components/Pets/PetListing/PetDetails/PetDetails'
-
+import Enquiry from './components/Pets/PetListing/PetDetails/Enquiry'
 
 // Bringing in the required imports from 'react-router-dom' to set up application routing behavior
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -44,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: 'pets/:petId',
         element: <PetDetails />,
+      },
+      {
+        path: 'enquiry',
+        element: <Enquiry />,
       },
       {
         path: 'login',

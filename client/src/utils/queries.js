@@ -50,12 +50,19 @@ export const QUERY_SINGLE_PET = gql`
       breed
       species
       age
+      gender
       color
       description
       location
       photo
       featured
       type
+      health
+      tame
+      specialNeeds
+      vaccinationHistory
+      disability
+      pedigreeKnown
     }
   }
 `;
