@@ -1,4 +1,4 @@
-const { User, Pet } = require('../models');
+const { User, Pet, Donation } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
