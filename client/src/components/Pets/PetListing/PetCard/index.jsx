@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { NavLink } from "react-router-dom";
 
-const PetCard = ( {index, type, name, location, age, breed, species, photo, featured, color, description}) => {
+const PetCard = ( {index, type, name, location, age, breed, species, photo, featured, color, description, pet}) => {
+  
   return (
     <motion.div className="card w-96 bg-base-200 shadow-xl"
     initial={{
@@ -36,6 +38,7 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo, feat
           <div className="badge badge-outline py-3  rounded-xl">{color}</div>
         </div>
         <p className='line-clamp-1'>{description}</p>
+        <NavLink to={`/pets/${pet._id}`} className='btn btn-primary'>More Info</NavLink>
       </div>
     </motion.div>
   );

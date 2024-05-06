@@ -1,4 +1,3 @@
-
 import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
@@ -14,8 +13,20 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($name: String!, $birthday: String!, $favoritePet: String!, $email: String!, $password: String!) {
-    addUser(name: $name, birthday: $birthday, favoritePet: $favoritePet, email: $email, password: $password) {
+  mutation addUser(
+    $name: String!
+    $birthday: String!
+    $favoritePet: String!
+    $email: String!
+    $password: String!
+  ) {
+    addUser(
+      name: $name
+      birthday: $birthday
+      favoritePet: $favoritePet
+      email: $email
+      password: $password
+    ) {
       token
       user {
         _id
@@ -24,6 +35,14 @@ export const ADD_USER = gql`
         favoritePet
         email
       }
+    }
+  }
+`;
+
+export const CREATE_CHECKOUT_SESSION = gql`
+  mutation CreateCheckoutSession($amount: Int!, $message: String) {
+    createCheckoutSession(amount: $amount, message: $message) {
+      session
     }
   }
 `;

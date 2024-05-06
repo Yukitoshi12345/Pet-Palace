@@ -2,7 +2,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-// import { Outlet } from "react-router-dom"
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import About from './pages/About';
@@ -46,18 +45,18 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-// Initialize Stripe with your key
-// const stripeAPI = import.meta.env.VITE_STRIPE_API_KEY;
-// const stripePromise = loadStripe(stripeAPI);
+const stripePromise = loadStripe(
+  'pk_test_51P8fzOP8oR1gIlWHcY2SE0w0DUHQfWcrTpjyyRwxvvxmshjHFf7pKFFT22jDQ5uYVOkvM0yQQnDch5AkF7Cj8qOB00HelqLVDV',
+);
 
 function App() {
   return (
     <ApolloProvider client={client}>
-          <ThemeController /> 
-          <Header />
-          <Outlet />
-          {/* <Footer /> */}
-          <BackToTopBtn />
+      <ThemeController />
+      <Header />
+      <Outlet />
+      {/* <Footer /> */}
+      <BackToTopBtn />
     </ApolloProvider>
   );
 }

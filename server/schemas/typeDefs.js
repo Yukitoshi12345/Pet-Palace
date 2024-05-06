@@ -31,17 +31,22 @@ const typeDefs = gql`
     featured: Boolean
   }
 
-  type Payment {
-    success: Boolean!
-    chargeId: String
-    error: String
-  }
-
   type Auth {
     token: ID!
     user: User
   }
 
+  type CheckoutSession {
+    session: ID!
+  }
+
+  type Query {
+    users: [User]
+    user(userId: ID!): User
+    pets: [Pet]
+    pet(petId: ID!): Pet
+    featuredPets: [Pet]
+  }
 
 
   type Mutation {
@@ -54,11 +59,9 @@ const typeDefs = gql`
       role: String!
     ): Auth
     login(email: String!, password: String!): Auth
-    createCharge(
-      amount: Int!
-      source: String!
-      currency: String = "aud"
-    ): Payment
+
+    createCheckoutSession(amount: Int!, message: String): CheckoutSession
+
   }
 
   type PageInfo {

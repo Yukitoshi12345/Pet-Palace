@@ -1,62 +1,51 @@
-// import React from 'react';
-import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
+import React, { useState } from 'react';
+import {
+  CardElement,
+  useStripe,
+  useElements,
+  Elements,
+} from '@stripe/react-stripe-js';
 
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     if (!stripe || !elements) {
-      console.log('Stripe has not loaded yet!');
+      // Stripe.js has not loaded yet. Make sure to disable form submission until Stripe.js has loaded.
       return;
     }
 
     const cardElement = elements.getElement(CardElement);
+
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
     });
 
     if (error) {
-      console.log('[error]', error);
-      alert(error.message);
+      setError(error.message);
+      setLoading(false);
     } else {
-      console.log('[PaymentMethod]', paymentMethod);
-      // Call your backend to process the payment
-      processPayment(paymentMethod.id);
-    }
-  };
-
-  const processPayment = async (paymentMethodId) => {
-    const response = await fetch('/api/create-charge', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        paymentMethodId,
-        amount: 2000, // Example amount in cents ($20.00)
-      }),
-    });
-
-    const responseData = await response.json();
-    if (responseData.success) {
-      console.log('Payment successful:', responseData);
-      alert('Payment successful!');
-    } else {
-      console.error('Payment failed:', responseData.message);
-      alert('Payment failed: ' + responseData.message);
+      // You would send the paymentMethod.id to your server here!
+      console.log(paymentMethod);
+      // Handle server response here
+      setLoading(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="card-payment-form">
       <CardElement />
-      <button type="submit" disabled={!stripe}>
+      <button type="submit" disabled={!stripe || loading}>
         Pay
       </button>
+      {error && <div className="card-error">{error}</div>}
     </form>
   );
 };

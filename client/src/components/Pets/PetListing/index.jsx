@@ -50,6 +50,7 @@ const PetListing = () => {
   if (error) return <div>error</div>;
   return (
     <main>
+
       <div className="md:grid md:grid-cols-3 md:gap-4">
         {loading ? (
           <span className="loading loading-bars loading-lg"></span>
@@ -62,6 +63,7 @@ const PetListing = () => {
             >
               <PetCard index={index} {...edge.node} />
             </NavLink>
+
           ))
         )}
       </div>

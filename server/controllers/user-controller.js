@@ -11,7 +11,9 @@ module.exports = {
     });
 
     if (!foundUser) {
-      return res.status(400).json({ message: 'Cannot find a user with this id!' });
+      return res
+        .status(400)
+        .json({ message: 'Cannot find a user with this id!' });
     }
 
     res.json(foundUser);
