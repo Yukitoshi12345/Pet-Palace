@@ -14,7 +14,7 @@ const typeDefs = gql`
     _id: ID!
     name: String!
     type: String!
-    breed:  String
+    breed: String
     species: String
     gender: String!
     age: Float
@@ -42,13 +42,7 @@ const typeDefs = gql`
     user: User
   }
 
-  type Query {
-    users: [User]
-    user(userId: ID!): User
-    pets: [Pet]
-    pet(_id: ID!): Pet
-    featuredPets : [Pet]
-  }
+
 
   type Mutation {
     addUser(
@@ -59,15 +53,37 @@ const typeDefs = gql`
       password: String!
       role: String!
     ): Auth
-    login(
-      email: String!, 
-      password: String!
-    ): Auth
+    login(email: String!, password: String!): Auth
     createCharge(
       amount: Int!
       source: String!
       currency: String = "aud"
     ): Payment
+  }
+
+  type PageInfo {
+    hasNextPage: Boolean
+    hasPreviousPage: Boolean
+    startCursor: String
+    endCursor: String
+  }
+
+  type PetEdge {
+    node: Pet!
+    cursor: String!
+  }
+
+  type PetConnection {
+    totalCount: Int!
+    edges: [PetEdge!]!
+    pageInfo: PageInfo!
+  }
+  type Query {
+    users: [User]
+    user(userId: ID!): User
+    pets(first: Int, after: String): PetConnection!
+    pet(_id: ID!): Pet
+    featuredPets: [Pet]
   }
 `;
 

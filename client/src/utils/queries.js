@@ -7,7 +7,7 @@ export const QUERY_USERS = gql`
       name
       birthday
       favoritePet
-      email  
+      email
     }
   }
 `;
@@ -19,28 +19,59 @@ export const QUERY_SINGLE_USER = gql`
       name
       birthday
       favoritePet
-      email  
+      email
     }
   }
 `;
 
+// export const QUERY_PETS = gql`
+//   query pets {
+//     pets {
+//       _id
+//       name
+//       breed
+//       species
+//       age
+//       color
+//       description
+//       location
+//       photo
+//       featured
+//       type
+//     }
+//   }
+// `;
+
 export const QUERY_PETS = gql`
-  query pets {
-    pets {
-      _id
-      name
-      breed
-      species
-      age
-      color
-      description
-      location
-      photo
-      featured
-      type
+  query pets($petsLimit: Int!, $cursor: String) {
+    pets(first: $petsLimit, after: $cursor) {
+      totalCount
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+      edges {
+        cursor
+        node {
+          _id
+          name
+          breed
+          species
+          age
+          color
+          description
+          location
+          photo
+          featured
+          type
+        }
+      }
     }
   }
 `;
+
 export const QUERY_FEATURED_PETS = gql`
   query featuredPets {
     featuredPets {

@@ -66,11 +66,12 @@ export default {
         neutral: "#ffffff",
         accent: "#A16207",
         primary: "#1f1f1f",
+        secondary: "#333c4d",
       },
       emerald:{
         ...require("daisyui/src/theming/themes")["emerald"],
         accent: "#A16207",
-        
+        secondary: "#fff",
         primary: "#faf9f6",
       }
     }
