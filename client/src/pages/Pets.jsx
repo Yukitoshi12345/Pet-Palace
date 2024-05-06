@@ -5,17 +5,15 @@ import PetListing from '../components/Pets/PetListing';
 
 const Pets = () => {
   return (
-    <section id="pets" className="section flex-col justify-between relative pt-10">
-      <div>
-        <div className="container mx-auto">
-          <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row">
-              {/* <Search /> */}
-              <div>
-                <PetListing />
-              </div>
-            </div>
-          </div>
+    <section
+      id="pets"
+      className="section flex-col justify-between relative pt-10"
+    >
+      <div className="container mx-auto">
+        <div className=" bg-base-200 flex-col lg:flex-row">
+          <Search />
+          
+          <PetListing />
         </div>
       </div>
       <Footer />
