@@ -24,23 +24,23 @@ export const QUERY_SINGLE_USER = gql`
   }
 `;
 
-// export const QUERY_PETS = gql`
-//   query pets {
-//     pets {
-//       _id
-//       name
-//       breed
-//       species
-//       age
-//       color
-//       description
-//       location
-//       photo
-//       featured
-//       type
-//     }
-//   }
-// `;
+export const QUERY_ALL_PETS = gql`
+  query allPets {
+    pets {
+      _id
+      name
+      breed
+      species
+      age
+      color
+      description
+      location
+      photo
+      featured
+      type
+    }
+  }
+`;
 
 export const QUERY_PETS = gql`
   query pets($petsLimit: Int!, $cursor: String) {

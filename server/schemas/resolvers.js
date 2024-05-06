@@ -38,6 +38,10 @@ const resolvers = {
       return { totalCount, edges, pageInfo };
     },
 
+    allPets: async () => {
+      return Pet.find();
+    },
+
     pet: async (parent, { petId }) => {
       return Pet.findOne({ _id: petId });
     },

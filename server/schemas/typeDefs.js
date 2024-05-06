@@ -74,11 +74,11 @@ const typeDefs = gql`
   type Query {
     users: [User]
     user(userId: ID!): User
+    allPets: [Pet]
     pets(first: Int, after: String): PetConnection!
-    pet(_id: ID!): Pet
+    pet(petId: ID!): Pet
     featuredPets: [Pet]
   }
-
 `;
 
 module.exports = typeDefs;
