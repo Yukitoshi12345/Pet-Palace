@@ -155,7 +155,7 @@ npm run dev
 The project was uploaded to [GitHub](https://github.com/) at the following repository:
 [https://github.com/yukitoshi12345/Pet-Palace/](https://github.com/yukitoshi12345/Pet-Palace)
 
-You can access the deployed application here: []()
+You can access the deployed application here: [https://pet-palace-syll.onrender.com/](https://pet-palace-syll.onrender.com/)
 
 ## License
 
