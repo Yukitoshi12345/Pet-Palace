@@ -4,14 +4,11 @@ const Pagination = ({
   startIndex,
   endIndex,
   totalCount,
-  hasPreviousPage,
   hasNextPage,
-  handlePrev,
-  handleNext,
-  fetchMore,
+  handleMore,
 }) => {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mt-6 gap-2">
       {/* <!-- Help text --> */}
       <span className="text-sm ">
         Showing <span className="font-semibold  text-neutral">{startIndex}</span> to{' '}
@@ -19,17 +16,15 @@ const Pagination = ({
         <span className="font-semibold text-neutralte">{totalCount}</span> Pets
       </span>
       {/* <!-- Buttons --> */}
-      <div className="inline-flex mt-2 xs:mt-0">
-        {hasPreviousPage && (
-          <button className="flex items-center justify-center px-3 h-8 text-sm font-medium  rounded-s :bg-base-200 border-base-100 hover:bg-secondary hover:text-neutral" onClick={handlePrev}>
-            Prev
+      <div className="inline-flex xs:mt-0">
+
+        {endIndex !== totalCount ? (
+          <button className="flex items-center justify-center px-3 h-8 text-sm font-medium  border-0 border-s rounded-e bg-base-200 border-base-100 hover:bg-secondary hover:text-neutral" onClick={handleMore}>
+            Show More
           </button>
-        )}
-        {hasNextPage && (
-          <button className="flex items-center justify-center px-3 h-8 text-sm font-medium  border-0 border-s rounded-e bg-base-200 border-base-100 hover:bg-secondary hover:text-neutral" onClick={handleNext}>
-            Next
-          </button>
-        )}
+        ):
+        <p>No more pets to show. </p>
+      }
       </div>
     </div>
   );
