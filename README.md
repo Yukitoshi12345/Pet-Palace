@@ -137,7 +137,7 @@ npm run seed
 - Type in the following to run the project:
 
 ```
-npm run start
+npm run dev
 ```
 
 ## Screenshots
