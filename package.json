@@ -8,9 +8,10 @@
     "start": "node server --ignore client",
     "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
-    "install": "cd server && npm i && cd ../client && npm i",
+    "install": "cd server && npm i && cd ../client && npm i && npm i --production=false",
     "client": "cd client && npm start",
-    "seed": "cd server && npm run seed"
+    "seed": "cd server && npm run seed",
+    "render-build": "npm install && npm run build"
   },
   "keywords": [],
   "author": "Jodie Lee, Suyash Maharjan, Yukitoshi Imaizumi-Zhou",
