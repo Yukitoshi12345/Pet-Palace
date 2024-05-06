@@ -38,7 +38,7 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo, feat
           <div className="badge badge-outline py-3  rounded-xl">{color}</div>
         </div>
         <p className='line-clamp-1'>{description}</p>
-        <NavLink to={`/pets/${pet._id}`} className='btn btn-primary'>More Info</NavLink>
+        <NavLink to={`/pets/${pet?._id}`} className='btn btn-primary'>More Info</NavLink>
       </div>
     </motion.div>
   );
