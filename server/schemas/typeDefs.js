@@ -39,16 +39,6 @@ const typeDefs = gql`
   type CheckoutSession {
     session: ID!
   }
-
-  type Query {
-    users: [User]
-    user(userId: ID!): User
-    pets: [Pet]
-    pet(petId: ID!): Pet
-    featuredPets: [Pet]
-  }
-
-
   type Mutation {
     addUser(
       name: String!
@@ -88,6 +78,7 @@ const typeDefs = gql`
     pet(_id: ID!): Pet
     featuredPets: [Pet]
   }
+
 `;
 
 module.exports = typeDefs;
