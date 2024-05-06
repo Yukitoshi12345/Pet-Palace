@@ -1,4 +1,4 @@
-<h1 align ="center">PetMatch Hub</h1>
+<h1 align ="center">Pet Palace</h1>
 
 Our project, a comprehensive Pet Adoption Platform, is designed to seamlessly connect pets in need of homes with potential adopters and to facilitate community engagement and support for animal shelters. This web application leverages modern technologies and industry best practices to deliver a user-friendly, interactive, and responsive experience.
 
@@ -153,10 +153,10 @@ npm run dev
 ## Deployed Application
 
 The project was uploaded to [GitHub](https://github.com/) at the following repository:
-[https://github.com/yukitoshi12345/PetMatch-Hub/](https://github.com/yukitoshi12345/PetMatch-Hub)
+[https://github.com/yukitoshi12345/Pet-Palace/](https://github.com/yukitoshi12345/Pet-Palace)
 
-You can access the deployed application here: [petmatch-hub.onrender.com](petmatch-hub.onrender.com)
+You can access the deployed application here: []()
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/Yukitoshi12345/PetMatch-Hub/blob/main/LICENSE).
+This project is licensed under the [MIT License](https://github.com/Yukitoshi12345/Pet-Palace/blob/main/LICENSE).
