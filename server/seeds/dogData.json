@@ -82,6 +82,7 @@
     "vaccinationHistory": "Fully Vaccinated",
     "disability": "Epilepsy",
     "pedigreeKnown": "true",
-    "type": "Dog"
+    "type": "Dog",
+    "featured": "true"
   }
 ]

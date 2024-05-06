@@ -37,11 +37,11 @@ const Header = () => {
 
         <NavLink
           to="/"
-          className="flex items-center space-x-3 rtl:space-x-reverse" // Changed href to to for NavLink
+          className="flex items-center space-x-3 rtl:space-x-reverse" 
         >
 
           <img src={companyLogo.pic} className="h-24 rounded-full" alt="Logo" />
-          <span className="self-center bg-clip-text text-4xl text-transparent  whitespace-nowrap font-logo bg-gradient-to-r from-accent via-secondary to-accent pr-3">
+          <span className="self-center bg-clip-text text-4xl text-transparent  whitespace-nowrap font-logo bg-gradient-to-r  from-orange-900 via-neutral to-orange-900 pr-3">
             {companyLogo.name}
           </span>
         </NavLink>

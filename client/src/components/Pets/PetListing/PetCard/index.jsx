@@ -13,13 +13,13 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo, feat
     whileInView={{
       opacity: 1,
       y: 0,
-      transition: { duration: 1, delay: 0.5, ease: 'easeInOut'}
+      transition: { duration: 1, delay: 0.0, ease: 'easeInOut'}
     }}
     viewport= {{once: false}}
     >
       <figure className='rounded-t-2xl my-0'>
         <img 
-          src={`/images/pets/${type.toLowerCase()}s/${photo}`}
+          src={`/images/pets/${type?.toLowerCase()}s/${photo}`}
           alt={`featured pet ${name}`}
         />
       </figure>

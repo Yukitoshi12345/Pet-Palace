@@ -5,7 +5,7 @@ import PetListing from '../components/Pets/PetListing';
 
 const Pets = () => {
   return (
-    <section id="pets" className="section flex-col justify-between relative">
+    <section id="pets" className="section flex-col justify-between relative pt-10">
       <div>
         <div className="container mx-auto">
           <div className="hero min-h-screen bg-base-200">

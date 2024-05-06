@@ -14,12 +14,34 @@ const resolvers = {
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
     },
-    pets: async () => {
-      return Pet.find();
+    
+    
+    pets: async (parent, { first, after }) => {
+      // let query = {};
+      // if (after) {
+      //   query = { _id: { $gt: new ObjectId(after) } };
+      // }
+      // tell mongoose to fetch next set of pets after the cursor
+      const results = await Pet.find(after ? { _id: { $gt: new ObjectId(after) } } : {}).sort({ name: 1 }).limit(first || 6);
+      
+      const edges = results.map((pet) => ({
+        node: pet,
+        cursor: pet._id,
+      }));
+      const totalCount = await Pet.countDocuments();
+      const pageInfo = {
+        hasNextPage: edges.length < totalCount,
+        hasPreviousPage: !!after,
+        startCursor: edges[0].cursor,  
+        endCursor: edges[edges.length - 1].cursor
+      };
+      return { totalCount, edges, pageInfo };
     },
+
     pet: async (parent, { petId }) => {
       return Pet.findOne({ _id: petId });
     },
+
     featuredPets: async () => {
       return Pet.find({ featured: true });
     },

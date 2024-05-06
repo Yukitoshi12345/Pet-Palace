@@ -48,6 +48,7 @@ const typeDefs = gql`
     featuredPets: [Pet]
   }
 
+
   type Mutation {
     addUser(
       name: String!
@@ -58,7 +59,34 @@ const typeDefs = gql`
       role: String!
     ): Auth
     login(email: String!, password: String!): Auth
+
     createCheckoutSession(amount: Int!, message: String): CheckoutSession
+
+  }
+
+  type PageInfo {
+    hasNextPage: Boolean
+    hasPreviousPage: Boolean
+    startCursor: String
+    endCursor: String
+  }
+
+  type PetEdge {
+    node: Pet!
+    cursor: String!
+  }
+
+  type PetConnection {
+    totalCount: Int!
+    edges: [PetEdge!]!
+    pageInfo: PageInfo!
+  }
+  type Query {
+    users: [User]
+    user(userId: ID!): User
+    pets(first: Int, after: String): PetConnection!
+    pet(_id: ID!): Pet
+    featuredPets: [Pet]
   }
 `;
 
