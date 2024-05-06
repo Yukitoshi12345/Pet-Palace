@@ -15,26 +15,25 @@ const resolvers = {
       return User.findOne({ _id: userId });
     },
     
-    
     pets: async (parent, { first, after }) => {
-      // let query = {};
-      // if (after) {
-      //   query = { _id: { $gt: new ObjectId(after) } };
-      // }
-      // tell mongoose to fetch next set of pets after the cursor
-      const results = await Pet.find(after ? { _id: { $gt: new ObjectId(after) } } : {}).sort({ name: 1 }).limit(first || 6);
-      
+      const results = await Pet.find(
+        after ? { _id: { $gt: new ObjectId(after) } } : {},
+      )
+        .sort({ name: 1 })
+        .limit(first);
+
       const edges = results.map((pet) => ({
         node: pet,
         cursor: pet._id,
       }));
-      const totalCount = await Pet.countDocuments();
+
+      const totalCount = await Pet.countDocuments(); 
+
       const pageInfo = {
         hasNextPage: edges.length < totalCount,
-        hasPreviousPage: !!after,
-        startCursor: edges[0].cursor,  
-        endCursor: edges[edges.length - 1].cursor
+        endCursor: edges[edges.length - 1]?.cursor,
       };
+
       return { totalCount, edges, pageInfo };
     },
 

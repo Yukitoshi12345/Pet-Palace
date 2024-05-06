@@ -7,47 +7,45 @@ import Pagination from './Pagination';
 
 const PetListing = () => {
   const petsLimit = 6;
-  const [cursor, setCursor] = useState(null);
-  const { loading, data, error, fetchMore } = useQuery(QUERY_PETS, {
-    variables: { petsLimit: petsLimit, cursor: cursor || null },
+  const { loading, data, fetchMore } = useQuery(QUERY_PETS, {
+    variables: { petsLimit: petsLimit },
   });
 
   const edges = data?.pets.edges || [];
-  const [startIndex, setStartIndex] = useState(1);
-  const [endIndex, setEndIndex] = useState(edges.length);
-  const hasPreviousPage = data?.pets.pageInfo.hasPreviousPage;
+  const totalCount = data?.pets.totalCount || 0;
+  const startIndex =  1;
+  const [endIndex, setEndIndex] = useState(petsLimit);
   const hasNextPage = data?.pets.pageInfo.hasNextPage;
+  const endCursor = data?.pets.pageInfo.endCursor;
 
-  const handleNext = () => {
-    // setStartIndex(startIndex + petsLimit);
-    // setEndIndex(endIndex + petsLimit);
-    const endCursor = data?.pets.pageInfo.endCursor;
-    // setCursor(endCursor);
+  const handleMore = () => {
+
     fetchMore({
       variables: { petsLimit: petsLimit, cursor: endCursor },
       updateQuery: (prevResult, { fetchMoreResult }) => {
         const newEdges = fetchMoreResult.pets.edges;
         const newPageInfo = fetchMoreResult.pets.pageInfo;
+        setEndIndex(prevResult.pets.edges.length + newEdges.length);
+
+          
         return newEdges.length
           ? {
               pets: {
-                __typename: prevResult.pets.__typename,
+                _typename: prevResult.pets._typename,
                 edges: [...prevResult.pets.edges, ...newEdges],
                 pageInfo: newPageInfo,
+                totalCount: fetchMoreResult.pets.totalCount,
               },
+              
             }
           : prevResult;
+          
       },
+      
     });
   };
 
-  const handlePrev = () => {
-    setStartIndex(startIndex - petsLimit);
-    setEndIndex(endIndex - petsLimit);
-    const startCursor = data?.pets.pageInfo.startCursor;
-    setCursor(startCursor);
-  };
-  if (error) return <div>error</div>;
+
   return (
     <main>
 
@@ -72,11 +70,9 @@ const PetListing = () => {
         <Pagination
           startIndex={startIndex}
           endIndex={endIndex}
-          hasPreviousPage={hasPreviousPage}
           hasNextPage={hasNextPage}
-          totalCount={data?.pets.totalCount || 0}
-          handleNext={handleNext}
-          handlePrev={handlePrev}
+          totalCount={totalCount}
+          handleMore={handleMore}
         />
       </div>
     </main>
