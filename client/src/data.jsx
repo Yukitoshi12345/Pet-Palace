@@ -258,3 +258,14 @@ export const donation = {
   btnTitle: 'donate now',
   icon: <BiSolidDonateHeart />,
 }
+
+export const search = {
+  placeholder: 'Search for pets by type',
+  petTypes: ['All Pets', 'Cats', 'Dogs', 'Birds', 'Reptiles', 'Small & Furry'],
+  location:{
+    placeholder: 'Location',
+    options: ['All Locations', 'Sydney', 'Melbourne', 'Brisbane'],
+  }
+  
+
+};

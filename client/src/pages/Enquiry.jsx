@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 // import DatePicker from 'react-datepicker';
 // import 'react-datepicker/dist/react-datepicker.css';
-import { contact } from '../../../../data';
-import Footer from '../../../../components/Footer';
-import Alert from '../../../../components/Alert';
+import { contact } from '../data';
+import Footer from '../components/Footer';
+import Alert from '../components/Alert';
 
 const Enquiry = () => {
   const [phoneNumber, setPhoneNumber] = useState('');

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { useParams, NavLink } from 'react-router-dom';
-import { QUERY_SINGLE_PET } from '../../../../utils/queries';
+import { QUERY_SINGLE_PET } from '../utils/queries';
 
 const PetDetails = () => {
   // Get the petId from the URL parameters
