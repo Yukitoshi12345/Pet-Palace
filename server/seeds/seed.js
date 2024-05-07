@@ -14,12 +14,8 @@ db.once('open', async () => {
   try{
     await cleanDB('Pet', 'pets');
     await cleanDB('User', 'users');
-  
-    await Pet.create(birdSeeds);
-    await Pet.create(catSeeds);
-    await Pet.create(dogSeeds);
-    await Pet.create(hamsterSeeds);
-    await Pet.create(rabbitSeeds);
+    const petSeeds = [...birdSeeds, ...catSeeds, ...dogSeeds, ...hamsterSeeds, ...rabbitSeeds].sort((a, b) => a.name.localeCompare(b.name));
+    await Pet.create(petSeeds);
     await User.create(userSeeds);
   
     console.log('Seeding finished successfully!');
