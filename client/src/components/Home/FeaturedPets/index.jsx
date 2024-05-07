@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_FEATURED_PETS } from '../../../utils/queries';
 import PetCard from './PetCard';
 import {home} from '../../../data';
-import { NavLink } from "react-router-dom";
+import { Link} from 'react-router-dom';
 
 const FeaturedPets = () => {
 
@@ -19,14 +19,14 @@ const FeaturedPets = () => {
               <span className="loading loading-bars loading-lg"></span>
             ) : (
               featuredPets.map((pet, index) => (
-                <NavLink key={index} to={`/pets/${pet._id}`} className='no-underline'>
+                <Link key={index} to={`/pets/${pet._id}`} className='no-underline'>
                   <PetCard  index={index} {...pet} />
-                </NavLink>
+                </Link>
               ))
             )}
           </div>
           <div className="flex justify-center my-5">
-            <NavLink to='/pets' className='btn btn-accent'>{home.featuredPets.icon}{home.featuredPets.btn}</NavLink>
+            <Link to='/pets' className='btn btn-accent'>{home.featuredPets.icon}{home.featuredPets.btn}</Link>
           </div>
         </div>
   )

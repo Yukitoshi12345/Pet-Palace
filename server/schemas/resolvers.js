@@ -14,7 +14,7 @@ const resolvers = {
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
     },
-    
+
     pets: async (parent, { first, after }) => {
       const results = await Pet.find(
         after ? { _id: { $gt: new ObjectId(after) } } : {},
@@ -27,7 +27,7 @@ const resolvers = {
         cursor: pet._id,
       }));
 
-      const totalCount = await Pet.countDocuments(); 
+      const totalCount = await Pet.countDocuments();
 
       const pageInfo = {
         hasNextPage: edges.length < totalCount,
@@ -38,16 +38,41 @@ const resolvers = {
     },
 
     allPets: async () => {
-      return Pet.find();
+      return await Pet.find();
     },
 
     pet: async (parent, { petId }) => {
-      return Pet.findOne({ _id: petId });
+      return await Pet.findOne({ _id: petId });
     },
 
     featuredPets: async () => {
-      return Pet.find({ featured: true });
+      return await Pet.find({ featured: true });
     },
+    petTypes: async () => {
+      return await Pet.find().distinct('type');
+      
+    },
+    locations: async () => {
+      return await Pet.find().distinct('location');
+    },
+    // breeds: async (parent, { petType }) => {
+    //   return await Pet.find({ type: petType }).distinct('breed');
+    // },
+    // species: async (parent, { petType }) => {
+    //   return await Pet.find({ type: petType }).distinct('species');
+    // },
+    petsByLocation: async (parent, { location }) => {
+      return await Pet.find({ location: location });
+    },
+    petsByType: async (parent, { type }) => {
+      return await Pet.find({ type: type });
+    },
+    //find the pets by breed or species
+    //the given string may be breed or species
+    petsByBreedOrSpecies: async (parent, { breedOrSpecies }) => {
+      return await Pet.find({ $or: [{ breed: breedOrSpecies }, { species: breedOrSpecies }] });
+    }
+ 
   },
 
   Mutation: {

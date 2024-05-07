@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { QUERY_PETS } from '../../../utils/queries';
 import PetCard from './PetCard';
 import Pagination from './Pagination';
@@ -54,13 +54,13 @@ const PetListing = () => {
           <span className="loading loading-bars loading-lg"></span>
         ) : (
           edges.map((edge, index) => (
-            <NavLink
+            <Link
               key={index}
               to={`/pets/${edge.node?._id}`}
               className="no-underline"
             >
               <PetCard index={index} {...edge.node} />
-            </NavLink>
+            </Link>
 
           ))
         )}

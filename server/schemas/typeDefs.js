@@ -78,6 +78,13 @@ const typeDefs = gql`
     pets(first: Int, after: String): PetConnection!
     pet(petId: ID!): Pet
     featuredPets: [Pet]
+    petTypes: [String]
+    locations: [String]
+    # breeds(petType: String!): [String]
+    # species(petType: String!): [String]
+    petsByLocation(location: String!): [Pet]
+    petsByType(type: String!): [Pet]
+    petsByBreedOrSpecies(breedOrSpecies: String): [Pet]
   }
 `;
 
