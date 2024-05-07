@@ -114,3 +114,45 @@ export const QUERY_FEATURED_PETS = gql`
     }
   }
 `;
+
+export const QUERY_PET_TYPES = gql`
+  query petTypes {
+    petTypes
+  }
+`;
+
+export const QUERY_LOCATIONS = gql`
+  query locations {
+    locations
+  }
+`;
+
+// export const QUERY_BREEDS = gql`
+//   query breeds($petType: String!) {
+//     breeds(petType: $petType)
+//   }
+// `;
+
+// export const QUERY_SPECIES = gql`
+//   query species($petType: String!) {
+//     species(petType: $petType)
+//   }
+// `;
+
+export const QUERY_PETS_BY_LOCATION = gql`
+  query petsByLocation($location: String!) {
+    petsByLocation(location: $location) {
+      _id
+      name
+      breed
+      species
+      age
+      color
+      description
+      location
+      photo
+      featured
+      type
+    }
+  }
+`;

@@ -2,8 +2,10 @@
 //donation logo
 import { BiSolidDonateHeart } from 'react-icons/bi';
 
+//paw icon
+import { MdPets } from "react-icons/md";
+
 //header logos
-import { FaUserLarge } from "react-icons/fa6";
 import { FaUserCheck } from "react-icons/fa6"; 
 import { FaUserLock } from "react-icons/fa6";
 //brand logo
@@ -13,6 +15,10 @@ import logo from './assets/images/logo.gif';
 import { FiMail, FiMapPin } from 'react-icons/fi';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { BsSendArrowUpFill } from 'react-icons/bs';
+
+
+//error page photo
+import dog from './assets/images/error/adopt-me-pet.png';
 
 //about hero photos
 import hero1 from './assets/images/about/hero/hero1.jpg';
@@ -40,7 +46,7 @@ import hero from './assets/images/home/pet-adoption.png';
 import rego1 from './assets/images/home/acnc.png';
 import rego2 from './assets/images/home/ACNC-1.png';
 
-import { MdPets } from "react-icons/md";
+
 
 export const about = {
   heros: [hero1, hero2, hero3, hero4],
@@ -256,13 +262,18 @@ export const donation = {
   icon: <BiSolidDonateHeart />,
 }
 
-export const search = {
-  placeholder: 'Search for pets by type',
-  petTypes: ['All Pets', 'Cats', 'Dogs', 'Birds', 'Reptiles', 'Small & Furry'],
-  location:{
-    placeholder: 'Location',
-    options: ['All Locations', 'Sydney', 'Melbourne', 'Brisbane'],
-  }
-  
-
+export const error = {
+  img: dog,
+  heading: 'Oops!',
+  paragraphs:[
+    'Sorry the page you are looking for is not available.',
+    'But I am available for adoption.'
+  ],
+  btn:{
+    text: 'Adopt Me',
+    icon: <MdPets />,
+  },
+  logo: logo,
 };
+
+

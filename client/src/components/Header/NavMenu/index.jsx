@@ -5,16 +5,16 @@ import { header } from '../../../data';
 import { QUERY_SINGLE_USER } from '../../../utils/queries';
 
 const NavMenu = ({ userId, bg }) => {
-  const { loading, data } = useQuery(QUERY_SINGLE_USER, {
-    variables: { userId: userId }
-  });
+  // const { loading, data } = useQuery(QUERY_SINGLE_USER, {
+  //   variables: { userId: userId }
+  // });
 
-  const user = data?.user;
+  //const user = data?.user;
 
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+  //const logout = (event) => {
+    //event.preventDefault();
+    //Auth.logout();
+  //};
 
   return (
     <div className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
