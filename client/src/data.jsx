@@ -27,9 +27,9 @@ import hero3 from './assets/images/about/hero/hero3.jpg';
 import hero4 from './assets/images/about/hero/hero4.jpg';
 
 //about staff photos
-//import jodi from './assets/images/about/jodi.jpg';
 import suyash from './assets/images/about/suyash.jpg';
 import yukitoshi from './assets/images/about/Yuki.jpg';
+import jodie from './assets/images/about/jodie.jpg';
 
 //about sponsors photos
 import myer from './assets/images/about/myer_logo.webp';
@@ -77,7 +77,7 @@ export const about = {
       {
         name: 'Jodie Lee',
         role: 'CEO',
-        pic: 'jodie',
+        pic: jodie,
       },
       {
         name: 'Suyash Maharjan',
