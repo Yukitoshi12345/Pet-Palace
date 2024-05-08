@@ -54,6 +54,7 @@ const typeDefs = gql`
     changePassword(currentPassword: String!, newPassword: String!, confirmPassword: String!): Boolean!
     createCheckoutSession(amount: Int!, message: String): CheckoutSession
     addFavorite(petId: ID!): User
+    removeFavorite(petId: ID!): User
   }
 
   type PageInfo {
