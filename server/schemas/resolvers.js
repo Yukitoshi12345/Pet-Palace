@@ -144,6 +144,29 @@ const resolvers = {
 
       return { session: session.id };
     },
+
+    Mutation: {
+      changePassword: async (parent, { currentPassword, newPassword, confirmPassword }, { user }) => {
+        
+        if (!user) {
+          throw new Error('User is not authenticated');
+        }
+  
+        if (newPassword !== confirmPassword) {
+          throw new Error('New password and confirm password do not match');
+        }
+  
+        const validPassword = await user.isValidPassword(currentPassword);
+        if (!validPassword) {
+          throw new Error('Current password is incorrect');
+        }
+  
+        user.password = newPassword;
+        await user.save();
+  
+        return true; 
+      }
+    },
   },
 };
 

@@ -46,3 +46,9 @@ export const CREATE_CHECKOUT_SESSION = gql`
     }
   }
 `;
+
+export const CHANGE_PASSWORD = gql`
+  mutation changePassword($currentPassword: String!, $newPassword: String!, $confirmPassword: String!) {
+    changePassword(currentPassword: $currentPassword, newPassword: $newPassword, confirmPassword: $confirmPassword)
+  }
+`;
