@@ -10,7 +10,7 @@ import ThemeController from './components/ThemeController';
 import Footer from './components/Footer';
 import BackToTopBtn from './components/BackToTopBtn';
 import Contact from './pages/Contact';
-import CheckoutForm from './pages/CheckoutForm'; // The Stripe Checkout Form component
+import Donation from './pages/Donation'; // The Stripe Checkout Form component
 
 import {
   ApolloClient,
@@ -44,10 +44,6 @@ const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
 });
-
-const stripePromise = loadStripe(
-  'pk_test_51P8fzOP8oR1gIlWHcY2SE0w0DUHQfWcrTpjyyRwxvvxmshjHFf7pKFFT22jDQ5uYVOkvM0yQQnDch5AkF7Cj8qOB00HelqLVDV',
-);
 
 function App() {
   return (
