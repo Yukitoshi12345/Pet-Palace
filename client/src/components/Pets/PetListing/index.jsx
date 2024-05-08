@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import { QUERY_PETS } from '../../../utils/queries';
 import PetCard from './PetCard';
 import Pagination from './Pagination';
@@ -19,15 +18,12 @@ const PetListing = () => {
   const endCursor = data?.pets.pageInfo.endCursor;
 
   const handleMore = () => {
-
     fetchMore({
       variables: { petsLimit: petsLimit, cursor: endCursor },
       updateQuery: (prevResult, { fetchMoreResult }) => {
         const newEdges = fetchMoreResult.pets.edges;
         const newPageInfo = fetchMoreResult.pets.pageInfo;
         setEndIndex(prevResult.pets.edges.length + newEdges.length);
-
-          
         return newEdges.length
           ? {
               pets: {
@@ -36,37 +32,24 @@ const PetListing = () => {
                 pageInfo: newPageInfo,
                 totalCount: fetchMoreResult.pets.totalCount,
               },
-              
             }
           : prevResult;
-          
       },
-      
     });
   };
 
-
   return (
     <main>
-
       <div className="md:grid md:grid-cols-3 md:gap-4">
         {loading ? (
           <span className="loading loading-bars loading-lg"></span>
         ) : (
           edges.map((edge, index) => (
-            <Link
-              key={index}
-              to={`/pets/${edge.node?._id}`}
-              className="no-underline"
-            >
-              <PetCard index={index} {...edge.node} />
-            </Link>
-
+            <PetCard key={index} index={index} pet={edge.node} />
           ))
         )}
       </div>
       <div className="flex justify-center">
-        {/* You can remove the console.log statements */}
         <Pagination
           startIndex={startIndex}
           endIndex={endIndex}
