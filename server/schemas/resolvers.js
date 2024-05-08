@@ -145,18 +145,25 @@ const resolvers = {
       return { session: session.id };
     },
 
-    changePassword: async (parent, { currentPassword, newPassword, confirmPassword }, context) => {
-  
+    changePassword: async (_, { currentPassword, newPassword, confirmPassword }, context) => {
+      // Verify the user's identity using JWT
+      if (!context.user) {
+        throw new AuthenticationError('User not authenticated.');
+      }
+
+      // Find the user in the database
       const user = await User.findById(context.user._id);
       if (!user) {
         throw new AuthenticationError('User not found.');
       }
 
+      // Validate the current password
       const passwordMatch = await bcrypt.compare(currentPassword, user.password);
       if (!passwordMatch) {
         throw new UserInputError('Incorrect current password.');
       }
 
+      // Validate the new password and confirm password
       if (newPassword !== confirmPassword) {
         throw new UserInputError("New password and confirm password don't match.");
       }
@@ -164,13 +171,15 @@ const resolvers = {
         throw new UserInputError('New password must be at least 5 characters long.');
       }
 
+      // Hash the new password and update the user's password in the database
       const hashedPassword = await bcrypt.hash(newPassword, 10);
       user.password = hashedPassword;
       await user.save();
 
-      return true;
-     }
-    }
-  };
+      return true; // Password change successful
+    },
+  },
+};
+
 
 module.exports = resolvers;

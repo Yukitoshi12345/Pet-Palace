@@ -52,7 +52,7 @@ const router = createBrowserRouter([
         element: <Enquiry />,
       },
       {
-        path: 'changepassword',
+        path: 'profiles/:userId/changepassword',
         element: <ChangePassword />,
       },
       {
