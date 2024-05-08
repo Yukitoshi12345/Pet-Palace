@@ -19,7 +19,7 @@ const resolvers = {
       const results = await Pet.find(
         after ? { _id: { $gt: new ObjectId(after) } } : {},
       )
-        .sort({ name: 1 })
+        .sort({ name: 1 , _id: 1 })
         .limit(first);
 
       const edges = results.map((pet) => ({
@@ -50,7 +50,6 @@ const resolvers = {
     },
     petTypes: async () => {
       return await Pet.find().distinct('type');
-      
     },
     locations: async () => {
       return await Pet.find().distinct('location');
@@ -70,9 +69,10 @@ const resolvers = {
     //find the pets by breed or species
     //the given string may be breed or species
     petsByBreedOrSpecies: async (parent, { breedOrSpecies }) => {
-      return await Pet.find({ $or: [{ breed: breedOrSpecies }, { species: breedOrSpecies }] });
-    }
- 
+      return await Pet.find({
+        $or: [{ breed: breedOrSpecies }, { species: breedOrSpecies }],
+      });
+    },
   },
 
   Mutation: {
