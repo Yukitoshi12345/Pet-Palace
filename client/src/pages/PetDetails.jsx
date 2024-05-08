@@ -1,25 +1,40 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { useParams, NavLink } from 'react-router-dom';
 import { QUERY_SINGLE_PET } from '../utils/queries';
+import { ADD_FAVORITE } from '../utils/mutations';
 
 const PetDetails = () => {
-  // Get the petId from the URL parameters
   const { petId } = useParams();
-
-  // Fetch data for the single pet using the QUERY_SINGLE_PET query
+  
   const { loading, data } = useQuery(QUERY_SINGLE_PET, {
     variables: { petId: petId },
   });
+
+  const [addFavorite] = useMutation(ADD_FAVORITE);
 
   const pet = data?.pet || {};
 
   // Check if pet.type is defined before using toLowerCase()
   const petType = pet.type ? pet.type.toLowerCase() : '';
 
+  const handleFavoriteClick = async () => {
+    try {
+      await addFavorite({
+        variables: { petId: pet._id },
+      });
+      // Optionally, provide visual feedback to the user that the pet has been favorited
+      alert('Pet added to favorites!');
+    } catch (error) {
+      console.error('Error adding pet to favorites:', error);
+      // Optionally, handle errors
+    }
+  };
+
   if (loading) {
     return <div className="text-center mt-8">Loading...</div>;
   }
+  
 
   return (
     <div className="container mx-auto section">
@@ -30,6 +45,8 @@ const PetDetails = () => {
             {pet.featured && <span className="badge badge-secondary py-3 ml-4 rounded-xl">FEATURED</span>}
             {pet.tame && <span className="badge badge-secondary py-3 ml-4 rounded-xl">TAME</span>}
             {pet.pedigreeKnown && <span className="badge badge-secondary py-3 ml-4 rounded-xl">PEDIGREE KNOWN</span>}
+            <button onClick={handleFavoriteClick} className="btn btn-primary rounded">Add to Favorites</button>
+
           </h1>
         </div>
         <div className='grid grid-cols-2'>

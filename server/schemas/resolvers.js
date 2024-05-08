@@ -12,7 +12,8 @@ const resolvers = {
       return User.find();
     },
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+      return User.findOne({ _id: userId }).populate('favorites');
+      
     },
 
     pets: async (parent, { first, after }) => {
@@ -146,24 +147,20 @@ const resolvers = {
     },
 
     changePassword: async (_, { currentPassword, newPassword, confirmPassword }, context) => {
-      // Verify the user's identity using JWT
       if (!context.user) {
         throw new AuthenticationError('User not authenticated.');
       }
 
-      // Find the user in the database
       const user = await User.findById(context.user._id);
       if (!user) {
         throw new AuthenticationError('User not found.');
       }
 
-      // Validate the current password
       const passwordMatch = await bcrypt.compare(currentPassword, user.password);
       if (!passwordMatch) {
         throw new UserInputError('Incorrect current password.');
       }
 
-      // Validate the new password and confirm password
       if (newPassword !== confirmPassword) {
         throw new UserInputError("New password and confirm password don't match.");
       }
@@ -171,13 +168,32 @@ const resolvers = {
         throw new UserInputError('New password must be at least 5 characters long.');
       }
 
-      // Hash the new password and update the user's password in the database
       const hashedPassword = await bcrypt.hash(newPassword, 10);
       user.password = hashedPassword;
       await user.save();
 
-      return true; // Password change successful
+      return true;
     },
+
+    addFavorite: async (parent, { petId }, context) => {
+  
+      if (!context.user) {
+        throw new AuthenticationError('User not authenticated.');
+      }
+
+      try {
+        const updatedUser = await User.findByIdAndUpdate(
+          context.user._id,
+          { $addToSet: { favorites: petId } },
+          { new: true } 
+        );
+
+        return updatedUser;
+      } catch (error) {
+        console.error('Error adding favorite:', error);
+        throw new Error('Error adding favorite.');
+      }
+    },  
   },
 };
 

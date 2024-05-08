@@ -53,3 +53,12 @@ export const CHANGE_PASSWORD = gql`
   }
 `;
 
+export const ADD_FAVORITE = gql`
+  mutation addFavorite($petId: ID!) {
+    addFavorite(petId: $petId) {
+      _id
+      name
+    }
+  }
+`;
+

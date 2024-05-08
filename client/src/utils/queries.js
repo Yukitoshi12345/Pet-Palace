@@ -8,6 +8,12 @@ export const QUERY_USERS = gql`
       birthday
       favoritePet
       email
+      favorites {
+        _id
+        name 
+        photo
+        type
+      }
     }
   }
 `;
@@ -20,6 +26,12 @@ export const QUERY_SINGLE_USER = gql`
       birthday
       favoritePet
       email
+      favorites {
+        _id
+        name
+        photo 
+        type
+      }
     }
   }
 `;

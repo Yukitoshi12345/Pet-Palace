@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom'; // Import Link
 import moment from 'moment'; 
 import { QUERY_SINGLE_USER } from '../utils/queries';
+
 
 const Profile = () => {
   const { userId } = useParams();
@@ -17,26 +18,16 @@ const Profile = () => {
     return <div>Loading...</div>;
   }
 
-  const handleAddFavorite = (petId) => {
-    // Check if the user is already loaded
-    if (user) {
-      // Update the user object to add the pet to favorites
-      setUser({
-        ...user,
-        favoritePets: [...user.favoritePets, petId],
-      });
-    }
-  };
-
-  // Assuming data.user contains the user object
+  console.log(data);
+  
   const userData = data?.user || {};
-  const favoritePets = userData.favoritePets || [];
+  const favoritePets = userData.favorites || [];
 
   return (
     <div className="container mx-auto mt-20 section">
-      <section id="profile" className="max-w-lg mx-auto bg-neutral rounded-lg shadow-lg p-8">
-        <h2 className="text-2xl font-bold mb-4">User Profile</h2>
-        <div className="border border-gray-300 rounded p-4 ">
+      <section id="profile" className="flex max-w-2xl mx-auto bg-neutral rounded-lg shadow-lg p-8">
+        <div className="w-1/2 border border-gray-300 rounded p-4 mr-4">
+          <h2 className="text-2xl font-bold mb-4">User Profile</h2>
           <p className="text-lg mb-2 text-base-100">
             <span className="font-semibold">Name:</span> {userData.name}
           </p>
@@ -50,14 +41,17 @@ const Profile = () => {
             <span className="font-semibold">Favorite Pet:</span> {userData.favoritePet}
           </p>
         </div>
-        <div>
-          <h3 className="text-lg font-bold mt-8 mb-4">Favorite Pets</h3>
-          {favoritePets.map((petId) => (
-            <div key={petId} className="border border-gray-300 rounded p-4 mb-4">
-              {/* Render the pet details here */}
+        <div className="w-1/2">
+          <h3 className="text-lg font-bold mb-4">Favorite Pets</h3>
+          {favoritePets.map((pet) => (
+            <div key={pet._id} className="border border-gray-300 rounded p-4 mb-4">
               <p className="text-lg mb-2 text-base-100">
-                Pet ID: {petId}
+                <span className="font-semibold">Pet Name:</span> <Link to={`/pets/${pet._id}`}>{pet.name}</Link>
               </p>
+              <p className="text-lg mb-2 text-base-100">
+                <span className="font-semibold">Pet Type:</span> {pet.type} {/* Display pet type */}
+              </p>
+              <img src={pet.photo} alt={pet.name} className="w-full rounded-lg mb-2" />
               {/* Assuming there's a button to remove pet from favorites */}
               <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                 Remove from Favorites

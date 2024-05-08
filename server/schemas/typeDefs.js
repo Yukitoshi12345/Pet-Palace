@@ -9,6 +9,7 @@ const typeDefs = gql`
     email: String!
     password: String!
     role: String!
+    favorites: [Pet!]
   }
   type Pet {
     _id: ID!
@@ -39,6 +40,7 @@ const typeDefs = gql`
   type CheckoutSession {
     session: ID!
   }
+
   type Mutation {
     addUser(
       name: String!
@@ -51,7 +53,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     changePassword(currentPassword: String!, newPassword: String!, confirmPassword: String!): Boolean!
     createCheckoutSession(amount: Int!, message: String): CheckoutSession
-
+    addFavorite(petId: ID!): User
   }
 
   type PageInfo {
