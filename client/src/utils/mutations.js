@@ -52,3 +52,4 @@ export const CHANGE_PASSWORD = gql`
     changePassword(currentPassword: $currentPassword, newPassword: $newPassword, confirmPassword: $confirmPassword)
   }
 `;
+
