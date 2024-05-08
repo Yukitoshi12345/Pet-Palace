@@ -1,25 +1,21 @@
 const mongoose = require('mongoose');
 
 const donationSchema = new mongoose.Schema({
-  amount: {
+  donationAmount: {
     type: Number,
     required: true,
+    minlength: 1,
+    maxlength: 280,
+    trim: true,
   },
-
-  donor: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  },
-
-  message: {
-    type: String,
-    default: '',
-  },
-
-  createdAt: {
+  donationDate: {
     type: Date,
     default: Date.now,
+    required: true,
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
   },
 });
 
