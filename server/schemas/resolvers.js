@@ -193,7 +193,29 @@ const resolvers = {
         console.error('Error adding favorite:', error);
         throw new Error('Error adding favorite.');
       }
-    },  
+    },
+    
+    removeFavorite: async (parent, { petId }, context) => {
+      if (!context.user) {
+        throw new Error('Authentication required');
+      }
+
+      try {
+        const user = await User.findById(context.user._id);
+
+        if (!user) {
+          throw new Error('User not found');
+        }
+
+        user.favorites = user.favorites.filter(favorite => favorite.toString() !== petId);
+        await user.save();
+
+        return user;
+      } catch (error) {
+        console.error('Error removing favorite:', error);
+        throw new Error('Failed to remove favorite');
+      }
+    }
   },
 };
 
