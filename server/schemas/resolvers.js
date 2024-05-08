@@ -109,28 +109,76 @@ const resolvers = {
       return { token, user };
     },
 
-    changePassword: async (
-      parent,
-      { currentPassword, newPassword, confirmPassword },
-      { user },
-    ) => {
+    changePassword: async (_, { currentPassword, newPassword, confirmPassword }, context) => {
+      if (!context.user) {
+        throw new AuthenticationError('User not authenticated.');
+      }
+
+      const user = await User.findById(context.user._id);
       if (!user) {
-        throw new Error('User is not authenticated');
+        throw new AuthenticationError('User not found.');
+      }
+
+      const passwordMatch = await bcrypt.compare(currentPassword, user.password);
+      if (!passwordMatch) {
+        throw new UserInputError('Incorrect current password.');
       }
 
       if (newPassword !== confirmPassword) {
-        throw new Error('New password and confirm password do not match');
+        throw new UserInputError("New password and confirm password don't match.");
+      }
+      if (newPassword.length < 5) {
+        throw new UserInputError('New password must be at least 5 characters long.');
       }
 
-      const validPassword = await user.isValidPassword(currentPassword);
-      if (!validPassword) {
-        throw new Error('Current password is incorrect');
-      }
-
-      user.password = newPassword;
+      const hashedPassword = await bcrypt.hash(newPassword, 10);
+      user.password = hashedPassword;
       await user.save();
 
+      return true;
+    },
 
+    addFavorite: async (parent, { petId }, context) => {
+  
+      if (!context.user) {
+        throw new AuthenticationError('User not authenticated.');
+      }
+
+      try {
+        const updatedUser = await User.findByIdAndUpdate(
+          context.user._id,
+          { $addToSet: { favorites: petId } },
+          { new: true } 
+        );
+
+        return updatedUser;
+      } catch (error) {
+        console.error('Error adding favorite:', error);
+        throw new Error('Error adding favorite.');
+      }
+    },
+    
+    removeFavorite: async (parent, { petId }, context) => {
+      if (!context.user) {
+        throw new Error('Authentication required');
+      }
+
+      try {
+        const user = await User.findById(context.user._id);
+
+        if (!user) {
+          throw new Error('User not found');
+        }
+
+        user.favorites = user.favorites.filter(favorite => favorite.toString() !== petId);
+        await user.save();
+
+        return user;
+      } catch (error) {
+        console.error('Error removing favorite:', error);
+        throw new Error('Failed to remove favorite');
+      }
+    },
   },
 };
 
