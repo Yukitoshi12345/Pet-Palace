@@ -62,3 +62,12 @@ export const ADD_FAVORITE = gql`
   }
 `;
 
+export const REMOVE_FAVORITE = gql`
+  mutation removeFavorite($petId: ID!) {
+    removeFavorite(petId: $petId) {
+      _id
+      name
+    }
+  }
+`;
+
