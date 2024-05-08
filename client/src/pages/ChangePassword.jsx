@@ -47,7 +47,7 @@ const ChangePassword = () => {
   return (
     <div className="max-w-md w-full px-4 section">
       <div className="flex flex-col justify-center bg-neutral shadow-md rounded-r-2xl px-8 py-8 -mt-12 min-h-[600px] ">
-      <h2>Password Change</h2>
+      <h2>Change Password</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="currentPassword">Current Password:</label>
