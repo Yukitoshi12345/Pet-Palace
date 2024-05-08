@@ -1,53 +1,54 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-// import { CHANGE_PASSWORD } from '../utils/mutations';
+import { CHANGE_PASSWORD } from '../utils/mutations';
 
 const ChangePassword = () => {
-  // const [formState, setFormState] = useState({ 
-  //   currentPassword: '', 
-  //   newPassword: '', 
-  //   confirmPassword: '' 
-  // });
-  // const [changePassword, { data }] = useMutation(CHANGE_PASSWORD);
-  // const [error, setError] = useState('');
+  const [formState, setFormState] = useState({ 
+    currentPassword: '', 
+    newPassword: '', 
+    confirmPassword: '' 
+  });
+  const [changePassword, { data }] = useMutation(CHANGE_PASSWORD);
+  const [error, setError] = useState('');
 
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  //   setFormState({
-  //     ...formState,
-  //     [name]: value,
-  //   });
-  // };
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
     
-  //   try {
-  //     const { data } = await changePassword({
-  //       variables: { ...formState },
-  //     });
+    try {
+      const { data } = await changePassword({
+        variables: { ...formState },
+      });
 
-  //     // Handle success
-  //     console.log('Password changed successfully');
-  //   } catch (e) {
-  //     // Handle error
-  //     console.error('Password change error:', e);
-  //     setError('Failed to change password. Please try again.');
-  //   }
+      // Handle success
+      console.log('Password changed successfully');
+    } catch (e) {
+      // Handle error
+      console.error('Password change error:', e);
+      setError('Failed to change password. Please try again.');
+    }
     
-  //   // Reset form
-  //   setFormState({
-  //     currentPassword: '',
-  //     newPassword: '',
-  //     confirmPassword: ''
-  //   });
-  // };
+    // Reset form
+    setFormState({
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: ''
+    });
+  };
 
   return (
-    <div>
-      <h2>Password Change</h2>
-      {/* <form onSubmit={handleFormSubmit}>
+    <div className="max-w-md w-full px-4 section">
+      <div className="flex flex-col justify-center bg-neutral shadow-md rounded-r-2xl px-8 py-8 -mt-12 min-h-[600px] ">
+      <h2>Change Password</h2>
+      <form onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="currentPassword">Current Password:</label>
           <input
@@ -83,8 +84,9 @@ const ChangePassword = () => {
         </div>
         <button type="submit">Change Password</button>
       </form>
-      {error && <div>{error}</div>} */}
+      {error && <div>{error}</div>}
     </div>
+  </div>
   );
 };
 
