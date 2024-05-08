@@ -16,7 +16,7 @@ The goal of this initiative is to deliver a seamless and engaging experience for
 - [Test Instruction](#test-instruction)
 - [Screenshots](#screenshots)
 - [Overview](#overview)
-- [Contributons](#contributons)
+- [Contribution and Tasks](#contribution-and-tasks)
 - [Deployed Application](#deployed-application)
 - [License](#license)
 
@@ -140,10 +140,36 @@ npm run dev
 ```
 
 ## Screenshots
+- [Please include]
 
 ## Overview
 
-## Contribution
+#### Features:
+- [List Here]
+
+#### Motivation For Development:
+- Created from a deep love for animals and a desire to make a significant impact.
+- Motivated by the belief that every pet deserves a loving home.
+- Developed a comprehensive platform to connect adopters with pets and support animal shelters.
+- User-friendly site that simplifies the adoption process and enhances pet visibility.
+- Facilitates donations, aiding shelters in their vital work.
+- Aims to foster a community focused on the well-being of pets.
+- Ensures every animal finds a place to call home.
+
+#### Challenges:
+- Stripe Issues
+- Render Issues
+- Data Filtering Issue
+- Amount of time given
+- Code Conflicts
+- 
+#### Successes:
+- Meeting all criterias
+- Stripe Implementation
+- PWA Installation
+- Working as a team
+- 
+## Contribution and Tasks
 
 | Contributons                                                 | Roles                                  | Task                                                                                                                                                                                                                                       |
 | ------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
