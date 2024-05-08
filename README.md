@@ -1,4 +1,4 @@
-![React](https://img.shields.io/badge/-React-%2361DAFB?style=for-the-badge&logo=react&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![ExpressJs](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white) ![NodeJs](https://img.shields.io/badge/Node.Js-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=white) ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3) ![Tailwind](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql)
+![React](https://img.shields.io/badge/-React-%2361DAFB?style=for-the-badge&logo=react&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) ![ExpressJs](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white) ![NodeJs](https://img.shields.io/badge/Node.Js-43853D.svg?style=for-the-badge&logo=node.js&logoColor=white) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![Javascript](https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=white) ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?style=for-the-badge&logo=css3) ![Tailwind](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql) ![DaisyUI](https://img.shields.io/badge/daisyUI-1ad1a5?style=for-the-badge&logo=daisyui&logoColor=white) ![Stripe](https://img.shields.io/badge/Stripe-626CD9?style=for-the-badge&logo=Stripe&logoColor=white)
 
 <h1 align ="center">Pet Palace</h1>
 
@@ -11,13 +11,12 @@ The goal of this initiative is to deliver a seamless and engaging experience for
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Technologies Used](#technologies-used)
-- [Development Dependencies Used](#development-dependencies-used)
 - [API's Used](#apis-used)
 - [Installation Instruction](#installation-instruction)
 - [Test Instruction](#test-instruction)
 - [Screenshots](#screenshots)
 - [Overview](#overview)
-- [Contributors](#contributors)
+- [Contributons](#contributons)
 - [Deployed Application](#deployed-application)
 - [License](#license)
 
@@ -93,8 +92,6 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 - apollo-server-express
 - update later
 
-## Development Dependencies Used
-
 ## APIs Used
 
 - [emailJs](https://www.emailjs.com/docs/rest-api/send/)
@@ -146,11 +143,19 @@ npm run dev
 
 ## Overview
 
-## Contributors
+## Contribution
 
-- [Jodie Lee](https://github.com/jodielee062788)
-- [Suyash Maharjan](https://github.com/simplesuyash)
-- [Yukitoshi Imaizumi-Zhou](https://github.com/yukitoshi12345)
+| Contributons                                                 | Roles                                  | Task                                                                                                                                                                                                                                       |
+| ------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [Yukitoshi Imaizumi-Zhou](https://github.com/yukitoshi12345) | Full-Stack Developer & Project Manager | - Created and Maintained Github Repository <br> - Created and Completed README <br> - Stripe Implementation <br> - Implementing PWA with React Vite <br> - Completed Seed Data for Animal Listing <br> - Fixing issues uploading on Render |
+| [Jodie Lee](https://github.com/jodielee062788)               | Full-Stack Developer & UI Designer     | - Developed User Interface (Tailwind and DaisyUI) <br> - Login/Sign Up Page <br> - Enquiry Page <br> - Add more here                                                                                                                       |
+| [Suyash Maharjan](https://github.com/simplesuyash)           | Full-Stack Developer & UI Designer     | - Developed User Interface (Tailwind and DaisyUI) <br> - Add more here                                                                                                                                                                     |
+
+<br>
+
+_The roles mentioned above are rough representation of individual member's tasks. Throughout the project, we all collaborated and contributed to each other's coding._
+
+<br>
 
 ## Deployed Application
 
