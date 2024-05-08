@@ -1,19 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import Home from './pages/Home'
-import About from './pages/About'
-import Contact from './pages/Contact'
-import Profile from './pages/Profile'
-import Login from './pages/Login'
-import SignUp from './pages/Signup'
-import ErrorPage from './pages/ErrorPage'
-import Pets from './pages/Pets'
-import PetDetails from './pages/PetDetails'
-import Enquiry from './pages/Enquiry'
-import ChangePassword from './pages/ChangePassword'
-import Donate from './pages/Donate'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import './index.css';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Profile from './pages/Profile';
+import Login from './pages/Login';
+import SignUp from './pages/Signup';
+import ErrorPage from './pages/ErrorPage';
+import Pets from './pages/Pets';
+import PetDetails from './pages/PetDetails';
+import Enquiry from './pages/Enquiry';
+import ChangePassword from './pages/ChangePassword';
+import Donation from './pages/Donation';
 
 // Bringing in the required imports from 'react-router-dom' to set up application routing behavior
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'donate',
-        element: <Donate />,
+        element: <Donation />,
       },
       {
         path: 'login',
@@ -74,5 +74,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <App /> */}
     <RouterProvider router={router} />
-  </React.StrictMode>
-)
+  </React.StrictMode>,
+);

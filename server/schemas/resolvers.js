@@ -2,9 +2,6 @@ const { User, Pet, Donation } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
-// Added personal stripe API
-const stripeAPI = process.env.STRIPE_API_KEY;
-const stripe = require('stripe')(stripeAPI);
 
 const resolvers = {
   Query: {
@@ -20,7 +17,7 @@ const resolvers = {
       const results = await Pet.find(
         after ? { _id: { $gt: new ObjectId(after) } } : {},
       )
-        .sort({ name: 1 , _id: 1 })
+        .sort({ name: 1, _id: 1 })
         .limit(first);
 
       const edges = results.map((pet) => ({
@@ -112,110 +109,28 @@ const resolvers = {
       return { token, user };
     },
 
-    createCheckoutSession: async (parent, args, context) => {
-      const url = new URL(context.headers.referer).origin;
-
-      const donation = await Donation.create({
-        amount: args.amount,
-        donor: context.user._id,
-        message: args.message,
-      });
-
-      const line_items = [
-        {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: 'Donation',
-              images: [`${url}/images/donation.png`],
-            },
-            unit_amount: args.amount * 100,
-          },
-          quantity: 1,
-        },
-      ];
-
-      const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card'],
-        line_items,
-        mode: 'payment',
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${url}/cancel`,
-      });
-
-      return { session: session.id };
-    },
-
-    changePassword: async (_, { currentPassword, newPassword, confirmPassword }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError('User not authenticated.');
-      }
-
-      const user = await User.findById(context.user._id);
+    changePassword: async (
+      parent,
+      { currentPassword, newPassword, confirmPassword },
+      { user },
+    ) => {
       if (!user) {
-        throw new AuthenticationError('User not found.');
-      }
-
-      const passwordMatch = await bcrypt.compare(currentPassword, user.password);
-      if (!passwordMatch) {
-        throw new UserInputError('Incorrect current password.');
+        throw new Error('User is not authenticated');
       }
 
       if (newPassword !== confirmPassword) {
-        throw new UserInputError("New password and confirm password don't match.");
-      }
-      if (newPassword.length < 5) {
-        throw new UserInputError('New password must be at least 5 characters long.');
+        throw new Error('New password and confirm password do not match');
       }
 
-      const hashedPassword = await bcrypt.hash(newPassword, 10);
-      user.password = hashedPassword;
+      const validPassword = await user.isValidPassword(currentPassword);
+      if (!validPassword) {
+        throw new Error('Current password is incorrect');
+      }
+
+      user.password = newPassword;
       await user.save();
 
-      return true;
-    },
 
-    addFavorite: async (parent, { petId }, context) => {
-  
-      if (!context.user) {
-        throw new AuthenticationError('User not authenticated.');
-      }
-
-      try {
-        const updatedUser = await User.findByIdAndUpdate(
-          context.user._id,
-          { $addToSet: { favorites: petId } },
-          { new: true } 
-        );
-
-        return updatedUser;
-      } catch (error) {
-        console.error('Error adding favorite:', error);
-        throw new Error('Error adding favorite.');
-      }
-    },
-    
-    removeFavorite: async (parent, { petId }, context) => {
-      if (!context.user) {
-        throw new Error('Authentication required');
-      }
-
-      try {
-        const user = await User.findById(context.user._id);
-
-        if (!user) {
-          throw new Error('User not found');
-        }
-
-        user.favorites = user.favorites.filter(favorite => favorite.toString() !== petId);
-        await user.save();
-
-        return user;
-      } catch (error) {
-        console.error('Error removing favorite:', error);
-        throw new Error('Failed to remove favorite');
-      }
-    }
   },
 };
 
