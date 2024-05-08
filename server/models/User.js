@@ -33,6 +33,7 @@ const userSchema = new Schema(
       enum: ['admin', 'user'],
       default: 'user',
     },
+    favorites: [{ type: Schema.Types.ObjectId, ref: 'Pet' }]
   }
 );
 

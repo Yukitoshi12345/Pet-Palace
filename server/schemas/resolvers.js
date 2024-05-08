@@ -9,7 +9,8 @@ const resolvers = {
       return User.find();
     },
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+      return User.findOne({ _id: userId }).populate('favorites');
+      
     },
 
     pets: async (parent, { first, after }) => {
@@ -129,9 +130,9 @@ const resolvers = {
       user.password = newPassword;
       await user.save();
 
-      return true;
-    },
+
   },
 };
+
 
 module.exports = resolvers;

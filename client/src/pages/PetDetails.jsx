@@ -1,21 +1,52 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useQuery, useMutation } from '@apollo/client';
 import { useParams, NavLink } from 'react-router-dom';
 import { QUERY_SINGLE_PET } from '../utils/queries';
+import { ADD_FAVORITE } from '../utils/mutations';
 
 const PetDetails = () => {
-  // Get the petId from the URL parameters
   const { petId } = useParams();
-
-  // Fetch data for the single pet using the QUERY_SINGLE_PET query
-  const { loading, data } = useQuery(QUERY_SINGLE_PET, {
+  const { loading, data, refetch } = useQuery(QUERY_SINGLE_PET, {
     variables: { petId: petId },
   });
 
-  const pet = data?.pet || {};
+  const [addFavorite] = useMutation(ADD_FAVORITE);
+  const [isInFavorites, setIsInFavorites] = useState(false);
 
-  // Check if pet.type is defined before using toLowerCase()
+  const fetchPetData = useCallback(async () => {
+    await refetch();
+  }, [refetch]);
+
+  useEffect(() => {
+    fetchPetData();
+  }, [fetchPetData]);
+
+  const pet = data?.pet || {};
   const petType = pet.type ? pet.type.toLowerCase() : '';
+
+  useEffect(() => {
+    if (data && data.pet) {
+      setIsInFavorites(data.pet.isInFavorites);
+    }
+  }, [data]);
+
+  const handleFavoriteClick = async () => {
+    try {
+      if (isInFavorites) {
+        alert('This pet is already added to favorites!');
+        return;
+      }
+
+      await addFavorite({
+        variables: { petId: pet._id },
+      });
+      setIsInFavorites(true);
+      await fetchPetData();
+      alert('Pet added to favorites!');
+    } catch (error) {
+      console.error('Error adding pet to favorites:', error);
+    }
+  };
 
   if (loading) {
     return <div className="text-center mt-8">Loading...</div>;
@@ -30,11 +61,12 @@ const PetDetails = () => {
             {pet.featured && <span className="badge badge-secondary py-3 ml-4 rounded-xl">FEATURED</span>}
             {pet.tame && <span className="badge badge-secondary py-3 ml-4 rounded-xl">TAME</span>}
             {pet.pedigreeKnown && <span className="badge badge-secondary py-3 ml-4 rounded-xl">PEDIGREE KNOWN</span>}
+            <button onClick={handleFavoriteClick} className="btn btn-primary rounded">Add to Favorites</button>
           </h1>
         </div>
         <div className='grid grid-cols-2'>
           <div>
-              <img className="rounded-lg" src={`/images/pets/${petType}s/${pet.photo}`} alt={pet.name} style={{ width: '650px', height: 'auto' }} />
+            <img className="rounded-lg" src={`/images/pets/${petType}s/${pet.photo}`} alt={pet.name} style={{ width: '650px', height: 'auto' }} />
           </div>
           <div>
             <p className="text-base-100"><span className="text-base-100 font-bold">Type: </span>{pet.type}</p>
@@ -71,9 +103,9 @@ const PetDetails = () => {
                 <p className="text-base-100"><span className="text-base-100 font-bold">Disability: </span>{pet.disability}</p>
               </div>
             )}
-          <div className="text-center">
-            <NavLink to="/enquiry" className="btn btn-primary rounded btn-block">Enquire Now</NavLink>
-          </div>
+            <div className="text-center">
+              <NavLink to="/enquiry" className="btn btn-primary rounded btn-block">Enquire Now</NavLink>
+            </div>
           </div>
         </div>  
       </section>
