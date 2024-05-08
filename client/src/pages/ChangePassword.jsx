@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { CHANGE_PASSWORD } from '../utils/mutations';
+import { ImEnter } from "react-icons/im";
 
 const ChangePassword = () => {
   const [formState, setFormState] = useState({ 
@@ -28,15 +29,13 @@ const ChangePassword = () => {
         variables: { ...formState },
       });
 
-      // Handle success
+      
       console.log('Password changed successfully');
     } catch (e) {
-      // Handle error
       console.error('Password change error:', e);
       setError('Failed to change password. Please try again.');
     }
     
-    // Reset form
     setFormState({
       currentPassword: '',
       newPassword: '',
@@ -46,43 +45,59 @@ const ChangePassword = () => {
 
   return (
     <div className="max-w-md w-full px-4 section">
-      <div className="flex flex-col justify-center bg-neutral shadow-md rounded-r-2xl px-8 py-8 -mt-12 min-h-[600px] ">
-      <h2>Change Password</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div>
-          <label htmlFor="currentPassword">Current Password:</label>
-          <input
-            type="password"
-            id="currentPassword"
-            name="currentPassword"
-            value={formState.currentPassword}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="newPassword">New Password:</label>
-          <input
-            type="password"
-            id="newPassword"
-            name="newPassword"
-            value={formState.newPassword}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="confirmPassword">Confirm Password:</label>
-          <input
-            type="password"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formState.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Change Password</button>
+      <div className="flex flex-col justify-center bg-neutral shadow-md rounded-2xl px-8 py-8 -mt-12 min-h-[550px] ">
+        <h4 className="text-2x1 mb-8 mt-1 font-bold text-center text-[34px] border-b py-1">CHANGE PASSWORD</h4>
+        <form onSubmit={handleFormSubmit}>
+            <label htmlFor="currentPassword" className="block text-base-100 mb-2">
+              Current Password
+            </label>
+            <div className="mb-4">
+              <input
+                type="password"
+                id="currentPassword"
+                name="currentPassword"
+                className="w-full px-3 py-2 border rounded text-black"
+                placeholder="Enter current password"
+                value={formState.currentPassword}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          
+            <div className="mb-4">
+              <label htmlFor="newPassword"  className="block text-base-100 mb-2">New Password</label>
+              <input
+                type="password"
+                id="newPassword"
+                name="newPassword"
+                className="w-full px-3 py-2 border rounded text-black"
+                placeholder="At least 5 characters"
+                value={formState.newPassword}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="confirmPassword" className="block text-base-100 mb-2">Confirm Password:</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                className="w-full px-3 py-2 border rounded text-black"
+                placeholder="Confirm Password"
+                value={formState.confirmPassword}
+                onChange={handleChange}
+                required
+              />
+            </div>
+        
+            <button
+              className="w-full py-2 btn btn-accent mt-2 text-[16px]"
+              type="submit"
+              >
+              <ImEnter/>CHANGE PASSWORD
+            </button>
       </form>
       {error && <div>{error}</div>}
     </div>
