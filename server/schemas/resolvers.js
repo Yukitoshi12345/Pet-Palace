@@ -145,29 +145,32 @@ const resolvers = {
       return { session: session.id };
     },
 
-    Mutation: {
-      changePassword: async (parent, { currentPassword, newPassword, confirmPassword }, { user }) => {
-        
-        if (!user) {
-          throw new Error('User is not authenticated');
-        }
+    changePassword: async (parent, { currentPassword, newPassword, confirmPassword }, context) => {
   
-        if (newPassword !== confirmPassword) {
-          throw new Error('New password and confirm password do not match');
-        }
-  
-        const validPassword = await user.isValidPassword(currentPassword);
-        if (!validPassword) {
-          throw new Error('Current password is incorrect');
-        }
-  
-        user.password = newPassword;
-        await user.save();
-  
-        return true; 
+      const user = await User.findById(context.user._id);
+      if (!user) {
+        throw new AuthenticationError('User not found.');
       }
-    },
-  },
-};
+
+      const passwordMatch = await bcrypt.compare(currentPassword, user.password);
+      if (!passwordMatch) {
+        throw new UserInputError('Incorrect current password.');
+      }
+
+      if (newPassword !== confirmPassword) {
+        throw new UserInputError("New password and confirm password don't match.");
+      }
+      if (newPassword.length < 5) {
+        throw new UserInputError('New password must be at least 5 characters long.');
+      }
+
+      const hashedPassword = await bcrypt.hash(newPassword, 10);
+      user.password = hashedPassword;
+      await user.save();
+
+      return true;
+     }
+    }
+  };
 
 module.exports = resolvers;
