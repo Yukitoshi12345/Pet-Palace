@@ -72,7 +72,6 @@ export const QUERY_PETS = gql`
   }
 `;
 
-
 export const QUERY_SINGLE_PET = gql`
   query singlePet($petId: ID!) {
     pet(petId: $petId) {
@@ -97,7 +96,6 @@ export const QUERY_SINGLE_PET = gql`
     }
   }
 `;
-
 
 export const QUERY_FEATURED_PETS = gql`
   query featuredPets {
@@ -153,6 +151,17 @@ export const QUERY_PETS_BY_LOCATION = gql`
       photo
       featured
       type
+    }
+  }
+`;
+
+export const USER_DONATIONS = gql`
+  query Query {
+    me {
+      donations {
+        donationAmount
+        donationDate
+      }
     }
   }
 `;

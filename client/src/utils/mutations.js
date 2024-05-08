@@ -39,16 +39,30 @@ export const ADD_USER = gql`
   }
 `;
 
-export const CREATE_CHECKOUT_SESSION = gql`
-  mutation CreateCheckoutSession($amount: Int!, $message: String) {
-    createCheckoutSession(amount: $amount, message: $message) {
-      session
+export const ADD_DONATION = gql`
+  mutation Mutation($donationAmount: Float!, $donationDate: String!) {
+    addDonation(donationAmount: $donationAmount, donationDate: $donationDate) {
+      _id
+      donationAmount
+      donationDate
+      user {
+        _id
+        username
+      }
     }
   }
 `;
 
 export const CHANGE_PASSWORD = gql`
-  mutation changePassword($currentPassword: String!, $newPassword: String!, $confirmPassword: String!) {
-    changePassword(currentPassword: $currentPassword, newPassword: $newPassword, confirmPassword: $confirmPassword)
+  mutation changePassword(
+    $currentPassword: String!
+    $newPassword: String!
+    $confirmPassword: String!
+  ) {
+    changePassword(
+      currentPassword: $currentPassword
+      newPassword: $newPassword
+      confirmPassword: $confirmPassword
+    )
   }
 `;
