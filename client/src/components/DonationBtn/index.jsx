@@ -1,5 +1,6 @@
 import React from 'react';
-import { useMutation, gql } from '@apollo/client';
+import { NavLink } from 'react-router-dom'; // Import NavLink
+import { useMutation } from '@apollo/client';
 import { CREATE_CHECKOUT_SESSION } from '../../utils/mutations';
 import { donation } from '../../data';
 
@@ -29,10 +30,12 @@ const DonationBtn = () => {
   };
 
   return (
-    <button className="btn btn-accent capitalize" onClick={handleDonateClick}>
-      {donation.icon}
-      {donation.btnTitle}
-    </button>
+    <NavLink to="/donate"> {/* Replace 'to' attribute with the donate page route */}
+      <button className="btn btn-accent capitalize" onClick={handleDonateClick}>
+        {donation.icon}
+        {donation.btnTitle}
+      </button>
+    </NavLink>
   );
 };
 
