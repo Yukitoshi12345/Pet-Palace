@@ -70,37 +70,21 @@ const Enquiry = () => {
     return options;
   };
 
+
+  // not complete yet 
   const handleInputBlur = (e) => {
     switch (e.target.name) {
       case 'phoneNumber':
         if (!phoneNumber) {
           setErrorMessage('Phone number is required');  
-          e.target.focus();
         } else if (!/^0(2|4)\d{8}$/.test(phoneNumber)) {
           setErrorMessage('Invalid phone number');
-          e.target.focus();
         } else { 
           setErrorMessage('');
         }
         break;
-      case 'previousPets':
-        if (!previousPets.length) {
-          setErrorMessage('Please select an option');
-          e.target.focus();
-        } else {
-          setErrorMessage('');
-        }
-        break;
-      case 'street':
-        if (!street) {
-          setErrorMessage('Street address is required');
-          e.target.focus();
-        } else {
-          setErrorMessage('');
-        } 
-        break;
+      
       default:
-        
         break;
     }
   };
@@ -122,12 +106,14 @@ const Enquiry = () => {
   };
 
   const handleFormSubmit = async (e) => {
-    e.preventDefault();
-    // Handle form submission logic
+    alert('Your enquiry has been sent successfully');
+    //redirect to pets page
+    window.location.assign('/pets');  
   };
   const focusInput = () => {
     inputRef.current.focus();
   };
+  const handleUserAndPetDataChange = (e) => {};
 
   return (
     <section className="section flex-col justify-between" id="enquiry"
@@ -158,9 +144,9 @@ const Enquiry = () => {
             {/* user related data that are needed to send the enquiry
             but not needed to be filled by the user */}
             <div className="hidden">
-              <input className='input' type="text" value= {_id} name="petId" />
-              <input className='input' type="text" value= {user?.name}  name ="name" disabled/>
-              <input className='input' type="text" value= {user?.email} name="email" />
+              <input className='input' type="text" value= {_id} name="petId" onChange={handleUserAndPetDataChange}/>
+              <input className='input' type="text" value= {user?.name}  name ="name" onChange={handleUserAndPetDataChange}/>
+              <input className='input' type="text" value= {user?.email} name="email" onChange={handleUserAndPetDataChange} />
             </div>
             <div className="flex flex-col items-center gap-2">
             <input

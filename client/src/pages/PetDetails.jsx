@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/Footer';
 import { TbLocationQuestion } from 'react-icons/tb';
+import { IoArrowBackCircleSharp } from "react-icons/io5";
+import { motion } from 'framer-motion';
 
 
 
@@ -66,6 +68,21 @@ const PetDetails = () => {
         id="petDetails"
         className=" bg-base-300 rounded-lg shadow-lg p-8 container min-h-[80dvh] flex flex-col items-center justify-center mx-auto mt-8"
       >
+        <motion.div className="w-full text-4xl  flex justify-end "
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          whileHover={{
+            scale: 1.2,
+            transition: { duration: 1 },
+            x:-150
+          }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <Link to="/pets" className='flex items-center no-underline text-accent'>
+            <IoArrowBackCircleSharp />Back to Pets
+          </Link>
+          </motion.div>
         <div className="flex justify-start w-full">
           <h1 className="text-3xl font-bold mb-1">
             < button onClick={handleFavoriteClick} className="btn btn-primary rounded mr-4 mx-1">
