@@ -276,4 +276,6 @@ export const error = {
   logo: logo,
 };
 
+//When guest visit the rescue center, 
+
 

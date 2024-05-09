@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { useParams, NavLink } from 'react-router-dom';
@@ -5,6 +6,9 @@ import { QUERY_SINGLE_PET } from '../utils/queries';
 import { ADD_FAVORITE } from '../utils/mutations';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import Footer from '../components/Footer';
+import { TbLocationQuestion } from 'react-icons/tb';
+
 
 const PetDetails = () => {
   const { petId } = useParams();
@@ -55,68 +59,134 @@ const PetDetails = () => {
   }
 
   return (
-    <div className="container section">
-      <section id="petDetails" className="mx-auto bg-neutral rounded-lg shadow-lg p-8">
-        <div>
-          <h1 className="text-3xl font-bold mb-1 border-b-2 py-2 text-[40px]">
-          < button onClick={handleFavoriteClick} className="btn btn-primary rounded mr-4 mx-1">
+
+    <section className="section flex-col justify-between relative pt-10">
+      <div
+        id="petDetails"
+        className=" bg-base-300 rounded-lg shadow-lg p-8 container min-h-[80dvh] flex flex-col items-center justify-center mx-auto mt-8"
+      >
+        <div className="flex justify-start w-full">
+          <h1 className="text-3xl font-bold mb-1">
+            < button onClick={handleFavoriteClick} className="btn btn-primary rounded mr-4 mx-1">
               <FontAwesomeIcon icon={faHeart} className={isInFavorites ? 'text-red-500' : 'text-gray-500'} />
             </button>
             {pet.name}
-            {pet.featured && <span className="badge badge-secondary py-3 ml-4 rounded-xl ">FEATURED</span>}
-            {pet.tame && <span className="badge badge-secondary py-3 ml-4 rounded-xl">TAME</span>}
-            {pet.pedigreeKnown && <span className="badge badge-secondary py-3 ml-4 rounded-xl">PEDIGREE KNOWN</span>}
-            
+            {pet.featured && (
+              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
+                FEATURED
+              </span>
+            )}
+            {pet.tame && (
+              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
+                TAME
+              </span>
+            )}
+            {pet.pedigreeKnown && (
+              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
+                PEDIGREE KNOWN
+              </span>
+            )}
           </h1>
         </div>
-        <div className='grid grid-cols-3'>
+        <div className=" w-full ">
+          <img
+            className="rounded-lg float-start m-6"
+            src={`/images/pets/${petType}s/${pet.photo}`}
+            alt={pet.name}
+            style={{ width: '650px', height: 'auto' }}
+          />
           <div>
-            <img className="rounded-lg" src={`/images/pets/${petType}s/${pet.photo}`} alt={pet.name} style={{ width: '650px', height: 'auto' }} />
-          </div>
-          <div className='ml-10'>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Type: </span>{pet.type}</p>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Color: </span>{pet.color}</p>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Age: </span>{pet.age}</p>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Gender: </span>{pet.gender}</p>
+            <p className="">
+              <span className=" font-bold">Type: </span>
+              {pet.type}
+            </p>
+            <p className="">
+              <span className=" font-bold">Color: </span>
+              {pet.color}
+            </p>
+            <p className="">
+              <span className=" font-bold">Age: </span>
+              {pet.age}
+            </p>
+            <p className="">
+              <span className=" font-bold">Gender: </span>
+              {pet.gender}
+            </p>
+
             {petType === 'bird' && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Species: </span>{pet.species}</p>
+                <p className="">
+                  <span className=" font-bold">Species: </span>
+                  {pet.species}
+                </p>
               </div>
             )}
             {petType !== 'bird' && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Breed: </span>{pet.breed}</p>
+                <p className="">
+                  <span className=" font-bold">Breed: </span>
+                  {pet.breed}
+                </p>
               </div>
             )}
-            <p className="text-base-100"><span className="text-base-100 font-bold">Location: </span>{pet.location}</p>    
+
+            <p className="">
+              <span className=" font-bold">Location: </span>
+              {pet.location}
+            </p>
+
 
             {(petType === 'bird' || petType === 'hamster') && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Health: </span>{pet.health}</p>
+                <p className="">
+                  <span className=" font-bold">Health: </span>
+                  {pet.health}
+                </p>
               </div>
             )}
             {petType === 'bird' && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Special Needs: </span>{pet.specialNeeds}</p>
+                <p className="">
+                  <span className=" font-bold">Special Needs: </span>
+                  {pet.specialNeeds}
+                </p>
               </div>
             )}
 
-            {(petType === 'cat' || petType === 'dog' || petType === 'rabbit') && (
+            {(petType === 'cat' ||
+              petType === 'dog' ||
+              petType === 'rabbit') && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Vaccination History: </span>{pet.vaccinationHistory}</p>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Disability: </span>{pet.disability}</p>
+                <p className="">
+                  <span className=" font-bold">Vaccination History: </span>
+                  {pet.vaccinationHistory}
+                </p>
+                <p className="">
+                  <span className=" font-bold">Disability: </span>
+                  {pet.disability}
+                </p>
               </div>
             )}
-          </div>  
-          <div className='ml-10'>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Description: </span>{pet.description}</p> 
-            <div className="text-center">
-              <NavLink to="/enquiry" className="btn btn-primary rounded btn-block">ENQUIRE NOW</NavLink>
-            </div>    
+
+            <p className="">
+              <span className=" font-bold">Description: </span>
+              {pet.description}
+            </p>
+            <div className=" flex justify-center">
+              <Link
+                to={`/pets/${petId}/enquiry`}
+                className="btn btn-accent mt-4"
+              >
+                <TbLocationQuestion />
+                Enquire Now
+              </Link>
+            </div>
+
           </div>
-        </div>  
-      </section>
-    </div>
+        </div>
+      </div>
+      <Footer />
+    </section>
   );
 };
 

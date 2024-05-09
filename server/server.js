@@ -7,6 +7,7 @@ const cors = require('cors');
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
+const { error } = require('console');
 
 const STRIPE_KEY = process.env.SECRET_KEY_STRIPE;
 const stripe = require('stripe')(STRIPE_KEY);
@@ -51,6 +52,7 @@ const startApolloServer = async () => {
 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
+
   app.use(cors());
   // Serve up static assets
   app.use(

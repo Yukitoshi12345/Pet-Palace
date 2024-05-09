@@ -83,11 +83,9 @@ const typeDefs = gql`
     featuredPets: [Pet]
     petTypes: [String]
     locations: [String]
-    # breeds(petType: String!): [String]
-    # species(petType: String!): [String]
-    petsByLocation(location: String!): [Pet]
-    petsByType(type: String!): [Pet]
-    petsByBreedOrSpecies(breedOrSpecies: String): [Pet]
+    petsBySearchCriteria(location: String, petType: String, speciesBreed: String): [Pet]
+    breedsOrSpecies(petType: String!): [String]
+    me: User
   }
 `;
 

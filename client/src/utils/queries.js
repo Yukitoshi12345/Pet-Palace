@@ -108,6 +108,21 @@ export const QUERY_SINGLE_PET = gql`
     }
   }
 `;
+export const QUERY_PET_FOR_ENQUIRY = gql`
+  query petForEnquiry($petId: ID!) {
+    pet(petId: $petId) {
+      _id
+      name
+      breed
+      species
+      age
+      color
+      description
+      location
+      gender
+    }
+  } 
+`;
 
 export const QUERY_FEATURED_PETS = gql`
   query featuredPets {
@@ -137,17 +152,6 @@ export const QUERY_LOCATIONS = gql`
   }
 `;
 
-// export const QUERY_BREEDS = gql`
-//   query breeds($petType: String!) {
-//     breeds(petType: $petType)
-//   }
-// `;
-
-// export const QUERY_SPECIES = gql`
-//   query species($petType: String!) {
-//     species(petType: $petType)
-//   }
-// `;
 
 export const QUERY_PETS_BY_LOCATION = gql`
   query petsByLocation($location: String!) {
@@ -167,6 +171,48 @@ export const QUERY_PETS_BY_LOCATION = gql`
   }
 `;
 
+export const QUERY_BREEDS_OR_SPECIES = gql`
+  query breedsOrSpecies($petType: String!) {
+    breedsOrSpecies(petType: $petType)
+  }
+`;
+
+export const QUERY_PETS_BY_SEARCH_CRITERIA = gql`
+  query petsBySearchCriteria(
+    $location: String!
+    $petType: String!
+    $speciesBreed: String!
+  ) {
+    petsBySearchCriteria(
+      location: $location
+      petType: $petType
+      speciesBreed: $speciesBreed
+    ) {
+      _id
+      name
+      breed
+      species
+      age
+      color
+      description
+      location
+      photo
+      featured
+      type
+    }
+  }
+`;
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      name
+      email
+    }
+  }
+`;
+
+
 export const USER_DONATIONS = gql`
   query Query {
     me {
@@ -177,3 +223,4 @@ export const USER_DONATIONS = gql`
     }
   }
 `;
+

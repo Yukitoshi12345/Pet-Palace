@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         element: <PetDetails />,
       },
       {
-        path: 'enquiry',
+        path: 'pets/:petId/enquiry',
         element: <Enquiry />,
       },
       {
