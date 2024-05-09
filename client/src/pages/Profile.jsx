@@ -45,7 +45,7 @@ const Profile = () => {
 
   return (
     <div className="container mx-auto mt-20 section">
-      <section id="profile" className="flex max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
+      <section id="profile" className="flex max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8 min-h-[600px] min-w-[800px]">
         <div className="w-1/2 border border-gray-300 rounded p-4 mr-4">
           <h2 className="text-3xl font-bold mb-4">User Profile</h2>
           <p className="text-lg mb-4 text-gray-700">
@@ -61,7 +61,7 @@ const Profile = () => {
             <span className="font-semibold">Favorite Pet:</span> {userData.favoritePet}
           </p>
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 border border-gray-300 rounded p-4 mr-4">
           <h3 className="text-3xl font-bold mb-4">Favorite Pets</h3>
           {favoritePets.map((pet) => (
             <div key={pet._id} className="border border-gray-300 rounded p-4 mb-4">
