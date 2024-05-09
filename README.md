@@ -139,14 +139,71 @@ npm run dev
 ```
 
 ## Screenshots
-- [Please include]
+
+<b> Home Page [Dark Mode]<b>
+
+![](./client/public/images/screenshots/Home.png)
+
+<br>
+
+<b> Home Page [Light Mode]<b>
+
+![](./client/public/images/screenshots/Home2.png)
+
+<br>
+
+<b> About Page <b>
+
+![](./client/public/images/screenshots/About.png)
+
+<br>
+
+<b> Contact Us Page <b>
+
+![](./client/public/images/screenshots/ContactUs.png)
+
+<br>
+
+<b> Sign Up Page <b>
+
+![](./client/public/images/screenshots/Signup.png)
+
+<br>
+
+<b> Log In Page <b>
+
+![](./client/public/images/screenshots/Login.png)
+
+<br>
+
+<b> Animal Listing Page <b>
+
+![](./client/public/images/screenshots/AnimalListing.png)
+
+<br>
+
+<b> Pet Detail Page <b>
+
+![](./client/public/images/screenshots/PetDetail.png)
+
+<br>
 
 ## Overview
 
 #### Features:
-- [List Here]
+
+- Sign Up
+- Login In
+- Donation
+- Back to Top Button
+- Pet Listing
+- Pet Details
+- Profile
+- Installation
+- Enquiry
 
 #### Motivation For Development:
+
 - Created from a deep love for animals and a desire to make a significant impact.
 - Motivated by the belief that every pet deserves a loving home.
 - Developed a comprehensive platform to connect adopters with pets and support animal shelters.
@@ -156,6 +213,7 @@ npm run dev
 - Ensures every animal finds a place to call home.
 
 #### Challenges:
+
 - Stripe Issues
 - Render Issues
 - Data Filtering Issue
@@ -163,18 +221,19 @@ npm run dev
 - Code Conflicts
 
 #### Successes:
+
 - Meeting all criterias
 - Stripe Implementation
 - PWA Installation
 - Working as a team
-  
+
 ## Contribution and Tasks
 
-| Contributons                                                 | Roles                                  | Task                                                                                                                                                                                                                                       |
-| ------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Contributons                                                 | Roles                                  | Task                                                                                                                                                                                                                           |
+| ------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Yukitoshi Imaizumi-Zhou](https://github.com/yukitoshi12345) | Full-Stack Developer & Project Manager | - Created and Maintained Github Repository <br> - Completed README <br> - Stripe Implementation <br> - Implementing PWA with React Vite <br> - Completed Seed Data for Animal Listing <br> - Fixing issues uploading on Render |
-| [Jodie Lee](https://github.com/jodielee062788)               | Full-Stack Developer & UI Designer     | - Developed User Interface (Tailwind and DaisyUI) <br> - Login/Sign Up Page <br> - Enquiry Page <br> - Add more here                                                                                                                       |
-| [Suyash Maharjan](https://github.com/simplesuyash)           | Full-Stack Developer & UI Designer     | - Developed User Interface (Tailwind and DaisyUI) <br> - Add more here                                                                                                                                                                     |
+| [Jodie Lee](https://github.com/jodielee062788)               | Full-Stack Developer & UI Designer     | - Developed User Interface (Tailwind and DaisyUI) <br> - User Authentication Login/Sign Up Page <br> - Enquiry Page <br> - Stripe Implementation <br> - Manage Pet Listings                                                    |
+| [Suyash Maharjan](https://github.com/simplesuyash)           | Full-Stack Developer & UI Designer     | - Full Front-End <br> - Developed User Interface (Tailwind, DaisyUI, and FlowBite) <br> - Variety of Features                                                                                                                  |
 
 <br>
 
