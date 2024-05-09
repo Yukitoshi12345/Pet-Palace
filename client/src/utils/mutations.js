@@ -72,9 +72,9 @@ export const REMOVE_FAVORITE = gql`
   }
 `;
 
-export const ADD_DONATION = gql`
-  mutation Donate($amount: Float!) {
-    donate(amount: $amount)
-  }
-`;
+// export const ADD_DONATION = gql`
+//   mutation Donate($amount: Float!) {
+//     donate(amount: $amount)
+//   }
+// `;
 
