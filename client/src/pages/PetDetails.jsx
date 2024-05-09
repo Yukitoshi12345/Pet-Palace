@@ -1,13 +1,14 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { useParams, NavLink } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { QUERY_SINGLE_PET } from '../utils/queries';
 import { ADD_FAVORITE } from '../utils/mutations';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/Footer';
 import { TbLocationQuestion } from 'react-icons/tb';
+
 
 
 const PetDetails = () => {
