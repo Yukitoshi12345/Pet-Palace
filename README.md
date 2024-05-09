@@ -161,7 +161,7 @@ npm run dev
 - Data Filtering Issue
 - Amount of time given
 - Code Conflicts
-  
+
 #### Successes:
 - Meeting all criterias
 - Stripe Implementation
