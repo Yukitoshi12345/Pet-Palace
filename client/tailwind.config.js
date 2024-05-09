@@ -13,7 +13,7 @@ export default {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'auto-fill': 'repeat(auto-fill, minmax(18em, 1fr))'
+        'auto-fill': 'repeat(auto-fill, minmax(22rem, 1fr))'
       },
     },
     fontFamily: {
@@ -28,34 +28,6 @@ export default {
         lg: '3rem',
       },
     },
-    /*
-    not using this anymore
-    clashing with flowbite
-    screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-    },
-    extend: {
-     display: ["group-hover"],
-      colors: {
-        primary: '#050402',
-        //secondary: '#1C1D24',
-        secondary: '#14161A',
-        //tertiary: '#131419',
-        tertiary: '#0c0908',
-        accent: {
-          DEFAULT: '#ac6b34',
-          hover: '#925a2b',
-        },
-        leather: '#0b0806',
-        // paragraph: '#878e99',
-        paragraph: '#78716c',
-        blackperl: '#0e1013', 
-      },
-    },
-    */
   },
   daisyui: {
     themes: [

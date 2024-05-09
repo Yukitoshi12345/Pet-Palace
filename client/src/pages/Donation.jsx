@@ -29,7 +29,7 @@ const Donation = () => {
   }, []);
 
   return (
-    <div className="flex flex-col-2">
+    <div className="flex flex-col-2 section">
       <div className="text-center">
         <h1 className="text-2xl m-5">How much would you like to give?</h1>
         <div>

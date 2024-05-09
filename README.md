@@ -90,7 +90,6 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 - stripe
 - @apollo/server
 - apollo-server-express
-- update later
 
 ## APIs Used
 
@@ -168,12 +167,12 @@ npm run dev
 - Stripe Implementation
 - PWA Installation
 - Working as a team
-- 
+  
 ## Contribution and Tasks
 
 | Contributons                                                 | Roles                                  | Task                                                                                                                                                                                                                                       |
 | ------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Yukitoshi Imaizumi-Zhou](https://github.com/yukitoshi12345) | Full-Stack Developer & Project Manager | - Created and Maintained Github Repository <br> - Created and Completed README <br> - Stripe Implementation <br> - Implementing PWA with React Vite <br> - Completed Seed Data for Animal Listing <br> - Fixing issues uploading on Render |
+| [Yukitoshi Imaizumi-Zhou](https://github.com/yukitoshi12345) | Full-Stack Developer & Project Manager | - Created and Maintained Github Repository <br> - Completed README <br> - Stripe Implementation <br> - Implementing PWA with React Vite <br> - Completed Seed Data for Animal Listing <br> - Fixing issues uploading on Render |
 | [Jodie Lee](https://github.com/jodielee062788)               | Full-Stack Developer & UI Designer     | - Developed User Interface (Tailwind and DaisyUI) <br> - Login/Sign Up Page <br> - Enquiry Page <br> - Add more here                                                                                                                       |
 | [Suyash Maharjan](https://github.com/simplesuyash)           | Full-Stack Developer & UI Designer     | - Developed User Interface (Tailwind and DaisyUI) <br> - Add more here                                                                                                                                                                     |
 

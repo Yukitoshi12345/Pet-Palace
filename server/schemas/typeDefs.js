@@ -9,6 +9,7 @@ const typeDefs = gql`
     email: String!
     password: String!
     role: String!
+    favorites: [Pet!]
   }
   type Pet {
     _id: ID!
@@ -36,6 +37,10 @@ const typeDefs = gql`
     user: User
   }
 
+  type CheckoutSession {
+    session: ID!
+  }
+
   type Mutation {
     addUser(
       name: String!
@@ -43,14 +48,12 @@ const typeDefs = gql`
       favoritePet: String!
       email: String!
       password: String!
-      role: String!
     ): Auth
     login(email: String!, password: String!): Auth
-    changePassword(
-      currentPassword: String!
-      newPassword: String!
-      confirmPassword: String!
-    ): Boolean
+    createCheckoutSession(amount: Int!, message: String): CheckoutSession
+    addFavorite(petId: ID!): User
+    removeFavorite(petId: ID!): User
+    donate(amount: Float!): String
   }
 
   type PageInfo {
@@ -70,6 +73,7 @@ const typeDefs = gql`
     edges: [PetEdge!]!
     pageInfo: PageInfo!
   }
+
   type Query {
     users: [User]
     user(userId: ID!): User
@@ -79,11 +83,9 @@ const typeDefs = gql`
     featuredPets: [Pet]
     petTypes: [String]
     locations: [String]
-    # breeds(petType: String!): [String]
-    # species(petType: String!): [String]
-    petsByLocation(location: String!): [Pet]
-    petsByType(type: String!): [Pet]
-    petsByBreedOrSpecies(breedOrSpecies: String): [Pet]
+    petsBySearchCriteria(location: String, petType: String, speciesBreed: String): [Pet]
+    breedsOrSpecies(petType: String!): [String]
+    me: User
   }
 `;
 

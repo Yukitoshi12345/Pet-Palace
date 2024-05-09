@@ -1,16 +1,13 @@
 // import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
-import About from './pages/About';
-import Home from './pages/Home';
 import ThemeController from './components/ThemeController';
-import Footer from './components/Footer';
 import BackToTopBtn from './components/BackToTopBtn';
+
 import Contact from './pages/Contact';
 import Donation from './pages/Donation'; // The Stripe Checkout Form component
+
 
 import {
   ApolloClient,
@@ -51,7 +48,6 @@ function App() {
       <ThemeController />
       <Header />
       <Outlet />
-      {/* <Footer /> */}
       <BackToTopBtn />
     </ApolloProvider>
   );

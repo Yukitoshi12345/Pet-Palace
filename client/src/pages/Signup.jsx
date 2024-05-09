@@ -63,7 +63,7 @@ const Signup = () => {
         </div>
         <div className="flex flex-col items-center lg:items-stretch lg:justify-start z-10 lg:flex-row">
           <div className="max-w-md w-full ">
-            <div className="bg-neutral shadow-md px-8 py-8 border-r-2 rounded-t-3xl lg:rounded-tr-none lg:rounded-l-3xl">
+            <div className="bg-base-300 shadow-md px-8 py-8 border-r-2 rounded-t-3xl lg:rounded-tr-none lg:rounded-l-3xl">
               <h4 className="text-2x1 mb-8 mt-1 font-bold text-center text-[34px] border-b py-1">SIGN UP</h4>
               {data ? (
                 <p className="text-green-500 mb-4">

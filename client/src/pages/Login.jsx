@@ -52,7 +52,7 @@ const Login = (props) => {
           className="contain h-[1200px] mask mask-squircle absolute right-1/4 -z-10 opacity-50"
         />
         <div className="max-w-md w-full px-4 ">
-          <div className="flex flex-col justify-center bg-neutral shadow-md rounded-r-2xl px-8 py-8 -mt-12 min-h-[600px] ">
+          <div className="flex flex-col justify-center bg-base-300 shadow-md rounded-r-2xl px-8 py-8 -mt-12 min-h-[600px] ">
             <h4 className="text-2x1 mb-8 mt-1 font-bold text-center text-[34px] border-b py-1">LOGIN</h4>
             {data ? (
               <p className="text-green-500 mb-4 text-center font-bold">
