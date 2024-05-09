@@ -8,10 +8,6 @@ const Header = () => {
   const { companyLogo, adopt } = header;
 
   const [bg, setBg] = useState(false);
-  const logout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -42,7 +38,7 @@ const Header = () => {
                     <NavLink to={`/profiles/${userId}`}>Profile</NavLink>
                   </li>
                   <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
-                    <button onClick={logout}>Logout</button>
+                    <button onClick={Auth.logout}>Logout</button>
                   </li>
                 </>
               ) : (
@@ -57,10 +53,17 @@ const Header = () => {
               )}
             </ul>
           </div>
-          <NavLink to="/pets" className="btn btn-accent">
-            {adopt.icon}
-            {adopt.btnTitle}
-          </NavLink>
+          {Auth.loggedIn() ? (
+            <NavLink to="/pets" className="btn btn-accent">
+              {adopt.icon}
+              {adopt.btnTitle}
+            </NavLink>
+          ) : (
+            <NavLink to="/login" className="btn btn-accent">
+              {adopt.icon}
+              {adopt.btnTitle}
+            </NavLink>
+          )}
           <button
             data-collapse-toggle="navbar-sticky"
             type="button"
@@ -91,5 +94,6 @@ const Header = () => {
     </nav>
   );
 };
+
 
 export default Header;
