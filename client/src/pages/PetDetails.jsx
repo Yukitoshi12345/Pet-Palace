@@ -73,7 +73,7 @@ const PetDetails = () => {
           <div>
             <img className="rounded-lg" src={`/images/pets/${petType}s/${pet.photo}`} alt={pet.name} style={{ width: '650px', height: 'auto' }} />
           </div>
-          <div className='ml-20'>
+          <div className='ml-10'>
             <p className="text-base-100"><span className="text-base-100 font-bold">Type: </span>{pet.type}</p>
             <p className="text-base-100"><span className="text-base-100 font-bold">Color: </span>{pet.color}</p>
             <p className="text-base-100"><span className="text-base-100 font-bold">Age: </span>{pet.age}</p>
@@ -108,7 +108,7 @@ const PetDetails = () => {
               </div>
             )}
           </div>  
-          <div>
+          <div className='ml-10'>
             <p className="text-base-100"><span className="text-base-100 font-bold">Description: </span>{pet.description}</p> 
             <div className="text-center">
               <NavLink to="/enquiry" className="btn btn-primary rounded btn-block">ENQUIRE NOW</NavLink>
