@@ -5,18 +5,24 @@ import { QUERY_PETS } from '../../../utils/queries';
 import PetCard from './PetCard';
 import Pagination from './Pagination';
 
-const PetListing = () => {
-  const petsLimit = 6;
-  const { loading, data, fetchMore } = useQuery(QUERY_PETS, {
-    variables: { petsLimit: petsLimit },
-  });
+const PetListing = ({loading, pets, fetchMore, petsLimit}) => {
+  // const petsLimit = 6;
+  // const { loading, data, fetchMore } = useQuery(QUERY_PETS, {
+  //   variables: { petsLimit: petsLimit },
+  // });
 
-  const edges = data?.pets.edges || [];
-  const totalCount = data?.pets.totalCount || 0;
+  // const edges = data?.pets.edges || [];
+  // const totalCount = data?.pets.totalCount || 0;
+  // const startIndex =  1;
+  // const [endIndex, setEndIndex] = useState(petsLimit);
+  // const hasNextPage = data?.pets.pageInfo.hasNextPage;
+  // const endCursor = data?.pets.pageInfo.endCursor;
+  const edges = pets?.pets.edges || [];
+  const totalCount = pets?.pets.totalCount || 0;
   const startIndex =  1;
   const [endIndex, setEndIndex] = useState(petsLimit);
-  const hasNextPage = data?.pets.pageInfo.hasNextPage;
-  const endCursor = data?.pets.pageInfo.endCursor;
+  const hasNextPage = pets?.pets.pageInfo.hasNextPage;
+  const endCursor = pets?.pets.pageInfo.endCursor;
 
   const handleMore = () => {
 
@@ -47,9 +53,9 @@ const PetListing = () => {
 
 
   return (
-    <main>
+    <main className='flex justify-center items-center flex-col pb-6'>
 
-      <div className="md:grid md:grid-cols-3 md:gap-4">
+      <div className=" grid grid-cols-auto-fill gap-4">
         {loading ? (
           <span className="loading loading-bars loading-lg"></span>
         ) : (
@@ -66,7 +72,7 @@ const PetListing = () => {
         )}
       </div>
       <div className="flex justify-center">
-        {/* You can remove the console.log statements */}
+       
         <Pagination
           startIndex={startIndex}
           endIndex={endIndex}

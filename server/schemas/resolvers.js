@@ -14,12 +14,18 @@ const resolvers = {
     user: async (parent, { userId }) => {
       return User.findOne({ _id: userId });
     },
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id });
+      }
+      throw AuthenticationError;
+    },
 
     pets: async (parent, { first, after }) => {
       const results = await Pet.find(
         after ? { _id: { $gt: new ObjectId(after) } } : {},
       )
-        .sort({ name: 1 , _id: 1 })
+        .sort({ _id: 1 })
         .limit(first);
 
       const edges = results.map((pet) => ({
@@ -54,24 +60,42 @@ const resolvers = {
     locations: async () => {
       return await Pet.find().distinct('location');
     },
-    // breeds: async (parent, { petType }) => {
-    //   return await Pet.find({ type: petType }).distinct('breed');
-    // },
-    // species: async (parent, { petType }) => {
-    //   return await Pet.find({ type: petType }).distinct('species');
-    // },
-    petsByLocation: async (parent, { location }) => {
-      return await Pet.find({ location: location });
+    breedsOrSpecies: async (parent, { petType }) => {
+      const breeds = await Pet.find({ type: petType }).distinct('breed');
+      const species = await Pet.find({ type: petType }).distinct('species');
+      const header = breeds.length > 0 ? 'All Breeds' : 'All Species';
+      return [header, ...breeds, ...species];
     },
-    petsByType: async (parent, { type }) => {
-      return await Pet.find({ type: type });
-    },
-    //find the pets by breed or species
-    //the given string may be breed or species
-    petsByBreedOrSpecies: async (parent, { breedOrSpecies }) => {
-      return await Pet.find({
-        $or: [{ breed: breedOrSpecies }, { species: breedOrSpecies }],
-      });
+    petsBySearchCriteria: async (
+      parent,
+      { location, petType, speciesBreed },
+    ) => {
+      let results = [];
+      if (location === 'All Locations' && petType === 'All Pet Types') {
+        results = await Pet.find();
+      } else if (location === 'All Locations') {
+        if (speciesBreed === 'All Breeds' || speciesBreed === 'All Species') {
+          results = await Pet.find({ type: petType });
+        } else {
+          results = await Pet.find({
+            type: petType,
+            $or: [{ species: speciesBreed }, { breed: speciesBreed }],
+          });
+        }
+      } else if (petType === 'All Pet Types') {
+        results = await Pet.find({ location: location });
+      } else {
+        if (speciesBreed === 'All Breeds' || speciesBreed === 'All Species') {
+          results = await Pet.find({ location: location, type: petType });
+        } else {
+          results = await Pet.find({
+            location: location,
+            type: petType,
+            $or: [{ species: speciesBreed }, { breed: speciesBreed }],
+          });
+        }
+      }
+      return results;
     },
   },
 

@@ -6,7 +6,7 @@ export default function ErrorPage() {
   return (
     <div
       id="error-page"
-      className={`lg:bg-[url('./assets/images/error/adopt-me-pet.png')]  bg-no-repeat bg-left bg-contain h-[100vh] relative`}
+      className={`lg:bg-[url('./assets/images/error/adopt-me-pet.png')]  bg-no-repeat bg-left bg-contain h-[100vh] relative bg-base-100`}
     >
       <img
         src={logo}
@@ -14,7 +14,7 @@ export default function ErrorPage() {
         className="w-[10dvw]  rounded-full absolute top-5 right-5"
       />
 
-      <div className="drop-shadow-lg ml-[15dvw] lg:px-12">
+      <div className=" ml-[15dvw] lg:px-12">
         <h1 className="text-[18dvw] flex justify-center  ">{heading}</h1>
         <div className="flex-col ">
           {

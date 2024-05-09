@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const PetCard = ( {index, type, name, location, age, breed, species, photo, featured, color, description, pet}) => {
   
   return (
-    <motion.div className="card w-96 bg-base-200 shadow-xl"
+    <motion.div className="card card-compact bg-base-200 shadow-xl"
     initial={{
       opacity: 0,
       y: index % 2 ===0 ? 50 : -50
@@ -25,7 +25,7 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo, feat
       <div className="card-body pt-0 mt-0">
         <h2 className="card-title my-2 border-b-0 ">
           {name}
-          {featured &&<div className="badge badge-secondary py-3  rounded-xl">FEATURED</div>}
+          {featured &&<div className="badge badge-secondary py-3  rounded-xl text-neutral">FEATURED</div>}
         </h2>
         <p className='leading-3 my-0'>{location} Rescue Center</p>
         <div className="card-actions justify-end">

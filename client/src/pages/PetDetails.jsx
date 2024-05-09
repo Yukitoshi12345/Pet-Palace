@@ -1,7 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import { useParams, NavLink } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { QUERY_SINGLE_PET } from '../utils/queries';
+import { TbLocationQuestion } from 'react-icons/tb';
+import Footer from '../components/Footer';
 
 const PetDetails = () => {
   // Get the petId from the URL parameters
@@ -22,62 +24,125 @@ const PetDetails = () => {
   }
 
   return (
-    <div className="container mx-auto section">
-      <section id="petDetails" className="mx-auto bg-neutral rounded-lg shadow-lg p-8">
-        <div>
+    <section className="section flex-col justify-between relative pt-10">
+      <div
+        id="petDetails"
+        className=" bg-base-300 rounded-lg shadow-lg p-8 container min-h-[80dvh] flex flex-col items-center justify-center mx-auto mt-8"
+      >
+        <div className="flex justify-start w-full">
           <h1 className="text-3xl font-bold mb-1">
             {pet.name}
-            {pet.featured && <span className="badge badge-secondary py-3 ml-4 rounded-xl">FEATURED</span>}
-            {pet.tame && <span className="badge badge-secondary py-3 ml-4 rounded-xl">TAME</span>}
-            {pet.pedigreeKnown && <span className="badge badge-secondary py-3 ml-4 rounded-xl">PEDIGREE KNOWN</span>}
+            {pet.featured && (
+              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
+                FEATURED
+              </span>
+            )}
+            {pet.tame && (
+              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
+                TAME
+              </span>
+            )}
+            {pet.pedigreeKnown && (
+              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
+                PEDIGREE KNOWN
+              </span>
+            )}
           </h1>
         </div>
-        <div className='grid grid-cols-2'>
+        <div className=" w-full ">
+          <img
+            className="rounded-lg float-start m-6"
+            src={`/images/pets/${petType}s/${pet.photo}`}
+            alt={pet.name}
+            style={{ width: '650px', height: 'auto' }}
+          />
           <div>
-              <img className="rounded-lg" src={`/images/pets/${petType}s/${pet.photo}`} alt={pet.name} style={{ width: '650px', height: 'auto' }} />
-          </div>
-          <div>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Type: </span>{pet.type}</p>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Color: </span>{pet.color}</p>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Age: </span>{pet.age}</p>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Gender: </span>{pet.gender}</p>
+            <p className="">
+              <span className=" font-bold">Type: </span>
+              {pet.type}
+            </p>
+            <p className="">
+              <span className=" font-bold">Color: </span>
+              {pet.color}
+            </p>
+            <p className="">
+              <span className=" font-bold">Age: </span>
+              {pet.age}
+            </p>
+            <p className="">
+              <span className=" font-bold">Gender: </span>
+              {pet.gender}
+            </p>
             {petType === 'bird' && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Species: </span>{pet.species}</p>
+                <p className="">
+                  <span className=" font-bold">Species: </span>
+                  {pet.species}
+                </p>
               </div>
             )}
             {petType !== 'bird' && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Breed: </span>{pet.breed}</p>
+                <p className="">
+                  <span className=" font-bold">Breed: </span>
+                  {pet.breed}
+                </p>
               </div>
             )}
-            <p className="text-base-100"><span className="text-base-100 font-bold">Location: </span>{pet.location}</p>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Description: </span>{pet.description}</p>     
+            <p className="">
+              <span className=" font-bold">Location: </span>
+              {pet.location}
+            </p>
 
             {(petType === 'bird' || petType === 'hamster') && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Health: </span>{pet.health}</p>
+                <p className="">
+                  <span className=" font-bold">Health: </span>
+                  {pet.health}
+                </p>
               </div>
             )}
             {petType === 'bird' && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Special Needs: </span>{pet.specialNeeds}</p>
+                <p className="">
+                  <span className=" font-bold">Special Needs: </span>
+                  {pet.specialNeeds}
+                </p>
               </div>
             )}
 
-            {(petType === 'cat' || petType === 'dog' || petType === 'rabbit') && (
+            {(petType === 'cat' ||
+              petType === 'dog' ||
+              petType === 'rabbit') && (
               <div>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Vaccination History: </span>{pet.vaccinationHistory}</p>
-                <p className="text-base-100"><span className="text-base-100 font-bold">Disability: </span>{pet.disability}</p>
+                <p className="">
+                  <span className=" font-bold">Vaccination History: </span>
+                  {pet.vaccinationHistory}
+                </p>
+                <p className="">
+                  <span className=" font-bold">Disability: </span>
+                  {pet.disability}
+                </p>
               </div>
             )}
-          <div className="text-center">
-            <NavLink to="/enquiry" className="btn btn-primary rounded btn-block">Enquire Now</NavLink>
+            <p className="">
+              <span className=" font-bold">Description: </span>
+              {pet.description}
+            </p>
+            <div className=" flex justify-center">
+              <Link
+                to={`/pets/${petId}/enquiry`}
+                className="btn btn-accent mt-4"
+              >
+                <TbLocationQuestion />
+                Enquire Now
+              </Link>
+            </div>
           </div>
-          </div>
-        </div>  
-      </section>
-    </div>
+        </div>
+      </div>
+      <Footer />
+    </section>
   );
 };
 
