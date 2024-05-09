@@ -41,7 +41,7 @@ const PetCard = ({ index, pet }) => {
           <div className="badge badge-outline py-3  rounded-xl">{color}</div>
         </div>
         <p className='line-clamp-1'>{description}</p>
-        <Link to={`/pets/${pet._id}`} className='btn btn-primary'>More Info</Link>
+        <button className='btn btn-primary'>More Info</button>
       </div>
     </motion.div>
   );
