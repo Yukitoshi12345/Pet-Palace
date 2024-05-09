@@ -90,7 +90,6 @@ THEN I am required to enter valid payment information, and I receive confirmatio
 - stripe
 - @apollo/server
 - apollo-server-express
-- update later
 
 ## APIs Used
 
