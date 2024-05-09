@@ -2,9 +2,7 @@ const { User, Pet, Donation } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
-// Added personal stripe API
-const stripeAPI = process.env.STRIPE_API_KEY;
-const stripe = require('stripe')(stripeAPI);
+// const stripe = require('stripe')('sk_test_51P8fzOP8oR1gIlWHOAxxL48oujcu144dZBk3bxsO6kTy6qNo6i1FN1vEc5LU7JtZcLqQ778SsYIlGCI5vbiRyvXa00YWa3uMG1')
 
 const resolvers = {
   Query: {
@@ -12,7 +10,8 @@ const resolvers = {
       return User.find();
     },
     user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+      return User.findOne({ _id: userId }).populate('favorites');
+      
     },
     me: async (parent, args, context) => {
       if (context.user) {
@@ -25,7 +24,9 @@ const resolvers = {
       const results = await Pet.find(
         after ? { _id: { $gt: new ObjectId(after) } } : {},
       )
+
         .sort({ _id: 1 })
+
         .limit(first);
 
       const edges = results.map((pet) => ({
@@ -128,47 +129,69 @@ const resolvers = {
         favoritePet: favoritePet,
         email: email,
         password: password,
-        role: 'user',
       });
 
       const token = signToken(user);
       return { token, user };
     },
 
-    createCheckoutSession: async (parent, args, context) => {
-      const url = new URL(context.headers.referer).origin;
+    addFavorite: async (parent, { petId }, context) => {
+  
+      if (!context.user) {
+        throw new AuthenticationError('User not authenticated.');
+      }
 
-      const donation = await Donation.create({
-        amount: args.amount,
-        donor: context.user._id,
-        message: args.message,
-      });
+      try {
+        const updatedUser = await User.findByIdAndUpdate(
+          context.user._id,
+          { $addToSet: { favorites: petId } },
+          { new: true } 
+        );
 
-      const line_items = [
-        {
-          price_data: {
-            currency: 'usd',
-            product_data: {
-              name: 'Donation',
-              images: [`${url}/images/donation.png`],
-            },
-            unit_amount: args.amount * 100,
-          },
-          quantity: 1,
-        },
-      ];
-
-      const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card'],
-        line_items,
-        mode: 'payment',
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${url}/cancel`,
-      });
-
-      return { session: session.id };
+        return updatedUser;
+      } catch (error) {
+        console.error('Error adding favorite:', error);
+        throw new Error('Error adding favorite.');
+      }
     },
+    
+    removeFavorite: async (parent, { petId }, context) => {
+      if (!context.user) {
+        throw new Error('Authentication required');
+      }
+
+      try {
+        const user = await User.findById(context.user._id);
+
+        if (!user) {
+          throw new Error('User not found');
+        }
+
+        user.favorites = user.favorites.filter(favorite => favorite.toString() !== petId);
+        await user.save();
+
+        return user;
+      } catch (error) {
+        console.error('Error removing favorite:', error);
+        throw new Error('Failed to remove favorite');
+      }
+    },
+    
+    // donate: async (parent, { amount }) => {
+    //   try {
+    //     const paymentIntent = await stripe.paymentIntents.create({
+    //       amount: amount * 100, 
+    //       currency: 'aud',
+    //     });
+
+    //     return paymentIntent.client_secret;
+    //   } catch (error) {
+    //     console.error('Error processing donation:', error);
+    //     throw new Error('Failed to process donation. Please try again.');
+    //   }
+    // },  
   },
 };
+
 
 module.exports = resolvers;

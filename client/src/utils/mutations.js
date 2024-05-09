@@ -39,10 +39,42 @@ export const ADD_USER = gql`
   }
 `;
 
-export const CREATE_CHECKOUT_SESSION = gql`
-  mutation CreateCheckoutSession($amount: Int!, $message: String) {
-    createCheckoutSession(amount: $amount, message: $message) {
-      session
+// export const ADD_DONATION = gql`
+//   mutation Mutation($donationAmount: Float!, $donationDate: String!) {
+//     addDonation(donationAmount: $donationAmount, donationDate: $donationDate) {
+//       _id
+//       donationAmount
+//       donationDate
+//       user {
+//         _id
+//         username
+//       }
+//     }
+//   }
+// `;
+
+
+export const ADD_FAVORITE = gql`
+  mutation addFavorite($petId: ID!) {
+    addFavorite(petId: $petId) {
+      _id
+      name
     }
   }
 `;
+
+export const REMOVE_FAVORITE = gql`
+  mutation removeFavorite($petId: ID!) {
+    removeFavorite(petId: $petId) {
+      _id
+      name
+    }
+  }
+`;
+
+// export const ADD_DONATION = gql`
+//   mutation Donate($amount: Float!) {
+//     donate(amount: $amount)
+//   }
+// `;
+

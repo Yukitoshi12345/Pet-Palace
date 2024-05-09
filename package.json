@@ -16,6 +16,9 @@
   "author": "Jodie Lee, Suyash Maharjan, Yukitoshi Imaizumi-Zhou",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "dotenv-webpack": "^8.1.0",

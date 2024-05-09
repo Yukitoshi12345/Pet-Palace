@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { NavLink } from "react-router-dom";
 
-const PetCard = ( {index, type, name, location, age, breed, species, photo, featured, color, description, pet}) => {
+const PetCard = ({ index, pet }) => {
+  const { type, name, location, age, breed, species, photo, featured, color, description } = pet;
   
   return (
+
     <motion.div className="card card-compact bg-base-200 shadow-xl"
     initial={{
       opacity: 0,
@@ -15,6 +18,7 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo, feat
       transition: { duration: 1, delay: 0.0, ease: 'easeInOut'}
     }}
     viewport= {{once: false}}
+
     >
       <figure className='rounded-t-2xl my-0'>
         <img 
@@ -37,7 +41,7 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo, feat
           <div className="badge badge-outline py-3  rounded-xl">{color}</div>
         </div>
         <p className='line-clamp-1'>{description}</p>
-        <button className='btn btn-primary border-2'>More Info</button>
+        <NavLink to={`/pets/${pet._id}`} className='btn btn-primary'>More Info</NavLink>
       </div>
     </motion.div>
   );

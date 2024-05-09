@@ -1,29 +1,65 @@
-import React from 'react';
-import { useQuery } from '@apollo/client';
-import { useParams, Link } from 'react-router-dom';
+
+import React, { useState, useEffect, useCallback } from 'react';
+import { useQuery, useMutation } from '@apollo/client';
+import { useParams, NavLink } from 'react-router-dom';
 import { QUERY_SINGLE_PET } from '../utils/queries';
-import { TbLocationQuestion } from 'react-icons/tb';
+import { ADD_FAVORITE } from '../utils/mutations';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/Footer';
+import { TbLocationQuestion } from 'react-icons/tb';
+
 
 const PetDetails = () => {
-  // Get the petId from the URL parameters
   const { petId } = useParams();
-
-  // Fetch data for the single pet using the QUERY_SINGLE_PET query
-  const { loading, data } = useQuery(QUERY_SINGLE_PET, {
+  const { loading, data, refetch } = useQuery(QUERY_SINGLE_PET, {
     variables: { petId: petId },
   });
 
-  const pet = data?.pet || {};
+  const [addFavorite] = useMutation(ADD_FAVORITE);
+  const [isInFavorites, setIsInFavorites] = useState(false);
 
-  // Check if pet.type is defined before using toLowerCase()
+  const fetchPetData = useCallback(async () => {
+    await refetch();
+  }, [refetch]);
+
+  useEffect(() => {
+    fetchPetData();
+  }, [fetchPetData]);
+
+  const pet = data?.pet || {};
   const petType = pet.type ? pet.type.toLowerCase() : '';
+
+  useEffect(() => {
+    if (data && data.pet) {
+      setIsInFavorites(data.pet.isInFavorites);
+    }
+  }, [data]);
+
+  const handleFavoriteClick = async () => {
+    try {
+      if (isInFavorites) {
+        alert('This pet is already added to favorites!');
+        return;
+      }
+
+      await addFavorite({
+        variables: { petId: pet._id },
+      });
+      setIsInFavorites(true);
+      await fetchPetData();
+      alert('Pet added to favorites!');
+    } catch (error) {
+      console.error('Error adding pet to favorites:', error);
+    }
+  };
 
   if (loading) {
     return <div className="text-center mt-8">Loading...</div>;
   }
 
   return (
+
     <section className="section flex-col justify-between relative pt-10">
       <div
         id="petDetails"
@@ -31,6 +67,9 @@ const PetDetails = () => {
       >
         <div className="flex justify-start w-full">
           <h1 className="text-3xl font-bold mb-1">
+            < button onClick={handleFavoriteClick} className="btn btn-primary rounded mr-4 mx-1">
+              <FontAwesomeIcon icon={faHeart} className={isInFavorites ? 'text-red-500' : 'text-gray-500'} />
+            </button>
             {pet.name}
             {pet.featured && (
               <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
@@ -73,6 +112,7 @@ const PetDetails = () => {
               <span className=" font-bold">Gender: </span>
               {pet.gender}
             </p>
+
             {petType === 'bird' && (
               <div>
                 <p className="">
@@ -89,10 +129,12 @@ const PetDetails = () => {
                 </p>
               </div>
             )}
+
             <p className="">
               <span className=" font-bold">Location: </span>
               {pet.location}
             </p>
+
 
             {(petType === 'bird' || petType === 'hamster') && (
               <div>
@@ -125,6 +167,7 @@ const PetDetails = () => {
                 </p>
               </div>
             )}
+
             <p className="">
               <span className=" font-bold">Description: </span>
               {pet.description}
@@ -138,6 +181,7 @@ const PetDetails = () => {
                 Enquire Now
               </Link>
             </div>
+
           </div>
         </div>
       </div>

@@ -8,6 +8,12 @@ export const QUERY_USERS = gql`
       birthday
       favoritePet
       email
+      favorites {
+        _id
+        name 
+        photo
+        type
+      }
     }
   }
 `;
@@ -20,6 +26,12 @@ export const QUERY_SINGLE_USER = gql`
       birthday
       favoritePet
       email
+      favorites {
+        _id
+        name
+        photo 
+        type
+      }
     }
   }
 `;
@@ -72,7 +84,6 @@ export const QUERY_PETS = gql`
   }
 `;
 
-
 export const QUERY_SINGLE_PET = gql`
   query singlePet($petId: ID!) {
     pet(petId: $petId) {
@@ -112,7 +123,6 @@ export const QUERY_PET_FOR_ENQUIRY = gql`
     }
   } 
 `;
-
 
 export const QUERY_FEATURED_PETS = gql`
   query featuredPets {
@@ -160,6 +170,7 @@ export const QUERY_PETS_BY_LOCATION = gql`
     }
   }
 `;
+
 export const QUERY_BREEDS_OR_SPECIES = gql`
   query breedsOrSpecies($petType: String!) {
     breedsOrSpecies(petType: $petType)
@@ -200,3 +211,16 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+
+export const USER_DONATIONS = gql`
+  query Query {
+    me {
+      donations {
+        donationAmount
+        donationDate
+      }
+    }
+  }
+`;
+
