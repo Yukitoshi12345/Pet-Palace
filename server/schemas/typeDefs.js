@@ -48,7 +48,6 @@ const typeDefs = gql`
       favoritePet: String!
       email: String!
       password: String!
-      role: String!
     ): Auth
     login(email: String!, password: String!): Auth
     createCheckoutSession(amount: Int!, message: String): CheckoutSession

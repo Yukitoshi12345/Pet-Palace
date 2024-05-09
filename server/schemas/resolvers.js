@@ -103,7 +103,6 @@ const resolvers = {
         favoritePet: favoritePet,
         email: email,
         password: password,
-        role: 'user',
       });
 
       const token = signToken(user);
