@@ -39,33 +39,20 @@ export const ADD_USER = gql`
   }
 `;
 
-export const ADD_DONATION = gql`
-  mutation Mutation($donationAmount: Float!, $donationDate: String!) {
-    addDonation(donationAmount: $donationAmount, donationDate: $donationDate) {
-      _id
-      donationAmount
-      donationDate
-      user {
-        _id
-        username
-      }
-    }
-  }
-`;
+// export const ADD_DONATION = gql`
+//   mutation Mutation($donationAmount: Float!, $donationDate: String!) {
+//     addDonation(donationAmount: $donationAmount, donationDate: $donationDate) {
+//       _id
+//       donationAmount
+//       donationDate
+//       user {
+//         _id
+//         username
+//       }
+//     }
+//   }
+// `;
 
-export const CHANGE_PASSWORD = gql`
-  mutation changePassword(
-    $currentPassword: String!
-    $newPassword: String!
-    $confirmPassword: String!
-  ) {
-    changePassword(
-      currentPassword: $currentPassword
-      newPassword: $newPassword
-      confirmPassword: $confirmPassword
-    )
-  }
-`;
 
 export const ADD_FAVORITE = gql`
   mutation addFavorite($petId: ID!) {
@@ -82,6 +69,12 @@ export const REMOVE_FAVORITE = gql`
       _id
       name
     }
+  }
+`;
+
+export const ADD_DONATION = gql`
+  mutation Donate($amount: Float!) {
+    donate(amount: $amount)
   }
 `;
 

@@ -1,15 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'; // Import NavLink
+import { NavLink } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { donation } from '../../data';
 
 const DonationBtn = () => {
   return (
-    <button className="btn btn-accent capitalize">
+    <NavLink to="/donate" className="btn btn-accent capitalize">
       {donation.icon}
       {donation.btnTitle}
-    </button>
+    </NavLink>
   );
 };
 

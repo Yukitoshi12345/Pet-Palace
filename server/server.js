@@ -4,12 +4,13 @@ const { expressMiddleware } = require('@apollo/server/express4');
 const path = require('path');
 const { authMiddleware } = require('./utils/auth');
 const cors = require('cors');
+const dotenv = require('dotenv');
+
 
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
-const STRIPE_KEY = process.env.SECRET_KEY_STRIPE;
-const stripe = require('stripe')(STRIPE_KEY);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -18,32 +19,32 @@ const server = new ApolloServer({
   resolvers,
 });
 
-// Stripe Integration
-app.get('/config', (req, res) => {
-  res.send({
-    publishableKey: `${process.env.PUBLISHABLE_KEY_STRIPE}`,
-  });
-});
+// // Stripe Integration
+// app.get('/config', (req, res) => {
+//   res.send({
+//     publishableKey: `${process.env.PUBLISHABLE_KEY_STRIPE}`,
+//   });
+// });
 
-app.post('/create-payment-intent', async (req, res) => {
-  try {
-    const paymentIntent = await stripe.paymentIntents.create({
-      currency: 'usd',
-      amount: 2000,
-      automatic_payment_methods: {
-        enabled: true,
-      },
-    });
+// app.post('/create-payment-intent', async (req, res) => {
+//   try {
+//     const paymentIntent = await stripe.paymentIntents.create({
+//       currency: 'usd',
+//       amount: 2000,
+//       automatic_payment_methods: {
+//         enabled: true,
+//       },
+//     });
 
-    res.send({ clientSecret: paymentIntent.client_secret });
-  } catch (error) {
-    return res.status(400).send({
-      error: {
-        message: error.message,
-      },
-    });
-  }
-});
+//     res.send({ clientSecret: paymentIntent.client_secret });
+//   } catch (error) {
+//     return res.status(400).send({
+//       error: {
+//         message: error.message,
+//       },
+//     });
+//   }
+// });
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
