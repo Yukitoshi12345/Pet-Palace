@@ -42,9 +42,6 @@ const Header = () => {
                     <NavLink to={`/profiles/${userId}`}>Profile</NavLink>
                   </li>
                   <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
-                    <NavLink to={`/profiles/${userId}/changepassword`}>Change Password</NavLink>
-                  </li>
-                  <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
                     <button onClick={logout}>Logout</button>
                   </li>
                 </>

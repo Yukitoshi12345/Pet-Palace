@@ -12,7 +12,6 @@ import ErrorPage from './pages/ErrorPage';
 import Pets from './pages/Pets';
 import PetDetails from './pages/PetDetails';
 import Enquiry from './pages/Enquiry';
-import ChangePassword from './pages/ChangePassword';
 import Donation from './pages/Donation';
 
 // Bringing in the required imports from 'react-router-dom' to set up application routing behavior
@@ -50,10 +49,6 @@ const router = createBrowserRouter([
       {
         path: 'enquiry',
         element: <Enquiry />,
-      },
-      {
-        path: 'profiles/:userId/changepassword',
-        element: <ChangePassword />,
       },
       {
         path: 'donate',

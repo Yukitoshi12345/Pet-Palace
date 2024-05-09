@@ -3,6 +3,8 @@ import { useQuery, useMutation } from '@apollo/client';
 import { useParams, NavLink } from 'react-router-dom';
 import { QUERY_SINGLE_PET } from '../utils/queries';
 import { ADD_FAVORITE } from '../utils/mutations';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const PetDetails = () => {
   const { petId } = useParams();
@@ -53,22 +55,25 @@ const PetDetails = () => {
   }
 
   return (
-    <div className="container mx-auto section">
+    <div className="container section">
       <section id="petDetails" className="mx-auto bg-neutral rounded-lg shadow-lg p-8">
         <div>
-          <h1 className="text-3xl font-bold mb-1">
+          <h1 className="text-3xl font-bold mb-1 border-b-2 py-2 text-[40px]">
+          < button onClick={handleFavoriteClick} className="btn btn-primary rounded mr-4 mx-1">
+              <FontAwesomeIcon icon={faHeart} className={isInFavorites ? 'text-red-500' : 'text-gray-500'} />
+            </button>
             {pet.name}
-            {pet.featured && <span className="badge badge-secondary py-3 ml-4 rounded-xl">FEATURED</span>}
+            {pet.featured && <span className="badge badge-secondary py-3 ml-4 rounded-xl ">FEATURED</span>}
             {pet.tame && <span className="badge badge-secondary py-3 ml-4 rounded-xl">TAME</span>}
             {pet.pedigreeKnown && <span className="badge badge-secondary py-3 ml-4 rounded-xl">PEDIGREE KNOWN</span>}
-            <button onClick={handleFavoriteClick} className="btn btn-primary rounded">Add to Favorites</button>
+            
           </h1>
         </div>
-        <div className='grid grid-cols-2'>
+        <div className='grid grid-cols-3'>
           <div>
             <img className="rounded-lg" src={`/images/pets/${petType}s/${pet.photo}`} alt={pet.name} style={{ width: '650px', height: 'auto' }} />
           </div>
-          <div>
+          <div className='ml-20'>
             <p className="text-base-100"><span className="text-base-100 font-bold">Type: </span>{pet.type}</p>
             <p className="text-base-100"><span className="text-base-100 font-bold">Color: </span>{pet.color}</p>
             <p className="text-base-100"><span className="text-base-100 font-bold">Age: </span>{pet.age}</p>
@@ -83,8 +88,7 @@ const PetDetails = () => {
                 <p className="text-base-100"><span className="text-base-100 font-bold">Breed: </span>{pet.breed}</p>
               </div>
             )}
-            <p className="text-base-100"><span className="text-base-100 font-bold">Location: </span>{pet.location}</p>
-            <p className="text-base-100"><span className="text-base-100 font-bold">Description: </span>{pet.description}</p>     
+            <p className="text-base-100"><span className="text-base-100 font-bold">Location: </span>{pet.location}</p>    
 
             {(petType === 'bird' || petType === 'hamster') && (
               <div>
@@ -103,9 +107,12 @@ const PetDetails = () => {
                 <p className="text-base-100"><span className="text-base-100 font-bold">Disability: </span>{pet.disability}</p>
               </div>
             )}
+          </div>  
+          <div>
+            <p className="text-base-100"><span className="text-base-100 font-bold">Description: </span>{pet.description}</p> 
             <div className="text-center">
-              <NavLink to="/enquiry" className="btn btn-primary rounded btn-block">Enquire Now</NavLink>
-            </div>
+              <NavLink to="/enquiry" className="btn btn-primary rounded btn-block">ENQUIRE NOW</NavLink>
+            </div>    
           </div>
         </div>  
       </section>

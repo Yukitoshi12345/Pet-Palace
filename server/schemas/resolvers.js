@@ -2,6 +2,7 @@ const { User, Pet, Donation } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
+const stripe = require('stripe')('sk_test_51P8fzOP8oR1gIlWHOAxxL48oujcu144dZBk3bxsO6kTy6qNo6i1FN1vEc5LU7JtZcLqQ778SsYIlGCI5vbiRyvXa00YWa3uMG1')
 
 const resolvers = {
   Query: {
@@ -109,35 +110,6 @@ const resolvers = {
       return { token, user };
     },
 
-    changePassword: async (_, { currentPassword, newPassword, confirmPassword }, context) => {
-      if (!context.user) {
-        throw new AuthenticationError('User not authenticated.');
-      }
-
-      const user = await User.findById(context.user._id);
-      if (!user) {
-        throw new AuthenticationError('User not found.');
-      }
-
-      const passwordMatch = await bcrypt.compare(currentPassword, user.password);
-      if (!passwordMatch) {
-        throw new UserInputError('Incorrect current password.');
-      }
-
-      if (newPassword !== confirmPassword) {
-        throw new UserInputError("New password and confirm password don't match.");
-      }
-      if (newPassword.length < 5) {
-        throw new UserInputError('New password must be at least 5 characters long.');
-      }
-
-      const hashedPassword = await bcrypt.hash(newPassword, 10);
-      user.password = hashedPassword;
-      await user.save();
-
-      return true;
-    },
-
     addFavorite: async (parent, { petId }, context) => {
   
       if (!context.user) {
@@ -179,6 +151,20 @@ const resolvers = {
         throw new Error('Failed to remove favorite');
       }
     },
+    
+    donate: async (parent, { amount }) => {
+      try {
+        const paymentIntent = await stripe.paymentIntents.create({
+          amount: amount * 100, 
+          currency: 'aud',
+        });
+
+        return paymentIntent.client_secret;
+      } catch (error) {
+        console.error('Error processing donation:', error);
+        throw new Error('Failed to process donation. Please try again.');
+      }
+    },  
   },
 };
 
