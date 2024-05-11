@@ -140,49 +140,49 @@ npm run dev
 
 ## Screenshots
 
-<b> Home Page [Dark Mode]<b>
+<b> Home Page [Dark Mode]</b>
 
 ![](./client/public/images/screenshots/Home.png)
 
 <br>
 
-<b> Home Page [Light Mode]<b>
+<b> Home Page [Light Mode]</b>
 
 ![](./client/public/images/screenshots/Home2.png)
 
 <br>
 
-<b> About Page <b>
+<b> About Page </b>
 
 ![](./client/public/images/screenshots/About.png)
 
 <br>
 
-<b> Contact Us Page <b>
+<b> Contact Us Page </b>
 
 ![](./client/public/images/screenshots/ContactUs.png)
 
 <br>
 
-<b> Sign Up Page <b>
+<b> Sign Up Page </b>
 
 ![](./client/public/images/screenshots/Signup.png)
 
 <br>
 
-<b> Log In Page <b>
+<b> Log In Page </b>
 
 ![](./client/public/images/screenshots/Login.png)
 
 <br>
 
-<b> Animal Listing Page <b>
+<b> Animal Listing Page </b>
 
 ![](./client/public/images/screenshots/AnimalListing.png)
 
 <br>
 
-<b> Pet Detail Page <b>
+<b> Pet Detail Page </b>
 
 ![](./client/public/images/screenshots/PetDetail.png)
 
@@ -228,6 +228,7 @@ npm run dev
 - Working as a team
 
 ## Contribution and Tasks
+
 
 | Contributions                                                 | Roles                                  | Task                                                                                                                                                                                                                           |
 | ------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
