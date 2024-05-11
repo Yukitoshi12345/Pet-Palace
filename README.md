@@ -140,49 +140,49 @@ npm run dev
 
 ## Screenshots
 
-<b> Home Page [Dark Mode]<b>
+<b> Home Page [Dark Mode]</b>
 
 ![](./client/public/images/screenshots/Home.png)
 
 <br>
 
-<b> Home Page [Light Mode]<b>
+<b> Home Page [Light Mode]</b>
 
 ![](./client/public/images/screenshots/Home2.png)
 
 <br>
 
-<b> About Page <b>
+<b> About Page </b>
 
 ![](./client/public/images/screenshots/About.png)
 
 <br>
 
-<b> Contact Us Page <b>
+<b> Contact Us Page </b>
 
 ![](./client/public/images/screenshots/ContactUs.png)
 
 <br>
 
-<b> Sign Up Page <b>
+<b> Sign Up Page </b>
 
 ![](./client/public/images/screenshots/Signup.png)
 
 <br>
 
-<b> Log In Page <b>
+<b> Log In Page </b>
 
 ![](./client/public/images/screenshots/Login.png)
 
 <br>
 
-<b> Animal Listing Page <b>
+<b> Animal Listing Page </b>
 
 ![](./client/public/images/screenshots/AnimalListing.png)
 
 <br>
 
-<b> Pet Detail Page <b>
+<b> Pet Detail Page </b>
 
 ![](./client/public/images/screenshots/PetDetail.png)
 
@@ -229,7 +229,7 @@ npm run dev
 
 ## Contribution and Tasks
 
-| Contributons                                                 | Roles                                  | Task                                                                                                                                                                                                                           |
+| Contributions                                                | Roles                                  | Task                                                                                                                                                                                                                           |
 | ------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Yukitoshi Imaizumi-Zhou](https://github.com/yukitoshi12345) | Full-Stack Developer & Project Manager | - Created and Maintained Github Repository <br> - Completed README <br> - Stripe Implementation <br> - Implementing PWA with React Vite <br> - Completed Seed Data for Animal Listing <br> - Fixing issues uploading on Render |
 | [Jodie Lee](https://github.com/jodielee062788)               | Full-Stack Developer & UI Designer     | - Developed User Interface (Tailwind and DaisyUI) <br> - User Authentication Login/Sign Up Page <br> - Enquiry Page <br> - Stripe Implementation <br> - Manage Pet Listings                                                    |
