@@ -193,7 +193,7 @@ npm run dev
 #### Features:
 
 - Sign Up
-- Login In
+- Login
 - Donation
 - Back to Top Button
 - Pet Listing
@@ -229,7 +229,8 @@ npm run dev
 
 ## Contribution and Tasks
 
-| Contributions                                                | Roles                                  | Task                                                                                                                                                                                                                           |
+
+| Contributions                                                 | Roles                                  | Task                                                                                                                                                                                                                           |
 | ------------------------------------------------------------ | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Yukitoshi Imaizumi-Zhou](https://github.com/yukitoshi12345) | Full-Stack Developer & Project Manager | - Created and Maintained Github Repository <br> - Completed README <br> - Stripe Implementation <br> - Implementing PWA with React Vite <br> - Completed Seed Data for Animal Listing <br> - Fixing issues uploading on Render |
 | [Jodie Lee](https://github.com/jodielee062788)               | Full-Stack Developer & UI Designer     | - Developed User Interface (Tailwind and DaisyUI) <br> - User Authentication Login/Sign Up Page <br> - Enquiry Page <br> - Stripe Implementation <br> - Manage Pet Listings                                                    |
