@@ -22,6 +22,21 @@ const manifestForPlugIn = {
       },
     ],
   },
+  workbox: {
+    globPatterns: ['**/*.{js,css,html,png,svg,jpg,pdf,jsx}'],
+    runtimeCaching: [
+      {
+        urlPattern: ({ url }) => url.pathname.startsWith('/src/assets'),
+        handler: 'CacheFirst',
+        options: {
+          cacheName: 'assets-cache',
+          cacheableResponse: {
+            statuses: [0, 200], // Caches successful and opaque responses
+          },
+        },
+      },
+    ],
+  },
 };
 
 export default defineConfig({
