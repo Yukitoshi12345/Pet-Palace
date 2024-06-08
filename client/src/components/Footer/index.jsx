@@ -2,26 +2,14 @@ import React from 'react';
 import { footer } from '../../data';
 
 const Footer = () => {
-  const { projectMembers, slogan, logo } = footer;
+  const { authors } = footer;
   return (
     <footer className="bg-accent footer mt-10 flex items-center justify-evenly">
-      <figure className="flex flex-col gap-0 items-center">
-        <img src={logo.pic} alt="logo" className="h-28 rounded-full" />
-        <figcaption className="text-white text-xl tracking-tight font-bold m-0">
-          {logo.brand}
-        </figcaption>
-      </figure>
-      <p className="font-logo text-4xl text-white">{slogan}</p>
+      <figure className="flex flex-col gap-0 items-center"></figure>
 
-      <div className=" text-white flex flex-col justify-center items-center">
-        <div className="divide-x-2 divide-dotted">
-          {projectMembers.map((member, index) => {
-            return (
-              <span key={index} className="px-3 italic">
-                {member}
-              </span>
-            );
-          })}
+      <div className="text-white flex flex-col justify-center items-center w-full">
+        <div className="divide-x-2 divide-dotted flex justify-center w-full">
+          <span className="px-2 text-center">{authors}</span>
         </div>
       </div>
     </footer>

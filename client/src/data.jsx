@@ -3,11 +3,11 @@
 import { BiSolidDonateHeart } from 'react-icons/bi';
 
 //paw icon
-import { MdPets } from "react-icons/md";
+import { MdPets } from 'react-icons/md';
 
 //header logos
-import { FaUserCheck } from "react-icons/fa6"; 
-import { FaUserLock } from "react-icons/fa6";
+import { FaUserCheck } from 'react-icons/fa6';
+import { FaUserLock } from 'react-icons/fa6';
 //brand logo
 import logo from './assets/images/logo.gif';
 
@@ -15,7 +15,6 @@ import logo from './assets/images/logo.gif';
 import { FiMail, FiMapPin } from 'react-icons/fi';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { BsSendArrowUpFill } from 'react-icons/bs';
-
 
 //error page photo
 import dog from './assets/images/error/adopt-me-pet.png';
@@ -40,13 +39,10 @@ import casino from './assets/images/about/star-casino.png';
 import coles from './assets/images/about/coles.jpg';
 import staff from './assets/images/about/StaffGroup.jpg';
 
-
 //home photos
 import hero from './assets/images/home/pet-adoption.png';
 import rego1 from './assets/images/home/acnc.png';
 import rego2 from './assets/images/home/ACNC-1.png';
-
-
 
 export const about = {
   heros: [hero1, hero2, hero3, hero4],
@@ -146,10 +142,8 @@ export const footer = {
     brand: 'Pet Palace',
     pic: logo,
   },
-  projectMembers: ['Jodie Lee', 'Suyash Maharjan', 'Yukitoshi Imaizumi-Zhou'], 
-  copyright: '\u{00A9} 2024 Pet Palace - edX Coding Bootcamp @The University of Sydney',
-  slogan: '\u{201c} A brighter future for animals in need \u{201d}'
-
+  authors:
+    '© 2024 Jodie Lee, Suyash Maharjan, and Yukitoshi Imaizumi-Zhou. All Rights Reserved.',
 };
 
 export const header = {
@@ -174,15 +168,30 @@ export const header = {
     },
   ],
   donationIcon: <BiSolidDonateHeart />,
-  adopt:{
+  adopt: {
     btnTitle: 'Adopt A Pet',
     icon: <MdPets />,
-  
   },
-  userIconLoggedOut: <FaUserLock style={{ fontSize: '2em',  
-  marginRight: 5, color: 'A16207', marginTop:'0.5rem' }}/>,
-  userIconLoggedIn: <FaUserCheck style={{ fontSize: '2em',  
-  marginRight: 5, color: 'A16207', marginTop:'0.5rem' }}/>,
+  userIconLoggedOut: (
+    <FaUserLock
+      style={{
+        fontSize: '2em',
+        marginRight: 5,
+        color: 'A16207',
+        marginTop: '0.5rem',
+      }}
+    />
+  ),
+  userIconLoggedIn: (
+    <FaUserCheck
+      style={{
+        fontSize: '2em',
+        marginRight: 5,
+        color: 'A16207',
+        marginTop: '0.5rem',
+      }}
+    />
+  ),
 };
 
 export const contact = {
@@ -215,18 +224,17 @@ export const contact = {
         email: 'info@brisbane.petpalace.org.au',
         number: '1800 000 002',
         address: '2 Burnett Ln, Brisbane, QLD 4000',
-
-      }
-    ]
+      },
+    ],
   },
-  successMessage: 'Message received successfully. Thank you for reaching out to us. We will get back to you as soon as possible.',
-  errorMessage: 'There was an error sending your message. Please try again.'
-  
-}
+  successMessage:
+    'Message received successfully. Thank you for reaching out to us. We will get back to you as soon as possible.',
+  errorMessage: 'There was an error sending your message. Please try again.',
+};
 
 export const home = {
   hero: hero,
-  plea: 'More than 500 animals desperately need help at our center. You have the power to change a life. It\'s a gift they\'ll never forget',
+  plea: "More than 500 animals desperately need help at our center. You have the power to change a life. It's a gift they'll never forget",
   donation: 'Donate Now',
   donationIcon: <BiSolidDonateHeart />,
   about: [
@@ -246,36 +254,35 @@ export const home = {
         'We are committed to creating a safe and loving environment for all animals. We believe that every animal deserves to be treated with kindness and compassion. We are dedicated to providing the best possible care for the animals in our care, and we are proud to be a part of the Pet Palace family.',
     },
   ],
-  registrationHeading: 'We are a registered charity with the Australian Charities and Not-for-profits Commission (ACNC)',
+  registrationHeading:
+    'We are a registered charity with the Australian Charities and Not-for-profits Commission (ACNC)',
   regos: [rego1, rego2],
   featured: 'See our featured pets',
-  featuredPets:{
+  featuredPets: {
     heading: 'Featured Pets',
     tag: 'featured',
     btn: 'View All Pets',
-    icon: <MdPets />
-  }
-}
+    icon: <MdPets />,
+  },
+};
 
 export const donation = {
   btnTitle: 'donate now',
   icon: <BiSolidDonateHeart />,
-}
+};
 
 export const error = {
   img: dog,
   heading: 'Oops!',
-  paragraphs:[
+  paragraphs: [
     'Sorry the page you are looking for is not available.',
-    'But I am available for adoption.'
+    'But I am available for adoption.',
   ],
-  btn:{
+  btn: {
     text: 'Adopt Me',
     icon: <MdPets />,
   },
   logo: logo,
 };
 
-//When guest visit the rescue center, 
-
-
+//When guest visit the rescue center,
