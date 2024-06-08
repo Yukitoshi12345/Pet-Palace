@@ -26,12 +26,6 @@ const Home = () => {
         </div>
       </div>
       <Footer />
-      <div className="toast">
-        <div className="alert bg-base-100">
-          <DonationBtn />
-        </div>
-      </div>
-
     </section>
   );
 };

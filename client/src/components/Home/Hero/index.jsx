@@ -3,25 +3,23 @@ import { home } from '../../../data';
 import { motion, AnimatePresence } from 'framer-motion';
 import DonationBtn from '../../DonationBtn';
 
-
 const sentence = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 0.1,
-        staggerChildren: 0.03,
-      },
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.1,
+      staggerChildren: 0.03,
     },
-  };
-  const letter = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
+  },
+};
+const letter = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+  },
+};
 
 const Hero = () => {
   return (
