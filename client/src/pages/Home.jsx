@@ -5,7 +5,6 @@ import FeaturedPets from '../components/Home/FeaturedPets';
 import About from '../components/Home/About';
 import Hero from '../components/Home/Hero';
 import Footer from '../components/Footer';
-import DonationBtn from '../components/DonationBtn';
 
 const Home = () => {
   return (
