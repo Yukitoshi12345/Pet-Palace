@@ -1,10 +1,9 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { contact } from '../data';
 import { validateEmail } from '../utils/helpers';
 import emailjs from '@emailjs/browser';
 import Footer from '../components/Footer';
-import  Alert from '../components/Alert';
-
+import Alert from '../components/Alert';
 
 const Contact = () => {
   // Create state variables for the fields in the form
@@ -18,6 +17,13 @@ const Contact = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
   const form = useRef();
+
+  useEffect(() => {
+    // Log environment variables to verify they are being loaded correctly
+    console.log('SERVICE ID:', import.meta.env.VITE_SERVICE_ID);
+    console.log('TEMPLATE ID:', import.meta.env.VITE_TEMPLATE_ID);
+    console.log('USER ID:', import.meta.env.VITE_USER_ID);
+  }, []);
 
   //handle input blur
   const handleInputBlur = (e) => {
@@ -71,8 +77,8 @@ const Contact = () => {
 
   // Handle the form submission
   const handleFormSubmit = async (e) => {
-    if (!email || !name || !message ) {
-      alert('Please fill in all required fields')
+    if (!email || !name || !message) {
+      alert('Please fill in all required fields');
       setErrorMessage('Please fill in all required fields');
       return;
     }
@@ -115,8 +121,12 @@ const Contact = () => {
       className="section flex-col justify-between"
       id="contact"
     >
-      <Alert  message={contact.successMessage} type="success" show={showSuccess}/>
-      <Alert  message={contact.errorMessage} type="error" show={showError} />
+      <Alert
+        message={contact.successMessage}
+        type="success"
+        show={showSuccess}
+      />
+      <Alert message={contact.errorMessage} type="error" show={showError} />
       <div>
         {/* section title  */}
         <div className="container mx-auto">
@@ -146,9 +156,13 @@ const Contact = () => {
                       <a href={`tel:${location.number}`}>{location.number}</a>
                     </div>
                     <div className="text-lg m-0 flex items-center gap-2 italic">
-                      <a href={`http://maps.google.com/?q= ${location.address}`} target='_blank'>{location.address}</a>
+                      <a
+                        href={`http://maps.google.com/?q= ${location.address}`}
+                        target="_blank"
+                      >
+                        {location.address}
+                      </a>
                     </div>
-
                   </div>
                 ))}
               </div>
