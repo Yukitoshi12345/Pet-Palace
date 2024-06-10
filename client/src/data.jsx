@@ -169,7 +169,7 @@ export const header = {
   ],
   donationIcon: <BiSolidDonateHeart />,
   adopt: {
-    btnTitle: 'Adopt A Pet',
+    btnTitle: 'ADOPT A PET',
     icon: <MdPets />,
   },
   userIconLoggedOut: (

@@ -31,6 +31,8 @@ export const QUERY_SINGLE_USER = gql`
         name
         photo 
         type
+        breed
+        species
       }
     }
   }
