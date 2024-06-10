@@ -24,7 +24,7 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo}) => 
       <div className="card-body pt-0 mt-0">
         <h2 className="card-title my-2 border-b-0 ">
           {name}
-          <div className="badge badge-secondary py-3  rounded-xl">FEATURED</div>
+          <div className="badge badge-secondary py-3 text-neutral rounded-xl">FEATURED</div>
         </h2>
         <p className='leading-3 my-0'>{location}</p>
         <div className="card-actions justify-end">
