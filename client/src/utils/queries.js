@@ -33,6 +33,7 @@ export const QUERY_SINGLE_USER = gql`
         type
         breed
         species
+        location
       }
     }
   }
