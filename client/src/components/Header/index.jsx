@@ -55,7 +55,8 @@ const Header = () => {
                     <NavLink to="/donate">Donate</NavLink>
                   </li>
                   <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
-                    <button onClick={Auth.logout}>Logout</button>
+                    <button onClick={Auth.logout}
+                    className="inline-block w-full text-left">Logout</button>
                   </li>
                 </>
               ) : (
@@ -71,7 +72,7 @@ const Header = () => {
             </ul>
           </div>
           {Auth.loggedIn() ? (
-            <NavLink to="/pets" className="btn btn-accent hidden sm:flex">
+            <NavLink to="/pets" className="btn btn-accent hidden sm:flex rounded-xl">
               {adopt.icon}
               {adopt.btnTitle}
             </NavLink>

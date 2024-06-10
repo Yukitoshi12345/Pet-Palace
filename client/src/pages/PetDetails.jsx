@@ -10,6 +10,7 @@ import { TbLocationQuestion } from 'react-icons/tb';
 import { IoArrowBackCircleSharp } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 
+
 const PetDetails = () => {
   const { petId } = useParams();
   const { loading, data, refetch } = useQuery(QUERY_SINGLE_PET, {
@@ -191,7 +192,7 @@ const PetDetails = () => {
               <span className="font-bold">Description: </span>
               {pet.description}
             </p>
-            <div className="flex justify-end">
+            <div className="flex justify-end rounded-xl">
               <Link
                 to={`/pets/${petId}/enquiry`}
                 className="btn btn-accent mt-3"

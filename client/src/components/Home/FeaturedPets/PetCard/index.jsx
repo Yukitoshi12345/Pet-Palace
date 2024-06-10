@@ -41,12 +41,12 @@ const PetCard = ({ index, type, name, location, age, breed, species, photo, _id 
           <div className="badge badge-outline py-3 rounded-xl">{breed || species}</div>
         </div>
         {isLoggedIn ? (
-          <Link to={`/pets/${_id}`} className="btn mt-3 btn-primary flex items-center">
+          <Link to={`/pets/${_id}`} className="btn mt-3 btn-primary bg-base-100 flex items-center rounded-xl">
             <FaPaw className="mr-2" />
             ADOPT ME
           </Link>
         ) : (
-          <Link to="/login" className="btn mt-3 btn-primary flex items-center">
+          <Link to="/login" className="btn mt-3 btn-primary flex items-center rounded-xl">
             <FaPaw className="mr-2" />
             ADOPT ME
           </Link>
