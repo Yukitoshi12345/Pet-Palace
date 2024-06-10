@@ -14,19 +14,19 @@ const FeaturedPets = () => {
       <h3 className="text-2xl font-bold text-center capitalize">
         {home.featured}
       </h3>
-      <div className="flex flex-wrap items-center justify-center p4 gap-4">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-4">
         {loading ? (
           <span className="loading loading-bars loading-lg"></span>
         ) : (
           featuredPets.map((pet, index) => (
-            <Link key={index} to={`/pets/${pet._id}`} className="no-underline">
+            <div key={index} className="no-underline">
               <PetCard index={index} {...pet} />
-            </Link>
+            </div>
           ))
         )}
       </div>
       <div className="flex justify-center my-5">
-        <Link to="/pets" className="btn btn-accent">
+        <Link to="/pets" className="btn btn-accent flex items-center">
           {home.featuredPets.icon}
           {home.featuredPets.btn}
         </Link>
