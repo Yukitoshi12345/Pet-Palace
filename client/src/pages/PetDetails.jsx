@@ -62,10 +62,10 @@ const PetDetails = () => {
     <section className="section flex-col justify-between relative pt-10">
       <div
         id="petDetails"
-        className=" bg-base-300 rounded-lg shadow-lg p-8 container min-h-[80dvh] flex flex-col items-center justify-center mx-auto mt-8"
+        className="bg-base-300 rounded-lg shadow-lg p-8 container min-h-[80dvh] flex flex-col items-center justify-center mx-auto mt-8"
       >
         <motion.div
-          className="w-full text-4xl  flex justify-end "
+          className="w-full text-4xl flex justify-end"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -77,7 +77,7 @@ const PetDetails = () => {
         >
           <Link
             to="/pets"
-            className="flex items-center no-underline text-accent text-[30px] mt-4"
+            className="flex items-center no-underline text-accent text-[30px] mt-1"
           >
             <IoArrowBackCircleSharp className='mr-2' />
             BACK TO PETS
@@ -87,7 +87,7 @@ const PetDetails = () => {
           <h1 className="text-3xl font-bold mb-1">
             <button
               onClick={handleFavoriteClick}
-              className="mr-5 ml-8 mx-1cursor-pointer"
+              className="mr-5 ml-8 mx-1 cursor-pointer"
             >
               <FontAwesomeIcon
                 icon={faHeart}
@@ -101,104 +101,100 @@ const PetDetails = () => {
               </span>
             )}
             {pet.tame && (
-              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
+              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral">
                 TAME
               </span>
             )}
             {pet.pedigreeKnown && (
-              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
+              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral">
                 PEDIGREE KNOWN
               </span>
             )}
           </h1>
         </div>
-        <div className=" w-full ">
-          <img
-            className="rounded-lg float-start m-6"
-            src={`/images/pets/${petType}s/${pet.photo}`}
-            alt={pet.name}
-            style={{ width: '650px', height: 'auto' }}
-          />
-          <div>
-            <p className="">
-              <span className=" font-bold">Type: </span>
+        <div className="w-full flex flex-wrap">
+          <div className="w-full md:w-1/2 p-2">
+            <img
+              className="rounded-lg w-full"
+              src={`/images/pets/${petType}s/${pet.photo}`}
+              alt={pet.name}
+            />
+          </div>
+          <div className="w-full md:w-1/2 p-7">
+            <p className="mb-2">
+              <span className="font-bold">Type: </span>
               {pet.type}
             </p>
-            <p className="">
-              <span className=" font-bold">Color: </span>
+            <p className="mb-2">
+              <span className="font-bold">Color: </span>
               {pet.color}
             </p>
-            <p className="">
-              <span className=" font-bold">Age: </span>
+            <p className="mb-2">
+              <span className="font-bold">Age: </span>
               {pet.age}
             </p>
-            <p className="">
-              <span className=" font-bold">Gender: </span>
+            <p className="mb-2">
+              <span className="font-bold">Gender: </span>
               {pet.gender}
             </p>
-
             {petType === 'bird' && (
-              <div>
+              <div className="mb-2">
                 <p className="">
-                  <span className=" font-bold">Species: </span>
+                  <span className="font-bold">Species: </span>
                   {pet.species}
                 </p>
               </div>
             )}
             {petType !== 'bird' && (
-              <div>
+              <div className="mb-2">
                 <p className="">
-                  <span className=" font-bold">Breed: </span>
+                  <span className="font-bold">Breed: </span>
                   {pet.breed}
                 </p>
               </div>
             )}
-
-            <p className="">
-              <span className=" font-bold">Location: </span>
+            <p className="mb-2">
+              <span className="font-bold">Location: </span>
               {pet.location}
             </p>
-
             {(petType === 'bird' || petType === 'hamster') && (
-              <div>
+              <div className="mb-2">
                 <p className="">
-                  <span className=" font-bold">Health: </span>
+                  <span className="font-bold">Health: </span>
                   {pet.health}
                 </p>
               </div>
             )}
             {petType === 'bird' && (
-              <div>
+              <div className="mb-2">
                 <p className="">
-                  <span className=" font-bold">Special Needs: </span>
+                  <span className="font-bold">Special Needs: </span>
                   {pet.specialNeeds}
                 </p>
               </div>
             )}
-
             {(petType === 'cat' ||
               petType === 'dog' ||
               petType === 'rabbit') && (
-              <div>
+              <div className="mb-2">
                 <p className="">
-                  <span className=" font-bold">Vaccination History: </span>
+                  <span className="font-bold">Vaccination History: </span>
                   {pet.vaccinationHistory}
                 </p>
                 <p className="">
-                  <span className=" font-bold">Disability: </span>
+                  <span className="font-bold">Disability: </span>
                   {pet.disability}
                 </p>
               </div>
             )}
-
-            <p className="">
-              <span className=" font-bold">Description: </span>
+            <p className="mb-2">
+              <span className="font-bold">Description: </span>
               {pet.description}
             </p>
-            <div className=" flex justify-center">
+            <div className="flex justify-end">
               <Link
                 to={`/pets/${petId}/enquiry`}
-                className="btn btn-accent mt-2 mb-8"
+                className="btn btn-accent mt-3"
               >
                 <TbLocationQuestion />
                 ENQUIRE NOW
