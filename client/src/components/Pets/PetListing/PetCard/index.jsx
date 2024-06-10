@@ -27,7 +27,7 @@ const PetCard = ({ index, pet }) => {
         />
       </figure>
       <div className="card-body pt-0 mt-3">
-        <h2 className="card-title my-2 border-b-0 ">
+        <h2 className="card-title my-2 border-b-0 font-bold text-[27px] ">
           {name}
           {featured && (
             <div className="badge badge-secondary py-3 rounded-xl text-neutral">
@@ -47,7 +47,7 @@ const PetCard = ({ index, pet }) => {
           <div className="badge badge-outline py-3 rounded-xl">{color}</div>
         </div>
         <p className="line-clamp-1">{description}</p>
-        <Link to={`/pets/${_id}`} className="btn btn-primary">
+        <Link to={`/pets/${_id}`} className="btn btn-primary bg-base-100 rounded-xl">
           <FaPaw />
           ADOPT ME
         </Link>

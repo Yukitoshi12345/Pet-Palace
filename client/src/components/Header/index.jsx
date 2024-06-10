@@ -72,7 +72,7 @@ const Header = () => {
             </ul>
           </div>
           {Auth.loggedIn() ? (
-            <NavLink to="/pets" className="btn btn-accent hidden sm:flex">
+            <NavLink to="/pets" className="btn btn-accent hidden sm:flex rounded-xl">
               {adopt.icon}
               {adopt.btnTitle}
             </NavLink>
