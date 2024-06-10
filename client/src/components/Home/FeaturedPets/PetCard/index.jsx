@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaPaw } from 'react-icons/fa';
 
 const PetCard = ( {index, type, name, location, age, breed, species, photo}) => {
   return (
@@ -34,6 +35,10 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo}) => 
           </div>
           <div className="badge badge-outline py-3  rounded-xl">{breed || species}</div>
         </div>
+        <button className='btn mt-3 btn-primary flex items-center'>
+          <FaPaw /> {/* Adding the icon with some margin */}
+          ADOPT ME
+        </button>
       </div>
     </motion.div>
   );
