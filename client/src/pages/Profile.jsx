@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import moment from 'moment'; 
 import { QUERY_SINGLE_USER } from '../utils/queries';
 import { REMOVE_FAVORITE } from '../utils/mutations'; 
+import { FaTimes } from 'react-icons/fa';
 
 const Profile = () => {
   const { userId } = useParams();
@@ -64,21 +65,21 @@ const Profile = () => {
             <p className="text-lg text-center mt-20 text-base-100">No favorite pets found.</p>
           ) : (
             favoritePets.map((pet) => (
-              <div key={pet._id} className="border border-gray-300 rounded p-2 mb-4">
+              <div key={pet._id} className="rounded p-2 hover:border">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center">
                     <img 
                       src={`/images/pets/${pet.type.toLowerCase()}s/${pet.photo}`} 
                       alt={`favorite pet ${pet.name}`} 
-                      className="w-16 h-16 mr-4 object-cover rounded-full"
+                      className="w-16 h-16 mr-4 object-cover rounded-full border border-grey shadow"
                     />
                     <div>
                       <Link to={`/pets/${pet._id}`} className="text-base-100 text-[20px] no-underline hover:underline">{pet.name}</Link>
-                      <p className='text-base-100 text-[14px] '>{pet.breed || pet.species}</p> 
+                      <p className='text-base-100 text-[14px] mt-0'>{pet.breed || pet.species}</p> 
                     </div>
                   </div>
-                  <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 text-sm rounded" onClick={() => handleRemoveFavorite(pet._id)}>
-                    REMOVE
+                  <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 text-[12px] rounded" onClick={() => handleRemoveFavorite(pet._id)}>
+                    <FaTimes />
                   </button>
                 </div>
               </div>
