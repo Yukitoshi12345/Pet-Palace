@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { useParams, Link } from 'react-router-dom';
 import moment from 'moment'; 
 import { QUERY_SINGLE_USER } from '../utils/queries';
 import { REMOVE_FAVORITE } from '../utils/mutations'; 
-
-// import DogPic from '../assets/images/favorites/dog.png';
-// import CatPic from '../assets/images/favorites/cat.png';
-// import BirdPic from '../assets/images/favorites/bird.png';
-// import RabbitPic from '../assets/images/favorites/rabbit.png';
-// import HamsterPic from '../assets/images/favorites/hamster.png';
+import { FaTimes } from 'react-icons/fa';
 
 const Profile = () => {
   const { userId } = useParams();
@@ -45,39 +40,53 @@ const Profile = () => {
 
   return (
     <div className="container mx-auto section">
-      <section id="profile" className="flex max-w-4xl mx-auto bg-neutral rounded-lg shadow-lg p-8 min-h-[600px] min-w-[800px]">
-        <div className="w-1/2 border-2 border-gray-300 rounded p-4 mr-4">
-          <h2 className="text-[34px] font-bold mb-4 text-center border-b-2 py-1">USER PROFILE</h2>
-          <div className='mt-20'>
-            <p className="text-[22px] mb-4 text-base-100">
+      <section id="profile" className="flex max-w-4xl mx-auto bg-base-300 rounded-lg shadow-lg p-8 min-h-[600px] min-w-[800px]">
+        <div className="w-1/2 p-4 mr-4">
+          <h2 className="text-[34px] font-bold text-center border-neutral border-b-2 py-1">USER PROFILE</h2>
+          <div className="flex flex-col items-center">
+            <img 
+              // src={} 
+              alt="User Profile" 
+              className="w-24 h-24 object-cover rounded-full border border-grey shadow-lg mb-4"
+            />
+            <p className="text-[20px] mb-0 text-neutral">
               <span className="font-semibold">Name:</span> {userData.name}
             </p>
-            <p className="text-[22px] mb-4 text-base-100">
+            <p className="text-[20px] mb-0 text-neutral">
               <span className="font-semibold">Email:</span> {userData.email}
             </p>
-            <p className="text-[22px] mb-4 text-base-100">
+            <p className="text-[20px] mb-0 text-neutral">
               <span className="font-semibold">Birthday:</span> {moment.unix(userData.birthday / 1000).format('YYYY-MM-DD')}
             </p>
-            <p className="text-[22px] mb-4 text-base-100">
+            <p className="text-[20px] mb-0 text-neutral">
               <span className="font-semibold">Favorite Pet:</span> {userData.favoritePet}
             </p>
           </div>
         </div>
         
-        <div className="w-1/2 border-2 border-gray-300 rounded p-4 mr-4">
-          <h3 className="text-[34px] font-bold text-center border-b-2 py-1">FAVORITE PETS</h3>
+        <div className="border-r border-neutral mr-3 border-dashed"></div>
+
+        <div className="w-1/2 p-4">
+          <h3 className="text-[34px] font-bold text-center border-b-2 border-neutral py-1">FAVORITE PETS</h3>
           {favoritePets.length === 0 ? (
-            <p className="text-lg text-center mt-20 text-base-100">No favorite pets found.</p>
+            <p className="text-lg text-center mt-20 text-neutral">No favorite pets found.</p>
           ) : (
             favoritePets.map((pet) => (
-              <div key={pet._id} className="border border-gray-300 rounded p-4 mb-4">
+              <div key={pet._id} className="rounded-lg p-3 hover:border hover:shadow-md">
                 <div className="flex items-center justify-between">
-                  <p className="text-xl font-semibold">         
-                    <Link to={`/pets/${pet._id}`} className="text-base-100 text-[26px] hover:underline">{pet.name}</Link>
-                  <p className='text-base-100'>{pet.type}</p>  
-                  </p>
-                  <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => handleRemoveFavorite(pet._id)}>
-                    Remove
+                  <div className="flex items-center">
+                    <img 
+                      src={`/images/pets/${pet.type.toLowerCase()}s/${pet.photo}`} 
+                      alt={`favorite pet ${pet.name}`} 
+                      className="w-16 h-16 mr-4 object-cover rounded-full border border-grey shadow-lg"
+                    />
+                    <div>
+                      <Link to={`/pets/${pet._id}`} className="text-neutral text-[20px] no-underline hover:underline">{pet.name}</Link>
+                      <p className='text-neutral text-[14px] mt-0'>{pet.breed || pet.species}</p> 
+                    </div>
+                  </div>
+                  <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 text-[12px] rounded" onClick={() => handleRemoveFavorite(pet._id)}>
+                    <FaTimes />
                   </button>
                 </div>
               </div>
