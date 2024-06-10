@@ -4,7 +4,7 @@ import { FaPaw } from 'react-icons/fa';
 
 const PetCard = ( {index, type, name, location, age, breed, species, photo}) => {
   return (
-    <motion.div className="card w-96 bg-base-200 shadow-xl"
+    <motion.div className="card w-96 h-96 bg-base-200 shadow-x1 flex flex-col"
     initial={{
       opacity: 0,
       y: index % 2 ===0 ? 50 : -50
@@ -22,8 +22,8 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo}) => 
           alt={`featured pet ${name}`}
         />
       </figure>
-      <div className="card-body pt-0 mt-0">
-        <h2 className="card-title my-2 border-b-0 ">
+      <div className="card-body pt-0 mt-3">
+        <h2 className="card-title my-2 border-b-0">
           {name}
           <div className="badge badge-secondary py-3 text-neutral rounded-xl">FEATURED</div>
         </h2>
