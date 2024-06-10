@@ -18,9 +18,14 @@ const Header = () => {
   const userId = Auth.loggedIn() ? Auth.getProfile().data._id : null;
 
   return (
-    <nav className={`${bg ? "bg-base-200 h-24 opacity-95 shadow-sm shadow-stone-700" : "bg-base-100 h-32"} fixed container mx-auto text-[1.2rem] z-20 top-0 left-0 right-0 lg:px-12 xxl:px-24`}>
+    <nav
+      className={`${bg ? 'bg-base-200 h-24 opacity-95 shadow-sm shadow-stone-700' : 'bg-base-100 h-32'} fixed container mx-auto text-[1.2rem] z-20 top-0 left-0 right-0 lg:px-12 xxl:px-24`}
+    >
       <div className="flex flex-wrap items-center justify-between mx-auto p-4">
-        <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <NavLink
+          to="/"
+          className="flex items-center space-x-3 rtl:space-x-reverse"
+        >
           <img src={companyLogo.pic} className="h-24 rounded-full" alt="Logo" />
           <span className="self-center bg-clip-text text-4xl text-transparent  whitespace-nowrap font-logo bg-gradient-to-r  from-orange-900 via-neutral to-orange-900 pr-3">
             {companyLogo.name}
@@ -29,13 +34,21 @@ const Header = () => {
         <div className="flex lg:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <div className="dropdown dropdown-bottom">
             <div tabIndex={0} role="button" className="m-1">
-              {Auth.loggedIn() ? header.userIconLoggedIn : header.userIconLoggedOut}
+              {Auth.loggedIn()
+                ? header.userIconLoggedIn
+                : header.userIconLoggedOut}
             </div>
-            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
               {Auth.loggedIn() ? (
                 <>
                   <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
                     <NavLink to={`/profiles/${userId}`}>Profile</NavLink>
+                  </li>
+                  <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
+                    <NavLink to="/donate">Donate</NavLink>
                   </li>
                   <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
                     <button onClick={Auth.logout}>Logout</button>
@@ -94,6 +107,5 @@ const Header = () => {
     </nav>
   );
 };
-
 
 export default Header;
