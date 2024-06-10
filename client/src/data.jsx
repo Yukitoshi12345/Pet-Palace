@@ -261,7 +261,7 @@ export const home = {
   featuredPets: {
     heading: 'Featured Pets',
     tag: 'featured',
-    btn: 'View All Pets',
+    btn: 'VIEW ALL PETS',
     icon: <MdPets />,
   },
 };

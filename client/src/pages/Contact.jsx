@@ -251,13 +251,15 @@ const Contact = () => {
               {errorMessage && (
                 <p className="text-red-500 text-md italic">{errorMessage}</p>
               )}
-              <button
-                type="button"
-                className="btn btn-lg btn-accent"
-                onClick={handleFormSubmit}
-              >
-                {contact.icon.send}Send Message
-              </button>
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  className="btn btn-md btn-accent rounded-xl"
+                  onClick={handleFormSubmit}
+                >
+                  {contact.icon.send}SEND MESSAGE
+                </button>
+              </div>
             </form>
           </div>
         </div>
