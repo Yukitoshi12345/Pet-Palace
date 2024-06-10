@@ -70,34 +70,33 @@ const PetDetails = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
           whileHover={{
-            scale: 1.2,
             transition: { duration: 1 },
-            x: -150,
+            x: -10,
           }}
           whileTap={{ scale: 0.9 }}
         >
           <Link
             to="/pets"
-            className="flex items-center no-underline text-accent"
+            className="flex items-center no-underline text-accent text-[30px]"
           >
-            <IoArrowBackCircleSharp />
-            Back to Pets
+            <IoArrowBackCircleSharp className='mr-2' />
+            BACK TO PETS
           </Link>
         </motion.div>
         <div className="flex justify-start w-full">
           <h1 className="text-3xl font-bold mb-1">
             <button
               onClick={handleFavoriteClick}
-              className="btn btn-primary rounded mr-4 mx-1"
+              className="mr-5 ml-8 mx-1cursor-pointer"
             >
               <FontAwesomeIcon
                 icon={faHeart}
-                className={isInFavorites ? 'text-red-500' : 'text-gray-500'}
+                className={`text-2xl ${isInFavorites ? 'text-red-500' : 'text-gray-500'} hover:text-red-500`}
               />
             </button>
             {pet.name}
             {pet.featured && (
-              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral ">
+              <span className="badge badge-secondary py-3 ml-4 rounded-xl text-neutral">
                 FEATURED
               </span>
             )}
