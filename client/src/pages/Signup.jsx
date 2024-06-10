@@ -54,7 +54,7 @@ const Signup = () => {
   return (
     <main className="section relative">
       <div className="container px-4 mt-20 relative">
-        <div className="absolute top-0 right-0 -top-52 -right-44 hidden lg:block opacity-45 -z-10">
+        <div className="absolute -top-48 -right-44 hidden lg:block opacity-45 -z-10">
           <img
             src={pet}
             alt="sad dog"
