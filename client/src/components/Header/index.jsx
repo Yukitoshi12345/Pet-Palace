@@ -19,9 +19,9 @@ const Header = () => {
 
   return (
     <nav
-      className={`${bg ? 'bg-base-200 h-24 opacity-95 shadow-sm shadow-stone-700' : 'bg-base-100 h-32'} fixed container mx-auto text-[1.2rem] z-20 top-0 left-0 right-0 lg:px-12 xxl:px-24`}
+      className={`${bg ? 'bg-base-200 h-24 opacity-95 shadow-sm shadow-stone-700' : 'bg-base-100 h-32'} fixed w-full text-[1.2rem] z-20 top-0 left-0 right-0 lg:px-12 xxl:px-24`}
     >
-      <div className="flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="flex flex-wrap items-center justify-between w-full p-4">
         <NavLink
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"

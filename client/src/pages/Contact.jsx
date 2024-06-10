@@ -9,7 +9,9 @@ const Contact = () => {
   // Create state variables for the fields in the form
   // We are also setting their initial values to an empty string
   const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phone, setPhone] = useState('');
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -37,9 +39,16 @@ const Contact = () => {
           setErrorMessage('');
         }
         break;
-      case 'name':
-        if (!name) {
-          setErrorMessage('Name is required');
+      case 'firstName':
+        if (!firstName) {
+          setErrorMessage('First name is required');
+        } else {
+          setErrorMessage('');
+        }
+        break;
+      case 'lastName':
+        if (!lastName) {
+          setErrorMessage('Last name is required');
         } else {
           setErrorMessage('');
         }
@@ -55,14 +64,21 @@ const Contact = () => {
         break;
     }
   };
+
   //based on the name of the input field, update the corresponding state variable
   const handleInputChange = (e) => {
     switch (e.target.name) {
       case 'email':
         setEmail(e.target.value);
         break;
-      case 'name':
-        setName(e.target.value);
+      case 'firstName':
+        setFirstName(e.target.value);
+        break;
+      case 'lastName':
+        setLastName(e.target.value);
+        break;
+      case 'phone':
+        setPhone(e.target.value);
         break;
       case 'subject':
         setSubject(e.target.value);
@@ -77,7 +93,7 @@ const Contact = () => {
 
   // Handle the form submission
   const handleFormSubmit = async (e) => {
-    if (!email || !name || !message) {
+    if (!email || !firstName || !lastName || !message) {
       alert('Please fill in all required fields');
       setErrorMessage('Please fill in all required fields');
       return;
@@ -99,7 +115,9 @@ const Contact = () => {
           setShowSuccess(false);
         }, 2000);
         setEmail('');
-        setName('');
+        setFirstName('');
+        setLastName('');
+        setPhone('');
         setSubject('');
         setMessage('');
       }
@@ -111,6 +129,7 @@ const Contact = () => {
       }, 2000);
     }
   };
+
   const focusInput = () => {
     inputRef.current.focus();
   };
@@ -176,14 +195,25 @@ const Contact = () => {
               <div className="flex gap-8">
                 <input
                   type="text"
-                  className="input "
-                  placeholder="Your name *"
-                  name="name"
-                  value={name}
+                  className="input"
+                  placeholder="First name *"
+                  name="firstName"
+                  value={firstName}
                   onChange={handleInputChange}
                   onBlur={handleInputBlur}
                   ref={inputRef}
                 />
+                <input
+                  type="text"
+                  className="input"
+                  placeholder="Last name *"
+                  name="lastName"
+                  value={lastName}
+                  onChange={handleInputChange}
+                  onBlur={handleInputBlur}
+                />
+              </div>
+              <div className="flex gap-8">
                 <input
                   type="email"
                   className="input"
@@ -193,11 +223,19 @@ const Contact = () => {
                   onChange={handleInputChange}
                   onBlur={handleInputBlur}
                 />
+                <input
+                  type="tel"
+                  className="input"
+                  placeholder="Your phone (optional)"
+                  name="phone"
+                  value={phone}
+                  onChange={handleInputChange}
+                />
               </div>
               <input
                 type="text"
                 className="input"
-                placeholder="Subject"
+                placeholder="Subject *"
                 name="subject"
                 value={subject}
                 onChange={handleInputChange}
@@ -217,7 +255,6 @@ const Contact = () => {
                 type="button"
                 className="btn btn-lg btn-accent"
                 onClick={handleFormSubmit}
-                // disabled={!email || !name || !message || !validateEmail(email)}
               >
                 {contact.icon.send}Send Message
               </button>
