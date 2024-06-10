@@ -154,7 +154,7 @@ const Signup = () => {
                       required
                     />
                   </div>
-                  <button className="col-span-2 w-full py-2 btn btn-accent mt-2 text-[16px]" type="submit">
+                  <button className="col-span-2 w-full py-2 btn btn-accent mt-2 text-[16px] rounded-xl" type="submit">
                     <GiArchiveRegister />
                     REGISTER
                   </button>
