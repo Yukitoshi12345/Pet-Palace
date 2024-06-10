@@ -36,7 +36,7 @@ const PetCard = ({ index, type, name, location, age, breed, species, photo, _id 
         <div className="card-actions justify-end">
           <div className="badge badge-outline py-3 rounded-xl">
             {age}
-            {age > 1 ? 'years' : 'year'}
+            {age > 1 ? ' years' : ' year'}
           </div>
           <div className="badge badge-outline py-3 rounded-xl">{breed || species}</div>
         </div>
