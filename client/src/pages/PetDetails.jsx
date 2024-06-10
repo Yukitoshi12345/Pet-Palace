@@ -10,6 +10,7 @@ import { TbLocationQuestion } from 'react-icons/tb';
 import { IoArrowBackCircleSharp } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 
+
 const PetDetails = () => {
   const { petId } = useParams();
   const { loading, data, refetch } = useQuery(QUERY_SINGLE_PET, {
