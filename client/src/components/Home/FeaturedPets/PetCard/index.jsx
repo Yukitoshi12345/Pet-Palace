@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPaw } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const PetCard = ( {index, type, name, location, age, breed, species, photo}) => {
+const PetCard = ( {index, type, name, location, age, breed, species, photo, _id}) => {
   return (
     <motion.div className="card w-96 h-96 bg-base-200 shadow-x1 flex flex-col"
     initial={{
@@ -35,10 +36,10 @@ const PetCard = ( {index, type, name, location, age, breed, species, photo}) => 
           </div>
           <div className="badge badge-outline py-3  rounded-xl">{breed || species}</div>
         </div>
-        <button className='btn mt-3 btn-primary flex items-center'>
+        <Link to={`/pets/${_id}`} className="btn mt-3 btn-primary flex items-center">
           <FaPaw /> {/* Adding the icon with some margin */}
           ADOPT ME
-        </button>
+        </Link>
       </div>
     </motion.div>
   );
