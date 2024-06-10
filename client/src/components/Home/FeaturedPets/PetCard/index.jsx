@@ -28,7 +28,7 @@ const PetCard = ({ index, type, name, location, age, breed, species, photo, _id 
         />
       </figure>
       <div className="card-body pt-0 mt-3">
-        <h2 className="card-title my-2 border-b-0">
+        <h2 className="card-title my-2 border-b-0 font-bold text-[24px]">
           {name}
           <div className="badge badge-secondary py-3 text-neutral rounded-xl">FEATURED</div>
         </h2>

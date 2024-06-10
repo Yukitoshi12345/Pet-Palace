@@ -195,7 +195,7 @@ const PetDetails = () => {
             <div className="flex justify-end rounded-xl">
               <Link
                 to={`/pets/${petId}/enquiry`}
-                className="btn btn-accent mt-3"
+                className="btn btn-accent mt-4 rounded-xl font-bold"
               >
                 <TbLocationQuestion />
                 ENQUIRE NOW

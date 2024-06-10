@@ -77,7 +77,7 @@ const Header = () => {
               {adopt.btnTitle}
             </NavLink>
           ) : (
-            <NavLink to="/login" className="btn btn-accent hidden sm:flex">
+            <NavLink to="/login" className="btn btn-accent hidden sm:flex rounded-xl">
               {adopt.icon}
               {adopt.btnTitle}
             </NavLink>

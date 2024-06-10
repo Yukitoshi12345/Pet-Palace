@@ -26,7 +26,7 @@ const FeaturedPets = () => {
         )}
       </div>
       <div className="flex justify-center my-5">
-        <Link to="/pets" className="btn btn-accent flex items-center">
+        <Link to="/pets" className="btn btn-accent flex items-center font-bold rounded-xl">
           {home.featuredPets.icon}
           {home.featuredPets.btn}
         </Link>
