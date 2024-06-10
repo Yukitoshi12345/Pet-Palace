@@ -19,7 +19,7 @@ const PetCard = ({ index, pet }) => {
       }}
       viewport={{ once: false }}
     >
-      <figure className="rounded-t-2xl my-0">
+      <figure className="rounded-t-2xl my-0 h-60">
         <img
           src={`/images/pets/${type?.toLowerCase()}s/${photo}`}
           alt={`featured pet ${name}`}
