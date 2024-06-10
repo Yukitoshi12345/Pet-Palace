@@ -7,7 +7,7 @@ const PetCard = ({ index, pet }) => {
   const { type, name, location, age, breed, species, photo, featured, color, description, _id } = pet;
 
   return (
-    <motion.div className="card card-compact bg-base-200 shadow-xl"
+    <motion.div className="card h-128 bg-base-200 shadow-xl flex flex-col"
       initial={{
         opacity: 0,
         y: index % 2 === 0 ? 50 : -50
@@ -26,7 +26,7 @@ const PetCard = ({ index, pet }) => {
           className="w-full h-full object-cover"
         />
       </figure>
-      <div className="card-body pt-0 mt-0">
+      <div className="card-body pt-0 mt-3">
         <h2 className="card-title my-2 border-b-0 ">
           {name}
           {featured && (

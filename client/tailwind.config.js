@@ -15,6 +15,11 @@ export default {
       gridTemplateColumns: {
         'auto-fill': 'repeat(auto-fill, minmax(22rem, 1fr))'
       },
+      height: {
+        '112': '28rem',
+        '120': '30rem',
+        '128': '36rem',
+      },
     },
     fontFamily: {
       primary: ['Playfair Display', 'serif'],
