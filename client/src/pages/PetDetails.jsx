@@ -77,13 +77,13 @@ const PetDetails = () => {
         >
           <Link
             to="/pets"
-            className="flex items-center no-underline text-accent text-[30px]"
+            className="flex items-center no-underline text-accent text-[30px] mt-4"
           >
             <IoArrowBackCircleSharp className='mr-2' />
             BACK TO PETS
           </Link>
         </motion.div>
-        <div className="flex justify-start w-full">
+        <div className="flex justify-start w-full border-b pb-4">
           <h1 className="text-3xl font-bold mb-1">
             <button
               onClick={handleFavoriteClick}
@@ -198,10 +198,10 @@ const PetDetails = () => {
             <div className=" flex justify-center">
               <Link
                 to={`/pets/${petId}/enquiry`}
-                className="btn btn-accent mt-4"
+                className="btn btn-accent mt-2 mb-8"
               >
                 <TbLocationQuestion />
-                Enquire Now
+                ENQUIRE NOW
               </Link>
             </div>
           </div>
