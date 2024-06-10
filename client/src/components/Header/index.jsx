@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <nav
-      className={`${bg ? 'bg-base-200 h-24 opacity-95 shadow-sm shadow-stone-700' : 'bg-base-100 h-32'} fixed w-full text-[1.2rem] z-20 top-0 left-0 right-0 lg:px-12 xxl:px-24`}
+      className={`${bg ? 'bg-base-200 h-30 opacity-95 shadow-sm shadow-stone-700' : 'bg-base-100 h-32'} fixed w-full text-[1.2rem] z-20 top-0 left-0 right-0 lg:px-12 xxl:px-24`}
     >
       <div className="flex flex-wrap items-center justify-between w-full px-4 py-2 lg:py-4">
         <NavLink
@@ -28,7 +28,7 @@ const Header = () => {
         >
           <img
             src={companyLogo.pic}
-            className="h-12 lg:h-24 rounded-full"
+            className="h-12 lg:h-20 rounded-full"
             alt="Logo"
           />
           <span className="self-center bg-clip-text text-2xl lg:text-4xl text-transparent whitespace-nowrap font-logo bg-gradient-to-r from-orange-900 via-neutral to-orange-900 pr-3">
