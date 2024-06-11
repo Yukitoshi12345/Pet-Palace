@@ -1,37 +1,17 @@
-import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_PETS } from '../../../utils/queries';
+import React, { useState, useEffect } from 'react';
 import PetCard from './PetCard';
 import Pagination from './Pagination';
 
-const PetListing = ({ loading, pets, fetchMore, petsLimit }) => {
-  const edges = pets?.pets.edges || [];
-  const totalCount = pets?.pets.totalCount || 0;
-  const startIndex = 1;
+const PetListing = ({ loading, pets, fetchMore, petsLimit, handleMore, searchQuery }) => {
+  const edges = pets?.edges || [];
+  const totalCount = pets?.totalCount || 0;
   const [endIndex, setEndIndex] = useState(petsLimit);
-  const hasNextPage = pets?.pets.pageInfo.hasNextPage;
-  const endCursor = pets?.pets.pageInfo.endCursor;
+  const [hasNextPage, setHasNextPage] = useState(pets?.pageInfo?.hasNextPage || false);
 
-  const handleMore = () => {
-    fetchMore({
-      variables: { petsLimit: petsLimit, cursor: endCursor },
-      updateQuery: (prevResult, { fetchMoreResult }) => {
-        const newEdges = fetchMoreResult.pets.edges;
-        const newPageInfo = fetchMoreResult.pets.pageInfo;
-        setEndIndex(prevResult.pets.edges.length + newEdges.length);
-        return newEdges.length
-          ? {
-              pets: {
-                _typename: prevResult.pets._typename,
-                edges: [...prevResult.pets.edges, ...newEdges],
-                pageInfo: newPageInfo,
-                totalCount: fetchMoreResult.pets.totalCount,
-              },
-            }
-          : prevResult;
-      },
-    });
-  };
+  useEffect(() => {
+    setHasNextPage(pets?.pageInfo?.hasNextPage || false);
+    setEndIndex(edges.length);
+  }, [pets]);
 
   return (
     <main className="flex justify-center items-center flex-col pb-6">
@@ -41,20 +21,22 @@ const PetListing = ({ loading, pets, fetchMore, petsLimit }) => {
         ) : (
           edges.map((edge, index) => (
             <div key={index} className="no-underline">
-              <PetCard key={index} index={index} pet={edge.node} />
+              <PetCard key={index} index={index} pet={edge.node || edge} />
             </div>
           ))
         )}
       </div>
-      <div className="flex justify-center">
-        <Pagination
-          startIndex={startIndex}
-          endIndex={endIndex}
-          hasNextPage={hasNextPage}
-          totalCount={totalCount}
-          handleMore={handleMore}
-        />
-      </div>
+      {!searchQuery && hasNextPage && (
+        <div className="flex justify-center">
+          <Pagination
+            startIndex={1}
+            endIndex={endIndex}
+            hasNextPage={hasNextPage}
+            totalCount={totalCount}
+            handleMore={handleMore}
+          />
+        </div>
+      )}
     </main>
   );
 };

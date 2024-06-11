@@ -41,7 +41,7 @@ export const QUERY_SINGLE_USER = gql`
 
 export const QUERY_ALL_PETS = gql`
   query allPets {
-    pets {
+    allPets {
       _id
       name
       breed
@@ -53,6 +53,8 @@ export const QUERY_ALL_PETS = gql`
       photo
       featured
       type
+      gender
+      vaccinationHistory
     }
   }
 `;
@@ -63,8 +65,6 @@ export const QUERY_PETS = gql`
       totalCount
       pageInfo {
         hasNextPage
-        hasPreviousPage
-        startCursor
         endCursor
       }
       edges {
