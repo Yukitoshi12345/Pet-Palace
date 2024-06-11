@@ -20,30 +20,28 @@ const resolvers = {
 
     pets: async (parent, { first, after }) => {
       const results = await Pet.find(
-        after ? { _id: { $gt: new ObjectId(after) } } : {},
+        after ? { _id: { $gt: new ObjectId(after) } } : {}
       )
-
-        .sort({ _id: 1 })
-
-        .limit(first);
-
-      const edges = results.map((pet) => ({
+        .sort({ _id: 1 })  // Sort by _id in ascending order
+        .limit(first + 1); // Fetch one extra pet to check if there is a next page
+    
+      const edges = results.slice(0, first).map((pet) => ({
         node: pet,
         cursor: pet._id,
       }));
-
+    
       const totalCount = await Pet.countDocuments();
-
+    
       const pageInfo = {
-        hasNextPage: edges.length < totalCount,
-        endCursor: edges[edges.length - 1]?.cursor,
+        hasNextPage: results.length > first, // There is a next page if more than `first` pets were fetched
+        endCursor: edges.length ? edges[edges.length - 1].cursor : null,
       };
-
+    
       return { totalCount, edges, pageInfo };
     },
 
     allPets: async () => {
-      return await Pet.find();
+      return Pet.find({});
     },
 
     pet: async (parent, { petId }) => {

@@ -4,10 +4,15 @@ import { FaPaw } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const PetCard = ({ index, pet }) => {
-  const { type, name, location, age, breed, species, photo, featured, color, description, _id } = pet;
+  if (!pet) {
+    return null;
+  }
+
+  const { type, name, location, age, breed, species, photo, featured, color, description, _id, vaccinationHistory, gender } = pet;
 
   return (
-    <motion.div className="card h-128 bg-base-200 shadow-xl flex flex-col"
+    <motion.div
+      className="card h-128 bg-base-200 shadow-xl flex flex-col"
       initial={{
         opacity: 0,
         y: index % 2 === 0 ? 50 : -50
@@ -30,25 +35,24 @@ const PetCard = ({ index, pet }) => {
         <h2 className="card-title my-2 border-b-0 font-bold text-[27px] ">
           {name}
           {featured && (
-            <div className="badge badge-secondary py-3 rounded-xl text-neutral">
+            <div className="badge badge-secondary py-3 rounded-xl text-neutral ml-2">
               FEATURED
             </div>
           )}
         </h2>
         <p className="leading-3 my-0">{location} Rescue Center</p>
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-end mt-2">
           <div className="badge badge-outline py-3 rounded-xl">
-            {age}
-            {age > 1 ? ' years' : ' year'}
+            {age} {age > 1 ? 'years' : 'year'}
           </div>
           <div className="badge badge-outline py-3 rounded-xl">
             {breed || species}
           </div>
           <div className="badge badge-outline py-3 rounded-xl">{color}</div>
         </div>
-        <p className="line-clamp-1">{description}</p>
-        <Link to={`/pets/${_id}`} className="btn btn-primary bg-base-100 rounded-xl">
-          <FaPaw />
+        <p className="line-clamp-1 mt-2">{description}</p>
+        <Link to={`/pets/${_id}`} className="btn btn-primary bg-base-100 rounded-xl mt-4 flex items-center justify-center">
+          <FaPaw className="mr-2" />
           ADOPT ME
         </Link>
       </div>
