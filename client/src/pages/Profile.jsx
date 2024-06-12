@@ -1,3 +1,7 @@
+import suyash from '../assets/images/about/suyash.jpg';
+import yukitoshi from '../assets/images/about/Yuki.jpg';
+import jodie from '../assets/images/about/jodie.jpg';
+import defaultpic from '../assets/images/about/default.jpg';
 import React, { useEffect } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { useParams, Link } from 'react-router-dom';
@@ -39,6 +43,19 @@ const Profile = () => {
     }
   };
 
+  const getUserImage = (name) => {
+    switch(name) {
+      case 'Yukitoshi Imaizumi-Zhou':
+        return yukitoshi;
+      case 'Jodie Lee':
+        return jodie;
+      case 'Suyash Maharjan':
+        return suyash;
+      default:
+        return defaultpic;
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <div className="container mx-auto section flex-grow">
@@ -50,9 +67,9 @@ const Profile = () => {
             </div>
             <div className="flex flex-col items-center">
               <img 
-                // src={} 
+                src={getUserImage(userData.name)} 
                 alt="User Profile" 
-                className="w-24 h-24 object-cover rounded-full border border-grey shadow-lg mb-4"
+                className="w-24 h-24 object rounded-full border border-grey shadow-lg mb-4"
               />
               <p className="text-[20px] mb-0 text-neutral">
                 <span className="font-semibold">Name:</span> {userData.name}
