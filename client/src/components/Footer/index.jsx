@@ -4,7 +4,7 @@ import { footer } from '../../data';
 const Footer = () => {
   const { authors } = footer;
   return (
-    <footer className="bg-accent footer mt-10 flex items-center justify-evenly">
+    <footer className="bg-accent footer mt-10 flex items-center justify-evenly p-4">
       <figure className="flex flex-col gap-0 items-center"></figure>
 
       <div className="text-white flex flex-col justify-center items-center w-full">
