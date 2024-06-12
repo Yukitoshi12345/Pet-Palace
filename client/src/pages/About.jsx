@@ -6,8 +6,16 @@ import Hero from '../components/About/Hero';
 import Footer from '../components/Footer';
 
 const About = () => {
-  const { heros, title, heading, paragraphs, commitments, team, rehoming, sponsors } =
-    about;
+  const {
+    heros,
+    title,
+    heading,
+    paragraphs,
+    commitments,
+    team,
+    rehoming,
+    sponsors,
+  } = about;
   return (
     <section id="about" className="section flex-col justify-between">
       <div>

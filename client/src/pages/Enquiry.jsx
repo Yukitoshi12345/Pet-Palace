@@ -5,13 +5,12 @@ import { contact } from '../data';
 import Footer from '../components/Footer';
 import Alert from '../components/Alert';
 import bonding from '../assets/images/enquiry/pet-bonding.jpg';
-import  cuddling from '../assets/images/enquiry/cuddling.webp';
+import cuddling from '../assets/images/enquiry/cuddling.webp';
 import { useParams } from 'react-router-dom';
 import { QUERY_PET_FOR_ENQUIRY } from '../utils/queries';
 import { useQuery } from '@apollo/client';
 import { useEffect } from 'react';
 import { QUERY_ME } from '../utils/queries';
-
 
 const Enquiry = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -34,8 +33,17 @@ const Enquiry = () => {
     variables: { petId: petId },
   });
   const pet = data?.pet || {};
-  const { _id, name, breed, species, age, color, description, gender, location } =
-    pet;
+  const {
+    _id,
+    name,
+    breed,
+    species,
+    age,
+    color,
+    description,
+    gender,
+    location,
+  } = pet;
 
   const [address, setAddress] = useState({
     street: '',
@@ -70,20 +78,19 @@ const Enquiry = () => {
     return options;
   };
 
-
-  // not complete yet 
+  // not complete yet
   const handleInputBlur = (e) => {
     switch (e.target.name) {
       case 'phoneNumber':
         if (!phoneNumber) {
-          setErrorMessage('Phone number is required');  
+          setErrorMessage('Phone number is required');
         } else if (!/^0(2|4)\d{8}$/.test(phoneNumber)) {
           setErrorMessage('Invalid phone number');
-        } else { 
+        } else {
           setErrorMessage('');
         }
         break;
-      
+
       default:
         break;
     }
@@ -108,7 +115,7 @@ const Enquiry = () => {
   const handleFormSubmit = async (e) => {
     alert('Your enquiry has been sent successfully');
     //redirect to pets page
-    window.location.assign('/pets');  
+    window.location.assign('/pets');
   };
   const focusInput = () => {
     inputRef.current.focus();
@@ -116,8 +123,11 @@ const Enquiry = () => {
   const handleUserAndPetDataChange = (e) => {};
 
   return (
-    <section className="section flex-col justify-between" id="enquiry"
-    onLoad={focusInput}>
+    <section
+      className="section flex-col justify-between"
+      id="enquiry"
+      onLoad={focusInput}
+    >
       <Alert
         message={contact.successMessage}
         type="success"
@@ -134,7 +144,6 @@ const Enquiry = () => {
           </h3>
         </div>
         <div className="flex flex-col-reverse lg:gap-x-8 lg:flex-row">
-
           {/* -----------------form----------------- */}
           <form ref={enquiryForm} className="space-y-4 min-w-[450px]">
             <div className="italic text-sm text-center">
@@ -144,12 +153,30 @@ const Enquiry = () => {
             {/* user related data that are needed to send the enquiry
             but not needed to be filled by the user */}
             <div className="hidden">
-              <input className='input' type="text" value= {_id} name="petId" onChange={handleUserAndPetDataChange}/>
-              <input className='input' type="text" value= {user?.name}  name ="name" onChange={handleUserAndPetDataChange}/>
-              <input className='input' type="text" value= {user?.email} name="email" onChange={handleUserAndPetDataChange} />
+              <input
+                className="input"
+                type="text"
+                value={_id}
+                name="petId"
+                onChange={handleUserAndPetDataChange}
+              />
+              <input
+                className="input"
+                type="text"
+                value={user?.name}
+                name="name"
+                onChange={handleUserAndPetDataChange}
+              />
+              <input
+                className="input"
+                type="text"
+                value={user?.email}
+                name="email"
+                onChange={handleUserAndPetDataChange}
+              />
             </div>
             <div className="flex flex-col items-center gap-2">
-            <input
+              <input
                 type="tel"
                 className="input"
                 placeholder="Phone Number *"
@@ -234,18 +261,35 @@ const Enquiry = () => {
               <h4 className="block font-semibold mt-2">
                 Your appointment will be at:
               </h4>
-              <div className='flex justify-center w-full'>
+              <div className="flex justify-center w-full">
                 {location === 'Sydney' && (
-                  <input className='input' type="text" value= {contact.location.locations[0].address} name="branchSyd" disabled/>
+                  <input
+                    className="input"
+                    type="text"
+                    value={contact.location.locations[0].address}
+                    name="branchSyd"
+                    disabled
+                  />
                 )}
                 {location === 'Melbourne' && (
-                  <input className='input' type="text" name="branchMel" value={contact.location.locations[1].address} disabled/>
+                  <input
+                    className="input"
+                    type="text"
+                    name="branchMel"
+                    value={contact.location.locations[1].address}
+                    disabled
+                  />
                 )}
                 {location === 'Brisbane' && (
-                  <input className='input' type="text" name="branchBrisb" value={contact.location.locations[2].address} disabled/>
+                  <input
+                    className="input"
+                    type="text"
+                    name="branchBrisb"
+                    value={contact.location.locations[2].address}
+                    disabled
+                  />
                 )}
               </div>
-              
             </div>
 
             <div className="mb-4 flex flex-col  w-full  items-center ">
@@ -294,8 +338,10 @@ const Enquiry = () => {
                     </h2>
                     <p className="line-clamp-3 text-sm">{description}</p>
                     <div className="card-actions flex-col items-end">
-                      <div className='space-x-1'>
-                        <div className="badge badge-outline">{age}year{age>1 && "s"}</div>
+                      <div className="space-x-1">
+                        <div className="badge badge-outline">
+                          {age}year{age > 1 && 's'}
+                        </div>
                         <div className="badge badge-outline">{color}</div>
                       </div>
                       <div>
@@ -305,27 +351,31 @@ const Enquiry = () => {
                   </div>
                   <div className="flex flex-col justify-center pt-4">
                     <span className="flex">Hi, {user.name}!</span>
-                    
-                  <ul className="text-sm italic ">
-                    <li>
-                      While you are visiting with <code>{name}</code>, our
-                      main goal will be to introduce, and showcase you to{' '}
-                      {gender === 'Male' ? 'him' : 'her'}. However, feel free to
-                      explore other pets available for adoption.
-                    </li>
-                    <li>
-                    Kindly be aware that the appointment is allocated for a 30-minute duration during which one of our staff members, responsible for the pet, will assist you. Feel free to extend your stay if you'd like to interact further with the pets at the shelter.
-                    </li>
-                    <li>
-                      Depending on your personal circumstances, our expert staff
-                      may recommend alternative pets that better suit your
-                      needs.
-                    </li>
-                    <li>
-                      Our staff will be in touch with you to confirm your
-                      booking.
-                    </li>
-                  </ul>
+
+                    <ul className="text-sm italic ">
+                      <li>
+                        While you are visiting with <code>{name}</code>, our
+                        main goal will be to introduce, and showcase you to{' '}
+                        {gender === 'Male' ? 'him' : 'her'}. However, feel free
+                        to explore other pets available for adoption.
+                      </li>
+                      <li>
+                        Kindly be aware that the appointment is allocated for a
+                        30-minute duration during which one of our staff
+                        members, responsible for the pet, will assist you. Feel
+                        free to extend your stay if you'd like to interact
+                        further with the pets at the shelter.
+                      </li>
+                      <li>
+                        Depending on your personal circumstances, our expert
+                        staff may recommend alternative pets that better suit
+                        your needs.
+                      </li>
+                      <li>
+                        Our staff will be in touch with you to confirm your
+                        booking.
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>

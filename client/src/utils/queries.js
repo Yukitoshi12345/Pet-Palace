@@ -10,7 +10,7 @@ export const QUERY_USERS = gql`
       email
       favorites {
         _id
-        name 
+        name
         photo
         type
       }
@@ -29,7 +29,7 @@ export const QUERY_SINGLE_USER = gql`
       favorites {
         _id
         name
-        photo 
+        photo
         type
         breed
         species
@@ -124,7 +124,7 @@ export const QUERY_PET_FOR_ENQUIRY = gql`
       location
       gender
     }
-  } 
+  }
 `;
 
 export const QUERY_FEATURED_PETS = gql`
@@ -154,7 +154,6 @@ export const QUERY_LOCATIONS = gql`
     locations
   }
 `;
-
 
 export const QUERY_PETS_BY_LOCATION = gql`
   query petsByLocation($location: String!) {
@@ -214,7 +213,6 @@ export const QUERY_ME = gql`
     }
   }
 `;
-
 
 export const USER_DONATIONS = gql`
   query Query {

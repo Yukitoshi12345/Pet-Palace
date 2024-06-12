@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import {error} from '../data'
+import { error } from '../data';
 
 export default function ErrorPage() {
-  const{logo, img, heading, paragraphs, btn}= {...error};
+  const { logo, img, heading, paragraphs, btn } = { ...error };
   return (
     <div
       id="error-page"
@@ -17,18 +17,21 @@ export default function ErrorPage() {
       <div className=" ml-[15dvw] lg:px-12">
         <h1 className="text-[18dvw] flex justify-center  ">{heading}</h1>
         <div className="flex-col ">
-          {
-            paragraphs.map((paragraph, index) => {
-              return (
-                <p key={index} className="flex justify-center text-4xl text-center ">{paragraph}</p>
-              )
-            })
-          }
+          {paragraphs.map((paragraph, index) => {
+            return (
+              <p
+                key={index}
+                className="flex justify-center text-4xl text-center "
+              >
+                {paragraph}
+              </p>
+            );
+          })}
         </div>
 
         <div className="flex justify-center mt-16 ">
           <Link to="/pets" className="btn btn-accent ">
-             {btn.icon}
+            {btn.icon}
             {btn.text}
           </Link>
         </div>

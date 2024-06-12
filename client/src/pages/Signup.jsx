@@ -4,7 +4,12 @@ import { ADD_USER } from '../utils/mutations';
 import { EMAIL_EXISTS } from '../utils/queries';
 import Auth from '../utils/auth';
 import pet from '../assets/images/signup/sad-dog.webp';
-import { FaCalendarDay, FaNewspaper, FaUnlockAlt, FaSave } from 'react-icons/fa';
+import {
+  FaCalendarDay,
+  FaNewspaper,
+  FaUnlockAlt,
+  FaSave,
+} from 'react-icons/fa';
 import { BiSolidDonateHeart } from 'react-icons/bi';
 import { GiArchiveRegister } from 'react-icons/gi';
 
@@ -19,10 +24,13 @@ const Signup = () => {
   });
 
   const [addUser] = useMutation(ADD_USER);
-  const { data: emailExistsData, refetch: refetchEmailExists } = useQuery(EMAIL_EXISTS, {
-    variables: { email: formState.email },
-    skip: !formState.email, // Skip query execution if email is not provided
-  });
+  const { data: emailExistsData, refetch: refetchEmailExists } = useQuery(
+    EMAIL_EXISTS,
+    {
+      variables: { email: formState.email },
+      skip: !formState.email, // Skip query execution if email is not provided
+    },
+  );
   const [error, setError] = useState('');
   const [signupSuccess, setSignupSuccess] = useState(false);
 
@@ -48,7 +56,7 @@ const Signup = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    
+
     if (formState.password !== formState.confirmPassword) {
       setError('Passwords do not match!');
       return;
@@ -84,15 +92,22 @@ const Signup = () => {
         <div className="flex flex-col items-center lg:items-stretch lg:justify-start z-10 lg:flex-row">
           <div className="max-w-md w-full">
             <div className="bg-base-300 shadow-md px-8 py-8 border-r-2 rounded-t-3xl lg:rounded-tr-none lg:rounded-l-3xl relative">
-              <h4 className="text-2x1 mb-8 mt-1 font-bold text-center text-[34px] border-b py-1">SIGN UP</h4>
+              <h4 className="text-2x1 mb-8 mt-1 font-bold text-center text-[34px] border-b py-1">
+                SIGN UP
+              </h4>
               {signupSuccess ? (
                 <p className="text-green-500 mb-4">
                   Success! Your account has been created!
                 </p>
               ) : (
-                <form onSubmit={handleFormSubmit} className="grid grid-cols-2 gap-4">
+                <form
+                  onSubmit={handleFormSubmit}
+                  className="grid grid-cols-2 gap-4"
+                >
                   <div className="mb-4 col-span-2 lg:col-span-1">
-                    <label htmlFor="name" className="block text-neutral mb-2">Name</label>
+                    <label htmlFor="name" className="block text-neutral mb-2">
+                      Name
+                    </label>
                     <input
                       id="name"
                       className="w-full px-3 py-2 border rounded text-black"
@@ -105,7 +120,12 @@ const Signup = () => {
                     />
                   </div>
                   <div className="mb-4 col-span-2 lg:col-span-1">
-                    <label htmlFor="birthday" className="block text-neutral mb-2">Birthday</label>
+                    <label
+                      htmlFor="birthday"
+                      className="block text-neutral mb-2"
+                    >
+                      Birthday
+                    </label>
                     <input
                       id="birthday"
                       className="w-full px-3 py-2 border rounded uppercase text-black"
@@ -118,7 +138,12 @@ const Signup = () => {
                     />
                   </div>
                   <div className="mb-4 col-span-2 lg:col-span-1">
-                    <label htmlFor="favoritePet" className="block text-neutral mb-2">Favorite Pet</label>
+                    <label
+                      htmlFor="favoritePet"
+                      className="block text-neutral mb-2"
+                    >
+                      Favorite Pet
+                    </label>
                     <select
                       id="favoritePet"
                       className="w-full px-3 py-2 border rounded text-black"
@@ -136,7 +161,9 @@ const Signup = () => {
                     </select>
                   </div>
                   <div className="mb-4 col-span-2 lg:col-span-1">
-                    <label htmlFor="email" className="block text-neutral mb-2">Email</label>
+                    <label htmlFor="email" className="block text-neutral mb-2">
+                      Email
+                    </label>
                     <input
                       id="email"
                       className="w-full px-3 py-2 border rounded text-black"
@@ -149,7 +176,12 @@ const Signup = () => {
                     />
                   </div>
                   <div className="mb-2 col-span-2 lg:col-span-1">
-                    <label htmlFor="password" className="block text-neutral mb-2">Password</label>
+                    <label
+                      htmlFor="password"
+                      className="block text-neutral mb-2"
+                    >
+                      Password
+                    </label>
                     <input
                       id="password"
                       className="w-full px-3 py-2 border rounded text-black"
@@ -162,7 +194,12 @@ const Signup = () => {
                     />
                   </div>
                   <div className="mb-2 col-span-2 lg:col-span-1">
-                    <label htmlFor="confirmPassword" className="block text-neutral mb-2">Confirm Password</label>
+                    <label
+                      htmlFor="confirmPassword"
+                      className="block text-neutral mb-2"
+                    >
+                      Confirm Password
+                    </label>
                     <input
                       id="confirmPassword"
                       className="w-full px-3 py-2 border rounded text-black"
@@ -174,7 +211,10 @@ const Signup = () => {
                       required
                     />
                   </div>
-                  <button className="col-span-2 w-full py-2 btn btn-accent mt-2 text-[16px] rounded-xl" type="submit">
+                  <button
+                    className="col-span-2 w-full py-2 btn btn-accent mt-2 text-[16px] rounded-xl"
+                    type="submit"
+                  >
                     <GiArchiveRegister />
                     REGISTER
                   </button>

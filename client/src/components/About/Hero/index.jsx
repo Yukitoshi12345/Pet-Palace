@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Hero = ({heros}) => {
+const Hero = ({ heros }) => {
   return (
     <div className="hidden md:flex w-full lg:h-[32rem] md:h-[26rem]">
       {/* get a random hero image from the heros array */}

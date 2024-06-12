@@ -12,14 +12,19 @@ const NavMenu = ({ userId, bg }) => {
   //const user = data?.user;
 
   //const logout = (event) => {
-    //event.preventDefault();
-    //Auth.logout();
+  //event.preventDefault();
+  //Auth.logout();
   //};
 
   return (
-    <div className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-sticky">
-      <ul className={`${bg ? "lg:bg-base-200" : "lg:bg-base-100"} bg-base-300 capitalize flex flex-col p-4 lg:p-0 mt-4 font-medium border rounded-lg lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0`}>
-        {header.navigation.map((navItem, index) => ( 
+    <div
+      className="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1"
+      id="navbar-sticky"
+    >
+      <ul
+        className={`${bg ? 'lg:bg-base-200' : 'lg:bg-base-100'} bg-base-300 capitalize flex flex-col p-4 lg:p-0 mt-4 font-medium border rounded-lg lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0`}
+      >
+        {header.navigation.map((navItem, index) => (
           <li
             key={index}
             className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0"
@@ -29,7 +34,6 @@ const NavMenu = ({ userId, bg }) => {
             </NavLink>
           </li>
         ))}
-       
       </ul>
     </div>
   );

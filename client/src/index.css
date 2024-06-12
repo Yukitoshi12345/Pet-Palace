@@ -68,5 +68,3 @@ h1 {
     @apply caret-accent textarea-bordered bg-primary resize-none w-full outline-none p-6 rounded-sm h-[200px] focus:outline focus:outline-1 !important;
   }
 }
-
-
