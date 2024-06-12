@@ -4,7 +4,7 @@ const TeamCard = ({name, role, pic}) => {
   return (
     <div className="max-w-80 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         
-        <img className="rounded-t-lg" src={pic} alt="team member" />
+        <img className="rounded-t-xl" src={pic} alt="team member" />
         
         <div className="p-5">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{role}</h5>
