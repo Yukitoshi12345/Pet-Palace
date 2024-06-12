@@ -2,7 +2,7 @@ const { User, Pet, Donation } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(process.env.SECRET_KEY_STRIPE);
 
 const resolvers = {
   Query: {
