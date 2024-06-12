@@ -31,11 +31,10 @@ import yukitoshi from './assets/images/about/Yuki.jpg';
 import jodie from './assets/images/about/jodie.jpg';
 
 //about sponsors photos
-import myer from './assets/images/about/myer_logo.webp';
+import myer from './assets/images/about/myer_logo.jpg';
 import nova from './assets/images/about/nova.png';
 import nsw from './assets/images/about/nsw-gov.png';
 import smh from './assets/images/about/smh.jpg';
-import casino from './assets/images/about/star-casino.png';
 import coles from './assets/images/about/coles.jpg';
 import staff from './assets/images/about/StaffGroup.jpg';
 
@@ -124,10 +123,6 @@ export const about = {
       {
         name: 'Sydney Morning Herald',
         pic: smh,
-      },
-      {
-        name: 'The Star Casino',
-        pic: casino,
       },
       {
         name: 'Coles',

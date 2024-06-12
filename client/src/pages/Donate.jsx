@@ -3,7 +3,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { DONATE_AMOUNT } from '../utils/mutations';
 
-const STRIPE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
+const STRIPE_KEY = import.meta.env.PUBLISHABLE_KEY_STRIPE;
 
 const Donate = () => {
   const [donateAmount, { error }] = useMutation(DONATE_AMOUNT);

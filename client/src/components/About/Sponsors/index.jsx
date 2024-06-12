@@ -9,7 +9,7 @@ const Sponsors = ({sponsors, description, heading}) => {
         {
           sponsors.map((sponsor, index) => {
             return (
-              <img key={index} src={sponsor.pic} alt='sponsor' className='size-32 object-fit object-center rounded-xl shadow-sm'/> 
+              <img key={index} src={sponsor.pic} alt='sponsor' className='size-36 rounded-xl object-cover shadow-sm'/> 
             )
           })
         } 
