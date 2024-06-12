@@ -20,7 +20,7 @@ const Search = ({ handleSearchChange }) => {
               setSearchQuery(e.target.value);
               handleSearchChange(e.target.value);
             }}
-            className="border p-2 rounded-xl w-full pl-4"
+            className="border p-2 rounded-xl w-full pl-4 text-black"
           />
           <button
             onClick={handleSearch}

@@ -86,6 +86,7 @@ const typeDefs = gql`
     petsBySearchCriteria(location: String, petType: String, speciesBreed: String): [Pet]
     breedsOrSpecies(petType: String!): [String]
     me: User
+    emailExists(email: String!): Boolean!
   }
 `;
 
