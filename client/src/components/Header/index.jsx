@@ -31,9 +31,10 @@ const Header = () => {
             className="h-12 lg:h-20 rounded-full"
             alt="Logo"
           />
-          <span className="self-center bg-clip-text text-2xl lg:text-4xl text-transparent whitespace-nowrap font-logo bg-gradient-to-r from-orange-900 via-neutral to-orange-900 pr-3">
-            {companyLogo.name}
-          </span>
+        <span className="text-[34px] font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text drop-shadow-lg p-1">
+          {companyLogo.name}
+        </span>
+
         </NavLink>
         <div className="flex items-center space-x-3 lg:order-2">
           <div className="dropdown dropdown-bottom">
