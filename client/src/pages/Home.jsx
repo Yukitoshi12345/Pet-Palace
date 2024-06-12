@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Affiliation from '../components/Home/Affiliation';
 import FeaturedPets from '../components/Home/FeaturedPets';
 import About from '../components/Home/About';

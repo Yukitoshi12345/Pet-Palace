@@ -2,11 +2,20 @@ import React, { useState, useEffect } from 'react';
 import PetCard from './PetCard';
 import Pagination from './Pagination';
 
-const PetListing = ({ loading, pets, fetchMore, petsLimit, handleMore, searchQuery }) => {
+const PetListing = ({
+  loading,
+  pets,
+  fetchMore,
+  petsLimit,
+  handleMore,
+  searchQuery,
+}) => {
   const edges = pets?.edges || [];
   const totalCount = pets?.totalCount || 0;
   const [endIndex, setEndIndex] = useState(petsLimit);
-  const [hasNextPage, setHasNextPage] = useState(pets?.pageInfo?.hasNextPage || false);
+  const [hasNextPage, setHasNextPage] = useState(
+    pets?.pageInfo?.hasNextPage || false,
+  );
 
   useEffect(() => {
     setHasNextPage(pets?.pageInfo?.hasNextPage || false);

@@ -10,7 +10,6 @@ import { TbLocationQuestion } from 'react-icons/tb';
 import { IoArrowBackCircleSharp } from 'react-icons/io5';
 import { motion } from 'framer-motion';
 
-
 const PetDetails = () => {
   const { petId } = useParams();
   const { loading, data, refetch } = useQuery(QUERY_SINGLE_PET, {
@@ -80,7 +79,7 @@ const PetDetails = () => {
             to="/pets"
             className="flex items-center no-underline text-accent text-[30px] mt-1"
           >
-            <IoArrowBackCircleSharp className='mr-2' />
+            <IoArrowBackCircleSharp className="mr-2" />
             BACK TO PETS
           </Link>
         </motion.div>

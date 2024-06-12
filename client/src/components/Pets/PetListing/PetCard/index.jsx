@@ -8,19 +8,33 @@ const PetCard = ({ index, pet }) => {
     return null;
   }
 
-  const { type, name, location, age, breed, species, photo, featured, color, description, _id, vaccinationHistory, gender } = pet;
+  const {
+    type,
+    name,
+    location,
+    age,
+    breed,
+    species,
+    photo,
+    featured,
+    color,
+    description,
+    _id,
+    vaccinationHistory,
+    gender,
+  } = pet;
 
   return (
     <motion.div
       className="card h-128 bg-base-200 shadow-xl flex flex-col"
       initial={{
         opacity: 0,
-        y: index % 2 === 0 ? 50 : -50
+        y: index % 2 === 0 ? 50 : -50,
       }}
       whileInView={{
         opacity: 1,
         y: 0,
-        transition: { duration: 1, delay: 0.0, ease: 'easeInOut' }
+        transition: { duration: 1, delay: 0.0, ease: 'easeInOut' },
       }}
       viewport={{ once: false }}
     >
@@ -51,7 +65,10 @@ const PetCard = ({ index, pet }) => {
           <div className="badge badge-outline py-3 rounded-xl">{color}</div>
         </div>
         <p className="line-clamp-1 mt-2">{description}</p>
-        <Link to={`/pets/${_id}`} className="btn btn-primary bg-base-100 rounded-xl mt-4 flex items-center justify-center">
+        <Link
+          to={`/pets/${_id}`}
+          className="btn btn-primary bg-base-100 rounded-xl mt-4 flex items-center justify-center"
+        >
           <FaPaw className="mr-2" />
           ADOPT ME
         </Link>

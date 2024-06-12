@@ -47,7 +47,6 @@ export const DONATE_AMOUNT = gql`
   }
 `;
 
-
 export const ADD_FAVORITE = gql`
   mutation addFavorite($petId: ID!) {
     addFavorite(petId: $petId) {
@@ -65,6 +64,3 @@ export const REMOVE_FAVORITE = gql`
     }
   }
 `;
-
-
-

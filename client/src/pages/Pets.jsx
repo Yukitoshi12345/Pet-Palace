@@ -35,9 +35,15 @@ const Pets = () => {
         const location = pet.location ? pet.location.toLowerCase() : '';
         const health = pet.health ? pet.health.toLowerCase() : '';
         const tame = pet.tame ? pet.tame.toLowerCase() : '';
-        const specialNeeds = pet.specialNeeds ? pet.specialNeeds.toLowerCase() : '';
-        const vaccinationHistory = pet.vaccinationHistory ? pet.vaccinationHistory.toLowerCase() : '';
-        const pedigreeKnown = pet.pedigreeKnown ? pet.pedigreeKnown.toLowerCase() : '';
+        const specialNeeds = pet.specialNeeds
+          ? pet.specialNeeds.toLowerCase()
+          : '';
+        const vaccinationHistory = pet.vaccinationHistory
+          ? pet.vaccinationHistory.toLowerCase()
+          : '';
+        const pedigreeKnown = pet.pedigreeKnown
+          ? pet.pedigreeKnown.toLowerCase()
+          : '';
         const disability = pet.disability ? pet.disability.toLowerCase() : '';
         return (
           name.includes(searchQuery) ||
@@ -93,7 +99,10 @@ const Pets = () => {
   };
 
   return (
-    <section id="pets" className="section flex-col justify-between relative pt-10">
+    <section
+      id="pets"
+      className="section flex-col justify-between relative pt-10"
+    >
       <div className="container mx-auto">
         <div className="bg-base-200 flex-col lg:flex-row justify-center items-center">
           <div className="flex justify-start">

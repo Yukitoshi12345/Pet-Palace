@@ -31,10 +31,9 @@ const Header = () => {
             className="h-12 lg:h-20 rounded-full"
             alt="Logo"
           />
-        <span className="text-[34px] font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text drop-shadow-lg p-1">
-          {companyLogo.name}
-        </span>
-
+          <span className="text-[34px] font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text drop-shadow-lg p-1">
+            {companyLogo.name}
+          </span>
         </NavLink>
         <div className="flex items-center space-x-3 lg:order-2">
           <div className="dropdown dropdown-bottom">
@@ -56,8 +55,12 @@ const Header = () => {
                     <NavLink to="/donate">Donate</NavLink>
                   </li>
                   <li className="block py-2 px-3 rounded hover:text-orange-700 lg:p-0">
-                    <button onClick={Auth.logout}
-                    className="inline-block w-full text-left">Logout</button>
+                    <button
+                      onClick={Auth.logout}
+                      className="inline-block w-full text-left"
+                    >
+                      Logout
+                    </button>
                   </li>
                 </>
               ) : (
@@ -73,12 +76,18 @@ const Header = () => {
             </ul>
           </div>
           {Auth.loggedIn() ? (
-            <NavLink to="/pets" className="btn btn-accent hidden sm:flex rounded-xl">
+            <NavLink
+              to="/pets"
+              className="btn btn-accent hidden sm:flex rounded-xl"
+            >
               {adopt.icon}
               {adopt.btnTitle}
             </NavLink>
           ) : (
-            <NavLink to="/login" className="btn btn-accent hidden sm:flex rounded-xl">
+            <NavLink
+              to="/login"
+              className="btn btn-accent hidden sm:flex rounded-xl"
+            >
               {adopt.icon}
               {adopt.btnTitle}
             </NavLink>

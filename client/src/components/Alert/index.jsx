@@ -2,7 +2,10 @@ import React from 'react';
 
 const Alert = ({ message, type, show }) => {
   return (
-    <div role="alert" className={`alert ${type === 'success' ? 'alert-success' : 'alert-error'} ${show === true ? 'block' : 'hidden' } container max-w-max z-30 flex`}>
+    <div
+      role="alert"
+      className={`alert ${type === 'success' ? 'alert-success' : 'alert-error'} ${show === true ? 'block' : 'hidden'} container max-w-max z-30 flex`}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="stroke-current shrink-0 h-6 w-6"
