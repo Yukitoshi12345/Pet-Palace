@@ -1,13 +1,8 @@
-// import React from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+
 import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import ThemeController from './components/ThemeController';
 import BackToTopBtn from './components/BackToTopBtn';
-
-import Contact from './pages/Contact';
-import Donation from './pages/Donation'; // The Stripe Checkout Form component
-
 
 import {
   ApolloClient,

@@ -41,21 +41,6 @@ const typeDefs = gql`
     session: ID!
   }
 
-  type Mutation {
-    addUser(
-      name: String!
-      birthday: String!
-      favoritePet: String!
-      email: String!
-      password: String!
-    ): Auth
-    login(email: String!, password: String!): Auth
-    createCheckoutSession(amount: Int!, message: String): CheckoutSession
-    addFavorite(petId: ID!): User
-    removeFavorite(petId: ID!): User
-    donate(amount: Float!): String
-  }
-
   type PageInfo {
     hasNextPage: Boolean
     hasPreviousPage: Boolean
@@ -74,6 +59,10 @@ const typeDefs = gql`
     pageInfo: PageInfo!
   }
 
+  type DonateResponse {
+    id: String!
+  }
+
   type Query {
     users: [User]
     user(userId: ID!): User
@@ -88,6 +77,21 @@ const typeDefs = gql`
     me: User
     emailExists(email: String!): Boolean!
   }
+
+  type Mutation {
+    addUser(
+      name: String!
+      birthday: String!
+      favoritePet: String!
+      email: String!
+      password: String!
+    ): Auth
+    login(email: String!, password: String!): Auth
+    addFavorite(petId: ID!): User
+    removeFavorite(petId: ID!): User
+    donateAmount(amount: String!): DonateResponse!
+  }
+
 `;
 
 module.exports = typeDefs;

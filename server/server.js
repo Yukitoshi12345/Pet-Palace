@@ -9,9 +9,6 @@ const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 const { error } = require('console');
 
-const STRIPE_KEY = process.env.SECRET_KEY_STRIPE;
-const stripe = require('stripe')(STRIPE_KEY);
-
 const PORT = process.env.PORT || 3001;
 const app = express();
 const server = new ApolloServer({
@@ -19,32 +16,6 @@ const server = new ApolloServer({
   resolvers,
 });
 
-// Stripe Integration
-app.get('/config', (req, res) => {
-  res.send({
-    publishableKey: `${process.env.PUBLISHABLE_KEY_STRIPE}`,
-  });
-});
-
-app.post('/create-payment-intent', async (req, res) => {
-  try {
-    const paymentIntent = await stripe.paymentIntents.create({
-      currency: 'usd',
-      amount: 2000,
-      automatic_payment_methods: {
-        enabled: true,
-      },
-    });
-
-    res.send({ clientSecret: paymentIntent.client_secret });
-  } catch (error) {
-    return res.status(400).send({
-      error: {
-        message: error.message,
-      },
-    });
-  }
-});
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
