@@ -13,6 +13,7 @@ import Pets from './pages/Pets';
 import PetDetails from './pages/PetDetails';
 import Enquiry from './pages/Enquiry';
 import Donation from './pages/Donate.jsx';
+import Success from './pages/Success.jsx';
 
 // Bringing in the required imports from 'react-router-dom' to set up application routing behavior
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: 'signup',
         element: <SignUp />,
+      },
+      {
+        path: 'success',
+        element: <Success />,
       },
     ],
   },
