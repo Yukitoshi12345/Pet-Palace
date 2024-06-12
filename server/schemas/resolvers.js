@@ -2,6 +2,7 @@ const { User, Pet, Donation } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 const { ObjectId } = require('mongodb');
 require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const resolvers = {
   Query: {
@@ -179,19 +180,35 @@ const resolvers = {
       }
     },
 
-    // donate: async (parent, { amount }) => {
-    //   try {
-    //     const paymentIntent = await stripe.paymentIntents.create({
-    //       amount: amount * 100,
-    //       currency: 'aud',
-    //     });
-
-    //     return paymentIntent.client_secret;
-    //   } catch (error) {
-    //     console.error('Error processing donation:', error);
-    //     throw new Error('Failed to process donation. Please try again.');
-    //   }
-    // },
+    donateAmount: async (parent, { amount }, context) => {
+      try {
+        const lineItems = [
+          {
+            price_data: {
+              currency: 'USD',
+              product_data: {
+                name: 'Donation Amount',
+              },
+              unit_amount: Math.ceil(amount * 100),
+            },
+            quantity: 1,
+          },
+        ];
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ['card'],
+          line_items: lineItems,
+          mode: 'payment',
+          success_url: `${context.headers.origin}/success`,
+          cancel_url: `${context.headers.origin}/`,
+        });
+        return {
+          id: session.id,
+        };
+      } catch (error) {
+        console.log(error);
+        throw new Error('Error during donating amount');
+      }
+    },
   },
 };
 
