@@ -227,3 +227,8 @@ export const USER_DONATIONS = gql`
   }
 `;
 
+export const EMAIL_EXISTS = gql`
+  query emailExists($email: String!) {
+    emailExists(email: $email)
+  }
+`;
