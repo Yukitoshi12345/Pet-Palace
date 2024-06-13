@@ -1,6 +1,9 @@
+// Import gql from apollo-server-express to define the GraphQL schema
 const { gql } = require('apollo-server-express');
 
+// Define the GraphQL type definitions
 const typeDefs = gql`
+  # Define the User type with its fields and their types
   type User {
     _id: ID!
     name: String!
@@ -11,6 +14,8 @@ const typeDefs = gql`
     role: String!
     favorites: [Pet!]
   }
+
+  # Define the Pet type with its fields and their types
   type Pet {
     _id: ID!
     name: String!
@@ -32,15 +37,18 @@ const typeDefs = gql`
     featured: Boolean
   }
 
+  # Define the Auth type for authentication responses
   type Auth {
     token: ID!
     user: User
   }
 
+  # Define the CheckoutSession type for Stripe checkout sessions
   type CheckoutSession {
     session: ID!
   }
 
+  # Define the PageInfo type for pagination information
   type PageInfo {
     hasNextPage: Boolean
     hasPreviousPage: Boolean
@@ -48,21 +56,25 @@ const typeDefs = gql`
     endCursor: String
   }
 
+  # Define the PetEdge type for pagination edges
   type PetEdge {
     node: Pet!
     cursor: String!
   }
 
+  # Define the PetConnection type for paginated pet results
   type PetConnection {
     totalCount: Int!
     edges: [PetEdge!]!
     pageInfo: PageInfo!
   }
 
+  # Define the DonateResponse type for donation responses
   type DonateResponse {
     id: String!
   }
 
+  # Define the Query type with its fields and return types
   type Query {
     users: [User]
     user(userId: ID!): User
@@ -72,12 +84,17 @@ const typeDefs = gql`
     featuredPets: [Pet]
     petTypes: [String]
     locations: [String]
-    petsBySearchCriteria(location: String, petType: String, speciesBreed: String): [Pet]
+    petsBySearchCriteria(
+      location: String
+      petType: String
+      speciesBreed: String
+    ): [Pet]
     breedsOrSpecies(petType: String!): [String]
     me: User
     emailExists(email: String!): Boolean!
   }
 
+  # Define the Mutation type with its fields and return types
   type Mutation {
     addUser(
       name: String!
@@ -91,7 +108,7 @@ const typeDefs = gql`
     removeFavorite(petId: ID!): User
     donateAmount(amount: String!): DonateResponse!
   }
-
 `;
 
+// Export the type definitions
 module.exports = typeDefs;

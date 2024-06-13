@@ -1,12 +1,16 @@
-const db = require("./connection");
-const {} = require("../models"); // add models inside the bracket
+// Import the database connection
+const db = require('./connection');
+// Import the models (currently no models are imported...)
+const {} = require('../models');
 
+// When the database connection is open, run the following async function
+db.once('open', async () => {
+  // Log that the products have been seeded
+  console.log('products seeded');
 
-// TODO: Complete section
-db.once("open", async () => {
-  console.log("products seeded");
+  // Log that the users have been seeded
+  console.log('users seeded');
 
-  console.log("users seeded");
-
+  // Exit the process
   process.exit();
 });
